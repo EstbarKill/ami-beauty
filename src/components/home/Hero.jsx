@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const slides = [
   {
-    img: "/img/1.jpg",
+    img: "/public/img/1.jpg",
     title: "Encuentra tu tono perfecto",
     desc: "Análisis con inteligencia artificial",
   },
@@ -47,7 +47,7 @@ export default function Hero() {
       />
 
       {/* Overlay oscuro */}
-      <div className="absolute inset-0 bg-black/10 flex items-center">
+      <div className="absolute inset-0 bg-black/50 flex items-center">
 
         <div className="max-w-7xl mx-auto px-4 text-white">
 

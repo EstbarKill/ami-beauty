@@ -1,61 +1,266 @@
-@reference "tailwindcss";
+@import "tailwindcss";
 
-
-@tailwind utilities;
-
-/* =========================
-   LAYOUT (NO usar @apply aquí)
-========================= */
-.container {
-  max-width: 1280px; /* equivalente a max-w-7xl */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+/* ─── DESIGN TOKENS ─────────────────────────────────── */
+:root {
+  --cream: #faf8f5;
+  --cream-dark: #f2ede6;
+  --blush: #edd9cc;
+  --rose: #c9957a;
+  --rose-dark: #a8735a;
+  --charcoal: #1c1815;
+  --charcoal-mid: #3a342f;
+  --muted: #8a8278;
+  --muted-light: #c5bfb8;
+  --gold: #c4a882;
+  --white: #ffffff;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-family: system-ui, sans-serif;
+}
+
+/* ─── TAILWIND THEME EXTENSION ───────────────────────── */
+@theme {
+  --color-cream: #faf8f5;
+  --color-cream-dark: #f2ede6;
+  --color-blush: #edd9cc;
+  --color-rose: #c9957a;
+  --color-rose-dark: #a8735a;
+  --color-charcoal: #1c1815;
+  --color-charcoal-mid: #3a342f;
+  --color-muted: #8a8278;
+  --color-muted-light: #c5bfb8;
+  --color-gold: #c4a882;
+
+  --font-serif: "Georgia", serif;
+  --font-sans: system-ui, sans-serif;
+}
+
+/* ─── COMPONENT CLASSES ─────────────────────────────── */
+
+/* Buttons */
 .btn-primary {
-  @apply px-4 py-2 rounded font-semibold transition bg-pink-500 text-white hover:bg-pink-600;
+  display: inline-block;
+  background-color: var(--rose);
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.btn-primary:hover {
+  background-color: var(--rose-dark);
+  transform: translateY(-1px);
 }
 
-.btn-ghost {
-  @apply px-4 py-2 rounded font-semibold transition border border-gray-300 hover:bg-gray-100;
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--charcoal);
+  padding: 0.7rem 1.8rem;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1px solid var(--charcoal);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-outline:hover {
+  background-color: var(--charcoal);
+  color: white;
 }
 
-/* =========================
-   CARDS
-========================= */
-.card {
-  @apply bg-white rounded-xl shadow p-4 transition hover:scale-[1.02];
+.btn-outline-light {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  padding: 0.7rem 1.8rem;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-outline-light:hover {
+  background-color: white;
+  color: var(--charcoal);
 }
 
-/* =========================
-   INPUTS
-========================= */
-.input {
-  @apply border rounded px-3 py-2 w-full outline-none focus:ring-2 focus:ring-pink-500;
+/* Typography atoms */
+.eyebrow {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 0.5rem;
+}
+.eyebrow-gold {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  line-height: 1.15;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+}
+.view-all-link {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal-mid);
+  text-decoration: none;
+  border-bottom: 1px solid var(--charcoal-mid);
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.view-all-link:hover {
+  color: var(--rose);
+  border-color: var(--rose);
 }
 
-/* =========================
-   BADGES
-========================= */
-.badge-green {
-  @apply text-xs px-2 py-1 rounded text-white bg-green-500;
+/* Skeleton loading */
+@keyframes skeletonPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
 }
-
-/* =========================
-   SKELETON LOADING
-========================= */
 .skeleton {
-  @apply animate-pulse bg-gray-200 rounded;
+  background-color: var(--cream-dark);
+  animation: skeletonPulse 1.4s ease infinite;
+  border-radius: 2px;
 }
 
-/* =========================
-   HOVER OVERLAY
-========================= */
-.overlay {
-  @apply absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center;
+/* Product card */
+.product-card {
+  background: white;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(28, 24, 21, 0.08);
+  border-color: var(--cream-dark);
+}
+.product-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  background: linear-gradient(to top, rgba(28, 24, 21, 0.5) 0%, transparent 100%);
+}
+.product-card:hover .product-overlay {
+  transform: translateY(0);
+}
+
+/* Badges */
+.badge-recommended {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: var(--rose);
+  color: white;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  font-weight: 500;
+}
+.badge-new {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--charcoal);
+  color: white;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  font-weight: 500;
+}
+
+/* Input shared styles */
+.input-base {
+  border: 1px solid var(--cream-dark);
+  background: var(--cream);
+  padding: 0.55rem 1rem;
+  font-size: 13px;
+  color: var(--charcoal);
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.input-base:focus {
+  border-color: var(--rose);
+}
+
+/* Overlay/group hover */
+.group:hover .group-hover-show {
+  opacity: 1;
+}
+
+/* Scan line animation for AI */
+@keyframes scanLine {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--rose), transparent);
+  animation: scanLine 2s linear infinite;
+}
+
+/* Card base */
+.card {
+  background: white;
+  border: 1px solid var(--cream-dark);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover {
+  border-color: var(--rose);
+  transform: translateY(-2px);
 }

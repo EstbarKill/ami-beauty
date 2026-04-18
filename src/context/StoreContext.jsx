@@ -1,45 +1,148 @@
-"use client"
-import { createContext, useContext, useEffect, useMemo, useState } from "react"
+"use client";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+} from "react";
 
-const Store = createContext()
+const StoreContext = createContext(null);
 
 export function StoreProvider({ children }) {
-  const [cart, setCart] = useState([])
-  const [favorites, setFavorites] = useState([])
+  const [cart, setCart] = useState([]);
+  const [favorites, setFavorites] = useState([]);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [toast, setToast] = useState({ msg: "", visible: false });
+  const [aiRecommended, setAiRecommended] = useState([]);
 
+  /* ── Hydrate from localStorage ─────────────── */
   useEffect(() => {
-    setCart(JSON.parse(localStorage.getItem("cart") || "[]"))
-    setFavorites(JSON.parse(localStorage.getItem("fav") || "[]"))
-  }, [])
+    try {
+      const c = localStorage.getItem("ami_cart");
+      const f = localStorage.getItem("ami_favs");
+      if (c) setCart(JSON.parse(c));
+      if (f) setFavorites(JSON.parse(f));
+    } catch {}
+  }, []);
 
-  const addToCart = (p) => {
-    const next = [...cart, p]
-    setCart(next)
-    localStorage.setItem("cart", JSON.stringify(next))
-  }
+  /* ── Persist cart ───────────────────────────── */
+  useEffect(() => {
+    localStorage.setItem("ami_cart", JSON.stringify(cart));
+  }, [cart]);
 
-  const toggleFav = (p) => {
-    let next
-    if (favorites.find(f => f.id === p.id)) {
-      next = favorites.filter(f => f.id !== p.id)
+  /* ── Persist favorites ──────────────────────── */
+  useEffect(() => {
+    localStorage.setItem("ami_favs", JSON.stringify(favorites));
+  }, [favorites]);
+
+  /* ── Toast ──────────────────────────────────── */
+  const showToast = useCallback((msg) => {
+    setToast({ msg, visible: true });
+    setTimeout(() => setToast((t) => ({ ...t, visible: false })), 2800);
+  }, []);
+
+  /* ── Cart actions ───────────────────────────── */
+  const addToCart = useCallback(
+    (product) => {
+      setCart((prev) => {
+        const exists = prev.find((c) => c.id === product.id);
+        if (exists)
+          return prev.map((c) =>
+            c.id === product.id ? { ...c, qty: c.qty + 1 } : c
+          );
+        return [...prev, { ...product, qty: 1 }];
+      });
+      showToast(`${product.name} agregado al carrito ✓`);
+    },
+    [showToast]
+  );
+
+  const removeFromCart = useCallback((id) => {
+    setCart((prev) => prev.filter((c) => c.id !== id));
+  }, []);
+
+  const clearCart = useCallback(() => setCart([]), []);
+
+  const updateQty = useCallback((id, qty) => {
+    if (qty <= 0) {
+      setCart((prev) => prev.filter((c) => c.id !== id));
     } else {
-      next = [...favorites, p]
+      setCart((prev) =>
+        prev.map((c) => (c.id === id ? { ...c, qty } : c))
+      );
     }
-    setFavorites(next)
-    localStorage.setItem("fav", JSON.stringify(next))
-  }
+  }, []);
 
-  const isFav = (id) => favorites.some(f => f.id === id)
+  const cartCount = cart.reduce((a, c) => a + c.qty, 0);
+  const cartTotal = cart.reduce((a, c) => a + c.price * c.qty, 0);
 
-  const value = useMemo(() => ({
-    cart,
-    favorites,
-    addToCart,
-    toggleFav,
-    isFav
-  }), [cart, favorites])
+  /* ── Favorites actions ──────────────────────── */
+  const toggleFav = useCallback(
+    (product) => {
+      setFavorites((prev) => {
+        const isFaved = prev.some((f) => f.id === product.id);
+        if (isFaved) {
+          showToast("Eliminado de favoritos");
+          return prev.filter((f) => f.id !== product.id);
+        }
+        showToast(`${product.name} guardado en favoritos ♥`);
+        return [...prev, product];
+      });
+    },
+    [showToast]
+  );
 
-  return <Store.Provider value={value}>{children}</Store.Provider>
+  const isFav = useCallback(
+    (id) => favorites.some((f) => f.id === id),
+    [favorites]
+  );
+
+  const value = useMemo(
+    () => ({
+      cart,
+      cartCount,
+      cartTotal,
+      addToCart,
+      removeFromCart,
+      clearCart,
+      updateQty,
+      favorites,
+      toggleFav,
+      isFav,
+      cartOpen,
+      setCartOpen,
+      toast,
+      showToast,
+      aiRecommended,
+      setAiRecommended,
+    }),
+    [
+      cart,
+      cartCount,
+      cartTotal,
+      addToCart,
+      removeFromCart,
+      clearCart,
+      updateQty,
+      favorites,
+      toggleFav,
+      isFav,
+      cartOpen,
+      toast,
+      showToast,
+      aiRecommended,
+    ]
+  );
+
+  return (
+    <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
+  );
 }
 
-export const useStore = () => useContext(Store)
+export function useStore() {
+  const ctx = useContext(StoreContext);
+  if (!ctx) throw new Error("useStore must be used inside StoreProvider");
+  return ctx;
+}

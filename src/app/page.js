@@ -1,15 +1,25 @@
 import Hero from "@/components/home/Hero";
+import PromoBar from "@/components/home/PromoBar";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import AISection from "@/components/home/AISection";
+import AboutSection from "@/components/home/AboutSection";
+import BenefitsSection from "@/components/home/BenefitsSection";
 import TipsSection from "@/components/home/TipsSection";
+import ReviewsSection from "@/components/home/ReviewsSection";
+import NewsletterCTA from "@/components/home/NewsletterCTA";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
+    <>
       <Hero />
+      <PromoBar />
       <FeaturedProducts />
       <AISection />
+      <AboutSection />
+      <BenefitsSection />
       <TipsSection />
-    </main>
+      <ReviewsSection />
+      <NewsletterCTA />
+    </>
   );
 }
