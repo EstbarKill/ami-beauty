@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Corrector Claro",
+        "price": 45000,
+        "category": "rostro",
+        "featured": true
+    },
+    {
+        "id": 2,
+        "name": "Corrector Medio",
+        "price": 47000,
+        "category": "rostro",
+        "featured": true
+    },
+    {
+        "id": 3,
+        "name": "Labial Mate",
+        "price": 30000,
+        "category": "labios"
+    }
+]
