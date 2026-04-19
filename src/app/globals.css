@@ -116,7 +116,7 @@ body {
 }
 .eyebrow-gold {
   display: block;
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);

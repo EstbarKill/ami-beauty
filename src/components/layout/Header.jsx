@@ -54,7 +54,7 @@ export default function Header() {
             flexShrink: 0,
           }}
         >
-          Ami<span style={{ color: "var(--rose)" }}>·</span>Boutique
+          Ami<span style={{ color: "var(--rose)" }}>·</span>Beauty
         </Link>
 
         {/* Search */}

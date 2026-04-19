@@ -44,7 +44,7 @@ export default function AboutSection() {
             }}
           >
             <span style={{ fontFamily: "Georgia,serif", fontSize: "1.4rem", color: "rgba(255,255,255,.4)", fontStyle: "italic" }}>
-              Boutique
+              Beauty
             </span>
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function AboutSection() {
               marginBottom: "1.25rem",
             }}
           >
-            En Ami Boutique nos dedicamos a ofrecer los mejores productos de belleza y
+            En Ami Beauty nos dedicamos a ofrecer los mejores productos de belleza y
             cosmética de lujo. Nuestro objetivo es crear una experiencia de compra que
             refleje los más altos estándares de calidad — desde formulaciones
             científicamente avanzadas hasta empaques sostenibles.

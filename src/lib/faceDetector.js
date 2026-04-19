@@ -1,7 +1,7 @@
-let detector = null;
+let model = null;
 
 export async function getFaceDetector() {
-  if (detector) return detector;
+  if (model) return model;
 
   const tf = await import("@tensorflow/tfjs");
   await import("@tensorflow/tfjs-backend-webgl");
@@ -9,15 +9,18 @@ export async function getFaceDetector() {
   await tf.setBackend("webgl");
   await tf.ready();
 
-  const faceDetection = await import("@tensorflow-models/face-detection");
+  const blazeface = await import("@tensorflow-models/blazeface");
 
-  detector = await faceDetection.createDetector(
-    faceDetection.SupportedModels.MediaPipeFaceDetector,
-    {
-      runtime: "tfjs", // 🔥 CLAVE (sin esto se rompe)
-      modelType: "short",
-    }
-  );
+  model = await blazeface.load();
 
-  return detector;
+  return model;
+}
+
+export async function detectFace(video) {
+  const detector = await getFaceDetector();
+  const predictions = await detector.estimateFaces(video, false);
+
+  if (!predictions.length) return null;
+
+  return predictions[0];
 }

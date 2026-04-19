@@ -7,8 +7,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="card relative group">
 
-      <div className="h-40 bg-gray-200 mb-4 rounded" />
-
+      <div className="h-40 bg-gray-700 mb-4 rounded" />
       <h3 className="font-semibold">{product.name}</h3>
       <p className="text-pink-500 font-bold">${product.price}</p>
 

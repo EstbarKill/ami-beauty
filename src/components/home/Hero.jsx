@@ -4,17 +4,17 @@ import Link from "next/link"
 
 const slides = [
   {
-    img: "/public/img/1.jpg",
+    img: "/ami-beauty/img/1.jpg",
     title: "Encuentra tu tono perfecto",
     desc: "Análisis con inteligencia artificial",
   },
   {
-    img: "/img/2.jpg",
+    img: "/ami-beauty/img/2.jpg",
     title: "Maquillaje profesional",
     desc: "Productos seleccionados para tu piel",
   },
   {
-    img: "/img/3.jpg",
+    img: "/ami-beauty/img/3.jpg",
     title: "Brilla con confianza",
     desc: "Descubre lo mejor para ti",
   }

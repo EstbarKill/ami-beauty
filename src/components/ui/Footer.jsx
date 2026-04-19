@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Marca */}
         <div>
           <h2 className="text-xl font-bold mb-3">
-            Ami Boutique
+            Ami Beauty
           </h2>
           <p className="text-sm text-gray-400">
             Descubre tu belleza con inteligencia artificial.
@@ -49,7 +49,7 @@ export default function Footer() {
             Contacto
           </h3>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li>Email: contacto@amiboutique.com</li>
+            <li>Email: contacto@amibeauty.com</li>
             <li>WhatsApp: +57 300 000 0000</li>
             <li>Colombia 🇨🇴</li>
           </ul>
@@ -59,7 +59,7 @@ export default function Footer() {
 
       {/* Línea inferior */}
       <div className="border-t border-gray-800 text-center text-sm text-gray-500 py-4">
-        © {new Date().getFullYear()} Ami Boutique — Todos los derechos reservados
+        © {new Date().getFullYear()} Ami Beauty — Todos los derechos reservados
       </div>
 
     </footer>

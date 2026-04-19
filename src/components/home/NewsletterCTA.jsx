@@ -87,7 +87,7 @@ export default function NewsletterCTA() {
           </button>
         </form>
         <p style={{ fontSize: "11px", color: "var(--muted)", marginTop: "1rem" }}>
-          Al suscribirte aceptas recibir comunicaciones de Ami Boutique. Puedes darte de baja en cualquier momento.
+          Al suscribirte aceptas recibir comunicaciones de Ami Beauty. Puedes darte de baja en cualquier momento.
         </p>
       </div>
     </section>

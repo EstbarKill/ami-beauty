@@ -1,83 +1,97 @@
 "use client";
 
-import { useRef, useState } from "react";
-import useFaceDetection from "@/hooks/useFaceDetection";
+import { useState } from "react";
+import Link from "next/link";
+import SkinAnalyzer from "@/components/ai/SkinAnalyzer";
 
 export default function AnalisisPage() {
-  const videoRef = useRef(null);
-  const canvasRef = useRef(null);
-
-  const face = useFaceDetection(videoRef);
-
-  const [status, setStatus] = useState("idle");
-
-  const startCamera = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: "user" },
-      });
-
-      videoRef.current.srcObject = stream;
-      await videoRef.current.play();
-
-      setStatus("streaming");
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const analyze = () => {
-    if (!face) return;
-
-    const video = videoRef.current;
-    const canvas = canvasRef.current;
-
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(video, 0, 0);
-
-    const box = face.box;
-
-    const x = box.xMin;
-    const y = box.yMin;
-    const w = box.width;
-    const h = box.height;
-
-    const imageData = ctx.getImageData(x, y, w, h);
-
-    console.log("PIXELS:", imageData);
-
-    setStatus("done");
-  };
+  const [started, setStarted] = useState(false);
 
   return (
-    <div style={{ padding: 40 }}>
-      <h1>Detector Facial IA</h1>
+    <div className="min-h-screen bg-[#0B0A09] text-white">
+      
+      {/* HEADER */}
+      <header className="border-b border-white/10 px-6 py-5 flex justify-between items-center">
+        <div>
+          <p className="text-[11px] tracking-widest text-amber-400 uppercase">
+            IA · Dermatología · Tiempo real
+          </p>
+          <h1 className="text-2xl font-serif">
+            Análisis de tono de piel
+          </h1>
+        </div>
 
-      <video
-        ref={videoRef}
-        autoPlay
-        playsInline
-        style={{ width: 400 }}
-      />
+        <Link href="/" className="text-white/40 text-sm hover:text-white">
+          ← Volver
+        </Link>
+      </header>
 
-      <canvas ref={canvasRef} style={{ display: "none" }} />
+      {/* CONTENT */}
+      <div className="grid lg:grid-cols-2 gap-10 px-6 py-10 max-w-6xl mx-auto">
 
-      <div style={{ marginTop: 20 }}>
-        {status === "idle" && (
-          <button onClick={startCamera}>Activar cámara</button>
-        )}
+        {/* LEFT PANEL */}
+        <div>
+          <p className="text-white/60 text-sm leading-relaxed mb-6">
+            Este sistema utiliza el modelo{" "}
+            <span className="text-amber-400">CIELAB + ITA</span>,
+            el mismo estándar dermatológico usado para clasificar tonos de piel
+            con precisión científica.
+          </p>
 
-        {status === "streaming" && (
-          <button onClick={analyze} disabled={!face}>
-            Analizar
-          </button>
-        )}
+          {/* STEPS */}
+          <div className="space-y-4 mb-8">
+            {[
+              "Activa la cámara",
+              "Ubica tu rostro en buena luz",
+              "Presiona analizar",
+              "Obtén tu tono exacto",
+            ].map((step, i) => (
+              <div key={i} className="flex gap-3 items-start">
+                <div className="w-6 h-6 rounded-full border border-amber-400 text-amber-400 text-xs flex items-center justify-center">
+                  {i + 1}
+                </div>
+                <p className="text-white/60 text-sm">{step}</p>
+              </div>
+            ))}
+          </div>
 
-        {!face && status === "streaming" && <p>Buscando rostro...</p>}
-        {face && <p>Rostro detectado ✅</p>}
+          {/* INFO CARD */}
+          <div className="border border-white/10 p-5 bg-white/5">
+            <p className="text-xs text-white/40 uppercase tracking-widest mb-2">
+              Tecnología
+            </p>
+            <p className="text-sm text-white/60 leading-relaxed">
+              Todo el procesamiento ocurre en tu navegador. No se almacenan
+              imágenes ni datos personales.
+            </p>
+          </div>
+        </div>
+
+        {/* RIGHT PANEL */}
+        <div className="bg-black border border-white/10 p-6">
+
+          {!started ? (
+            <div className="flex flex-col items-center justify-center h-[420px] gap-4">
+              <div className="w-20 h-20 border border-white/20 rounded-full flex items-center justify-center">
+                🎥
+              </div>
+
+              <p className="text-white/50 text-sm text-center">
+                Inicia el análisis para activar la cámara
+              </p>
+
+              <button
+                onClick={() => setStarted(true)}
+                className="px-6 py-3 bg-amber-400 text-black text-sm font-medium hover:bg-amber-300 transition"
+              >
+                Activar análisis
+              </button>
+            </div>
+          ) : (
+            <SkinAnalyzer />
+          )}
+
+        </div>
       </div>
     </div>
   );

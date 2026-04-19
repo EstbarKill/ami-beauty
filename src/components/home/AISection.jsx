@@ -185,15 +185,15 @@ export default function AISection() {
                 padding: "1.5rem",
               }}
             >
-              <span className="eyebrow-gold" style={{ marginBottom: "1.25rem" }}>
-                11 tonos · Escala ITA · Fitzpatrick I–VI
+              <span className="eyebrow-gold justify-self-center" style={{ marginBottom: "1.25rem" }}>
+                11 tonos · Escala ITA · Ami Beauty
               </span>
               <div
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(4,1fr)",
                   gap: "0.6rem",
-                  marginTop: "1rem",
+                  marginTop: "1rem"
                 }}
               >
                 {SKIN_TONES.map((tone) => (
@@ -204,15 +204,15 @@ export default function AISection() {
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
-                      gap: "5px",
+                      gap: "3px",
                       padding: "8px 4px",
                       cursor: "default",
                     }}
                   >
                     <div
                       style={{
-                        width: "38px",
-                        height: "38px",
+                        width: "80px",
+                        height: "80px",
                         borderRadius: "50%",
                         background: tone.hex,
                         border: "2px solid rgba(255,255,255,.15)",
@@ -220,7 +220,7 @@ export default function AISection() {
                     />
                     <span
                       style={{
-                        fontSize: "9px",
+                        fontSize: "20px",
                         textAlign: "center",
                         color: "rgba(255,255,255,.7)",
                         lineHeight: 1.3,
@@ -230,7 +230,7 @@ export default function AISection() {
                     </span>
                     <span
                       style={{
-                        fontSize: "8px",
+                        fontSize: "15px",
                         fontFamily: "monospace",
                         color: "rgba(255,255,255,.3)",
                       }}

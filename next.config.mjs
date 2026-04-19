@@ -4,10 +4,6 @@ const repo = "ami-beauty";
 const nextConfig = {
   output: "export",
     reactStrictMode: true,
-
-  experimental: {
-    turbo: false,
-  },
   images: {
     unoptimized: true
   },
