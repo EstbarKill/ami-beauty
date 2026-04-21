@@ -125,7 +125,7 @@ export default function CategoryPage() {
       <div style={{ background: "var(--charcoal)", color: "white", padding: "2.5rem 3rem" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ fontSize: "12px", color: "rgba(255,255,255,.4)", marginBottom: "0.75rem" }}>
-            <Link href="/" style={{ color: "rgba(255,255,255,.4)", textDecoration: "none", cursor: "pointer" }}>
+            <Link prefetch={false} href="/" style={{ color: "rgba(255,255,255,.4)", textDecoration: "none", cursor: "pointer" }}>
               Inicio
             </Link>
             <span style={{ margin: "0 0.5rem" }}>›</span>

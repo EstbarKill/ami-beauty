@@ -13,7 +13,7 @@ export default function FavoritesPage() {
       <div style={{ background: "var(--cream-dark)", padding: "2.5rem 3rem" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ fontSize: "12px", color: "var(--muted)", marginBottom: "0.5rem" }}>
-            <Link href="/" style={{ color: "var(--muted)", textDecoration: "none" }}>Inicio</Link>
+            <Link href="/" style={{ color: "var(--muted)", textDecoration: "none" }} prefetch={false}>Inicio</Link>
             <span style={{ margin: "0 0.5rem" }}>›</span>
             <span>Favoritos</span>
           </div>
@@ -42,7 +42,7 @@ export default function FavoritesPage() {
             <p style={{ fontSize: "14px", color: "var(--muted)", marginBottom: "2rem" }}>
               Guarda los productos que te gustan para encontrarlos fácilmente.
             </p>
-            <Link href="/category/todos" className="btn-primary">
+            <Link href="/category/todos" className="btn-primary" prefetch={false}>
               Explorar productos
             </Link>
           </div>

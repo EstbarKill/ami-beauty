@@ -20,7 +20,7 @@ export default function AnalisisPage() {
           </h1>
         </div>
 
-        <Link href="/" className="text-white/40 text-sm hover:text-white">
+        <Link href="/" className="text-white/40 text-sm hover:text-white" prefetch={false}>
           ← Volver
         </Link>
       </header>
