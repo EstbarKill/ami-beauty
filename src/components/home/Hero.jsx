@@ -5,19 +5,19 @@ import Link from "next/link";
 
 const slides = [
   {
-    img: "/ami-beauty/img/hero-1.png",
+    img: "/img/hero-1.png",
     eyebrow: "Nueva colección",
     title: "Encuentra tu tono perfecto",
     desc: "Análisis con inteligencia artificial",
   },
   {
-    img: "/ami-beauty/img/hero-2.png",
+    img: "/img/hero-2.png",
     eyebrow: "Selección premium",
     title: "Maquillaje profesional",
     desc: "Productos seleccionados para tu piel",
   },
   {
-    img: "/ami-beauty/img/hero-3.png",
+    img: "/img/hero-3.png",
     eyebrow: "Confianza y elegancia",
     title: "Brilla con confianza",
     desc: "Descubre lo mejor para ti",

@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Corrector Luminoso Porcelana",
     "slug": "corrector-luminoso-porcelana",
-    "cat": "base",
+    "cat": "correctores",
     "catLabel": "Base & Corrector",
     "toneGroup": "Claro",
     "toneIds": ["porcelana", "claro-rosado"],
@@ -15,14 +15,14 @@
     "reviews": 248,
     "desc": "Cobertura media-alta con acabado luminoso. Fórmula enriquecida con ácido hialurónico para pieles muy claras con subtono rosado.",
     "ingredients": "Ácido hialurónico, vitamina E, SPF 15",
-    "image": "/ami-beauty/img/products/base-1.jpg",
+    "image": "/img/products/base-1.jpg",
     "recomended": true
   },
   {
     "id": 2,
     "name": "Base Fluida Sérum Claro Neutro SPF30",
     "slug": "base-fluida-serum-claro-neutro",
-    "cat": "base",
+    "cat": "pestanas",
     "catLabel": "Base & Corrector",
     "toneGroup": "Claro",
     "toneIds": ["claro-neutro", "claro-dorado"],
@@ -34,13 +34,13 @@
     "reviews": 192,
     "desc": "Base fluida con beneficios de sérum. Cobertura buildable, acabado segunda piel con protección solar SPF 30 para tonos neutros.",
     "ingredients": "Niacinamida, ácido ferúlico, filtro solar",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 3,
     "name": "Corrector Ultra Cover Tono Dorado",
     "slug": "corrector-ultra-cover-dorado",
-    "cat": "base",
+    "cat": "labios",
     "catLabel": "Base & Corrector",
     "toneGroup": "Claro",
     "toneIds": ["claro-dorado"],
@@ -52,13 +52,13 @@
     "reviews": 167,
     "desc": "Cobertura total de ojeras y manchas. Fórmula waterproof 18h con subtono dorado cálido para pieles claras-doradas.",
     "ingredients": "Pigmentos minerales, aceite de argán, cera de abeja",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 4,
     "name": "Polvo Translúcido Fijador Piel Clara",
     "slug": "polvo-translucido-fijador",
-    "cat": "polvo",
+    "cat": "la-piel",
     "catLabel": "Polvos",
     "toneGroup": "Claro",
     "toneIds": ["porcelana", "claro-rosado", "claro-neutro"],
@@ -70,13 +70,13 @@
     "reviews": 315,
     "desc": "Polvo translúcido ultra-fino para fijar sin añadir cobertura. Efecto mate sedoso todo el día para pieles claras.",
     "ingredients": "Almidón de tapioca, sílica",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 5,
     "name": "Base Medio Rosado Buildable",
     "slug": "base-medio-rosado",
-    "cat": "base",
+    "cat": "brochas",
     "catLabel": "Base & Corrector",
     "toneGroup": "Medio",
     "toneIds": ["medio-rosado"],
@@ -88,13 +88,13 @@
     "reviews": 88,
     "desc": "Base buildable con subtono rosado para tonos medios. Cobertura de media a completa con acabado satinado natural.",
     "ingredients": "Ácido hialurónico triple acción, ceramidas",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 6,
     "name": "Corrector Medio Neutro Pro",
     "slug": "corrector-medio-neutro",
-    "cat": "base",
+    "cat": "accesorios",
     "catLabel": "Base & Corrector",
     "toneGroup": "Medio",
     "toneIds": ["medio-neutro"],
@@ -106,13 +106,13 @@
     "reviews": 201,
     "desc": "Corrector de tono neutro medio para piel morena intermedia. Neutraliza ojeras con pigmentos durazno y beige equilibrado.",
     "ingredients": "Karité, jojoba, pigmentos micronizados",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 7,
     "name": "Base Trigueña Glow SPF20",
     "slug": "base-triguena-glow",
-    "cat": "base",
+    "cat": "correctores",
     "catLabel": "Base & Corrector",
     "toneGroup": "Medio",
     "toneIds": ["trigueño"],
@@ -124,13 +124,13 @@
     "reviews": 142,
     "desc": "Base con efecto glow para tonos trigueños cálidos-dorados. Ilumina y unifica con un acabado de piel saludable.",
     "ingredients": "Aceite de marula, vitamina C, pigmentos dorados",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 8,
     "name": "Paleta Contorno Natural Pieles Medias",
     "slug": "paleta-contorno-medias",
-    "cat": "contorno",
+    "cat": "pestanas",
     "catLabel": "Contorno",
     "toneGroup": "Medio",
     "toneIds": ["medio-rosado", "medio-neutro", "trigueño"],
@@ -142,13 +142,13 @@
     "reviews": 88,
     "desc": "Paleta 4 tonos para contorno, escultura e iluminación. Fórmulas ultra-blendables pensadas para pieles medias.",
     "ingredients": "Talco, mica, pigmentos minerales",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 9,
     "name": "Corrector Moreno Cálido Waterproof",
     "slug": "corrector-moreno-calido",
-    "cat": "base",
+    "cat": "labios",
     "catLabel": "Base & Corrector",
     "toneGroup": "Oscuro",
     "toneIds": ["moreno-calido"],
@@ -160,13 +160,13 @@
     "reviews": 167,
     "desc": "Corrector waterproof para pieles morenas cálidas. Subtono rojizo equilibrado que neutraliza manchas y unifica.",
     "ingredients": "Cera de carnaúba, pigmentos ocre, aceite de coco",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 10,
     "name": "Base Oscura Cálida Sérum 24h",
     "slug": "base-oscura-calida",
-    "cat": "base",
+    "cat": "la-piel",
     "catLabel": "Base & Corrector",
     "toneGroup": "Oscuro",
     "toneIds": ["oscuro-calido"],
@@ -178,13 +178,13 @@
     "reviews": 203,
     "desc": "Base sérum para pieles oscuras cálidas. Cobertura completa buildable con activos hidratantes de 24 horas de duración.",
     "ingredients": "Ácido hialurónico, manteca de karité, pigmentos terracota",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 11,
     "name": "Corrector Tono Ébano Full Cover",
     "slug": "corrector-ebano-full-cover",
-    "cat": "base",
+    "cat": "brochas",
     "catLabel": "Base & Corrector",
     "toneGroup": "Oscuro",
     "toneIds": ["oscuro-frio", "ebano"],
@@ -196,13 +196,13 @@
     "reviews": 94,
     "desc": "Corrector de máxima cobertura para tonos ébano. Fórmula con subtono frío-ceniza que ilumina sin parecer gris.",
     "ingredients": "Dióxido de titanio, mica, pigmentos azul-violeta",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 12,
     "name": "Blush Seda Rosado Pétalo",
     "slug": "blush-rosado-petalo",
-    "cat": "blush",
+    "cat": "accesorios",
     "catLabel": "Blush & Iluminador",
     "toneGroup": "Claro",
     "toneIds": ["porcelana", "claro-rosado"],
@@ -214,13 +214,13 @@
     "reviews": 201,
     "desc": "Colorete en polvo con acabado sedoso. Tono rosado natural que aporta un flush saludable a pieles claras.",
     "ingredients": "Talco, mica, rosa de Damasco",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 13,
     "name": "Iluminador Dorado Líquido",
     "slug": "iluminador-dorado-liquido",
-    "cat": "blush",
+    "cat": "correctores",
     "catLabel": "Blush & Iluminador",
     "toneGroup": "Medio",
     "toneIds": ["trigueño", "moreno-calido"],
@@ -232,13 +232,13 @@
     "reviews": 142,
     "desc": "Iluminador líquido buildable para rostro y cuerpo. Partículas doradas micro-finadas para un brillo natural espectacular.",
     "ingredients": "Mica dorada, aceite de jojoba, vitamina E",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 14,
     "name": "Blush Terracota Pieles Oscuras",
     "slug": "blush-terracota-oscuro",
-    "cat": "blush",
+    "cat": "pestanas",
     "catLabel": "Blush & Iluminador",
     "toneGroup": "Oscuro",
     "toneIds": ["moreno-calido", "oscuro-calido", "ebano"],
@@ -250,13 +250,13 @@
     "reviews": 76,
     "desc": "Blush en polvo terracota intenso formulado para resaltar en pieles oscuras sin verse apagado.",
     "ingredients": "Óxidos de hierro, mica, silica",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 15,
     "name": "Paleta Sombras Nudes 12",
     "slug": "paleta-sombras-nudes-12",
-    "cat": "sombras",
+    "cat": "labios",
     "catLabel": "Sombras",
     "toneGroup": "Medio",
     "toneIds": ["medio-rosado", "medio-neutro", "trigueño"],
@@ -268,13 +268,13 @@
     "reviews": 276,
     "desc": "12 sombras en tonos nude, desde vainilla hasta chocolate. Pigmentación intensa y altamente difuminables.",
     "ingredients": "Talco, mica, pigmentos minerales certificados",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 16,
     "name": "Delineador Precision Ink Negro",
     "slug": "delineador-precision-ink",
-    "cat": "delineador",
+    "cat": "la-piel",
     "catLabel": "Delineador",
     "toneGroup": "Claro",
     "toneIds": ["porcelana", "claro-rosado", "claro-neutro", "claro-dorado"],
@@ -286,13 +286,13 @@
     "reviews": 333,
     "desc": "Liner líquido punta ultra-fina para trazos precisos. Fórmula waterproof 24 horas sin corrimientos.",
     "ingredients": "Negro de carbón, cera de abeja, agua purificada",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 17,
     "name": "Máscara Volume XXL",
     "slug": "mascara-volume-xxl",
-    "cat": "mascara",
+    "cat": "brochas",
     "catLabel": "Máscara",
     "toneGroup": "Oscuro",
     "toneIds": ["moreno-calido", "oscuro-calido", "oscuro-frio", "ebano"],
@@ -304,13 +304,13 @@
     "reviews": 412,
     "desc": "Máscara volumizante cepillo XL. Agranda y separa cada pestaña con fórmula vitamina E y pigmento negro intenso.",
     "ingredients": "Cera de carnaúba, negro de carbón, vitamina E, pantenol",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 18,
     "name": "Labial Terciopelo Rosa Claro",
     "slug": "labial-terciopelo-rosa",
-    "cat": "lipstick",
+    "cat": "accesorios",
     "catLabel": "Labial",
     "toneGroup": "Claro",
     "toneIds": ["porcelana", "claro-rosado", "claro-neutro"],
@@ -322,13 +322,13 @@
     "reviews": 520,
     "desc": "Labial mate de larga duración con fórmula hidratante. Rosa pálido que favorece pieles claras con subtono frío.",
     "ingredients": "Aceite de rosa mosqueta, vitamina C, pigmento rosa",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 19,
     "name": "Labial Líquido Metal Caoba",
     "slug": "labial-metal-caoba",
-    "cat": "lipstick",
+    "cat": "correctores",
     "catLabel": "Labial",
     "toneGroup": "Oscuro",
     "toneIds": ["moreno-calido", "oscuro-calido", "oscuro-frio", "ebano"],
@@ -340,13 +340,13 @@
     "reviews": 74,
     "desc": "Labial líquido metálico de larga duración. Tono caoba oscuro intenso que resalta de forma espectacular en pieles oscuras.",
     "ingredients": "Aceite de argán, mica, pigmento caoba",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 20,
     "name": "Gloss Volumen Beige Nude",
     "slug": "gloss-beige-nude",
-    "cat": "gloss",
+    "cat": "pestanas",
     "catLabel": "Gloss",
     "toneGroup": "Medio",
     "toneIds": ["medio-rosado", "medio-neutro"],
@@ -358,13 +358,13 @@
     "reviews": 187,
     "desc": "Gloss voluminizador acabado espejo. Tono beige-nude que favorece tonos medios y complementa cualquier look.",
     "ingredients": "Aceite de ricino, menta, mica perla",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 21,
     "name": "Sérum Vitamina C Glow Pieles Claras",
     "slug": "serum-vitamina-c-claro",
-    "cat": "serum",
+    "cat": "labios",
     "catLabel": "Sérum & Tratamientos",
     "toneGroup": "Claro",
     "toneIds": ["porcelana", "claro-rosado", "claro-neutro", "claro-dorado"],
@@ -376,13 +376,13 @@
     "reviews": 298,
     "desc": "Sérum concentrado vitamina C 15% estabilizada. Unifica el tono, ilumina y estimula colágeno para pieles claras.",
     "ingredients": "Vitamina C 15%, ácido ferúlico, vitamina E",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 22,
     "name": "Retinol Night Sérum Pieles Medias",
     "slug": "retinol-night-serum",
-    "cat": "serum",
+    "cat": "la-piel",
     "catLabel": "Sérum & Tratamientos",
     "toneGroup": "Medio",
     "toneIds": ["trigueño", "medio-neutro", "moreno-calido"],
@@ -394,13 +394,13 @@
     "reviews": 41,
     "desc": "Sérum nocturno retinol encapsulado 0.5% y niacinamida. Reduce manchas y mejora textura en pieles medias.",
     "ingredients": "Retinol 0.5%, niacinamida 5%, péptidos",
-    "image": "/ami-beauty/img/products/base-2.png"
+    "image": "/img/products/base-2.png"
   },
   {
     "id": 23,
     "name": "Crema Hidratante Profunda 50h",
     "slug": "crema-hidratante-profunda",
-    "cat": "hidratacion",
+    "cat": "brochas",
     "catLabel": "Hidratación",
     "toneGroup": "Medio",
     "toneIds": ["medio-rosado", "medio-neutro", "trigueño", "moreno-calido"],
@@ -412,13 +412,13 @@
     "reviews": 365,
     "desc": "Crema rica ácido hialurónico triple acción y ceramidas. Hidratación profunda hasta 50 horas comprobadas.",
     "ingredients": "Ácido hialurónico, ceramidas, manteca de karité",
-    "image": "/ami-beauty/img/products/base-1.jpg"
+    "image": "/img/products/base-1.jpg"
   },
   {
     "id": 24,
     "name": "Perfume Oud Rose Intense",
     "slug": "perfume-oud-rose",
-    "cat": "perfumes",
+    "cat": "accesorios",
     "catLabel": "Perfumes",
     "toneGroup": "Oscuro",
     "toneIds": ["oscuro-calido", "oscuro-frio", "ebano"],
@@ -430,7 +430,7 @@
     "reviews": 89,
     "desc": "Eau de parfum notas de oud, rosa de Damasco y vainilla ahumada. Proyección intensa, 12h duración.",
     "ingredients": "Oud, rosa, vainilla, sándalo, ámbar",
-    "image": "/ami-beauty/img/products/base-2.png",
+    "image": "/img/products/base-2.png",
     "recomended": false
   }
 ]

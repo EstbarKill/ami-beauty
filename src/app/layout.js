@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "Cosméticos de lujo con análisis de tono de piel mediante inteligencia artificial.",
   icons: {
-    icon: "/ami-beauty/favicon.png", sizes: "32x32",
+    icon: "/favicon.png", sizes: "32x32",
   },
 };
 

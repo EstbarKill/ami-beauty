@@ -20,10 +20,10 @@ export default function AboutSection() {
             style={{
               width: "78%",
               aspectRatio: "0.82",
-              backgroundImage: `url("/ami-beauty/img/ami.jpg")`,
-                            backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
+              backgroundImage: `url("/img/ami.jpg")`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
               display: "flex",
               alignItems: "flex-end",
               justifyContent: "flex-start",
@@ -34,7 +34,7 @@ export default function AboutSection() {
               style={{
                 fontFamily: "Georgia,serif",
                 fontSize: "5rem",
-                marginBottom:"-2rem",
+                marginBottom: "-2rem",
                 color: "rgba(230,21,193, 1)",
                 fontStyle: "italic",
                 lineHeight: 1,
@@ -50,10 +50,10 @@ export default function AboutSection() {
             style={{
               width: "46%",
               aspectRatio: "0.85",
-              backgroundImage: `url("/ami-beauty/img/beauty.png")`,
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
+              backgroundImage: `url("/img/beauty.png")`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
               position: "absolute",
               bottom: "-2rem",
               right: 0,
@@ -69,7 +69,7 @@ export default function AboutSection() {
                 fontFamily: "Georgia,serif",
                 fontSize: "1.2rem",
                 color: "rgba(230,21,193, 1)",
-                marginBottom:"-1rem",
+                marginBottom: "-1rem",
                 fontStyle: "italic",
                 userSelect: "none",
               }}
@@ -87,10 +87,10 @@ export default function AboutSection() {
               width: "80px",
               height: "80px",
               borderRadius: "50%",
-              backgroundImage: `url("/ami-beauty/img/dot.png")`,
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat'
+              backgroundImage: `url("/img/dot.png")`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
             }}
           />
         </div>
@@ -100,7 +100,11 @@ export default function AboutSection() {
           <span className="eyebrow">Sobre Nosotras</span>
           <h2
             className="section-title"
-            style={{ marginBottom: "1.5rem", color: "var(--charcoal)", marginTop: "0.25rem" }}
+            style={{
+              marginBottom: "1.5rem",
+              color: "var(--charcoal)",
+              marginTop: "0.25rem",
+            }}
           >
             Elevando el lujo, redefiniendo la elegancia
           </h2>
@@ -112,10 +116,11 @@ export default function AboutSection() {
               marginBottom: "1.25rem",
             }}
           >
-            En Ami Beauty nos dedicamos a ofrecer los mejores productos de belleza y
-            cosmética de lujo. Nuestro objetivo es crear una experiencia de compra que
-            refleje los más altos estándares de calidad — desde formulaciones
-            científicamente avanzadas hasta empaques sostenibles.
+            En Ami Beauty nos dedicamos a ofrecer los mejores productos de
+            belleza y cosmética de lujo. Nuestro objetivo es crear una
+            experiencia de compra que refleje los más altos estándares de
+            calidad — desde formulaciones científicamente avanzadas hasta
+            empaques sostenibles.
           </p>
           <p
             style={{
@@ -125,9 +130,10 @@ export default function AboutSection() {
               marginBottom: "2.25rem",
             }}
           >
-            Cada producto en nuestra tienda ha sido cuidadosamente seleccionado. Usamos
-            tecnología de inteligencia artificial para ayudarte a encontrar los productos
-            perfectos para tu tono de piel exacto — Fitzpatrick I hasta VI.
+            Cada producto en nuestra tienda ha sido cuidadosamente seleccionado.
+            Usamos tecnología de inteligencia artificial para ayudarte a
+            encontrar los productos perfectos para tu tono de piel exacto —
+            Fitzpatrick I hasta VI.
           </p>
 
           {/* Stats row */}
@@ -158,7 +164,14 @@ export default function AboutSection() {
                 >
                   {n}
                 </div>
-                <div style={{ fontSize: "10.5px", color: "var(--muted)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                <div
+                  style={{
+                    fontSize: "10.5px",
+                    color: "var(--muted)",
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                  }}
+                >
                   {label}
                 </div>
               </div>
