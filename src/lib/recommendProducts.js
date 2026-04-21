@@ -18,7 +18,7 @@ export function getRecommendations(toneResult) {
         p.toneGroup === toneGroup &&
         p.toneIds.includes(id)
     )
-    .slice(0, 4);
+    .slice(0, 2);
 
   // 🔥 INTERÉS (cross-selling)
   const interest = products

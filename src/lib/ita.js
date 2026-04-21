@@ -1,12 +1,27 @@
-export function calculateITA(L, b) {
-  return Math.atan((L - 50) / b) * (180 / Math.PI);
-}
+import { rgbToLab } from "./colorUtils";
+import { getToneByITA } from "@/data/skinTones";
+import { getCheekPixels } from "./cheeks";
 
-export function classifyITA(ita) {
-  if (ita > 55) return { label: "Muy claro", group: "light" };
-  if (ita > 41) return { label: "Claro", group: "light" };
-  if (ita > 28) return { label: "Intermedio claro", group: "medium-light" };
-  if (ita > 10) return { label: "Intermedio", group: "medium" };
-  if (ita > -30) return { label: "Moreno", group: "medium-dark" };
-  return { label: "Oscuro", group: "dark" };
+export async function analyzeSkinAdvanced(ctx, canvas, source, landmarks) {
+  // 🚨 YA NO DETECTAMOS AQUÍ
+
+  if (!landmarks) return null;
+
+  const rgb = getCheekPixels(landmarks, canvas, ctx);
+
+  if (!rgb) return null;
+
+  const [r, g, b] = rgb;
+
+  const { L, b: bStar } = rgbToLab(r, g, b);
+
+  const ita = Math.atan2(L - 50, bStar) * (180 / Math.PI);
+console.log("RGB:", rgb);
+console.log("ITA:", ita);
+
+  return {
+    tone: getToneByITA(ita),
+    ita: Math.round(ita * 10) / 10,
+    rgb,
+  };
 }

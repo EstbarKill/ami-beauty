@@ -8,7 +8,7 @@ const nextConfig = {
     unoptimized: true
   },
   basePath: `/${repo}`, // ⚠️ nombre del repo
-  assetPrefix: `/${repo}`,
+  assetPrefix: `/${repo}`
 };
 
 export default nextConfig;

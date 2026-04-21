@@ -1,3 +1,4 @@
+import '@/styles/globals.css';
 const PROMOS = [
   { icon: "◈", label: "Formulación", value: "Aprobada por dermatólogos" },
   { icon: "✦", label: "Envío gratis", value: "En compras +$150.000" },
@@ -9,21 +10,23 @@ export default function PromoBar() {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(3,1fr)",
+        gridTemplateColumns: "repeat(3,2fr)",
         gap: "1px",
         background: "var(--cream-dark)",
       }}
     >
       {PROMOS.map((p) => (
         <div
+          className="promoBar"
           key={p.label}
           style={{
             background: "white",
-            padding: "1.4rem 2rem",
+            padding: "2rem",
             display: "flex",
             alignItems: "center",
             gap: "1rem",
-          }}
+          }
+        }
         >
           <span style={{ fontSize: "1.4rem", color: "var(--rose)", flexShrink: 0 }}>{p.icon}</span>
           <div>

@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/ui/Footer";
@@ -11,6 +11,9 @@ export const metadata = {
   title: "Ami Beauty — Beauty & Cosmetics",
   description:
     "Cosméticos de lujo con análisis de tono de piel mediante inteligencia artificial.",
+  icons: {
+    icon: "/ami-beauty/favicon.png", sizes: "32x32",
+  },
 };
 
 export default function RootLayout({ children }) {

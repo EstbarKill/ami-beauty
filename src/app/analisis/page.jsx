@@ -5,12 +5,11 @@ import Link from "next/link";
 import SkinAnalyzer from "@/components/ai/SkinAnalyzer";
 
 export default function AnalisisPage() {
-  const [started, setStarted] = useState(false);
+  const [mode, setMode] = useState(null); // "camera" | "upload" | null
 
   return (
     <div className="min-h-screen bg-[#0B0A09] text-white">
       
-      {/* HEADER */}
       <header className="border-b border-white/10 px-6 py-5 flex justify-between items-center">
         <div>
           <p className="text-[11px] tracking-widest text-amber-400 uppercase">
@@ -26,7 +25,6 @@ export default function AnalisisPage() {
         </Link>
       </header>
 
-      {/* CONTENT */}
       <div className="grid lg:grid-cols-2 gap-10 px-6 py-10 max-w-6xl mx-auto">
 
         {/* LEFT PANEL */}
@@ -60,6 +58,9 @@ export default function AnalisisPage() {
             <p className="text-xs text-white/40 uppercase tracking-widest mb-2">
               Tecnología
             </p>
+            <p className="text-white/50 text-xs mb-4">
+  Puedes usar la cámara o subir una imagen desde tu dispositivo.
+</p>
             <p className="text-sm text-white/60 leading-relaxed">
               Todo el procesamiento ocurre en tu navegador. No se almacenan
               imágenes ni datos personales.
@@ -67,28 +68,31 @@ export default function AnalisisPage() {
           </div>
         </div>
 
-        {/* RIGHT PANEL */}
+        {/* RIGHT */}
         <div className="bg-black border border-white/10 p-6">
 
-          {!started ? (
+          {!mode ? (
             <div className="flex flex-col items-center justify-center h-[420px] gap-4">
-              <div className="w-20 h-20 border border-white/20 rounded-full flex items-center justify-center">
-                🎥
-              </div>
-
               <p className="text-white/50 text-sm text-center">
-                Inicia el análisis para activar la cámara
+                ¿Cómo quieres analizar tu piel?
               </p>
 
               <button
-                onClick={() => setStarted(true)}
-                className="px-6 py-3 bg-amber-400 text-black text-sm font-medium hover:bg-amber-300 transition"
+                onClick={() => setMode("camera")}
+                className="px-6 py-3 bg-amber-400 text-black"
               >
-                Activar análisis
+                Usar cámara
+              </button>
+
+              <button
+                onClick={() => setMode("upload")}
+                className="px-6 py-3 border"
+              >
+                Subir imagen
               </button>
             </div>
           ) : (
-            <SkinAnalyzer />
+            <SkinAnalyzer mode={mode} />
           )}
 
         </div>

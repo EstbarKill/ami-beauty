@@ -8,6 +8,7 @@ import { useStore } from "@/context/StoreContext";
 export default function Header() {
   const { cartCount, favorites, setCartOpen } = useStore();
   const [query, setQuery] = useState("");
+  const [focused, setFocused] = useState(false);
   const router = useRouter();
   const timer = useRef(null);
 
@@ -36,8 +37,9 @@ export default function Header() {
           margin: "0 auto",
           display: "flex",
           alignItems: "center",
-          gap: "1.5rem",
-          padding: "0.9rem 3rem",
+          gap: "2rem",
+          padding: "0 2.5rem",
+          height: "62px",
         }}
       >
         {/* Logo */}
@@ -45,22 +47,37 @@ export default function Header() {
           href="/"
           style={{
             fontFamily: "Georgia, serif",
-            fontSize: "1.6rem",
+            fontSize: "1.45rem",
             fontWeight: 400,
-            letterSpacing: ".08em",
+            letterSpacing: ".1em",
             color: "var(--charcoal)",
             textDecoration: "none",
             whiteSpace: "nowrap",
             flexShrink: 0,
+            display: "flex",
+            alignItems: "center",
+            gap: "1px",
           }}
         >
-          Ami<span style={{ color: "var(--rose)" }}>·</span>Beauty
+          Ami
+          <span style={{ color: "var(--rose)", fontSize: "1.8rem", lineHeight: 0, position: "relative", top: "1px" }}>·</span>
+          Beauty
         </Link>
 
         {/* Search */}
-        <div style={{ flex: 1, maxWidth: "520px", position: "relative", display: "flex", alignItems: "center" }}>
-          <span style={{ position: "absolute", left: "0.8rem", pointerEvents: "none", color: "var(--muted)" }}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="14" height="14">
+        <div style={{ flex: 1, maxWidth: "480px", position: "relative" }}>
+          <span
+            style={{
+              position: "absolute",
+              left: "0.9rem",
+              top: "50%",
+              transform: "translateY(-50%)",
+              pointerEvents: "none",
+              color: focused ? "var(--rose)" : "var(--muted-light)",
+              transition: "color 0.2s",
+            }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="13" height="13">
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.35-4.35" />
             </svg>
@@ -71,75 +88,113 @@ export default function Header() {
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="Buscar productos, marcas y más..."
             className="input-base"
-            style={{ paddingLeft: "2.6rem", borderRadius: "2px" }}
-            onFocus={(e) => (e.target.style.borderColor = "var(--rose)")}
-            onBlur={(e) => (e.target.style.borderColor = "var(--cream-dark)")}
+            style={{ paddingLeft: "2.4rem", fontSize: "12.5px", letterSpacing: "0.02em" }}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
           />
         </div>
 
         {/* Actions */}
-        <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "0.25rem" }}>
-          {/* Favorites */}
-          <Link
-            href="/favoritos"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "2px",
-              padding: "0.5rem 0.75rem",
-              color: "var(--charcoal-mid)",
-              textDecoration: "none",
-              position: "relative",
-              transition: "color .2s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--rose)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--charcoal-mid)")}
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" width="20" height="20">
+        <div style={{ marginLeft: "auto", display: "flex", alignItems: "center" }}>
+          <NavAction href="/favoritos" label="Favoritos" badge={favorites.length}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" width="19" height="19">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
             </svg>
-            <span style={{ fontSize: "10px", letterSpacing: ".06em", color: "var(--muted)" }}>Favoritos</span>
-            {favorites.length > 0 && (
-              <span style={{ position: "absolute", top: "2px", right: "6px", background: "var(--rose)", color: "white", fontSize: "9px", width: "16px", height: "16px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 500 }}>
-                {favorites.length}
-              </span>
-            )}
-          </Link>
+          </NavAction>
 
-          {/* Cart */}
-          <button
-            onClick={() => setCartOpen(true)}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "2px",
-              padding: "0.5rem 0.75rem",
-              color: "var(--charcoal-mid)",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              position: "relative",
-              transition: "color .2s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--rose)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--charcoal-mid)")}
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" width="20" height="20">
+          <NavAction label="Carrito" badge={cartCount} onClick={() => setCartOpen(true)} as="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" width="19" height="19">
               <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
               <line x1="3" y1="6" x2="21" y2="6" />
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
-            <span style={{ fontSize: "10px", letterSpacing: ".06em", color: "var(--muted)" }}>Carrito</span>
-            {cartCount > 0 && (
-              <span style={{ position: "absolute", top: "2px", right: "6px", background: "var(--rose)", color: "white", fontSize: "9px", width: "16px", height: "16px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 500 }}>
-                {cartCount}
-              </span>
-            )}
-          </button>
+          </NavAction>
         </div>
       </div>
     </header>
+  );
+}
+
+function NavAction({ href, label, badge, onClick, as = "link", children }) {
+  const [hovered, setHovered] = useState(false);
+
+  const inner = (
+    <>
+      <span style={{ position: "relative" }}>
+        {children}
+        {badge > 0 && (
+          <span
+            style={{
+              position: "absolute",
+              top: "-5px",
+              right: "-6px",
+              background: "var(--rose)",
+              color: "white",
+              fontSize: "8.5px",
+              width: "15px",
+              height: "15px",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontWeight: 600,
+              letterSpacing: 0,
+            }}
+          >
+            {badge}
+          </span>
+        )}
+      </span>
+      <span
+        style={{
+          fontSize: "9.5px",
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          color: hovered ? "var(--rose)" : "var(--muted)",
+          transition: "color 0.2s",
+          fontWeight: 500,
+        }}
+      >
+        {label}
+      </span>
+    </>
+  );
+
+  const sharedStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "4px",
+    padding: "0.5rem 0.85rem",
+    color: hovered ? "var(--rose)" : "var(--charcoal-mid)",
+    textDecoration: "none",
+    background: "none",
+    border: "none",
+    cursor: "pointer",
+    transition: "color 0.2s",
+  };
+
+  if (as === "button") {
+    return (
+      <button
+        onClick={onClick}
+        style={sharedStyle}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {inner}
+      </button>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      style={sharedStyle}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {inner}
+    </Link>
   );
 }

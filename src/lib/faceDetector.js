@@ -1,26 +1,79 @@
-let model = null;
+import { FilesetResolver, FaceLandmarker } from "@mediapipe/tasks-vision";
 
-export async function getFaceDetector() {
-  if (model) return model;
+let faceLandmarker = null;
+let runningMode = "VIDEO";
+let loading = false;
 
-  const tf = await import("@tensorflow/tfjs");
-  await import("@tensorflow/tfjs-backend-webgl");
+export async function getFaceLandmarker(mode = "VIDEO") {
+  if (faceLandmarker && runningMode === mode) return faceLandmarker;
+  if (loading) return faceLandmarker;
 
-  await tf.setBackend("webgl");
-  await tf.ready();
+  loading = true;
 
-  const blazeface = await import("@tensorflow-models/blazeface");
+  const vision = await FilesetResolver.forVisionTasks(
+    "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm"
+  );
 
-  model = await blazeface.load();
+  runningMode = mode;
 
-  return model;
+  faceLandmarker = await FaceLandmarker.createFromOptions(vision, {
+    baseOptions: {
+      modelAssetPath:
+        "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+    },
+    runningMode: mode,
+    numFaces: 1,
+  });
+  loading = false;
+  return faceLandmarker;
 }
 
-export async function detectFace(video) {
-  const detector = await getFaceDetector();
-  const predictions = await detector.estimateFaces(video, false);
+export async function detectFace(source) {
+  if (!source) return null;
 
-  if (!predictions.length) return null;
+  // 🎥 VIDEO
+  if (source instanceof HTMLVideoElement) {
+    if (source.readyState !== 4) return null;
 
-  return predictions[0];
+    const model = await getFaceLandmarker("VIDEO");
+
+    const now = performance.now();
+
+let res;
+
+const originalError = console.error;
+
+console.error = (...args) => {
+  if (
+    typeof args[0] === "string" &&
+    args[0].includes("TensorFlow Lite")
+  ) {
+    return; // 🚫 ignorar log basura
+  }
+  originalError(...args);
+};
+
+try {
+  res = model.detectForVideo(source, now);
+} finally {
+  console.error = originalError;
+  
+}
+
+    return res?.faceLandmarks?.[0] ?? null;
+  }
+
+  // 🖼 IMAGE
+  if (
+    source instanceof HTMLImageElement ||
+    source instanceof HTMLCanvasElement
+  ) {
+    const model = await getFaceLandmarker("IMAGE");
+
+    const res = model.detect(source);
+
+    return res?.faceLandmarks?.[0] ?? null;
+  }
+
+  return ;
 }

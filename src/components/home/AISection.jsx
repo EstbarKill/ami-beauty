@@ -17,15 +17,13 @@ export default function AISection() {
   const [activeTab, setActiveTab] = useState("qr");
   const [qrUrl, setQrUrl] = useState("");
 
+  // ✅ Fix: generates the real URL client-side
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const base = window.location.origin;
-      setQrUrl(`${base}/analisis`);
-    }
+    setQrUrl(window.location.origin + "/analisis");
   }, []);
 
   return (
-    <section style={{ background: "var(--charcoal)", color: "white", padding: "5rem 3rem" }}>
+    <section style={{ background: "var(--charcoal)", color: "white", padding: "4rem 3rem" }}>
       <div
         style={{
           maxWidth: "1440px",
@@ -36,7 +34,7 @@ export default function AISection() {
           alignItems: "center",
         }}
       >
-        {/* ── LEFT ── */}
+        {/* LEFT */}
         <div>
           <span className="eyebrow-gold">Tecnología IA · Privado · Sin servidor</span>
           <h2
@@ -54,20 +52,19 @@ export default function AISection() {
           </h2>
           <p
             style={{
-              color: "rgba(255,255,255,.6)",
+              color: "rgba(255,255,255,.58)",
               fontSize: "14px",
-              lineHeight: "1.8",
-              marginBottom: "2rem",
+              lineHeight: "1.85",
+              marginBottom: "2.25rem",
             }}
           >
             Usamos el algoritmo{" "}
-            <strong style={{ color: "var(--gold)" }}>ITA (Individual Typology Angle)</strong>,
+            <strong style={{ color: "var(--gold)", fontWeight: 500 }}>ITA (Individual Typology Angle)</strong>,
             el estándar científico de dermatología, para clasificar con precisión tu tono en
             11 categorías. Todo el procesamiento ocurre en tu navegador — ningún dato sale
             de tu dispositivo.
           </p>
 
-          {/* Steps */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginBottom: "2.5rem" }}>
             {STEPS.map(({ n, text }) => (
               <div key={n} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
@@ -81,23 +78,28 @@ export default function AISection() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "12px",
-                    fontWeight: 500,
+                    fontSize: "11px",
+                    fontWeight: 600,
                     flexShrink: 0,
                     marginTop: "2px",
+                    letterSpacing: "0",
                   }}
                 >
                   {n}
                 </div>
-                <p style={{ fontSize: "14px", color: "rgba(255,255,255,.65)", lineHeight: "1.6", margin: 0 }}>
+                <p style={{ fontSize: "14px", color: "rgba(255,255,255,.6)", lineHeight: "1.65", margin: 0 }}>
                   {text}
                 </p>
               </div>
             ))}
           </div>
 
-          <Link href="/analisis" className="btn-primary" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem" }}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="15" height="15">
+          <Link
+            href="/analisis"
+            className="btn-primary"
+            style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem" }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="14" height="14">
               <circle cx="12" cy="12" r="3" />
               <path d="M20 6H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z" />
             </svg>
@@ -105,14 +107,16 @@ export default function AISection() {
           </Link>
         </div>
 
-        {/* ── RIGHT ── */}
+        {/* RIGHT */}
         <div>
           {/* Tab switcher */}
           <div
             style={{
               display: "inline-flex",
-              border: "1px solid rgba(255,255,255,.1)",
+              border: "1px solid rgba(255,255,255,.12)",
               marginBottom: "1.5rem",
+              borderRadius: "2px",
+              overflow: "hidden",
             }}
           >
             {[
@@ -123,13 +127,13 @@ export default function AISection() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 style={{
-                  padding: "0.55rem 1.25rem",
-                  fontSize: "11px",
-                  letterSpacing: ".1em",
+                  padding: "0.6rem 1.35rem",
+                  fontSize: "10.5px",
+                  letterSpacing: ".12em",
                   textTransform: "uppercase",
                   fontWeight: 500,
                   background: activeTab === tab.id ? "var(--rose)" : "transparent",
-                  color: activeTab === tab.id ? "white" : "rgba(255,255,255,.4)",
+                  color: activeTab === tab.id ? "white" : "rgba(255,255,255,.38)",
                   border: "none",
                   cursor: "pointer",
                   transition: "all .2s",
@@ -146,31 +150,46 @@ export default function AISection() {
               style={{
                 border: "1px solid rgba(255,255,255,.08)",
                 background: "rgba(255,255,255,.03)",
-                padding: "2rem",
+                padding: "2.5rem 2rem",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                gap: "1.25rem",
+                gap: "1.5rem",
                 textAlign: "center",
               }}
             >
-              <span className="eyebrow-gold">Analiza desde tu móvil Android</span>
-              <div style={{ padding: "12px", background: "white" }}>
+              <span className="eyebrow-gold" style={{ marginBottom: 0, fontSize: "11px" }}>
+                Analiza desde tu móvil Android
+              </span>
+
+              <div
+                style={{
+                  padding: "14px",
+                  background: "white",
+                  borderRadius: "3px",
+                  boxShadow: "0 8px 32px rgba(0,0,0,.3)",
+                }}
+              >
                 {qrUrl ? (
-                  <QRCode value={qrUrl} size={180} />
+                  <QRCode value={qrUrl} size={172} />
                 ) : (
-                  <div className="skeleton" style={{ width: "180px", height: "180px" }} />
+                  <div
+                    className="skeleton"
+                    style={{ width: "172px", height: "172px" }}
+                  />
                 )}
               </div>
+
               <div>
-                <p style={{ fontSize: "13px", color: "rgba(255,255,255,.65)", marginBottom: "4px" }}>
+                <p style={{ fontSize: "13px", color: "rgba(255,255,255,.6)", marginBottom: "4px", margin: "0 0 4px" }}>
                   Apunta la cámara de tu Android al código
                 </p>
-                <p style={{ fontSize: "11px", color: "rgba(255,255,255,.3)", margin: 0 }}>
+                <p style={{ fontSize: "11px", color: "rgba(255,255,255,.28)", margin: 0 }}>
                   Compatible con Chrome Android · Requiere HTTPS
                 </p>
               </div>
-              <Link href="/analisis" className="btn-outline-light" style={{ fontSize: "11px" }}>
+
+              <Link href="/analisis" className="btn-outline-light" style={{ fontSize: "10.5px" }}>
                 Abrir en este dispositivo
               </Link>
             </div>
@@ -182,18 +201,20 @@ export default function AISection() {
               style={{
                 border: "1px solid rgba(255,255,255,.08)",
                 background: "rgba(255,255,255,.03)",
-                padding: "1.5rem",
+                padding: "1.75rem",
               }}
             >
-              <span className="eyebrow-gold justify-self-center" style={{ marginBottom: "1.25rem" }}>
+              <span
+                className="eyebrow-gold"
+                style={{ display: "block", textAlign: "center", marginBottom: "1.5rem", fontSize: "11px" }}
+              >
                 11 tonos · Escala ITA · Ami Beauty
               </span>
               <div
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(4,1fr)",
-                  gap: "0.6rem",
-                  marginTop: "1rem"
+                  gap: "0.75rem",
                 }}
               >
                 {SKIN_TONES.map((tone) => (
@@ -204,35 +225,37 @@ export default function AISection() {
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
-                      gap: "3px",
-                      padding: "8px 4px",
+                      gap: "5px",
+                      padding: "6px 2px",
                       cursor: "default",
                     }}
                   >
                     <div
                       style={{
-                        width: "80px",
-                        height: "80px",
+                        width: "44px",
+                        height: "44px",
                         borderRadius: "50%",
                         background: tone.hex,
-                        border: "2px solid rgba(255,255,255,.15)",
+                        border: "2px solid rgba(255,255,255,.12)",
+                        boxShadow: "0 2px 8px rgba(0,0,0,.25)",
                       }}
                     />
                     <span
                       style={{
-                        fontSize: "20px",
+                        fontSize: "10px",
                         textAlign: "center",
-                        color: "rgba(255,255,255,.7)",
+                        color: "rgba(255,255,255,.65)",
                         lineHeight: 1.3,
+                        letterSpacing: "0.02em",
                       }}
                     >
                       {tone.label}
                     </span>
                     <span
                       style={{
-                        fontSize: "15px",
+                        fontSize: "9px",
                         fontFamily: "monospace",
-                        color: "rgba(255,255,255,.3)",
+                        color: "rgba(255,255,255,.28)",
                       }}
                     >
                       {tone.hex}

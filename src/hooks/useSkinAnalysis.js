@@ -1,87 +1,64 @@
-"use client";
-
 import { useState } from "react";
+import { analyzeSkinAdvanced } from "@/lib/ita";
+import { getRecommendations } from "@/lib/recommendProducts";
 import { detectFace } from "@/lib/faceDetector";
-import { rgbToXyz, xyzToLab } from "@/lib/colorUtils";
-import { calculateITA, classifyITA } from "@/lib/ita";
 
 export default function useSkinAnalysis(videoRef, canvasRef) {
-  const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const analyze = async () => {
-    if (!videoRef.current) return;
 
-    setLoading(true);
+const analyze = async (source = null) => {
+  setLoading(true);
 
-    const face = await detectFace(videoRef.current);
+  const canvas = canvasRef.current;
+  const ctx = canvas.getContext("2d", { willReadFrequently: true });
 
-    if (!face) {
-      alert("No se detectó rostro");
-      setLoading(false);
-      return;
-    }
+  const input = source || videoRef.current;
 
-    const [x1, y1] = face.topLeft;
-    const [x2, y2] = face.bottomRight;
+  if (!input) {
+    setLoading(false);
+    return null;
+  }
 
-    const width = x2 - x1;
-    const height = y2 - y1;
+  const face = await detectFace(input);
 
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
+  if (!face) {
+    setResult({ error: "no-face" });
+    setLoading(false);
+    return null;
+  }
 
-    canvas.width = videoRef.current.videoWidth;
-    canvas.height = videoRef.current.videoHeight;
+  canvas.width = input.videoWidth || input.width;
+  canvas.height = input.videoHeight || input.height;
 
-    ctx.drawImage(videoRef.current, 0, 0);
+  ctx.drawImage(input, 0, 0);
 
-    // ROI (mejilla)
-    const sx = x1 + width * 0.2;
-    const sy = y1 + height * 0.3;
-    const sw = width * 0.6;
-    const sh = height * 0.4;
+  const data = await analyzeSkinAdvanced(ctx, canvas, input, face);
 
-    const data = ctx.getImageData(sx, sy, sw, sh).data;
+  if (!data) {
+    setLoading(false);
+    return null;
+  }
 
-    let r = 0, g = 0, b = 0, count = 0;
+  const { matched, interest } = getRecommendations(data);
 
-    for (let i = 0; i < data.length; i += 4) {
-      const pr = data[i];
-      const pg = data[i + 1];
-      const pb = data[i + 2];
+  const final = {
+    data,
+    matched,
+    interest,
+  };
 
-      const brightness = (pr + pg + pb) / 3;
+  setResult(final);
+  setLoading(false);
 
-      if (brightness > 30 && brightness < 230) {
-        r += pr; g += pg; b += pb; count++;
-      }
-    }
+  return final; // ✅ FIX REAL
+};
 
-    if (!count) {
-      setLoading(false);
-      return;
-    }
-
-    r = Math.round(r / count);
-    g = Math.round(g / count);
-    b = Math.round(b / count);
-
-    const [x, y, z] = rgbToXyz(r, g, b);
-    const [L, a, bLab] = xyzToLab(x, y, z);
-
-    const ita = calculateITA(L, bLab);
-    const tone = classifyITA(ita);
-
-    setResult({
-      tone,
-      ita: ita.toFixed(2),
-      lab: { L, a, b: bLab },
-      rgb: [r, g, b],
-    });
-
+  const reset = () => {
+    setResult(null);
     setLoading(false);
   };
 
-  return { analyze, result, loading };
+  return { analyze, result, loading, reset };
 }

@@ -26,9 +26,14 @@ export function xyzToLab(x, y, z) {
   const fy = f(y);
   const fz = f(z);
 
-  return [
-    (116 * fy) - 16,
-    500 * (fx - fy),
-    200 * (fy - fz)
-  ];
+  return {
+    L: (116 * fy) - 16,
+    a: 500 * (fx - fy),
+    b: 200 * (fy - fz)
+  };
+}
+
+export function rgbToLab(r, g, b) {
+  const [x, y, z] = rgbToXyz(r, g, b);
+  return xyzToLab(x, y, z);
 }
