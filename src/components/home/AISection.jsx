@@ -220,7 +220,7 @@ export default function AISection() {
                 {SKIN_TONES.map((tone) => (
                   <div
                     key={tone.id}
-                    title={`${tone.label} · ${tone.subtone}\n${tone.desc}`}
+                    title={`${tone.label} · ${tone.subtones}\n${tone.desc}`}
                     style={{
                       display: "flex",
                       flexDirection: "column",

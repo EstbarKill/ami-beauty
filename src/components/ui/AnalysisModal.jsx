@@ -4,7 +4,10 @@ export default function AnalysisModal({ result, onClose }) {
   if (!result) return null;
 
   const tone = result.data?.tone;
-  const products = [...(result.matched || []), ...(result.interest || [])].slice(0, 2);
+  const products = [
+    ...(result.matched || []),
+    ...(result.interest || []),
+  ].slice(0, 2);
 
   return (
     <div
@@ -52,7 +55,14 @@ export default function AnalysisModal({ result, onClose }) {
               padding: 0,
             }}
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="14" height="14">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              width="14"
+              height="14"
+            >
               <path d="M19 12H5M12 5l-7 7 7 7" />
             </svg>
             Volver
@@ -69,7 +79,7 @@ export default function AnalysisModal({ result, onClose }) {
               border: "none",
               cursor: "pointer",
               color: "var(--muted)",
-              fontSize: "18px",
+              fontSize: "2rem",
               lineHeight: 1,
               padding: "2px",
             }}
@@ -80,45 +90,48 @@ export default function AnalysisModal({ result, onClose }) {
 
         {/* BODY — horizontal split */}
         <div style={{ display: "flex", minHeight: "340px" }}>
-
           {/* LEFT — Color card */}
           <div
             style={{
-              width: "52%",
+              color:"black",
+              width: "56%",
               padding: "1.6rem",
               borderRight: "1px solid var(--cream-dark)",
               background: "var(--cream)",
               display: "flex",
               flexDirection: "column",
-              gap: "1.2rem",
+              gap: "2.2rem",
             }}
           >
             {/* Reference row */}
-            <div style={{ display: "flex", gap: "6px" }}>
-              {[
-                { label: "LIGHT", hex: "#EBCBB8" },
-                { label: "MED", hex: tone?.hex || "#BE896A" },
-                { label: "DARK", hex: "#5A3828" },
-              ].map((s) => (
-                <div key={s.label} style={{ flex: 1, textAlign: "center" }}>
-                  <div
-                    style={{
-                      height: "36px",
-                      borderRadius: "3px",
-                      background: s.hex,
-                      border: s.label === "MED" ? "2px solid var(--rose)" : "1px solid var(--cream-dark)",
-                    }}
-                  />
-                  <p style={{ fontSize: "9px", letterSpacing: "0.1em", color: "var(--muted)", marginTop: "4px", textTransform: "uppercase" }}>
-                    {s.label}
-                  </p>
-                </div>
-              ))}
+            <div style={{ display: "flex", gap: "6px", }}>
+              {tone?.subtones?.map((s) => {
+                const active = s.tone === tone.subtoneKey;
+                return (
+                  <div key={s.id} style={{ flex: 1, textAlign: "center" }}>
+                    <p style={{ fontFamily:" Georgia, serif", fontSize: "1rem" }}>{s.tone}</p>
+                    <div
+                      style={{
+                        height: "36px",
+                        borderRadius: "3px",
+                        background: s.hex,
+                        border: active
+                          ? "2px solid var(--rose)"
+                          : "1px solid var(--cream-dark)",
+                        transform: active ? "scale(1.05)" : "scale(1)",
+                        transition: "all .2s",
+                      }}
+                    />
+                  </div>
+                );
+              })}
             </div>
 
             {/* Main swatch + info */}
             {tone && (
-              <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "1rem"}}
+              >
                 <div
                   style={{
                     width: "64px",
@@ -126,17 +139,27 @@ export default function AnalysisModal({ result, onClose }) {
                     borderRadius: "50%",
                     background: `radial-gradient(circle at 38% 36%, ${lighten(tone.hex)}, ${tone.hex} 60%, ${darken(tone.hex)} 100%)`,
                     flexShrink: 0,
-                    boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.15)"
                   }}
                 />
                 <div>
-                  <p style={{ fontSize: "15px", fontFamily: "Georgia, serif", color: "var(--charcoal)", marginBottom: "2px" }}>
+                  <p
+                    style={{
+                      fontSize: "2rem",
+                      fontFamily: "Georgia, serif",
+                      color: "var(--charcoal)",
+                      marginBottom: "2px",
+                    }}
+                  >
                     {tone.label}
                   </p>
-                  <p style={{ fontSize: "12px", color: "var(--muted)", marginBottom: "2px" }}>
-                    Subtono: <strong style={{ color: "var(--charcoal-mid)" }}>{tone.subtone}</strong>
-                  </p>
-                  <p style={{ fontSize: "10px", color: "var(--muted-light)", letterSpacing: "0.06em" }}>
+                  <p
+                    style={{
+                      fontSize: "0.8rem",
+                      color: "black",
+                      letterSpacing: "0.06em",
+                    }}
+                  >
                     ITA° {result.data?.ita}
                   </p>
                 </div>
@@ -145,16 +168,46 @@ export default function AnalysisModal({ result, onClose }) {
 
             {/* Hex chip */}
             {tone && (
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "auto" }}>
-                <div style={{ width: "18px", height: "18px", borderRadius: "2px", background: tone.hex, border: "1px solid var(--cream-dark)" }} />
-                <span style={{ fontSize: "11px", fontFamily: "monospace", color: "var(--muted)", letterSpacing: "0.08em" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  marginTop: "auto",
+                }}
+              >
+                <div
+                  style={{
+                    width: "18px",
+                    height: "18px",
+                    borderRadius: "2px",
+                    background: tone.hex,
+                    border: "1px solid var(--cream-dark)",
+                  }}
+                />
+                <span
+                  style={{
+                    fontSize: "1rem",
+                    fontFamily: "monospace",
+                    color: "var(--charcoal-mid)",
+                    letterSpacing: "0.08em",
+                  }}
+                >
                   {tone.hex}
                 </span>
               </div>
             )}
 
             {/* Brand watermark */}
-            <p style={{ fontSize: "10px", letterSpacing: "0.14em", color: "var(--muted-light)", textTransform: "uppercase", marginTop: "auto" }}>
+            <p
+              style={{
+                fontSize: "15px",
+                letterSpacing: "0.14em",
+                color: "var(--muted)",
+                textTransform: "uppercase",
+                marginTop: "auto",
+              }}
+            >
               a ami beauty
             </p>
           </div>
@@ -174,7 +227,9 @@ export default function AnalysisModal({ result, onClose }) {
             </span>
 
             {products.length === 0 && (
-              <p style={{ fontSize: "13px", color: "var(--muted)" }}>No hay recomendaciones disponibles.</p>
+              <p style={{ fontSize: "13px", color: "var(--muted)" }}>
+                No hay recomendaciones disponibles.
+              </p>
             )}
 
             {products.map((p) => (
@@ -242,21 +297,52 @@ function HorizontalProductCard({ product }) {
       {/* Info */}
       <div style={{ flex: 1, minWidth: 0 }}>
         {product.brand && (
-          <p style={{ fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--rose)", marginBottom: "2px" }}>
+          <p
+            style={{
+              fontSize: "10px",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: "var(--rose)",
+              marginBottom: "2px",
+            }}
+          >
             {product.brand}
           </p>
         )}
-        <p style={{ fontSize: "13px", color: "var(--charcoal)", fontWeight: 500, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+        <p
+          style={{
+            fontSize: "13px",
+            color: "var(--charcoal)",
+            fontWeight: 500,
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+        >
           {product.name}
         </p>
         {product.shade && (
-          <p style={{ fontSize: "11px", color: "var(--muted)", marginTop: "2px" }}>{product.shade}</p>
+          <p
+            style={{
+              fontSize: "11px",
+              color: "var(--muted)",
+              marginTop: "2px",
+            }}
+          >
+            {product.shade}
+          </p>
         )}
       </div>
 
       {/* Price */}
       <div style={{ textAlign: "right", flexShrink: 0 }}>
-        <p style={{ fontSize: "13px", fontWeight: 600, color: "var(--charcoal)" }}>
+        <p
+          style={{
+            fontSize: "13px",
+            fontWeight: 600,
+            color: "var(--charcoal)",
+          }}
+        >
           ${product.price?.toLocaleString("es-CO")}
         </p>
         <button

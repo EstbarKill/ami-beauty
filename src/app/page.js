@@ -3,7 +3,6 @@ import PromoBar from "@/components/home/PromoBar";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import AISection from "@/components/home/AISection";
 import AboutSection from "@/components/home/AboutSection";
-import BenefitsSection from "@/components/home/BenefitsSection";
 import TipsSection from "@/components/home/TipsSection";
 import ReviewsSection from "@/components/home/ReviewsSection";
 import NewsletterCTA from "@/components/home/NewsletterCTA";
@@ -16,7 +15,6 @@ export default function HomePage() {
       <FeaturedProducts />
       <AISection />
       <AboutSection />
-      <BenefitsSection />
       <TipsSection />
       <ReviewsSection />
       <NewsletterCTA />

@@ -1,7 +1,5 @@
 /**
- * Escala de tonos de piel basada en ITA (Individual Typology Angle).
- * ITA = arctan((L* - 50) / b*) × (180/π)
- * Cubre el rango completo Fitzpatrick I–VI con 11 tonos granulares.
+ * SKIN TONES + SUBTONES (basado en ITA + b*)
  */
 
 export const SKIN_TONES = [
@@ -11,10 +9,12 @@ export const SKIN_TONES = [
     hex: "#FDDBB4",
     itaRange: "> 55",
     fitzpatrick: "I",
-    subtone: "Frío–Rosado",
-    desc: "Piel muy clara con subtono frío-rosado. Se enrojece con facilidad. Ideales: correctores con base rosa perla y beige pálido.",
     toneGroup: "Claro",
-    productCats: ["base", "polvo"],
+    subtones: [
+      { id: "p1", tone: "lith", label: "Frío", hex: "#F8D4D8" },
+      { id: "p2", tone: "mid", label: "Neutro", hex: "#F1D1B5" },
+      { id: "p3", tone: "dark", label: "Cálido", hex: "#EAC29A" },
+    ],
   },
   {
     id: "claro-rosado",
@@ -22,10 +22,12 @@ export const SKIN_TONES = [
     hex: "#F7CAA0",
     itaRange: "49–55",
     fitzpatrick: "I–II",
-    subtone: "Rosado",
-    desc: "Piel clara con subtono rosado suave. Favorecen beige rosados y durazno suave.",
     toneGroup: "Claro",
-    productCats: ["base", "blush"],
+    subtones: [
+      { id: "c1", tone: "lith", label: "Frío", hex: "#F5C6CB" },
+      { id: "c2", tone: "mid", label: "Neutro", hex: "#EFC7A5" },
+      { id: "c3", tone: "dark", label: "Cálido", hex: "#E3B78E" },
+    ],
   },
   {
     id: "claro-neutro",
@@ -33,10 +35,12 @@ export const SKIN_TONES = [
     hex: "#EDBA8C",
     itaRange: "41–48",
     fitzpatrick: "II",
-    subtone: "Neutro",
-    desc: "Subtono neutro-claro muy versátil. La mayoría de correctores beige funcionan perfectamente.",
     toneGroup: "Claro",
-    productCats: ["base", "contorno"],
+    subtones: [
+      { id: "cn1", tone: "lith", label: "Frío", hex: "#E7B8BE" },
+      { id: "cn2", tone: "mid", label: "Neutro", hex: "#E2B28C" },
+      { id: "cn3", tone: "dark", label: "Cálido", hex: "#D6A273" },
+    ],
   },
   {
     id: "claro-dorado",
@@ -44,10 +48,12 @@ export const SKIN_TONES = [
     hex: "#D9956A",
     itaRange: "34–40",
     fitzpatrick: "II–III",
-    subtone: "Cálido–Dorado",
-    desc: "Subtono cálido dorado. Piel clara con matices amarillos. Favorecen beige dorados y melocotón intenso.",
     toneGroup: "Claro",
-    productCats: ["base", "contorno", "blush"],
+    subtones: [
+      { id: "cd1", tone: "lith", hex: "#DDA0A0" },
+      { id: "cd2", tone: "mid", hex: "#D19A75" },
+      { id: "cd3", tone: "dark", hex: "#C78954" },
+    ],
   },
   {
     id: "medio-rosado",
@@ -55,10 +61,12 @@ export const SKIN_TONES = [
     hex: "#C68642",
     itaRange: "28–33",
     fitzpatrick: "III",
-    subtone: "Rosado–Neutro",
-    desc: "Subtono rosado-neutro medio. Favorecen rosas terrosos, nude rosado y cobrizos suaves.",
     toneGroup: "Medio",
-    productCats: ["base", "blush", "lipstick"],
+    subtones: [
+      { id: "m1", tone: "lith", hex: "#C97F84" },
+      { id: "m2", tone: "mid", hex: "#B57A50" },
+      { id: "m3", tone: "dark", hex: "#A86B3A" },
+    ],
   },
   {
     id: "medio-neutro",
@@ -66,10 +74,12 @@ export const SKIN_TONES = [
     hex: "#B5622E",
     itaRange: "20–27",
     fitzpatrick: "III–IV",
-    subtone: "Neutro",
-    desc: "Subtono neutro medio. Bronceados naturales, beige medios y terracota son ideales.",
     toneGroup: "Medio",
-    productCats: ["base", "contorno"],
+    subtones: [
+      { id: "mn1", tone: "lith", hex: "#B86C6C" },
+      { id: "mn2", tone: "mid", hex: "#A9663F" },
+      { id: "mn3", tone: "dark", hex: "#99552C" },
+    ],
   },
   {
     id: "trigueño",
@@ -77,10 +87,12 @@ export const SKIN_TONES = [
     hex: "#A0522D",
     itaRange: "10–19",
     fitzpatrick: "IV",
-    subtone: "Cálido–Dorado",
-    desc: "Subtono cálido-dorado intenso. Dorados, caramelos y terracota te favorecen de forma espectacular.",
     toneGroup: "Medio",
-    productCats: ["base", "contorno", "lipstick"],
+    subtones: [
+      { id: "t1", tone: "lith", hex: "#9E5F60" },
+      { id: "t2", tone: "mid", hex: "#8F5A3C" },
+      { id: "t3", tone: "dark", hex: "#7F4B2C" },
+    ],
   },
   {
     id: "moreno-calido",
@@ -88,109 +100,70 @@ export const SKIN_TONES = [
     hex: "#8B3A2F",
     itaRange: "0–9",
     fitzpatrick: "IV–V",
-    subtone: "Cálido–Rojizo",
-    desc: "Subtono cálido-rojizo. Favorecen caobas cálidas, cobres y tonos nuez intensos.",
     toneGroup: "Oscuro",
-    productCats: ["base", "blush"],
+    subtones: [
+      { id: "mc1", tone: "lith", hex: "#7E4B4F" },
+      { id: "mc2", tone: "mid", hex: "#6F3F32" },
+      { id: "mc3", tone: "dark", hex: "#5E2F25" },
+    ],
   },
   {
     id: "oscuro-calido",
     label: "Oscuro Cálido",
     hex: "#6B2E1E",
-    itaRange: "−15 a −1",
+    itaRange: "-15 a -1",
     fitzpatrick: "V",
-    subtone: "Cálido",
-    desc: "Subtono cálido intenso profundo. Perfecto con tonos tierra, ámbar y cacao.",
     toneGroup: "Oscuro",
-    productCats: ["base", "contorno"],
+    subtones: [
+      { id: "oc1", tone: "lith", hex: "#6A3E3E" },
+      { id: "oc2", tone: "mid", hex: "#5A3228" },
+      { id: "oc3", tone: "dark", hex: "#4A241C" },
+    ],
   },
   {
     id: "oscuro-frio",
     label: "Oscuro Frío",
     hex: "#5C2418",
-    itaRange: "−30 a −16",
+    itaRange: "-30 a -16",
     fitzpatrick: "V–VI",
-    subtone: "Frío–Ceniza",
-    desc: "Subtono frío-ceniza. Favorecen correctores con base ciruela y marrón frío.",
     toneGroup: "Oscuro",
-    productCats: ["base", "lipstick"],
+    subtones: [
+      { id: "of1", tone: "lith", hex: "#5C2E34" },
+      { id: "of2", tone: "mid", hex: "#4C2A22" },
+      { id: "of3", tone: "dark", hex: "#3C1F17" },
+    ],
   },
   {
     id: "ebano",
     label: "Ébano",
     hex: "#3B1A0E",
-    itaRange: "< −30",
+    itaRange: "< -30",
     fitzpatrick: "VI",
-    subtone: "Profundo",
-    desc: "Subtono profundo y rico. Favorecen tonos chocolate intenso, caoba oscura y vinos.",
     toneGroup: "Oscuro",
-    productCats: ["base", "contorno", "lipstick"],
+    subtones: [
+      { id: "e1", tone: "lith", hex: "#3B2A2E" },
+      { id: "e2", tone: "mid", hex: "#2F1F16" },
+      { id: "e3", tone: "dark", hex: "#1F120C" },
+    ],
   },
 ];
 
-/**
- * Devuelve el tono de piel basado en el valor ITA.
- * @param {number} ita - Ángulo ITA calculado
- * @returns {object} - Objeto del tono de piel
- */
 export function getToneByITA(ita) {
-  if (ita > 55) return SKIN_TONES[0];   // porcelana
-  if (ita > 48) return SKIN_TONES[1];   // claro-rosado
-  if (ita > 41) return SKIN_TONES[2];   // claro-neutro
-  if (ita > 34) return SKIN_TONES[3];   // claro-dorado
-  if (ita > 28) return SKIN_TONES[4];   // medio-rosado
-  if (ita > 20) return SKIN_TONES[5];   // medio-neutro
-  if (ita > 10) return SKIN_TONES[6];   // trigueño
-  if (ita > 0)  return SKIN_TONES[7];   // moreno-calido
-  if (ita > -15) return SKIN_TONES[8];  // oscuro-calido
-  if (ita > -30) return SKIN_TONES[9];  // oscuro-frio
-  return SKIN_TONES[10];                // ebano
+  if (ita > 55) return SKIN_TONES[0];
+  if (ita > 48) return SKIN_TONES[1];
+  if (ita > 41) return SKIN_TONES[2];
+  if (ita > 34) return SKIN_TONES[3];
+  if (ita > 28) return SKIN_TONES[4];
+  if (ita > 20) return SKIN_TONES[5];
+  if (ita > 10) return SKIN_TONES[6];
+  if (ita > 0) return SKIN_TONES[7];
+  if (ita > -15) return SKIN_TONES[8];
+  if (ita > -30) return SKIN_TONES[9];
+  return SKIN_TONES[10];
 }
 
-/**
- * Convierte un canal sRGB (0-255) a lineal.
- */
-function linearize(c) {
-  const s = c / 255;
-  return s <= 0.04045 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+export function getSubtone(b) {
+  if (b < 5) return "lith";
+  if (b < 18) return "mid";
+  return "dark";
 }
-
-/**
- * Convierte RGB (0-255) a CIE L*a*b* y calcula el ángulo ITA.
- * Retorna { L, a, b, ita, tone, hex }
- *
- * @param {number} r - Rojo (0-255)
- * @param {number} g - Verde (0-255)
- * @param {number} b - Azul (0-255)
- * @returns {{ L: number, a: number, b: number, ita: number, tone: object, hex: string }}
- */
-export function analyzePixels(r, g, b) {
-  // 1. sRGB → lineal
-  const R = linearize(r);
-  const G = linearize(g);
-  const B = linearize(b);
-
-  // 2. Lineal → XYZ (iluminante D65)
-  const X = (R * 0.4124564 + G * 0.3575761 + B * 0.1804375) / 0.95047;
-  const Y = (R * 0.2126729 + G * 0.7151522 + B * 0.0721750) / 1.00000;
-  const Z = (R * 0.0193339 + G * 0.1191920 + B * 0.9503041) / 1.08883;
-
-  // 3. XYZ → CIE L*a*b*
-  const f = (t) => (t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116);
-  const L = 116 * f(Y) - 16;
-  const aVal = 500 * (f(X) - f(Y));
-  const bVal = 200 * (f(Y) - f(Z));
-
-  // 4. ITA = arctan((L* - 50) / b*) × (180/π)
-  const ita = Math.atan2(L - 50, bVal) * (180 / Math.PI);
-
-  const tone = getToneByITA(ita);
-
-  // 5. Hex del color promedio real detectado
-  const toHex = (n) => Math.round(n).toString(16).padStart(2, "0");
-  const hex = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
-
-  return { L: Math.round(L * 10) / 10, a: Math.round(aVal * 10) / 10, b: Math.round(bVal * 10) / 10, ita: Math.round(ita * 10) / 10, tone, hex };
-}
-
-export default SKIN_TONES;
