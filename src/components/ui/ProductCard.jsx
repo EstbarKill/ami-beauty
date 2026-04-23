@@ -1,37 +1,102 @@
 "use client";
 
-import Link from "next/link";
+import { useStore } from "@/context/StoreContext";
 
-export default function ProductCard({ product, compact = false }) {
+export default function AnalysisModal({ result, onClose }) {
+  const { addToCart, toggleFav, isFav } = useStore();
+
+  if (!result) return null;
+
+  const tone = result.data?.tone;
+
+  const products = [
+    ...(result.matched || []),
+    ...(result.interest || [])
+  ]
+    .filter(p => p.recommended)
+    .slice(0, 2);
+
   return (
-    <div className="product-card group">
+    <div className="modal">
+      <div className="card">
 
-      {/* IMAGE */}
-      <div className="relative overflow-hidden">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-40 object-cover"
-        />
+        {/* HEADER */}
+        <div className="header">
+          <button onClick={onClose}>Volver</button>
+          <span>Análisis IA</span>
+          <button onClick={onClose}>✕</button>
+        </div>
 
-        {/* OVERLAY */}
-        <div className="product-overlay flex justify-center">
-          <button className="btn-outline-light text-xs">
-            🛒
-          </button>
-          <button className="btn-outline-light text-xs">
-            ♥
-          </button>
+        {/* BODY */}
+        <div className="body">
+
+          {/* LEFT */}
+          <div className="left">
+            {tone && (
+              <>
+                <div style={{
+                  width: "80px",
+                  height: "80px",
+                  borderRadius: "50%",
+                  background: tone.hex
+                }} />
+                <p>{tone.label}</p>
+              </>
+            )}
+          </div>
+
+          {/* RIGHT */}
+          <div className="right">
+            <h3>Recomendados</h3>
+
+            {products.length === 0 && <p>No hay productos</p>}
+
+            {products.map(p => (
+              <HorizontalProductCard
+                key={p.id}
+                product={p}
+                addToCart={addToCart}
+                toggleFav={toggleFav}
+                isFav={isFav}
+              />
+            ))}
+          </div>
+
         </div>
       </div>
+    </div>
+  );
+}
 
-      {/* INFO */}
-      <Link href={`/product/${product.slug}`}>
-        <div className="p-3">
-          <p className="text-sm font-medium">{product.name}</p>
-          <p className="text-xs text-muted">${product.price}</p>
-        </div>
-      </Link>
+function HorizontalProductCard({ product, addToCart, toggleFav, isFav }) {
+  const fav = isFav(product.id);
+
+  return (
+    <div style={{
+      display: "flex",
+      gap: "10px",
+      alignItems: "center",
+      border: "1px solid #eee",
+      padding: "8px"
+    }}>
+      <img src={product.image} width={60} />
+
+      <div style={{ flex: 1 }}>
+        <p>{product.name}</p>
+        <p>${product.price.toLocaleString("es-CO")}</p>
+
+        {product.isNew && <span>Nuevo</span>}
+      </div>
+
+      <div>
+        <button onClick={() => addToCart(product)}>
+          +
+        </button>
+
+        <button onClick={() => toggleFav(product)}>
+          {fav ? "♥" : "♡"}
+        </button>
+      </div>
     </div>
   );
 }

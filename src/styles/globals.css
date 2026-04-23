@@ -207,8 +207,8 @@ body {
   top: 0.75rem;
   right: 0.75rem;
   background: var(--charcoal);
-  color: white;
-  font-size: 10px;
+  color: red;
+  font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 0.2rem 0.6rem;

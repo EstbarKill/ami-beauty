@@ -8,6 +8,7 @@
     "subtones": ["lith"],
     "price": 68000,
     "featured": true,
+    "isNew": true,
     "image": "/img/products/base-1.jpg"
   },
   {
