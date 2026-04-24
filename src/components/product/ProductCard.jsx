@@ -90,12 +90,13 @@ const variant = product.matchVariants?.[0];
 
         {/* ADD */}
         <div className="product-overlay">
-          <button onClick={() =>
+          <button className="product-overlay-btn" onClick={() =>
   addToCart({
     ...product,
     selectedVariant: variant
-  })
-}>
+  }) 
+}
+>
             Agregar
           </button>
         </div>

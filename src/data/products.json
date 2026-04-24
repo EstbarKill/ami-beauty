@@ -79,11 +79,9 @@
     "toneIds": ["porcelana", "claro-rosado", "claro-neutro", "claro-dorado", "medio-rosado", "medio-neutro"],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/lula-c1.jpg",
-      "/img/products/lula-c2.jpg",
-      "/img/products/lula-c3.jpg",
-      "/img/products/lula-c4.jpg",
-      "/img/products/lula-c5.jpg"
+      "/img/products/lula-c1.jpeg",
+      "/img/products/lula-c2.jpeg",
+      "/img/products/lula-c3.jpeg"
     ],
     "variants": [
       { "shade": "01", "hex": "#FAEFE1", "toneId": "porcelana",    "subtone": "mid" },
@@ -114,11 +112,11 @@
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/montoc-base-1.jpg",
-      "/img/products/montoc-base-2.jpg",
-      "/img/products/montoc-base-3.jpg",
-      "/img/products/montoc-base-4.jpg",
-      "/img/products/montoc-base-5.jpg"
+      "/img/products/montoc-base-1.jpeg",
+      "/img/products/montoc-base-2.jpeg",
+      "/img/products/montoc-base-3.jpeg",
+      "/img/products/montoc-base-4.jpeg",
+      "/img/products/montoc-base-5.jpeg"
     ],
     "variants": [
       { "shade": "100", "hex": "#F2D6C2", "toneId": "porcelana",     "subtone": "mid"  },
@@ -154,11 +152,10 @@
     ],
     "subtones": ["mid", "dark"],
     "images": [
-      "/img/products/purpure-base-1.jpg",
-      "/img/products/purpure-base-2.jpg",
-      "/img/products/purpure-base-3.jpg",
-      "/img/products/purpure-base-4.jpg",
-      "/img/products/purpure-base-5.jpg"
+      "/img/products/purpure-base-1.jpeg",
+      "/img/products/purpure-base-2.jpeg",
+      "/img/products/purpure-base-3.jpeg",
+      "/img/products/purpure-base-4.jpeg"
     ],
     "variants": [
       { "shade": "01 Clementine", "hex": "#F4CBA0", "toneId": "claro-dorado",  "subtone": "dark" },

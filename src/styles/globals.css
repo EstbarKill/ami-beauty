@@ -162,7 +162,7 @@ body {
 
 /* Product card */
 .product-card {
-  background: white;
+  background: rgba(255, 250, 247, 0.842);
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -170,7 +170,7 @@ body {
 }
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(28, 24, 21, 0.08);
+  box-shadow: 0 16px 48px rgba(241, 112, 14, 0.08);
   border-color: var(--cream-dark);
 }
 .product-overlay {
@@ -183,10 +183,17 @@ body {
   gap: 0.5rem;
   transform: translateY(100%);
   transition: transform 0.3s ease;
-  background: linear-gradient(to top, rgba(28, 24, 21, 0.5) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(190, 99, 29, 0.5) 0%, transparent 100%);
 }
-.product-card:hover .product-overlay {
+.product-card:hover .product-overlay{
   transform: translateY(0);
+}
+
+.product-overlay:hover{
+  transition: transform 4s ease;
+  font-size: 1.2rem;
+  color:white;
+  background: linear-gradient(to top, rgba(190, 89, 11, 0.856) 0%, transparent 100%);
 }
 
 /* Badges */
