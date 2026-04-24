@@ -47,11 +47,19 @@ export function StoreProvider({ children }) {
   const addToCart = useCallback(
     (product) => {
       setCart((prev) => {
-        const exists = prev.find((c) => c.id === product.id);
-        if (exists)
-          return prev.map((c) =>
-            c.id === product.id ? { ...c, qty: c.qty + 1 } : c
-          );
+        const exists = prev.find(
+  (c) =>
+    c.id === product.id &&
+    c.selectedVariant?.shade === product.selectedVariant?.shade
+);
+if (exists) {
+  return prev.map((c) =>
+    c.id === product.id &&
+    c.selectedVariant?.shade === product.selectedVariant?.shade
+      ? { ...c, qty: c.qty + 1 }
+      : c
+  );
+}
         return [...prev, { ...product, qty: 1 }];
       });
       showToast(`${product.name} agregado al carrito ✓`);

@@ -13,7 +13,7 @@ export default function ProductPage({ params }) {
       <div className="grid md:grid-cols-2 gap-10">
 
         <img
-          src={product.image}
+          src={product.images?.[0]}
           className="w-full rounded"
         />
 

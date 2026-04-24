@@ -5,19 +5,36 @@ export function getRecommendations(toneResult) {
 
   const { toneGroup, id, subtoneKey } = toneResult.tone;
 
-  const matched = products.filter(
-    (p) =>
-      p.toneGroup === toneGroup &&
-      p.toneIds.includes(id) &&
-      (!p.subtones || p.subtones.includes(subtoneKey))
-  ).slice(0, 3);
+  const matched = products
+    .map((p) => {
+      const matchVariants = p.variants?.filter(
+        (v) =>
+          v.toneId === id &&
+          v.subtone === subtoneKey
+      );
 
-  const interest = products.filter(
-    (p) =>
-      p.toneGroup === toneGroup &&
-      p.featured &&
-      !p.toneIds.includes(id)
-  ).slice(0, 4);
+      if (
+        p.toneGroup === toneGroup &&
+        matchVariants?.length
+      ) {
+        return {
+          ...p,
+          matchVariants, // 🔥 clave
+        };
+      }
+
+      return null;
+    })
+    .filter(Boolean)
+    .slice(0, 3);
+
+  const interest = products
+    .filter(
+      (p) =>
+        p.toneGroup === toneGroup &&
+        !p.variants?.some(v => v.toneId === id)
+    )
+    .slice(0, 4);
 
   return { matched, interest };
 }

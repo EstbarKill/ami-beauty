@@ -1,5 +1,5 @@
 "use client";
-
+import { useStore } from "@/context/StoreContext";
 export default function AnalysisModal({ result, onClose }) {
   if (!result) return null;
 
@@ -252,6 +252,10 @@ export default function AnalysisModal({ result, onClose }) {
 
 /* ── Horizontal mini product card ── */
 function HorizontalProductCard({ product }) {
+  const { addToCart, toggleFav, isFav } = useStore();
+  const variant = product.matchVariants?.[0];
+  const fav = isFav(product.id);
+  
   return (
     <div
       style={{
@@ -285,9 +289,9 @@ function HorizontalProductCard({ product }) {
           overflow: "hidden",
         }}
       >
-        {product.image && (
+        {product.images?.[0] && (
           <img
-            src={product.image}
+            src={product.images?.[0]}
             alt={product.name}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
@@ -321,6 +325,27 @@ function HorizontalProductCard({ product }) {
         >
           {product.name}
         </p>
+        {variant && (
+  <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "2px" }}>
+    
+    {/* Color */}
+    <span
+      style={{
+        width: "12px",
+        height: "12px",
+        borderRadius: "50%",
+        background: variant.hex,
+        border: "1px solid #ddd"
+      }}
+    />
+
+    {/* Shade */}
+    <span style={{ fontSize: "11px", color: "var(--muted)" }}>
+      {variant.shade}
+    </span>
+
+  </div>
+)}
         {product.shade && (
           <p
             style={{
@@ -335,7 +360,10 @@ function HorizontalProductCard({ product }) {
       </div>
 
       {/* Price */}
-      <div style={{ textAlign: "right", flexShrink: 0 }}>
+      <div style={{textAlign: "right", flexShrink: 0 }}>
+        <button style={{display:"flex" ,justifySelf:"end",color:"red", fontSize:"1.3rem"}} onClick={() => toggleFav(product)}>
+          {fav ? "♥" : "♡"}
+        </button>
         <p
           style={{
             fontSize: "13px",
@@ -346,6 +374,12 @@ function HorizontalProductCard({ product }) {
           ${product.price?.toLocaleString("es-CO")}
         </p>
         <button
+          onClick={() =>
+    addToCart({
+      ...product,
+      selectedVariant: variant
+    })
+  }
           style={{
             marginTop: "6px",
             background: "var(--rose)",

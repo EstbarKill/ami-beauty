@@ -59,7 +59,7 @@ export default function CartSidebar() {
             </div>
           ) : (
             cart.map((item) => (
-              <div key={item.id} style={{ display: "flex", gap: "1rem", padding: "1rem 0", borderBottom: "1px solid var(--cream-dark)" }}>
+              <div key={`${item.id}-${item.selectedVariant?.shade || "default"}`} style={{ display: "flex", gap: "1rem", padding: "1rem 0", borderBottom: "1px solid var(--cream-dark)" }}>
                 <div style={{ width: "72px", height: "90px", background: `linear-gradient(135deg,#C9957A,#8B5E4A)`, flexShrink: 0 }} />
                 <div style={{ flex: 1 }}>
                   <div style={{ fontFamily: "Georgia,serif", fontSize: "1rem", marginBottom: "0.25rem", lineHeight: 1.3 }}>{item.name}</div>

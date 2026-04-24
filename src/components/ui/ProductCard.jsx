@@ -8,7 +8,7 @@ export default function AnalysisModal({ result, onClose }) {
   if (!result) return null;
 
   const tone = result.data?.tone;
-
+const variant = product.matchVariants?.[0];
   const products = [
     ...(result.matched || []),
     ...(result.interest || [])
@@ -89,7 +89,12 @@ function HorizontalProductCard({ product, addToCart, toggleFav, isFav }) {
       </div>
 
       <div>
-        <button onClick={() => addToCart(product)}>
+        <button onClick={() =>
+  addToCart({
+    ...product,
+    selectedVariant: variant
+  })
+}>
           +
         </button>
 

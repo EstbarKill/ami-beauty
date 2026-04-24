@@ -264,3 +264,90 @@ body {
   border-color: var(--rose);
   transform: translateY(-2px);
 }
+
+/* ───────────────────────────── */
+/* 🔥 PRODUCT PRO UPGRADE */
+/* ───────────────────────────── */
+
+/* Imagen carrusel hover */
+.product-card img {
+  will-change: transform;
+}
+
+/* Navegación de imágenes */
+.img-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.img-nav:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.img-nav.left { left: 6px; }
+.img-nav.right { right: 6px; }
+
+/* Favorito */
+.fav-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Swatches (colores reales del producto) */
+.swatches {
+  display: flex;
+  gap: 5px;
+  margin: 6px 0;
+}
+
+.swatches span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.swatches span:hover {
+  transform: scale(1.2);
+  border: 1px solid var(--charcoal);
+}
+
+/* Highlight IA */
+.match-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: var(--gold);
+  color: white;
+  font-size: 9px;
+  padding: 3px 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Producto recomendado (modal) */
+.product-match {
+  border-color: var(--rose) !important;
+  background: #fff7f3;
+}

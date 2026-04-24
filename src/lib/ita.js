@@ -1,6 +1,16 @@
 import { rgbToLab } from "./colorUtils";
 import { getToneByITA, getSubtone } from "@/data/skinTones";
 import { getCheekPixels } from "./cheeks";
+let lastResults = [];
+function smooth(value) {
+  lastResults.push(value);
+  if (lastResults.length > 5) lastResults.shift();
+
+  return (
+    lastResults.reduce((a, b) => a + b, 0) /
+    lastResults.length
+  );
+}
 
 export async function analyzeSkinAdvanced(ctx, canvas, source, landmarks) {
   if (!landmarks) return null;
@@ -12,7 +22,8 @@ export async function analyzeSkinAdvanced(ctx, canvas, source, landmarks) {
 
   const { L, a, b: bStar } = rgbToLab(r, g, b);
 
-  const ita = Math.atan2(L - 50, bStar) * (180 / Math.PI);
+let ita = Math.atan2(L - 50, bStar) * (180 / Math.PI);
+ita = smooth(ita);
 
   const toneBase = getToneByITA(ita);
   const subtoneKey = getSubtone(bStar);

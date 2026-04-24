@@ -1,113 +1,917 @@
 [
   {
     "id": 1,
-    "name": "Corrector Porcelana Glow",
-    "slug": "corrector-porcelana-glow",
-    "toneGroup": "Claro",
-    "toneIds": ["porcelana"],
-    "subtones": ["lith"],
-    "price": 68000,
+    "name": "Corrector Pure Cover",
+    "brand": "Majikal Beauty",
+    "slug": "corrector-pure-cover-majikal",
+    "category": "corrector",
+    "description": "Corrector hidratante, ligero y de alta cobertura con ácido hialurónico y niacinamida. Ideal para cubrir, iluminar y contornear. Corrige perfectamente las imperfecciones y puede ser utilizado como base ligera.",
+    "price": 32500,
     "featured": true,
-    "isNew": true,
-    "image": "/img/products/base-1.jpg"
+    "isNew": false,
+    "recommended":true,
+    "content": "6gr",
+    "toneGroup": "Claro",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/majikal-c1.jpeg",
+      "/img/products/majikal-c2.jpeg",
+      "/img/products/majikal-c3.jpeg",
+      "/img/products/majikal-c1.jpeg",
+      "/img/products/majikal-c2.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 Winter", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "mid" },
+      { "shade": "01 Snow",   "hex": "#FEE1C7", "toneId": "porcelana", "subtone": "dark" },
+      { "shade": "02 Off White", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "mid" },
+      { "shade": "03 Latina",    "hex": "#F2C49A", "toneId": "claro-dorado", "subtone": "dark" },
+      { "shade": "04 Cream Brûlée", "hex": "#F2B177", "toneId": "medio-rosado", "subtone": "dark" },
+      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "moreno-calido", "subtone": "dark" }
+    ]
   },
+
   {
     "id": 2,
-    "name": "Base Claro Neutro Soft",
-    "slug": "base-claro-neutro",
-    "toneGroup": "Claro",
-    "toneIds": ["claro-neutro"],
-    "subtones": ["mid"],
-    "price": 72000,
+    "name": "Corrector de Ojeras",
+    "brand": "Anik",
+    "slug": "corrector-anik",
+    "category": "corrector",
+    "description": "Corrector vegano de cobertura media-alta, textura cremosa e hidratante. Perfecto para todo tipo de piel. Puede usarse para corregir imperfecciones, iluminar zonas del rostro o como base ligera.",
+    "price": 24000,
     "featured": true,
-    "image": "/img/products/base-1.jpg"
+    "isNew": true,
+    "recommended":true,
+    "content": "4.3ml",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "medio-neutro", "trigueño"],
+    "subtones": ["mid", "dark"],
+    "images": [
+      "/img/products/anik-c1.jpeg",
+      "/img/products/anik-c2.jpeg",
+      "/img/products/anik-c3.jpeg",
+      "/img/products/anik-c4.jpeg",
+      "/img/products/anik-c5.jpeg",
+      "/img/products/anik-c6.jpeg",
+      "/img/products/anik-c7.jpeg",
+      "/img/products/anik-c8.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 Snow",         "hex": "#F1D9C3", "toneId": "porcelana",    "subtone": "mid" },
+      { "shade": "01 Bone",         "hex": "#E6C0AE", "toneId": "claro-neutro", "subtone": "mid" },
+      { "shade": "02 Radiant",      "hex": "#EFC8AA", "toneId": "claro-dorado", "subtone": "dark" },
+      { "shade": "03 Honey",        "hex": "#EAB58C", "toneId": "medio-rosado", "subtone": "dark" },
+      { "shade": "04 Ginger",       "hex": "#E4AA78", "toneId": "medio-neutro", "subtone": "dark" },
+      { "shade": "05 Golden Brown", "hex": "#B5674B", "toneId": "trigueño",     "subtone": "dark" }
+    ]
   },
+
   {
     "id": 3,
-    "name": "Base Dorado Warm",
-    "slug": "base-dorado",
-    "toneGroup": "Claro",
-    "toneIds": ["claro-dorado"],
-    "subtones": ["dark"],
-    "price": 75000,
-    "featured": false,
-    "image": "/img/products/base-2.png"
+    "name": "Corrector Líquido",
+    "brand": "Lula",
+    "slug": "corrector-lula",
+    "category": "corrector",
+    "description": "Alta cobertura para ojeras, granitos y manchas. Fórmula ligera y de larga duración que se difumina fácilmente para un acabado natural.",
+    "price": 17000,
+    "featured": true,
+    "isNew": true,
+    "recommended":true,
+    "toneIds": ["porcelana", "claro-rosado", "claro-neutro", "claro-dorado", "medio-rosado", "medio-neutro"],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/lula-c1.jpg",
+      "/img/products/lula-c2.jpg",
+      "/img/products/lula-c3.jpg",
+      "/img/products/lula-c4.jpg",
+      "/img/products/lula-c5.jpg"
+    ],
+    "variants": [
+      { "shade": "01", "hex": "#FAEFE1", "toneId": "porcelana",    "subtone": "mid" },
+      { "shade": "02", "hex": "#FFE7CD", "toneId": "claro-rosado", "subtone": "mid" },
+      { "shade": "03", "hex": "#F6DCC4", "toneId": "claro-neutro", "subtone": "mid" },
+      { "shade": "04", "hex": "#F6DAC6", "toneId": "claro-neutro", "subtone": "dark" },
+      { "shade": "05", "hex": "#F4CEAB", "toneId": "claro-dorado", "subtone": "dark" },
+      { "shade": "06", "hex": "#F2B886", "toneId": "medio-rosado", "subtone": "dark" },
+      { "shade": "07", "hex": "#F2B893", "toneId": "medio-neutro", "subtone": "dark" }
+    ]
   },
+
   {
     "id": 4,
-    "name": "Blush Medio Rosado",
-    "slug": "blush-medio",
-    "toneGroup": "Medio",
-    "toneIds": ["medio-rosado"],
-    "subtones": ["mid"],
-    "price": 54000,
+    "name": "Base Humide Healthy Foundation",
+    "brand": "Montoc",
+    "slug": "base-montoc",
+    "category": "base",
+    "description": "Base líquida hidratante para piel normal a grasa. Iguala el tono de la piel mientras aporta hidratación durante el maquillaje, sin sensación pesada.",
+    "price": 61000,
     "featured": true,
-    "image": "/img/products/base-2.png"
+    "isNew": true,
+    "content": "30ml",
+    "toneIds": [
+      "porcelana", "claro-neutro", "claro-dorado",
+      "medio-rosado", "medio-neutro", "trigueño",
+      "moreno-calido", "oscuro-calido"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/montoc-base-1.jpg",
+      "/img/products/montoc-base-2.jpg",
+      "/img/products/montoc-base-3.jpg",
+      "/img/products/montoc-base-4.jpg",
+      "/img/products/montoc-base-5.jpg"
+    ],
+    "variants": [
+      { "shade": "100", "hex": "#F2D6C2", "toneId": "porcelana",     "subtone": "mid"  },
+      { "shade": "200", "hex": "#E8C2A8", "toneId": "claro-neutro",  "subtone": "mid"  },
+      { "shade": "250", "hex": "#E0B490", "toneId": "claro-dorado",  "subtone": "mid"  },
+      { "shade": "300", "hex": "#D9A07A", "toneId": "medio-rosado",  "subtone": "dark" },
+      { "shade": "350", "hex": "#CE9068", "toneId": "medio-neutro",  "subtone": "mid"  },
+      { "shade": "400", "hex": "#C07850", "toneId": "medio-neutro",  "subtone": "dark" },
+      { "shade": "500", "hex": "#B56A45", "toneId": "trigueño",      "subtone": "mid"  },
+      { "shade": "550", "hex": "#A05840", "toneId": "trigueño",      "subtone": "dark" },
+      { "shade": "600", "hex": "#904832", "toneId": "moreno-calido", "subtone": "mid"  },
+      { "shade": "700", "hex": "#7A3828", "toneId": "moreno-calido", "subtone": "dark" },
+      { "shade": "750", "hex": "#6B3020", "toneId": "oscuro-calido", "subtone": "lith" },
+      { "shade": "800", "hex": "#5C2A1E", "toneId": "oscuro-calido", "subtone": "dark" },
+      { "shade": "850", "hex": "#4A1E18", "toneId": "oscuro-frio",   "subtone": "dark" }
+    ]
   },
+
   {
     "id": 5,
-    "name": "Contorno Trigueño",
-    "slug": "contorno-trigueno",
-    "toneGroup": "Medio",
-    "toneIds": ["trigueño"],
-    "subtones": ["dark"],
-    "price": 60000,
-    "featured": false,
-    "image": "/img/products/base-1.jpg"
+    "name": "Base de Maquillaje Purpure",
+    "brand": "Purpure",
+    "slug": "base-purpure",
+    "category": "base",
+    "description": "Base líquida de alta cobertura con textura ligera y acabado natural. Cubre manchas, enrojecimientos y unifica el tono. Sistema dual de aplicación: corrector de precisión o dispensador completo.",
+    "price": 38000,
+    "featured": true,
+    "isNew": true,
+    "content": "30ml",
+    "toneIds": [
+      "claro-dorado", "medio-rosado", "medio-neutro",
+      "trigueño", "moreno-calido", "oscuro-calido"
+    ],
+    "subtones": ["mid", "dark"],
+    "images": [
+      "/img/products/purpure-base-1.jpg",
+      "/img/products/purpure-base-2.jpg",
+      "/img/products/purpure-base-3.jpg",
+      "/img/products/purpure-base-4.jpg",
+      "/img/products/purpure-base-5.jpg"
+    ],
+    "variants": [
+      { "shade": "01 Clementine", "hex": "#F4CBA0", "toneId": "claro-dorado",  "subtone": "dark" },
+      { "shade": "02 Eleanor",    "hex": "#EFC090", "toneId": "claro-dorado",  "subtone": "dark" },
+      { "shade": "03 Rosalie",    "hex": "#E8B07A", "toneId": "medio-rosado",  "subtone": "mid"  },
+      { "shade": "3.5 Selene",    "hex": "#D9A065", "toneId": "medio-rosado",  "subtone": "dark" },
+      { "shade": "04 Aitana",     "hex": "#C88A55", "toneId": "medio-neutro",  "subtone": "mid"  },
+      { "shade": "05 Angie",      "hex": "#B87040", "toneId": "trigueño",      "subtone": "mid"  },
+      { "shade": "06 Mariana",    "hex": "#9A5830", "toneId": "trigueño",      "subtone": "dark" },
+      { "shade": "07 Laia",       "hex": "#7A3E28", "toneId": "moreno-calido", "subtone": "dark" },
+      { "shade": "08 Moana",      "hex": "#5C2C1A", "toneId": "oscuro-calido", "subtone": "dark" }
+    ]
   },
+
   {
     "id": 6,
-    "name": "Base Moreno Cálido",
-    "slug": "base-moreno",
-    "toneGroup": "Oscuro",
-    "toneIds": ["moreno-calido"],
-    "subtones": ["dark"],
-    "price": 78000,
-    "featured": true,
-    "image": "/img/products/base-2.png"
-  },
-  {
-    "id": 7,
-    "name": "Corrector Oscuro Frío",
-    "slug": "corrector-oscuro",
-    "toneGroup": "Oscuro",
-    "toneIds": ["oscuro-frio"],
-    "subtones": ["lith"],
-    "price": 69000,
-    "featured": false,
-    "image": "/img/products/base-1.jpg"
-  },
-  {
-    "id": 8,
-    "name": "Base Ébano Deep",
-    "slug": "base-ebano",
-    "toneGroup": "Oscuro",
-    "toneIds": ["ebano"],
-    "subtones": ["dark"],
-    "price": 80000,
-    "featured": true,
-    "image": "/img/products/base-2.png"
-  },
-  {
-    "id": 9,
-    "name": "Labial Nude Medio",
-    "slug": "labial-nude",
-    "toneGroup": "Medio",
-    "toneIds": ["medio-neutro"],
-    "subtones": ["mid"],
+    "name": "Base Bonita",
+    "brand": "Anik",
+    "slug": "base-anik-bonita",
+    "category": "base",
+    "description": "Base de cobertura media-alta construible con acabado semi-mate. Textura ligera y suave que se funde delicadamente con la piel.",
     "price": 45000,
     "featured": true,
-    "image": "/img/products/base-1.jpg"
+    "isNew": true,
+    "content": "28ml",
+    "toneIds": [
+      "porcelana", "claro-neutro", "claro-dorado",
+      "medio-rosado", "medio-neutro", "trigueño", "moreno-calido"
+    ],
+    "subtones": ["mid", "dark"],
+    "images": [
+      "/img/products/anik-base-1.jpg",
+      "/img/products/anik-base-2.jpg",
+      "/img/products/anik-base-3.jpg",
+      "/img/products/anik-base-4.jpg",
+      "/img/products/anik-base-5.jpg"
+    ],
+    "variants": [
+      { "shade": "00 Anne",    "hex": "#F5D8C0", "toneId": "porcelana",     "subtone": "mid"  },
+      { "shade": "01 Katy",    "hex": "#ECC8A8", "toneId": "claro-neutro",  "subtone": "mid"  },
+      { "shade": "02 Taylor",  "hex": "#E0B48A", "toneId": "claro-dorado",  "subtone": "dark" },
+      { "shade": "03 Dua",     "hex": "#D09C70", "toneId": "medio-rosado",  "subtone": "dark" },
+      { "shade": "04 Selena",  "hex": "#B8844E", "toneId": "medio-neutro",  "subtone": "dark" },
+      { "shade": "05 Eva",     "hex": "#9A6838", "toneId": "trigueño",      "subtone": "dark" },
+      { "shade": "06 Naomi",   "hex": "#7A4830", "toneId": "moreno-calido", "subtone": "dark" }
+    ]
   },
+
+  {
+    "id": 7,
+    "name": "Base Stay Matte",
+    "brand": "OG",
+    "slug": "base-og-stay-matte",
+    "category": "base",
+    "description": "Base diseñada para pieles grasas o mixtas. Acabado mate natural y aterciopelado que controla el exceso de grasa. Fórmula oil-free y no comedogénica, resistente al agua, sudor y clima hasta por 12 horas.",
+    "price": 45000,
+    "featured": true,
+    "isNew": true,
+    "content": "30ml",
+    "toneIds": [
+      "claro-neutro", "claro-dorado", "medio-rosado",
+      "trigueño", "moreno-calido"
+    ],
+    "subtones": ["mid", "dark"],
+    "images": [
+      "/img/products/og-matte-1.jpg",
+      "/img/products/og-matte-2.jpg",
+      "/img/products/og-matte-3.jpg",
+      "/img/products/og-matte-4.jpg",
+      "/img/products/og-matte-5.jpg"
+    ],
+    "variants": [
+      { "shade": "420", "hex": "#F0D0B0", "toneId": "claro-neutro",  "subtone": "mid"  },
+      { "shade": "425", "hex": "#E8C098", "toneId": "claro-dorado",  "subtone": "mid"  },
+      { "shade": "525", "hex": "#D4A070", "toneId": "medio-rosado",  "subtone": "dark" },
+      { "shade": "620", "hex": "#B87850", "toneId": "trigueño",      "subtone": "mid"  },
+      { "shade": "625", "hex": "#A86840", "toneId": "trigueño",      "subtone": "dark" },
+      { "shade": "630", "hex": "#906030", "toneId": "moreno-calido", "subtone": "mid"  },
+      { "shade": "635", "hex": "#784828", "toneId": "moreno-calido", "subtone": "dark" }
+    ]
+  },
+
+  {
+    "id": 8,
+    "name": "Base Aqua Smooth",
+    "brand": "OG",
+    "slug": "base-og-aqua-smooth",
+    "category": "base",
+    "description": "Base con acabado luminoso, fresco y sin peso. Cobertura media construible que unifica el tono y disimula imperfecciones. Enriquecida con ingredientes hidratantes. Textura ligera y semi-cremosa hasta por 12 horas.",
+    "price": 39000,
+    "featured": true,
+    "isNew": true,
+    "content": "30ml",
+    "toneIds": [
+      "claro-neutro", "claro-dorado", "medio-rosado",
+      "medio-neutro", "trigueño", "moreno-calido"
+    ],
+    "subtones": ["mid", "dark"],
+    "images": [
+      "/img/products/og-aqua-1.jpg",
+      "/img/products/og-aqua-2.jpg",
+      "/img/products/og-aqua-3.jpg",
+      "/img/products/og-aqua-4.jpg",
+      "/img/products/og-aqua-5.jpg"
+    ],
+    "variants": [
+      { "shade": "N.2",   "hex": "#F0CEAC", "toneId": "claro-neutro",  "subtone": "mid"  },
+      { "shade": "N.3",   "hex": "#E4BC98", "toneId": "claro-dorado",  "subtone": "mid"  },
+      { "shade": "N.4",   "hex": "#D4A07A", "toneId": "medio-rosado",  "subtone": "dark" },
+      { "shade": "N.4.5", "hex": "#C49060", "toneId": "medio-neutro",  "subtone": "mid"  },
+      { "shade": "N.5",   "hex": "#B07848", "toneId": "trigueño",      "subtone": "mid"  },
+      { "shade": "N.6",   "hex": "#946038", "toneId": "trigueño",      "subtone": "dark" },
+      { "shade": "N.7",   "hex": "#784830", "toneId": "moreno-calido", "subtone": "dark" }
+    ]
+  },
+
+  {
+    "id": 9,
+    "name": "Polvo Traslúcido 4 Tonos",
+    "brand": "Majikal Beauty",
+    "slug": "polvo-majikal",
+    "category": "polvo",
+    "description": "Polvo traslúcido fijador y corrector de color con cuatro tonos armonizados, adaptados a todo tipo de piel. Matifica, corrige y difumina los poros. Sin flashback, textura sedosa.",
+    "price": 47900,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-dorado", "medio-neutro"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/polvo-mj-1.jpg",
+      "/img/products/polvo-mj-2.jpg",
+      "/img/products/polvo-mj-3.jpg",
+      "/img/products/polvo-mj-4.jpg",
+      "/img/products/polvo-mj-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Rosado",   "hex": "#F5C6CB", "toneId": "claro-rosado", "subtone": "lith" },
+      { "shade": "Lila",     "hex": "#E6D6F5", "toneId": "porcelana",    "subtone": "lith" },
+      { "shade": "Durazno",  "hex": "#F4CEAB", "toneId": "claro-dorado", "subtone": "mid"  },
+      { "shade": "Amarillo", "hex": "#F7E3A1", "toneId": "medio-neutro", "subtone": "dark" }
+    ]
+  },
+
   {
     "id": 10,
-    "name": "Blush Cálido Oscuro",
-    "slug": "blush-oscuro",
-    "toneGroup": "Oscuro",
-    "toneIds": ["oscuro-calido"],
-    "subtones": ["dark"],
-    "price": 52000,
-    "featured": false,
-    "image": "/img/products/base-2.png"
+    "name": "Polvo Suelto Soft-Powder",
+    "brand": "Montoc",
+    "slug": "polvo-montoc-soft",
+    "category": "polvo",
+    "description": "Fórmula micro-pulverizada que se adhiere suavemente a la piel, matificando sin resecar. Efecto aterciopelado que controla el brillo sin alterar el color del maquillaje.",
+    "price": 65000,
+    "featured": true,
+    "isNew": true,
+    "content": "30g",
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "medio-neutro", "trigueño", "moreno-calido", "oscuro-calido"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/montoc-polvo-1.jpg",
+      "/img/products/montoc-polvo-2.jpg",
+      "/img/products/montoc-polvo-3.jpg",
+      "/img/products/montoc-polvo-4.jpg",
+      "/img/products/montoc-polvo-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Único Traslúcido", "hex": "#F8EEE0", "toneId": "porcelana", "subtone": "mid" }
+    ]
+  },
+
+  {
+    "id": 11,
+    "name": "Polvo Suelto Ultra Fino",
+    "brand": "Purpure",
+    "slug": "polvo-purpure",
+    "category": "polvo",
+    "description": "Polvo suelto ultra fino y sedoso. Controla el brillo absorbiendo la grasa y dejando una apariencia mate natural. Fija el maquillaje dándole mayor duración. Sin espejo ni borla.",
+    "price": 23000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "medio-neutro", "trigueño", "moreno-calido", "oscuro-calido"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/purpure-polvo-1.jpg",
+      "/img/products/purpure-polvo-2.jpg",
+      "/img/products/purpure-polvo-3.jpg",
+      "/img/products/purpure-polvo-4.jpg",
+      "/img/products/purpure-polvo-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Único Traslúcido", "hex": "#F5EDE2", "toneId": "porcelana", "subtone": "mid" }
+    ]
+  },
+
+  {
+    "id": 12,
+    "name": "Bronzer Cremoso en Barra Collection",
+    "brand": "Atenea",
+    "slug": "contorno-atenea-stick",
+    "category": "contorno",
+    "description": "Bronzer en barra de alta pigmentación y fácil difuminado. Textura cremosa. Se recomienda construir la tonalidad deseada progresivamente.",
+    "price": 45000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": ["trigueño", "moreno-calido"],
+    "subtones": ["mid", "dark"],
+    "images": [
+      "/img/products/atenea-bronzer-1.jpg",
+      "/img/products/atenea-bronzer-2.jpg",
+      "/img/products/atenea-bronzer-3.jpg",
+      "/img/products/atenea-bronzer-4.jpg",
+      "/img/products/atenea-bronzer-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Terranova",      "hex": "#8F5A3C", "toneId": "trigueño",      "subtone": "mid"  },
+      { "shade": "Toasted Coconut","hex": "#6F3F32", "toneId": "moreno-calido", "subtone": "dark" }
+    ]
+  },
+
+  {
+    "id": 13,
+    "name": "Contorno Líquido",
+    "brand": "Anik",
+    "slug": "contorno-anik-liquido",
+    "category": "contorno",
+    "description": "Contorno líquido que redefine las facciones con precisión. Textura ligera para un acabado natural fácil de graduar. Ideal para retocar en cualquier momento.",
+    "price": 27000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": ["trigueño", "moreno-calido", "oscuro-calido"],
+    "subtones": ["mid", "dark"],
+    "images": [
+      "/img/products/anik-contorno-1.jpg",
+      "/img/products/anik-contorno-2.jpg",
+      "/img/products/anik-contorno-3.jpg",
+      "/img/products/anik-contorno-4.jpg",
+      "/img/products/anik-contorno-5.jpg"
+    ],
+    "variants": [
+      { "shade": "01 Mocca Mami",      "hex": "#8B6240", "toneId": "trigueño",      "subtone": "mid"  },
+      { "shade": "02 Hollywood Vibes", "hex": "#7A4E30", "toneId": "trigueño",      "subtone": "dark" },
+      { "shade": "03 Goddess",         "hex": "#6A3E28", "toneId": "moreno-calido", "subtone": "dark" },
+      { "shade": "04 Amber Dreams",    "hex": "#5A3020", "toneId": "oscuro-calido", "subtone": "dark" }
+    ]
+  },
+
+  {
+    "id": 14,
+    "name": "Contorno Líquido Contour Up",
+    "brand": "Ame",
+    "slug": "contorno-ame-contour-up",
+    "category": "contorno",
+    "description": "Contorno líquido que esculpe y define los rasgos, dando profundidad al rostro y resaltando las facciones.",
+    "price": 35200,
+    "featured": true,
+    "isNew": true,
+    "toneIds": ["trigueño", "moreno-calido", "oscuro-calido", "oscuro-frio"],
+    "subtones": ["mid", "dark"],
+    "images": [
+      "/img/products/ame-contorno-1.jpg",
+      "/img/products/ame-contorno-2.jpg",
+      "/img/products/ame-contorno-3.jpg",
+      "/img/products/ame-contorno-4.jpg",
+      "/img/products/ame-contorno-5.jpg"
+    ],
+    "variants": [
+      { "shade": "01 Cedro", "hex": "#8A6248", "toneId": "trigueño",      "subtone": "mid"  },
+      { "shade": "02 Caoba", "hex": "#724836", "toneId": "moreno-calido", "subtone": "mid"  },
+      { "shade": "03 Nogal", "hex": "#5E3828", "toneId": "moreno-calido", "subtone": "dark" },
+      { "shade": "04 Ébano", "hex": "#3C2018", "toneId": "oscuro-calido", "subtone": "dark" }
+    ]
+  },
+
+  {
+    "id": 15,
+    "name": "Paleta Contornos e Iluminador Glamblack",
+    "brand": "Atenea",
+    "slug": "paleta-atenea-glamblack",
+    "category": "contorno",
+    "description": "Paleta con 4 tonos de iluminadores y 3 bronceadores. Alta pigmentación y fácil difuminación.",
+    "price": 54000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "claro-dorado", "medio-rosado", "medio-neutro",
+      "trigueño", "moreno-calido"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/atenea-glamblack-1.jpg",
+      "/img/products/atenea-glamblack-2.jpg",
+      "/img/products/atenea-glamblack-3.jpg",
+      "/img/products/atenea-glamblack-4.jpg",
+      "/img/products/atenea-glamblack-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Iluminador Champagne", "hex": "#F4E0C0", "toneId": "claro-dorado",  "subtone": "mid"  },
+      { "shade": "Iluminador Rose Gold", "hex": "#E8C0B0", "toneId": "medio-rosado",  "subtone": "lith" },
+      { "shade": "Iluminador Dorado",    "hex": "#F0D080", "toneId": "claro-dorado",  "subtone": "dark" },
+      { "shade": "Iluminador Blanco",    "hex": "#F8F0E8", "toneId": "porcelana",     "subtone": "lith" },
+      { "shade": "Bronzer Canela",       "hex": "#C0805A", "toneId": "medio-neutro",  "subtone": "dark" },
+      { "shade": "Bronzer Toffee",       "hex": "#9A5838", "toneId": "trigueño",      "subtone": "dark" },
+      { "shade": "Bronzer Espresso",     "hex": "#6A3828", "toneId": "moreno-calido", "subtone": "dark" }
+    ]
+  },
+
+  {
+    "id": 16,
+    "name": "Rubor Líquido Glow Filter",
+    "brand": "Montoc",
+    "slug": "rubor-montoc-glow-filter",
+    "category": "rubor",
+    "description": "Rubor líquido con partículas de brillo que aporta color y luminosidad al rostro. Textura fluida de fácil difuminado con acabado glow que se integra con la base o sobre piel natural.",
+    "price": 44000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "claro-dorado", "medio-rosado", "trigueño", "moreno-calido"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/montoc-rubor-1.jpg",
+      "/img/products/montoc-rubor-2.jpg",
+      "/img/products/montoc-rubor-3.jpg",
+      "/img/products/montoc-rubor-4.jpg",
+      "/img/products/montoc-rubor-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Guayaba 01",  "hex": "#F28B82", "toneId": "medio-rosado", "subtone": "lith" },
+      { "shade": "Durazno 1.5", "hex": "#F4A261", "toneId": "claro-dorado", "subtone": "mid"  },
+      { "shade": "Acai 2.0",    "hex": "#8E3B46", "toneId": "trigueño",     "subtone": "lith" },
+      { "shade": "Tamarindo 2.5","hex": "#A0522D", "toneId": "trigueño",     "subtone": "dark" },
+      { "shade": "Pitaya 3.0",  "hex": "#D94F70", "toneId": "medio-rosado", "subtone": "lith" }
+    ]
+  },
+
+  {
+    "id": 17,
+    "name": "Paleta de Rubores Atemporal",
+    "brand": "Atenea",
+    "slug": "rubor-atenea-atemporal",
+    "category": "rubor",
+    "description": "Paleta de rubores de alta pigmentación con 6 tonos compactos. Cuatro con acabado mate y dos satinados. Ideal para darle color al rostro.",
+    "price": 66000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "claro-rosado", "claro-dorado", "medio-rosado",
+      "medio-neutro", "trigueño", "moreno-calido"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/atenea-rubor-atemporal-1.jpg",
+      "/img/products/atenea-rubor-atemporal-2.jpg",
+      "/img/products/atenea-rubor-atemporal-3.jpg",
+      "/img/products/atenea-rubor-atemporal-4.jpg",
+      "/img/products/atenea-rubor-atemporal-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Nude Satin",   "hex": "#DEB49A", "toneId": "claro-dorado",  "subtone": "mid"  },
+      { "shade": "Coral Mate",   "hex": "#E8836A", "toneId": "medio-rosado",  "subtone": "dark" },
+      { "shade": "Rosa Mate",    "hex": "#E09090", "toneId": "claro-rosado",  "subtone": "lith" },
+      { "shade": "Durazno Mate", "hex": "#ECA880", "toneId": "claro-dorado",  "subtone": "dark" },
+      { "shade": "Mora Satin",   "hex": "#9A4858", "toneId": "trigueño",      "subtone": "lith" },
+      { "shade": "Terracota",    "hex": "#B06040", "toneId": "medio-neutro",  "subtone": "dark" }
+    ]
+  },
+
+  {
+    "id": 18,
+    "name": "Rubor Dúo Allure Crema y Polvo",
+    "brand": "Atenea",
+    "slug": "rubor-atenea-duo-allure",
+    "category": "rubor",
+    "description": "Rubores dúo: 3 tonos versátiles y atemporales para maquillajes clásicos, glamurosos y frescos. Textura suave, cremosa y sedosa. Fáciles de difuminar y de larga duración.",
+    "price": 50000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "claro-rosado", "claro-dorado", "medio-rosado", "trigueño"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/atenea-allure-1.jpg",
+      "/img/products/atenea-allure-2.jpg",
+      "/img/products/atenea-allure-3.jpg",
+      "/img/products/atenea-allure-4.jpg",
+      "/img/products/atenea-allure-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Dúo 01 Rose",    "hex": "#ECA8A8", "toneId": "claro-rosado", "subtone": "lith" },
+      { "shade": "Dúo 02 Peach",   "hex": "#EAA882", "toneId": "claro-dorado", "subtone": "mid"  },
+      { "shade": "Dúo 03 Mauve",   "hex": "#B87880", "toneId": "trigueño",     "subtone": "lith" }
+    ]
+  },
+
+  {
+    "id": 19,
+    "name": "Rubor Cremoso en Barra Collection",
+    "brand": "Atenea",
+    "slug": "rubor-atenea-stick",
+    "category": "rubor",
+    "description": "Rubor en barra con textura cremosa, fácil difuminación y alta pigmentación. Aporta color al rostro. También puede usarse como sombra y labial. Tamaño práctico para la cosmetiquera.",
+    "price": 44000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "claro-rosado", "claro-dorado", "medio-rosado", "trigueño", "moreno-calido"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/atenea-rubor-stick-1.jpg",
+      "/img/products/atenea-rubor-stick-2.jpg",
+      "/img/products/atenea-rubor-stick-3.jpg",
+      "/img/products/atenea-rubor-stick-4.jpg",
+      "/img/products/atenea-rubor-stick-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Pink Chai",    "hex": "#E8A0A8", "toneId": "claro-rosado", "subtone": "lith" },
+      { "shade": "Sugarplum",    "hex": "#C87090", "toneId": "medio-rosado", "subtone": "lith" },
+      { "shade": "Cherry Pie",   "hex": "#A84060", "toneId": "trigueño",     "subtone": "lith" },
+      { "shade": "Scarlet Fever","hex": "#8A2840", "toneId": "moreno-calido","subtone": "lith" }
+    ]
+  },
+
+  {
+    "id": 20,
+    "name": "Rubor Compacto Blush",
+    "brand": "Purpure",
+    "slug": "rubor-purpure-compacto",
+    "category": "rubor",
+    "description": "Rubor compacto con acabado satinado que aporta un toque de luz delicado. Color intenso y modulable, textura sedosa de fácil difuminación y larga duración.",
+    "price": 16000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "claro-dorado", "claro-rosado", "medio-rosado", "trigueño"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/purpure-rubor-1.jpg",
+      "/img/products/purpure-rubor-2.jpg",
+      "/img/products/purpure-rubor-3.jpg",
+      "/img/products/purpure-rubor-4.jpg",
+      "/img/products/purpure-rubor-5.jpg"
+    ],
+    "variants": [
+      { "shade": "01 Golden Hour", "hex": "#F4A060", "toneId": "claro-dorado", "subtone": "dark" },
+      { "shade": "02 Secret Blush","hex": "#F0A0A0", "toneId": "claro-rosado", "subtone": "lith" },
+      { "shade": "03 First Crush", "hex": "#E08090", "toneId": "medio-rosado", "subtone": "lith" },
+      { "shade": "04 Soft Bloom",  "hex": "#C07090", "toneId": "trigueño",     "subtone": "lith" },
+      { "shade": "05 Pitaya",      "hex": "#D94F70", "toneId": "medio-rosado", "subtone": "lith" }
+    ]
+  },
+
+  {
+    "id": 21,
+    "name": "Iluminador Boreal",
+    "brand": "Purpure",
+    "slug": "iluminador-purpure-boreal",
+    "category": "iluminador",
+    "description": "Iluminador tipo boreal que combina tonos multicolor para crear un brillo mágico. Perfecto para mejillas, nariz o cualquier zona de realce. Acabado luminoso que cambia sutilmente con la luz.",
+    "price": 19900,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "medio-neutro", "trigueño"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/purpure-iluminador-1.jpg",
+      "/img/products/purpure-iluminador-2.jpg",
+      "/img/products/purpure-iluminador-3.jpg",
+      "/img/products/purpure-iluminador-4.jpg",
+      "/img/products/purpure-iluminador-5.jpg"
+    ],
+    "variants": [
+      { "shade": "01 Sirius",   "hex": "#E8D8F0", "toneId": "porcelana",    "subtone": "lith" },
+      { "shade": "02 Coraline", "hex": "#F0B8C8", "toneId": "claro-rosado", "subtone": "lith" },
+      { "shade": "03 Ruby",     "hex": "#E87080", "toneId": "medio-rosado", "subtone": "lith" }
+    ]
+  },
+
+  {
+    "id": 22,
+    "name": "Iluminador Light Set",
+    "brand": "Montoc",
+    "slug": "iluminador-montoc-light-set",
+    "category": "iluminador",
+    "description": "Iluminador compacto que le dará a tu maquillaje un toque de luminosidad inigualable.",
+    "price": 35000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "medio-neutro", "trigueño", "moreno-calido"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/montoc-iluminador-1.jpg",
+      "/img/products/montoc-iluminador-2.jpg",
+      "/img/products/montoc-iluminador-3.jpg",
+      "/img/products/montoc-iluminador-4.jpg",
+      "/img/products/montoc-iluminador-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Golden",    "hex": "#F8D880", "toneId": "claro-dorado",  "subtone": "dark" },
+      { "shade": "Rose",      "hex": "#F8C0C0", "toneId": "claro-rosado",  "subtone": "lith" },
+      { "shade": "Champagne", "hex": "#F4E0C0", "toneId": "claro-neutro",  "subtone": "mid"  }
+    ]
+  },
+
+  {
+    "id": 23,
+    "name": "Iluminador Individual",
+    "brand": "Lula",
+    "slug": "iluminador-lula",
+    "category": "iluminador",
+    "description": "Iluminador con brillo intenso, textura suave y ligera. 6 tonos ideales para realzar los puntos altos del rostro. Perfecto para looks de día o de noche.",
+    "price": 16000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "trigueño"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/lula-iluminador-1.jpg",
+      "/img/products/lula-iluminador-2.jpg",
+      "/img/products/lula-iluminador-3.jpg",
+      "/img/products/lula-iluminador-4.jpg",
+      "/img/products/lula-iluminador-5.jpg"
+    ],
+    "variants": [
+      { "shade": "01", "hex": "#F8E8B0", "toneId": "porcelana",    "subtone": "lith" },
+      { "shade": "02", "hex": "#F8D890", "toneId": "claro-dorado", "subtone": "mid"  },
+      { "shade": "03", "hex": "#E8C070", "toneId": "claro-dorado", "subtone": "dark" },
+      { "shade": "04", "hex": "#F0C8C0", "toneId": "claro-rosado", "subtone": "lith" },
+      { "shade": "05", "hex": "#E8A8B0", "toneId": "medio-rosado", "subtone": "lith" },
+      { "shade": "06", "hex": "#C87890", "toneId": "trigueño",     "subtone": "lith" }
+    ]
+  },
+
+  {
+    "id": 24,
+    "name": "Iluminador Suelto",
+    "brand": "Anik",
+    "slug": "iluminador-anik-suelto",
+    "category": "iluminador",
+    "description": "Iluminador suelto multiusos con textura micropulverizada. Logra un acabado húmedo en la piel. Aplícalo como iluminador, sombra brillante o mézclalo con crema corporal para el escote.",
+    "price": 22000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "trigueño"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/anik-iluminador-1.jpg",
+      "/img/products/anik-iluminador-2.jpg",
+      "/img/products/anik-iluminador-3.jpg",
+      "/img/products/anik-iluminador-4.jpg",
+      "/img/products/anik-iluminador-5.jpg"
+    ],
+    "variants": [
+      { "shade": "01 Angel Glow",    "hex": "#F0E0C0", "toneId": "claro-neutro", "subtone": "mid"  },
+      { "shade": "02 Diva Glow",     "hex": "#F0D0A0", "toneId": "claro-dorado", "subtone": "dark" },
+      { "shade": "03 Cookie",        "hex": "#E0B880", "toneId": "claro-dorado", "subtone": "dark" },
+      { "shade": "04 Cosmic Lover",  "hex": "#D0A0B8", "toneId": "medio-rosado", "subtone": "lith" }
+    ]
+  },
+
+  {
+    "id": 25,
+    "name": "Paleta de Sombras Birds 35 Tonos",
+    "brand": "Atenea",
+    "slug": "sombras-atenea-birds",
+    "category": "sombras",
+    "description": "Paleta Birds, la más completa del mercado con 35 colores entre tonos tierra y neones.",
+    "price": 96000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "medio-neutro", "trigueño", "moreno-calido",
+      "oscuro-calido", "oscuro-frio", "ebano"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/atenea-birds-1.jpg",
+      "/img/products/atenea-birds-2.jpg",
+      "/img/products/atenea-birds-3.jpg",
+      "/img/products/atenea-birds-4.jpg",
+      "/img/products/atenea-birds-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Paleta Completa", "hex": "#C89060", "toneId": "medio-neutro", "subtone": "mid" }
+    ]
+  },
+
+  {
+    "id": 26,
+    "name": "Paleta de Sombras Classic 35 Tonos",
+    "brand": "Atenea",
+    "slug": "sombras-atenea-classic",
+    "category": "sombras",
+    "description": "35 tonos versátiles: desde fríos hasta cálidos y satinados. Mezcla, difumina y adapta el look que desees, clásico, trendy, atrevido u otoñal.",
+    "price": 122000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "medio-neutro", "trigueño", "moreno-calido",
+      "oscuro-calido", "oscuro-frio", "ebano"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/atenea-classic-1.jpg",
+      "/img/products/atenea-classic-2.jpg",
+      "/img/products/atenea-classic-3.jpg",
+      "/img/products/atenea-classic-4.jpg",
+      "/img/products/atenea-classic-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Paleta Completa", "hex": "#B07850", "toneId": "medio-neutro", "subtone": "mid" }
+    ]
+  },
+
+  {
+    "id": 27,
+    "name": "Paleta de Sombras Palette Crush",
+    "brand": "Purpure",
+    "slug": "sombras-purpure-crush",
+    "category": "sombras",
+    "description": "Explosión de color y calidez. Tonos desde neutros suaves hasta destellos intensos. Fórmula sedosa de aplicación uniforme. Adaptable a cualquier mood y ocasión.",
+    "price": 20000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "medio-neutro", "trigueño", "moreno-calido"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/purpure-sombras-1.jpg",
+      "/img/products/purpure-sombras-2.jpg",
+      "/img/products/purpure-sombras-3.jpg",
+      "/img/products/purpure-sombras-4.jpg",
+      "/img/products/purpure-sombras-5.jpg"
+    ],
+    "variants": [
+      { "shade": "01 Neutral",      "hex": "#D4A880", "toneId": "claro-dorado",  "subtone": "mid"  },
+      { "shade": "02 Diva Glow",    "hex": "#D070A0", "toneId": "medio-rosado",  "subtone": "lith" },
+      { "shade": "03 Cookie",       "hex": "#C89060", "toneId": "medio-neutro",  "subtone": "dark" },
+      { "shade": "04 Cosmic Lover", "hex": "#9060A0", "toneId": "trigueño",      "subtone": "lith" },
+      { "shade": "05 Smoky",        "hex": "#605040", "toneId": "moreno-calido", "subtone": "dark" },
+      { "shade": "06 Earth",        "hex": "#A07050", "toneId": "trigueño",      "subtone": "mid"  }
+    ]
+  },
+
+  {
+    "id": 28,
+    "name": "Paleta de Sombras Harmony",
+    "brand": "Montoc",
+    "slug": "sombras-montoc-harmony",
+    "category": "sombras",
+    "description": "Paleta compacta con seis tonos esenciales en acabados mate y satinados para crear looks de intensidad. Práctica, bien pigmentada y de fórmula duradera.",
+    "price": 41000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "claro-rosado", "claro-dorado", "medio-rosado", "trigueño"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/montoc-sombras-1.jpg",
+      "/img/products/montoc-sombras-2.jpg",
+      "/img/products/montoc-sombras-3.jpg",
+      "/img/products/montoc-sombras-4.jpg",
+      "/img/products/montoc-sombras-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Dalia",  "hex": "#D4607A", "toneId": "medio-rosado", "subtone": "lith" },
+      { "shade": "Iris",   "hex": "#8878C0", "toneId": "trigueño",     "subtone": "lith" },
+      { "shade": "Rosett", "hex": "#E89898", "toneId": "claro-rosado", "subtone": "lith" }
+    ]
+  },
+
+  {
+    "id": 29,
+    "name": "Butter Balm",
+    "brand": "Purpure",
+    "slug": "labios-purpure-butter-balm",
+    "category": "labios",
+    "description": "Hidratante de labios con fórmula ligera que hidrata profundamente, repara la resequedad y deja un brillo hermoso y sutil. Ideal para llevar en el bolso. Labios suaves, frescos y con un toque de luz.",
+    "price": 20000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "medio-neutro", "trigueño"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/purpure-labios-1.jpg",
+      "/img/products/purpure-labios-2.jpg",
+      "/img/products/purpure-labios-3.jpg",
+      "/img/products/purpure-labios-4.jpg",
+      "/img/products/purpure-labios-5.jpg"
+    ],
+    "variants": [
+      { "shade": "01 Nude",     "hex": "#E8B8A0", "toneId": "claro-neutro", "subtone": "mid"  },
+      { "shade": "02 Pink",     "hex": "#F0A0B8", "toneId": "claro-rosado", "subtone": "lith" },
+      { "shade": "03 Berry",    "hex": "#C07080", "toneId": "medio-rosado", "subtone": "lith" },
+      { "shade": "04 Caramel",  "hex": "#C88060", "toneId": "claro-dorado", "subtone": "dark" }
+    ]
+  },
+
+  {
+    "id": 30,
+    "name": "Gloss Bonita",
+    "brand": "Anik",
+    "slug": "labios-anik-gloss-bonita",
+    "category": "labios",
+    "description": "Gloss con textura lip oil ideal para realzar los labios. Aplicador en silicona que evita contaminar el producto. Da un toque especial y luminoso al maquillaje.",
+    "price": 21000,
+    "featured": true,
+    "isNew": true,
+    "toneIds": [
+      "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
+      "medio-rosado", "trigueño"
+    ],
+    "subtones": ["lith", "mid", "dark"],
+    "images": [
+      "/img/products/anik-gloss-1.jpg",
+      "/img/products/anik-gloss-2.jpg",
+      "/img/products/anik-gloss-3.jpg",
+      "/img/products/anik-gloss-4.jpg",
+      "/img/products/anik-gloss-5.jpg"
+    ],
+    "variants": [
+      { "shade": "Kim",   "hex": "#F0C0A8", "toneId": "claro-neutro", "subtone": "mid"  },
+      { "shade": "Diva",  "hex": "#E89090", "toneId": "claro-rosado", "subtone": "lith" },
+      { "shade": "Angel", "hex": "#F8D0B8", "toneId": "porcelana",    "subtone": "mid"  }
+    ]
   }
 ]
