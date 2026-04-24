@@ -12,7 +12,7 @@ export default async function CategoryPage({ params }) {
   const { slug } = await params; // ✅ FIX AQUÍ
 
   const filtered = productsData.filter(
-    (p) => p.cat === slug // 👈 IMPORTANTE (antes estabas usando p.slug)
+    (p) => p.category === slug // 👈 IMPORTANTE (antes estabas usando p.slug)
   );
 
   return (
@@ -24,4 +24,9 @@ export default async function CategoryPage({ params }) {
       <ProductGrid products={filtered} />
     </div>
   );
+}
+export async function generateMetadata({ params }) {
+  return {
+    title: `${CATEGORY_MAP[params.slug]} | Ami Beauty`,
+  };
 }

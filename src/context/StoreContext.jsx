@@ -47,14 +47,14 @@ export function StoreProvider({ children }) {
   const addToCart = useCallback(
     (product) => {
       setCart((prev) => {
-        const exists = prev.find(
+const exists = prev.find(
   (c) =>
     c.id === product.id &&
     c.selectedVariant?.shade === product.selectedVariant?.shade
 );
 if (exists) {
   return prev.map((c) =>
-    c.id === product.id &&
+    c.id === product.id && c.variant === product.variant &&
     c.selectedVariant?.shade === product.selectedVariant?.shade
       ? { ...c, qty: c.qty + 1 }
       : c

@@ -1,8 +1,8 @@
 import '@/styles/globals.css';
 const PROMOS = [
-  { icon: "◈", label: "Formulación", value: "Aprobada por dermatólogos" },
+  { icon: "◈", label: "Busqueda", value: "Encuentra el maquillaje perfecto para ti" },
   { icon: "✦", label: "Envío gratis", value: "En compras +$150.000" },
-  { icon: "○", label: "Devolución", value: "30 días sin preguntas" },
+  { icon: "◈", label: "Envios", value: "Toda colombia" },
 ];
 
 export default function PromoBar() {

@@ -197,18 +197,6 @@ body {
 }
 
 /* Badges */
-.badge-recommended {
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  background: var(--rose);
-  color: white;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
-  font-weight: 500;
-}
 .badge-new {
   position: absolute;
   top: 0.75rem;
@@ -352,9 +340,26 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+img {
+  user-select: none;
+}
 
+button {
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
 /* Producto recomendado (modal) */
 .product-match {
   border-color: var(--rose) !important;
   background: #fff7f3;
+}
+
+@font-face {
+  font-family: "BadgerScript";
+  src: url("/fonts/BadgerScript-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }

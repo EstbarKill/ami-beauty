@@ -4,11 +4,11 @@
     "name": "Corrector Pure Cover",
     "brand": "Majikal Beauty",
     "slug": "corrector-pure-cover-majikal",
-    "category": "corrector",
+    "category": "correctores",
     "description": "Corrector hidratante, ligero y de alta cobertura con ácido hialurónico y niacinamida. Ideal para cubrir, iluminar y contornear. Corrige perfectamente las imperfecciones y puede ser utilizado como base ligera.",
     "price": 32500,
     "featured": true,
-    "isNew": false,
+    "isNew": true,
     "recommended":true,
     "content": "6gr",
     "toneGroup": "Claro",
@@ -18,8 +18,8 @@
       "/img/products/majikal-c1.jpeg",
       "/img/products/majikal-c2.jpeg",
       "/img/products/majikal-c3.jpeg",
-      "/img/products/majikal-c1.jpeg",
-      "/img/products/majikal-c2.jpeg"
+      "/img/products/majikal-c2.jpeg",
+      "/img/products/majikal-c1.jpeg"
     ],
     "variants": [
       { "shade": "00 Winter", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "mid" },
@@ -36,11 +36,11 @@
     "name": "Corrector de Ojeras",
     "brand": "Anik",
     "slug": "corrector-anik",
-    "category": "corrector",
+    "category": "correctores",
     "description": "Corrector vegano de cobertura media-alta, textura cremosa e hidratante. Perfecto para todo tipo de piel. Puede usarse para corregir imperfecciones, iluminar zonas del rostro o como base ligera.",
     "price": 24000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
     "recommended":true,
     "content": "4.3ml",
     "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "medio-neutro", "trigueño"],
@@ -50,10 +50,7 @@
       "/img/products/anik-c2.jpeg",
       "/img/products/anik-c3.jpeg",
       "/img/products/anik-c4.jpeg",
-      "/img/products/anik-c5.jpeg",
-      "/img/products/anik-c6.jpeg",
-      "/img/products/anik-c7.jpeg",
-      "/img/products/anik-c8.jpeg"
+      "/img/products/anik-c5.jpeg"
     ],
     "variants": [
       { "shade": "00 Snow",         "hex": "#F1D9C3", "toneId": "porcelana",    "subtone": "mid" },
@@ -70,18 +67,20 @@
     "name": "Corrector Líquido",
     "brand": "Lula",
     "slug": "corrector-lula",
-    "category": "corrector",
+    "category": "correctores",
     "description": "Alta cobertura para ojeras, granitos y manchas. Fórmula ligera y de larga duración que se difumina fácilmente para un acabado natural.",
     "price": 17000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
     "recommended":true,
     "toneIds": ["porcelana", "claro-rosado", "claro-neutro", "claro-dorado", "medio-rosado", "medio-neutro"],
     "subtones": ["lith", "mid", "dark"],
     "images": [
       "/img/products/lula-c1.jpeg",
       "/img/products/lula-c2.jpeg",
-      "/img/products/lula-c3.jpeg"
+      "/img/products/lula-c3.jpeg",
+      "/img/products/lula-c4.jpeg",
+      "/img/products/lula-c5.jpeg"
     ],
     "variants": [
       { "shade": "01", "hex": "#FAEFE1", "toneId": "porcelana",    "subtone": "mid" },
@@ -99,11 +98,12 @@
     "name": "Base Humide Healthy Foundation",
     "brand": "Montoc",
     "slug": "base-montoc",
-    "category": "base",
+    "category": "bases",
     "description": "Base líquida hidratante para piel normal a grasa. Iguala el tono de la piel mientras aporta hidratación durante el maquillaje, sin sensación pesada.",
     "price": 61000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "content": "30ml",
     "toneIds": [
       "porcelana", "claro-neutro", "claro-dorado",
@@ -140,11 +140,12 @@
     "name": "Base de Maquillaje Purpure",
     "brand": "Purpure",
     "slug": "base-purpure",
-    "category": "base",
+    "category": "bases",
     "description": "Base líquida de alta cobertura con textura ligera y acabado natural. Cubre manchas, enrojecimientos y unifica el tono. Sistema dual de aplicación: corrector de precisión o dispensador completo.",
     "price": 38000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "content": "30ml",
     "toneIds": [
       "claro-dorado", "medio-rosado", "medio-neutro",
@@ -155,7 +156,8 @@
       "/img/products/purpure-base-1.jpeg",
       "/img/products/purpure-base-2.jpeg",
       "/img/products/purpure-base-3.jpeg",
-      "/img/products/purpure-base-4.jpeg"
+      "/img/products/purpure-base-4.jpeg",
+      "/img/products/purpure-base-5.jpeg"
     ],
     "variants": [
       { "shade": "01 Clementine", "hex": "#F4CBA0", "toneId": "claro-dorado",  "subtone": "dark" },
@@ -175,11 +177,12 @@
     "name": "Base Bonita",
     "brand": "Anik",
     "slug": "base-anik-bonita",
-    "category": "base",
+    "category": "bases",
     "description": "Base de cobertura media-alta construible con acabado semi-mate. Textura ligera y suave que se funde delicadamente con la piel.",
     "price": 45000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "content": "28ml",
     "toneIds": [
       "porcelana", "claro-neutro", "claro-dorado",
@@ -187,11 +190,11 @@
     ],
     "subtones": ["mid", "dark"],
     "images": [
-      "/img/products/anik-base-1.jpg",
-      "/img/products/anik-base-2.jpg",
-      "/img/products/anik-base-3.jpg",
-      "/img/products/anik-base-4.jpg",
-      "/img/products/anik-base-5.jpg"
+      "/img/products/anik-base-1.jpeg",
+      "/img/products/anik-base-2.jpeg",
+      "/img/products/anik-base-3.jpeg",
+      "/img/products/anik-base-4.jpeg",
+      "/img/products/anik-base-5.jpeg"
     ],
     "variants": [
       { "shade": "00 Anne",    "hex": "#F5D8C0", "toneId": "porcelana",     "subtone": "mid"  },
@@ -209,11 +212,12 @@
     "name": "Base Stay Matte",
     "brand": "OG",
     "slug": "base-og-stay-matte",
-    "category": "base",
+    "category": "bases",
     "description": "Base diseñada para pieles grasas o mixtas. Acabado mate natural y aterciopelado que controla el exceso de grasa. Fórmula oil-free y no comedogénica, resistente al agua, sudor y clima hasta por 12 horas.",
     "price": 45000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "content": "30ml",
     "toneIds": [
       "claro-neutro", "claro-dorado", "medio-rosado",
@@ -221,11 +225,11 @@
     ],
     "subtones": ["mid", "dark"],
     "images": [
-      "/img/products/og-matte-1.jpg",
-      "/img/products/og-matte-2.jpg",
-      "/img/products/og-matte-3.jpg",
-      "/img/products/og-matte-4.jpg",
-      "/img/products/og-matte-5.jpg"
+      "/img/products/og-matte-1.jpeg",
+      "/img/products/og-matte-2.jpeg",
+      "/img/products/og-matte-3.jpeg",
+      "/img/products/og-matte-4.jpeg",
+      "/img/products/og-matte-5.jpeg"
     ],
     "variants": [
       { "shade": "420", "hex": "#F0D0B0", "toneId": "claro-neutro",  "subtone": "mid"  },
@@ -243,11 +247,12 @@
     "name": "Base Aqua Smooth",
     "brand": "OG",
     "slug": "base-og-aqua-smooth",
-    "category": "base",
+    "category": "bases",
     "description": "Base con acabado luminoso, fresco y sin peso. Cobertura media construible que unifica el tono y disimula imperfecciones. Enriquecida con ingredientes hidratantes. Textura ligera y semi-cremosa hasta por 12 horas.",
     "price": 39000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "content": "30ml",
     "toneIds": [
       "claro-neutro", "claro-dorado", "medio-rosado",
@@ -255,11 +260,11 @@
     ],
     "subtones": ["mid", "dark"],
     "images": [
-      "/img/products/og-aqua-1.jpg",
-      "/img/products/og-aqua-2.jpg",
-      "/img/products/og-aqua-3.jpg",
-      "/img/products/og-aqua-4.jpg",
-      "/img/products/og-aqua-5.jpg"
+      "/img/products/og-aqua-1.jpeg",
+      "/img/products/og-aqua-2.jpeg",
+      "/img/products/og-aqua-3.jpeg",
+      "/img/products/og-aqua-4.jpeg",
+      "/img/products/og-aqua-5.jpeg"
     ],
     "variants": [
       { "shade": "N.2",   "hex": "#F0CEAC", "toneId": "claro-neutro",  "subtone": "mid"  },
@@ -277,21 +282,22 @@
     "name": "Polvo Traslúcido 4 Tonos",
     "brand": "Majikal Beauty",
     "slug": "polvo-majikal",
-    "category": "polvo",
+    "category": "polvos",
     "description": "Polvo traslúcido fijador y corrector de color con cuatro tonos armonizados, adaptados a todo tipo de piel. Matifica, corrige y difumina los poros. Sin flashback, textura sedosa.",
     "price": 47900,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-dorado", "medio-neutro"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/polvo-mj-1.jpg",
-      "/img/products/polvo-mj-2.jpg",
-      "/img/products/polvo-mj-3.jpg",
-      "/img/products/polvo-mj-4.jpg",
-      "/img/products/polvo-mj-5.jpg"
+      "/img/products/polvo-mj-1.jpeg",
+      "/img/products/polvo-mj-2.jpeg",
+      "/img/products/polvo-mj-3.jpeg",
+      "/img/products/polvo-mj-4.jpeg",
+      "/img/products/polvo-mj-5.jpeg"
     ],
     "variants": [
       { "shade": "Rosado",   "hex": "#F5C6CB", "toneId": "claro-rosado", "subtone": "lith" },
@@ -306,11 +312,12 @@
     "name": "Polvo Suelto Soft-Powder",
     "brand": "Montoc",
     "slug": "polvo-montoc-soft",
-    "category": "polvo",
+    "category": "polvos",
     "description": "Fórmula micro-pulverizada que se adhiere suavemente a la piel, matificando sin resecar. Efecto aterciopelado que controla el brillo sin alterar el color del maquillaje.",
     "price": 65000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "content": "30g",
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
@@ -318,11 +325,11 @@
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/montoc-polvo-1.jpg",
-      "/img/products/montoc-polvo-2.jpg",
-      "/img/products/montoc-polvo-3.jpg",
-      "/img/products/montoc-polvo-4.jpg",
-      "/img/products/montoc-polvo-5.jpg"
+      "/img/products/montoc-polvo-1.jpeg",
+      "/img/products/montoc-polvo-2.jpeg",
+      "/img/products/montoc-polvo-3.jpeg",
+      "/img/products/montoc-polvo-4.jpeg",
+      "/img/products/montoc-polvo-5.jpeg"
     ],
     "variants": [
       { "shade": "Único Traslúcido", "hex": "#F8EEE0", "toneId": "porcelana", "subtone": "mid" }
@@ -334,22 +341,23 @@
     "name": "Polvo Suelto Ultra Fino",
     "brand": "Purpure",
     "slug": "polvo-purpure",
-    "category": "polvo",
+    "category": "polvos",
     "description": "Polvo suelto ultra fino y sedoso. Controla el brillo absorbiendo la grasa y dejando una apariencia mate natural. Fija el maquillaje dándole mayor duración. Sin espejo ni borla.",
     "price": 23000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido", "oscuro-calido"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/purpure-polvo-1.jpg",
-      "/img/products/purpure-polvo-2.jpg",
-      "/img/products/purpure-polvo-3.jpg",
-      "/img/products/purpure-polvo-4.jpg",
-      "/img/products/purpure-polvo-5.jpg"
+      "/img/products/purpure-polvo-1.jpeg",
+      "/img/products/purpure-polvo-2.jpeg",
+      "/img/products/purpure-polvo-3.jpeg",
+      "/img/products/purpure-polvo-4.jpeg",
+      "/img/products/purpure-polvo-5.jpeg"
     ],
     "variants": [
       { "shade": "Único Traslúcido", "hex": "#F5EDE2", "toneId": "porcelana", "subtone": "mid" }
@@ -361,19 +369,20 @@
     "name": "Bronzer Cremoso en Barra Collection",
     "brand": "Atenea",
     "slug": "contorno-atenea-stick",
-    "category": "contorno",
+    "category": "contornos",
     "description": "Bronzer en barra de alta pigmentación y fácil difuminado. Textura cremosa. Se recomienda construir la tonalidad deseada progresivamente.",
     "price": 45000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": ["trigueño", "moreno-calido"],
     "subtones": ["mid", "dark"],
     "images": [
-      "/img/products/atenea-bronzer-1.jpg",
-      "/img/products/atenea-bronzer-2.jpg",
-      "/img/products/atenea-bronzer-3.jpg",
-      "/img/products/atenea-bronzer-4.jpg",
-      "/img/products/atenea-bronzer-5.jpg"
+      "/img/products/atenea-bronzer-1.jpeg",
+      "/img/products/atenea-bronzer-2.jpeg",
+      "/img/products/atenea-bronzer-3.jpeg",
+      "/img/products/atenea-bronzer-4.jpeg",
+      "/img/products/atenea-bronzer-5.jpeg"
     ],
     "variants": [
       { "shade": "Terranova",      "hex": "#8F5A3C", "toneId": "trigueño",      "subtone": "mid"  },
@@ -386,19 +395,20 @@
     "name": "Contorno Líquido",
     "brand": "Anik",
     "slug": "contorno-anik-liquido",
-    "category": "contorno",
+    "category": "contornos",
     "description": "Contorno líquido que redefine las facciones con precisión. Textura ligera para un acabado natural fácil de graduar. Ideal para retocar en cualquier momento.",
     "price": 27000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": ["trigueño", "moreno-calido", "oscuro-calido"],
     "subtones": ["mid", "dark"],
     "images": [
-      "/img/products/anik-contorno-1.jpg",
-      "/img/products/anik-contorno-2.jpg",
-      "/img/products/anik-contorno-3.jpg",
-      "/img/products/anik-contorno-4.jpg",
-      "/img/products/anik-contorno-5.jpg"
+      "/img/products/anik-contorno-1.jpeg",
+      "/img/products/anik-contorno-2.jpeg",
+      "/img/products/anik-contorno-3.jpeg",
+      "/img/products/anik-contorno-4.jpeg",
+      "/img/products/anik-contorno-5.jpeg"
     ],
     "variants": [
       { "shade": "01 Mocca Mami",      "hex": "#8B6240", "toneId": "trigueño",      "subtone": "mid"  },
@@ -413,19 +423,20 @@
     "name": "Contorno Líquido Contour Up",
     "brand": "Ame",
     "slug": "contorno-ame-contour-up",
-    "category": "contorno",
+    "category": "contornos",
     "description": "Contorno líquido que esculpe y define los rasgos, dando profundidad al rostro y resaltando las facciones.",
     "price": 35200,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": ["trigueño", "moreno-calido", "oscuro-calido", "oscuro-frio"],
     "subtones": ["mid", "dark"],
     "images": [
-      "/img/products/ame-contorno-1.jpg",
-      "/img/products/ame-contorno-2.jpg",
-      "/img/products/ame-contorno-3.jpg",
-      "/img/products/ame-contorno-4.jpg",
-      "/img/products/ame-contorno-5.jpg"
+      "/img/products/ame-contorno-1.jpeg",
+      "/img/products/ame-contorno-2.jpeg",
+      "/img/products/ame-contorno-3.jpeg",
+      "/img/products/ame-contorno-4.jpeg",
+      "/img/products/ame-contorno-5.jpeg"
     ],
     "variants": [
       { "shade": "01 Cedro", "hex": "#8A6248", "toneId": "trigueño",      "subtone": "mid"  },
@@ -440,22 +451,23 @@
     "name": "Paleta Contornos e Iluminador Glamblack",
     "brand": "Atenea",
     "slug": "paleta-atenea-glamblack",
-    "category": "contorno",
+    "category": "contornos",
     "description": "Paleta con 4 tonos de iluminadores y 3 bronceadores. Alta pigmentación y fácil difuminación.",
     "price": 54000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "claro-dorado", "medio-rosado", "medio-neutro",
       "trigueño", "moreno-calido"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/atenea-glamblack-1.jpg",
-      "/img/products/atenea-glamblack-2.jpg",
-      "/img/products/atenea-glamblack-3.jpg",
-      "/img/products/atenea-glamblack-4.jpg",
-      "/img/products/atenea-glamblack-5.jpg"
+      "/img/products/atenea-glamblack-1.jpeg",
+      "/img/products/atenea-glamblack-2.jpeg",
+      "/img/products/atenea-glamblack-3.jpeg",
+      "/img/products/atenea-glamblack-4.jpeg",
+      "/img/products/atenea-glamblack-5.jpeg"
     ],
     "variants": [
       { "shade": "Iluminador Champagne", "hex": "#F4E0C0", "toneId": "claro-dorado",  "subtone": "mid"  },
@@ -473,21 +485,22 @@
     "name": "Rubor Líquido Glow Filter",
     "brand": "Montoc",
     "slug": "rubor-montoc-glow-filter",
-    "category": "rubor",
+    "category": "rubores",
     "description": "Rubor líquido con partículas de brillo que aporta color y luminosidad al rostro. Textura fluida de fácil difuminado con acabado glow que se integra con la base o sobre piel natural.",
     "price": 44000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "claro-dorado", "medio-rosado", "trigueño", "moreno-calido"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/montoc-rubor-1.jpg",
-      "/img/products/montoc-rubor-2.jpg",
-      "/img/products/montoc-rubor-3.jpg",
-      "/img/products/montoc-rubor-4.jpg",
-      "/img/products/montoc-rubor-5.jpg"
+      "/img/products/montoc-rubor-1.jpeg",
+      "/img/products/montoc-rubor-2.jpeg",
+      "/img/products/montoc-rubor-3.jpeg",
+      "/img/products/montoc-rubor-4.jpeg",
+      "/img/products/montoc-rubor-5.jpeg"
     ],
     "variants": [
       { "shade": "Guayaba 01",  "hex": "#F28B82", "toneId": "medio-rosado", "subtone": "lith" },
@@ -503,22 +516,23 @@
     "name": "Paleta de Rubores Atemporal",
     "brand": "Atenea",
     "slug": "rubor-atenea-atemporal",
-    "category": "rubor",
+    "category": "rubores",
     "description": "Paleta de rubores de alta pigmentación con 6 tonos compactos. Cuatro con acabado mate y dos satinados. Ideal para darle color al rostro.",
     "price": 66000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "claro-rosado", "claro-dorado", "medio-rosado",
       "medio-neutro", "trigueño", "moreno-calido"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/atenea-rubor-atemporal-1.jpg",
-      "/img/products/atenea-rubor-atemporal-2.jpg",
-      "/img/products/atenea-rubor-atemporal-3.jpg",
-      "/img/products/atenea-rubor-atemporal-4.jpg",
-      "/img/products/atenea-rubor-atemporal-5.jpg"
+      "/img/products/atenea-rubor-atemporal-1.jpeg",
+      "/img/products/atenea-rubor-atemporal-2.jpeg",
+      "/img/products/atenea-rubor-atemporal-3.jpeg",
+      "/img/products/atenea-rubor-atemporal-4.jpeg",
+      "/img/products/atenea-rubor-atemporal-5.jpeg"
     ],
     "variants": [
       { "shade": "Nude Satin",   "hex": "#DEB49A", "toneId": "claro-dorado",  "subtone": "mid"  },
@@ -535,21 +549,22 @@
     "name": "Rubor Dúo Allure Crema y Polvo",
     "brand": "Atenea",
     "slug": "rubor-atenea-duo-allure",
-    "category": "rubor",
+    "category": "rubores",
     "description": "Rubores dúo: 3 tonos versátiles y atemporales para maquillajes clásicos, glamurosos y frescos. Textura suave, cremosa y sedosa. Fáciles de difuminar y de larga duración.",
     "price": 50000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "claro-rosado", "claro-dorado", "medio-rosado", "trigueño"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/atenea-allure-1.jpg",
-      "/img/products/atenea-allure-2.jpg",
-      "/img/products/atenea-allure-3.jpg",
-      "/img/products/atenea-allure-4.jpg",
-      "/img/products/atenea-allure-5.jpg"
+      "/img/products/atenea-allure-1.jpeg",
+      "/img/products/atenea-allure-2.jpeg",
+      "/img/products/atenea-allure-3.jpeg",
+      "/img/products/atenea-allure-4.jpeg",
+      "/img/products/atenea-allure-5.jpeg"
     ],
     "variants": [
       { "shade": "Dúo 01 Rose",    "hex": "#ECA8A8", "toneId": "claro-rosado", "subtone": "lith" },
@@ -563,21 +578,22 @@
     "name": "Rubor Cremoso en Barra Collection",
     "brand": "Atenea",
     "slug": "rubor-atenea-stick",
-    "category": "rubor",
+    "category": "rubores",
     "description": "Rubor en barra con textura cremosa, fácil difuminación y alta pigmentación. Aporta color al rostro. También puede usarse como sombra y labial. Tamaño práctico para la cosmetiquera.",
     "price": 44000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "claro-rosado", "claro-dorado", "medio-rosado", "trigueño", "moreno-calido"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/atenea-rubor-stick-1.jpg",
-      "/img/products/atenea-rubor-stick-2.jpg",
-      "/img/products/atenea-rubor-stick-3.jpg",
-      "/img/products/atenea-rubor-stick-4.jpg",
-      "/img/products/atenea-rubor-stick-5.jpg"
+      "/img/products/atenea-rubor-stick-1.jpeg",
+      "/img/products/atenea-rubor-stick-2.jpeg",
+      "/img/products/atenea-rubor-stick-3.jpeg",
+      "/img/products/atenea-rubor-stick-4.jpeg",
+      "/img/products/atenea-rubor-stick-5.jpeg"
     ],
     "variants": [
       { "shade": "Pink Chai",    "hex": "#E8A0A8", "toneId": "claro-rosado", "subtone": "lith" },
@@ -592,21 +608,22 @@
     "name": "Rubor Compacto Blush",
     "brand": "Purpure",
     "slug": "rubor-purpure-compacto",
-    "category": "rubor",
+    "category": "rubores",
     "description": "Rubor compacto con acabado satinado que aporta un toque de luz delicado. Color intenso y modulable, textura sedosa de fácil difuminación y larga duración.",
     "price": 16000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "claro-dorado", "claro-rosado", "medio-rosado", "trigueño"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/purpure-rubor-1.jpg",
-      "/img/products/purpure-rubor-2.jpg",
-      "/img/products/purpure-rubor-3.jpg",
-      "/img/products/purpure-rubor-4.jpg",
-      "/img/products/purpure-rubor-5.jpg"
+      "/img/products/purpure-rubor-1.jpeg",
+      "/img/products/purpure-rubor-2.jpeg",
+      "/img/products/purpure-rubor-3.jpeg",
+      "/img/products/purpure-rubor-4.jpeg",
+      "/img/products/purpure-rubor-5.jpeg"
     ],
     "variants": [
       { "shade": "01 Golden Hour", "hex": "#F4A060", "toneId": "claro-dorado", "subtone": "dark" },
@@ -622,22 +639,23 @@
     "name": "Iluminador Boreal",
     "brand": "Purpure",
     "slug": "iluminador-purpure-boreal",
-    "category": "iluminador",
+    "category": "iluminadores",
     "description": "Iluminador tipo boreal que combina tonos multicolor para crear un brillo mágico. Perfecto para mejillas, nariz o cualquier zona de realce. Acabado luminoso que cambia sutilmente con la luz.",
     "price": 19900,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/purpure-iluminador-1.jpg",
-      "/img/products/purpure-iluminador-2.jpg",
-      "/img/products/purpure-iluminador-3.jpg",
-      "/img/products/purpure-iluminador-4.jpg",
-      "/img/products/purpure-iluminador-5.jpg"
+      "/img/products/purpure-iluminador-1.jpeg",
+      "/img/products/purpure-iluminador-2.jpeg",
+      "/img/products/purpure-iluminador-3.jpeg",
+      "/img/products/purpure-iluminador-4.jpeg",
+      "/img/products/purpure-iluminador-5.jpeg"
     ],
     "variants": [
       { "shade": "01 Sirius",   "hex": "#E8D8F0", "toneId": "porcelana",    "subtone": "lith" },
@@ -651,22 +669,23 @@
     "name": "Iluminador Light Set",
     "brand": "Montoc",
     "slug": "iluminador-montoc-light-set",
-    "category": "iluminador",
+    "category": "iluminadores",
     "description": "Iluminador compacto que le dará a tu maquillaje un toque de luminosidad inigualable.",
     "price": 35000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/montoc-iluminador-1.jpg",
-      "/img/products/montoc-iluminador-2.jpg",
-      "/img/products/montoc-iluminador-3.jpg",
-      "/img/products/montoc-iluminador-4.jpg",
-      "/img/products/montoc-iluminador-5.jpg"
+      "/img/products/montoc-iluminador-1.jpeg",
+      "/img/products/montoc-iluminador-2.jpeg",
+      "/img/products/montoc-iluminador-3.jpeg",
+      "/img/products/montoc-iluminador-4.jpeg",
+      "/img/products/montoc-iluminador-5.jpeg"
     ],
     "variants": [
       { "shade": "Golden",    "hex": "#F8D880", "toneId": "claro-dorado",  "subtone": "dark" },
@@ -680,22 +699,23 @@
     "name": "Iluminador Individual",
     "brand": "Lula",
     "slug": "iluminador-lula",
-    "category": "iluminador",
+    "category": "iluminadores",
     "description": "Iluminador con brillo intenso, textura suave y ligera. 6 tonos ideales para realzar los puntos altos del rostro. Perfecto para looks de día o de noche.",
     "price": 16000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "trigueño"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/lula-iluminador-1.jpg",
-      "/img/products/lula-iluminador-2.jpg",
-      "/img/products/lula-iluminador-3.jpg",
-      "/img/products/lula-iluminador-4.jpg",
-      "/img/products/lula-iluminador-5.jpg"
+      "/img/products/lula-iluminador-1.jpeg",
+      "/img/products/lula-iluminador-2.jpeg",
+      "/img/products/lula-iluminador-3.jpeg",
+      "/img/products/lula-iluminador-4.jpeg",
+      "/img/products/lula-iluminador-5.jpeg"
     ],
     "variants": [
       { "shade": "01", "hex": "#F8E8B0", "toneId": "porcelana",    "subtone": "lith" },
@@ -712,22 +732,23 @@
     "name": "Iluminador Suelto",
     "brand": "Anik",
     "slug": "iluminador-anik-suelto",
-    "category": "iluminador",
+    "category": "iluminadores",
     "description": "Iluminador suelto multiusos con textura micropulverizada. Logra un acabado húmedo en la piel. Aplícalo como iluminador, sombra brillante o mézclalo con crema corporal para el escote.",
     "price": 22000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "trigueño"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/anik-iluminador-1.jpg",
-      "/img/products/anik-iluminador-2.jpg",
-      "/img/products/anik-iluminador-3.jpg",
-      "/img/products/anik-iluminador-4.jpg",
-      "/img/products/anik-iluminador-5.jpg"
+      "/img/products/anik-iluminador-1.jpeg",
+      "/img/products/anik-iluminador-2.jpeg",
+      "/img/products/anik-iluminador-3.jpeg",
+      "/img/products/anik-iluminador-4.jpeg",
+      "/img/products/anik-iluminador-5.jpeg"
     ],
     "variants": [
       { "shade": "01 Angel Glow",    "hex": "#F0E0C0", "toneId": "claro-neutro", "subtone": "mid"  },
@@ -746,7 +767,8 @@
     "description": "Paleta Birds, la más completa del mercado con 35 colores entre tonos tierra y neones.",
     "price": 96000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido",
@@ -754,11 +776,11 @@
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/atenea-birds-1.jpg",
-      "/img/products/atenea-birds-2.jpg",
-      "/img/products/atenea-birds-3.jpg",
-      "/img/products/atenea-birds-4.jpg",
-      "/img/products/atenea-birds-5.jpg"
+      "/img/products/atenea-birds-1.jpeg",
+      "/img/products/atenea-birds-2.jpeg",
+      "/img/products/atenea-birds-3.jpeg",
+      "/img/products/atenea-birds-4.jpeg",
+      "/img/products/atenea-birds-5.jpeg"
     ],
     "variants": [
       { "shade": "Paleta Completa", "hex": "#C89060", "toneId": "medio-neutro", "subtone": "mid" }
@@ -774,7 +796,8 @@
     "description": "35 tonos versátiles: desde fríos hasta cálidos y satinados. Mezcla, difumina y adapta el look que desees, clásico, trendy, atrevido u otoñal.",
     "price": 122000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido",
@@ -782,11 +805,11 @@
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/atenea-classic-1.jpg",
-      "/img/products/atenea-classic-2.jpg",
-      "/img/products/atenea-classic-3.jpg",
-      "/img/products/atenea-classic-4.jpg",
-      "/img/products/atenea-classic-5.jpg"
+      "/img/products/atenea-classic-1.jpeg",
+      "/img/products/atenea-classic-2.jpeg",
+      "/img/products/atenea-classic-3.jpeg",
+      "/img/products/atenea-classic-4.jpeg",
+      "/img/products/atenea-classic-5.jpeg"
     ],
     "variants": [
       { "shade": "Paleta Completa", "hex": "#B07850", "toneId": "medio-neutro", "subtone": "mid" }
@@ -802,18 +825,19 @@
     "description": "Explosión de color y calidez. Tonos desde neutros suaves hasta destellos intensos. Fórmula sedosa de aplicación uniforme. Adaptable a cualquier mood y ocasión.",
     "price": 20000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/purpure-sombras-1.jpg",
-      "/img/products/purpure-sombras-2.jpg",
-      "/img/products/purpure-sombras-3.jpg",
-      "/img/products/purpure-sombras-4.jpg",
-      "/img/products/purpure-sombras-5.jpg"
+      "/img/products/purpure-sombras-1.jpeg",
+      "/img/products/purpure-sombras-2.jpeg",
+      "/img/products/purpure-sombras-3.jpeg",
+      "/img/products/purpure-sombras-4.jpeg",
+      "/img/products/purpure-sombras-5.jpeg"
     ],
     "variants": [
       { "shade": "01 Neutral",      "hex": "#D4A880", "toneId": "claro-dorado",  "subtone": "mid"  },
@@ -834,17 +858,18 @@
     "description": "Paleta compacta con seis tonos esenciales en acabados mate y satinados para crear looks de intensidad. Práctica, bien pigmentada y de fórmula duradera.",
     "price": 41000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "claro-rosado", "claro-dorado", "medio-rosado", "trigueño"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/montoc-sombras-1.jpg",
-      "/img/products/montoc-sombras-2.jpg",
-      "/img/products/montoc-sombras-3.jpg",
-      "/img/products/montoc-sombras-4.jpg",
-      "/img/products/montoc-sombras-5.jpg"
+      "/img/products/montoc-sombras-1.jpeg",
+      "/img/products/montoc-sombras-2.jpeg",
+      "/img/products/montoc-sombras-3.jpeg",
+      "/img/products/montoc-sombras-4.jpeg",
+      "/img/products/montoc-sombras-5.jpeg"
     ],
     "variants": [
       { "shade": "Dalia",  "hex": "#D4607A", "toneId": "medio-rosado", "subtone": "lith" },
@@ -862,18 +887,19 @@
     "description": "Hidratante de labios con fórmula ligera que hidrata profundamente, repara la resequedad y deja un brillo hermoso y sutil. Ideal para llevar en el bolso. Labios suaves, frescos y con un toque de luz.",
     "price": 20000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/purpure-labios-1.jpg",
-      "/img/products/purpure-labios-2.jpg",
-      "/img/products/purpure-labios-3.jpg",
-      "/img/products/purpure-labios-4.jpg",
-      "/img/products/purpure-labios-5.jpg"
+      "/img/products/purpure-labios-1.jpeg",
+      "/img/products/purpure-labios-2.jpeg",
+      "/img/products/purpure-labios-3.jpeg",
+      "/img/products/purpure-labios-4.jpeg",
+      "/img/products/purpure-labios-5.jpeg"
     ],
     "variants": [
       { "shade": "01 Nude",     "hex": "#E8B8A0", "toneId": "claro-neutro", "subtone": "mid"  },
@@ -892,18 +918,19 @@
     "description": "Gloss con textura lip oil ideal para realzar los labios. Aplicador en silicona que evita contaminar el producto. Da un toque especial y luminoso al maquillaje.",
     "price": 21000,
     "featured": true,
-    "isNew": true,
+    "isNew": false,
+    "recommended":true,
     "toneIds": [
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "trigueño"
     ],
     "subtones": ["lith", "mid", "dark"],
     "images": [
-      "/img/products/anik-gloss-1.jpg",
-      "/img/products/anik-gloss-2.jpg",
-      "/img/products/anik-gloss-3.jpg",
-      "/img/products/anik-gloss-4.jpg",
-      "/img/products/anik-gloss-5.jpg"
+      "/img/products/anik-gloss-1.jpeg",
+      "/img/products/anik-gloss-2.jpeg",
+      "/img/products/anik-gloss-3.jpeg",
+      "/img/products/anik-gloss-4.jpeg",
+      "/img/products/anik-gloss-5.jpeg"
     ],
     "variants": [
       { "shade": "Kim",   "hex": "#F0C0A8", "toneId": "claro-neutro", "subtone": "mid"  },

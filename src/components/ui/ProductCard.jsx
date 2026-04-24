@@ -8,18 +8,23 @@ export default function AnalysisModal({ result, onClose }) {
   if (!result) return null;
 
   const tone = result.data?.tone;
-const variant = product.matchVariants?.[0];
-  const products = [
-    ...(result.matched || []),
-    ...(result.interest || [])
-  ]
-    .filter(p => p.recommended)
+  const variant = product.matchVariants?.[0];
+  const products = [...(result.matched || []), ...(result.interest || [])]
+    .map((p) => {
+      const variant = p.matchVariants?.[0] || p.variants?.[0];
+
+      return {
+        ...p,
+        image: p.images?.[0], // ← FIX IMAGEN
+        shade: variant?.shade, // ← FIX SHADE
+        hex: variant?.hex, // ← para futuro
+      };
+    })
     .slice(0, 2);
 
   return (
     <div className="modal">
       <div className="card">
-
         {/* HEADER */}
         <div className="header">
           <button onClick={onClose}>Volver</button>
@@ -29,17 +34,18 @@ const variant = product.matchVariants?.[0];
 
         {/* BODY */}
         <div className="body">
-
           {/* LEFT */}
           <div className="left">
             {tone && (
               <>
-                <div style={{
-                  width: "80px",
-                  height: "80px",
-                  borderRadius: "50%",
-                  background: tone.hex
-                }} />
+                <div
+                  style={{
+                    width: "80px",
+                    height: "80px",
+                    borderRadius: "50%",
+                    background: tone.hex,
+                  }}
+                />
                 <p>{tone.label}</p>
               </>
             )}
@@ -51,7 +57,7 @@ const variant = product.matchVariants?.[0];
 
             {products.length === 0 && <p>No hay productos</p>}
 
-            {products.map(p => (
+            {products.map((p) => (
               <HorizontalProductCard
                 key={p.id}
                 product={p}
@@ -61,7 +67,6 @@ const variant = product.matchVariants?.[0];
               />
             ))}
           </div>
-
         </div>
       </div>
     </div>
@@ -72,13 +77,15 @@ function HorizontalProductCard({ product, addToCart, toggleFav, isFav }) {
   const fav = isFav(product.id);
 
   return (
-    <div style={{
-      display: "flex",
-      gap: "10px",
-      alignItems: "center",
-      border: "1px solid #eee",
-      padding: "8px"
-    }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "10px",
+        alignItems: "center",
+        border: "1px solid #eee",
+        padding: "8px",
+      }}
+    >
       <img src={product.image} width={60} />
 
       <div style={{ flex: 1 }}>
@@ -89,18 +96,19 @@ function HorizontalProductCard({ product, addToCart, toggleFav, isFav }) {
       </div>
 
       <div>
-        <button onClick={() =>
+        <button
+onClick={() =>
   addToCart({
     ...product,
-    selectedVariant: variant
+    variant: product.shade,
+    variantHex: product.hex
   })
-}>
+}
+        >
           +
         </button>
 
-        <button onClick={() => toggleFav(product)}>
-          {fav ? "♥" : "♡"}
-        </button>
+        <button onClick={() => toggleFav(product)}>{fav ? "♥" : "♡"}</button>
       </div>
     </div>
   );

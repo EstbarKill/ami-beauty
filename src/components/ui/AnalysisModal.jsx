@@ -89,7 +89,10 @@ export default function AnalysisModal({ result, onClose }) {
         </div>
 
         {/* BODY — horizontal split */}
-        <div style={{ display: "flex", minHeight: "340px" }}>
+        <div style={{ display: "flex", minHeight: "340px",
+  gap: "1rem",
+  overflowX: "auto",
+  paddingBottom: "1rem" }}>
           {/* LEFT — Color card */}
           <div
             style={{
@@ -227,7 +230,7 @@ export default function AnalysisModal({ result, onClose }) {
             </span>
 
             {products.length === 0 && (
-              <p style={{ fontSize: "13px", color: "var(--muted)" }}>
+              <p style={{ fontSize: "13px", color: "var(--muted)", }}>
                 No hay recomendaciones disponibles.
               </p>
             )}

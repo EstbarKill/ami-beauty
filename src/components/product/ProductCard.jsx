@@ -34,6 +34,7 @@ const variant = product.matchVariants?.[0];
         }}
         onMouseEnter={() => images.length > 1 && nextImage()}
       >
+        <Link href={`/product/${product.slug}`}>
         <img
           src={currentImage}
           alt={product.name}
@@ -50,7 +51,7 @@ const variant = product.matchVariants?.[0];
             (e.currentTarget.style.transform = "scale(1)")
           }
         />
-
+</Link>
         {/* MINI CONTROLES */}
         {images.length > 1 && (
           <>
@@ -70,11 +71,6 @@ const variant = product.matchVariants?.[0];
         )}
 
         {/* BADGES */}
-        {product.recommended && (
-          <span className="badge-recommended">
-            Recomendado
-          </span>
-        )}
         {product.isNew && (
           <span className="badge-new">Nuevo</span>
         )}

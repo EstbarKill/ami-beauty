@@ -46,11 +46,11 @@ export default function Header() {
         <Link
           href="/"
           style={{
-            fontFamily: "Georgia, serif",
-            fontSize: "1.45rem",
+            fontFamily: "BadgerScript",
+            fontSize: "2.6rem",
             fontWeight: 400,
-            letterSpacing: ".1em",
-            color: "var(--charcoal)",
+            letterSpacing: ".05em",
+            color: "var(--rose-dark)",
             textDecoration: "none",
             whiteSpace: "nowrap",
             flexShrink: 0,
@@ -60,7 +60,7 @@ export default function Header() {
           }}
         >
           Ami
-          <span style={{ color: "var(--rose)", fontSize: "1.8rem", lineHeight: 0, position: "relative", top: "1px" }}>·</span>
+          <span style={{ color: "var(--rose)", fontSize: "2.8rem", lineHeight: 0, position: "relative", top: "5px" }}>·</span>
           Beauty
         </Link>
 

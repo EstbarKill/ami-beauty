@@ -48,7 +48,7 @@ const analyze = async (source = null) => {
     matched,
     interest,
   };
-
+console.log("RESULT FINAL:", final);
   setResult(final);
   setLoading(false);
 

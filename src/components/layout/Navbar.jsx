@@ -26,7 +26,7 @@ export default function Navbar() {
         }}
       >
         {categories.map((cat) => {
-          const active = pathname?.includes(cat.slug);
+          const active = pathname === `/category/${cat.slug}`;
 
           return (
             <Link
