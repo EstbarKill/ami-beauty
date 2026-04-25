@@ -1,9 +1,21 @@
 "use client";
 import { useStore } from "@/context/StoreContext";
+import { rgbToHex } from "@/lib/toneVariants";
+
 export default function AnalysisModal({ result, onClose }) {
   if (!result) return null;
-
   const tone = result.data?.tone;
+  const variants = tone?.variants || [];
+
+  const light = variants.find((v) => v.tone === "light");
+  const mid = variants.find((v) => v.tone === "mid");
+  const dark = variants.find((v) => v.tone === "dark");
+  const rgb = result?.data?.rgb;
+
+  if (!rgb) {
+    return <p>Error en análisis de color</p>;
+  }
+
   const products = [
     ...(result.matched || []),
     ...(result.interest || []),
@@ -89,14 +101,19 @@ export default function AnalysisModal({ result, onClose }) {
         </div>
 
         {/* BODY — horizontal split */}
-        <div style={{ display: "flex", minHeight: "340px",
-  gap: "1rem",
-  overflowX: "auto",
-  paddingBottom: "1rem" }}>
+        <div
+          style={{
+            display: "flex",
+            minHeight: "340px",
+            gap: "1rem",
+            overflowX: "auto",
+            paddingBottom: "1rem",
+          }}
+        >
           {/* LEFT — Color card */}
           <div
             style={{
-              color:"black",
+              color: "black",
               width: "56%",
               padding: "1.6rem",
               borderRight: "1px solid var(--cream-dark)",
@@ -107,12 +124,18 @@ export default function AnalysisModal({ result, onClose }) {
             }}
           >
             {/* Reference row */}
-            <div style={{ display: "flex", gap: "6px", }}>
-              {tone?.subtones?.map((s) => {
-                const active = s.tone === tone.subtoneKey;
+            <div style={{ display: "flex", gap: "6px" }}>
+              {tone?.variants?.map((s) => {
+                const active = s.tone === "mid";
+
                 return (
                   <div key={s.id} style={{ flex: 1, textAlign: "center" }}>
-                    <p style={{ fontFamily:" Georgia, serif", fontSize: "1rem" }}>{s.tone}</p>
+                    <p
+                      style={{ fontFamily: "Georgia, serif", fontSize: "1rem" }}
+                    >
+                      {s.label}
+                    </p>
+
                     <div
                       style={{
                         height: "36px",
@@ -133,16 +156,20 @@ export default function AnalysisModal({ result, onClose }) {
             {/* Main swatch + info */}
             {tone && (
               <div
-                style={{ display: "flex", alignItems: "center", gap: "1rem"}}
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
               >
                 <div
                   style={{
                     width: "64px",
                     height: "64px",
                     borderRadius: "50%",
-                    background: `radial-gradient(circle at 38% 36%, ${lighten(tone.hex)}, ${tone.hex} 60%, ${darken(tone.hex)} 100%)`,
-                    flexShrink: 0,
-                    boxShadow: "0 4px 16px rgba(0,0,0,0.15)"
+                    background: `radial-gradient(
+  circle at 38% 36%,
+  ${rgbToHex(result.data.rgb)},
+  ${rgbToHex(result.data.rgb)} 60%,
+  ${rgbToHex(result.data.rgb)} 100%
+)`,
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
                   }}
                 />
                 <div>
@@ -184,7 +211,7 @@ export default function AnalysisModal({ result, onClose }) {
                     width: "18px",
                     height: "18px",
                     borderRadius: "2px",
-                    background: tone.hex,
+                    background: rgbToHex(result.data.rgb),
                     border: "1px solid var(--cream-dark)",
                   }}
                 />
@@ -196,7 +223,7 @@ export default function AnalysisModal({ result, onClose }) {
                     letterSpacing: "0.08em",
                   }}
                 >
-                  {tone.hex}
+                  {rgbToHex(result.data.rgb)}
                 </span>
               </div>
             )}
@@ -230,7 +257,7 @@ export default function AnalysisModal({ result, onClose }) {
             </span>
 
             {products.length === 0 && (
-              <p style={{ fontSize: "13px", color: "var(--muted)", }}>
+              <p style={{ fontSize: "13px", color: "var(--muted)" }}>
                 No hay recomendaciones disponibles.
               </p>
             )}
@@ -258,7 +285,7 @@ function HorizontalProductCard({ product }) {
   const { addToCart, toggleFav, isFav } = useStore();
   const variant = product.matchVariants?.[0];
   const fav = isFav(product.id);
-  
+
   return (
     <div
       style={{
@@ -329,26 +356,31 @@ function HorizontalProductCard({ product }) {
           {product.name}
         </p>
         {variant && (
-  <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "2px" }}>
-    
-    {/* Color */}
-    <span
-      style={{
-        width: "12px",
-        height: "12px",
-        borderRadius: "50%",
-        background: variant.hex,
-        border: "1px solid #ddd"
-      }}
-    />
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+              marginTop: "2px",
+            }}
+          >
+            {/* Color */}
+            <span
+              style={{
+                width: "12px",
+                height: "12px",
+                borderRadius: "50%",
+                background: variant.hex,
+                border: "1px solid #ddd",
+              }}
+            />
 
-    {/* Shade */}
-    <span style={{ fontSize: "11px", color: "var(--muted)" }}>
-      {variant.shade}
-    </span>
-
-  </div>
-)}
+            {/* Shade */}
+            <span style={{ fontSize: "11px", color: "var(--muted)" }}>
+              {variant.shade}
+            </span>
+          </div>
+        )}
         {product.shade && (
           <p
             style={{
@@ -363,8 +395,16 @@ function HorizontalProductCard({ product }) {
       </div>
 
       {/* Price */}
-      <div style={{textAlign: "right", flexShrink: 0 }}>
-        <button style={{display:"flex" ,justifySelf:"end",color:"red", fontSize:"1.3rem"}} onClick={() => toggleFav(product)}>
+      <div style={{ textAlign: "right", flexShrink: 0 }}>
+        <button
+          style={{
+            display: "flex",
+            justifySelf: "end",
+            color: "red",
+            fontSize: "1.3rem",
+          }}
+          onClick={() => toggleFav(product)}
+        >
           {fav ? "♥" : "♡"}
         </button>
         <p
@@ -378,11 +418,11 @@ function HorizontalProductCard({ product }) {
         </p>
         <button
           onClick={() =>
-    addToCart({
-      ...product,
-      selectedVariant: variant
-    })
-  }
+            addToCart({
+              ...product,
+              selectedVariant: variant,
+            })
+          }
           style={{
             marginTop: "6px",
             background: "var(--rose)",

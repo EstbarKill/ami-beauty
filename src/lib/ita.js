@@ -1,6 +1,7 @@
 import { rgbToLab } from "./colorUtils";
 import { getToneByITA, getSubtone } from "@/data/skinTones";
 import { getCheekPixels } from "./cheeks";
+import { generateToneVariants, rgbToHex  } from "./toneVariants";
 
 let history = [];
 
@@ -38,14 +39,16 @@ export async function analyzeSkinAdvanced(ctx, canvas, source, landmarks) {
   const toneBase = getToneByITA(ita);
   const subtoneKey = getSubtone(a, bStar);
 
-  return {
-    tone: {
-      ...toneBase,
-      subtoneKey,
-    },
-    ita: Math.round(ita * 10) / 10,
-    rgb,
-    lab: { L, a, b: bStar },
-    confidence: Math.min(1, count / 30),
-  };
+return {
+  tone: {
+    ...toneBase,
+    subtoneKey,
+    variants: generateToneVariants(rgb), // dinámico real
+  },
+  ita: Math.round(ita * 10) / 10,
+  rgb: [r, g, b],
+  hex: rgbToHex(rgb), // 🔥 ESTE ES EL COLOR REAL GLOBAL
+  lab: { L, a, b: bStar },
+  confidence: Math.min(1, count / 30),
+};
 }
