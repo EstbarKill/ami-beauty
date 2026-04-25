@@ -36,8 +36,6 @@ export default function SkinAnalyzer({ mode }) {
     document.removeEventListener("visibilitychange", handleVisibility);
   };
   }, []);
-  
-console.log(navigator.mediaDevices);
 if (!navigator.mediaDevices) {
   alert("Tu navegador no soporta cámara. Usa Chrome actualizado.");
 }
@@ -138,9 +136,7 @@ const handleAnalyze = async () => {
     alert("No se pudo analizar el rostro");
     return;
   }
-  console.log("RESULTADO FINAL:", result);
-
-  setShowModal(true);
+    setShowModal(true);
 };
 
   return (

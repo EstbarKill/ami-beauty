@@ -13,23 +13,45 @@ export function getCheekPixels(landmarks, canvas, ctx) {
     const x = Math.floor(p.x * canvas.width);
     const y = Math.floor(p.y * canvas.height);
 
-    const pixel = ctx.getImageData(x, y, 1, 1).data;
+    const size = 4;
+    const data = ctx.getImageData(
+      x - size,
+      y - size,
+      size * 2,
+      size * 2
+    ).data;
 
-    const brightness = (pixel[0] + pixel[1] + pixel[2]) / 3;
+    let pr = 0, pg = 0, pb = 0, c = 0;
+
+    for (let i = 0; i < data.length; i += 4) {
+      pr += data[i];
+      pg += data[i + 1];
+      pb += data[i + 2];
+      c++;
+    }
+
+    const avgR = pr / c;
+    const avgG = pg / c;
+    const avgB = pb / c;
+
+    const brightness = (avgR + avgG + avgB) / 3;
 
     if (brightness > 40 && brightness < 230) {
-      r += pixel[0];
-      g += pixel[1];
-      b += pixel[2];
+      r += avgR;
+      g += avgG;
+      b += avgB;
       count++;
     }
   });
 
   if (!count) return null;
 
-  return [
-    Math.round(r / count),
-    Math.round(g / count),
-    Math.round(b / count),
-  ];
+  return {
+    rgb: [
+      Math.round(r / count),
+      Math.round(g / count),
+      Math.round(b / count),
+    ],
+    count,
+  };
 }

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { analyzeSkinAdvanced } from "@/lib/ita";
 import { getRecommendations } from "@/lib/recommendProducts";
 import { detectFace } from "@/lib/faceDetector";
+import { applyPreprocessing } from "@/lib/preprocess";
+import { applyGrayWorld } from "@/lib/colorCorrection";
 
 export default function useSkinAnalysis(videoRef, canvasRef) {
   const [result, setResult] = useState(null);
@@ -34,6 +36,8 @@ const analyze = async (source = null) => {
 
   ctx.drawImage(input, 0, 0);
 
+  applyPreprocessing(ctx, canvas);
+applyGrayWorld(ctx, canvas);
   const data = await analyzeSkinAdvanced(ctx, canvas, input, face);
 
   if (!data) {
@@ -48,7 +52,6 @@ const analyze = async (source = null) => {
     matched,
     interest,
   };
-console.log("RESULT FINAL:", final);
   setResult(final);
   setLoading(false);
 

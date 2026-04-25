@@ -50,7 +50,7 @@ export default function Header() {
             fontSize: "2.6rem",
             fontWeight: 400,
             letterSpacing: ".05em",
-            color: "var(--rose-dark)",
+            color: "var(--blue)",
             textDecoration: "none",
             whiteSpace: "nowrap",
             flexShrink: 0,
@@ -60,7 +60,7 @@ export default function Header() {
           }}
         >
           Ami
-          <span style={{ color: "var(--rose)", fontSize: "2.8rem", lineHeight: 0, position: "relative", top: "5px" }}>·</span>
+          <span style={{ color: "var(--blue)", fontSize: "2.8rem", lineHeight: 0, position: "relative", top: "5px" }}>·</span>
           Beauty
         </Link>
 

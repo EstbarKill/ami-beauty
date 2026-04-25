@@ -162,8 +162,9 @@ export function getToneByITA(ita) {
   return SKIN_TONES[10];
 }
 
-export function getSubtone(b) {
-  if (b < 5) return "lith";
-  if (b < 18) return "mid";
-  return "dark";
+export function getSubtone(a, b) {
+  if (b > 15 && a < 10) return "warm";
+  if (a > 15 && b < 10) return "cool";
+  if (b > 10 && a < 5) return "olive";
+  return "neutral";
 }
