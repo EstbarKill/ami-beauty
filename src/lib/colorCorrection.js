@@ -26,6 +26,10 @@ export function applyGrayWorld(ctx, canvas) {
     data[i + 1] *= gainG;
     data[i + 2] *= gainB;
   }
-
+for (let i = 0; i < data.length; i += 4) {
+  data[i]     = Math.min(255, data[i]     * gainR);
+  data[i + 1] = Math.min(255, data[i + 1] * gainG);
+  data[i + 2] = Math.min(255, data[i + 2] * gainB);
+}
   ctx.putImageData(img, 0, 0);
 }

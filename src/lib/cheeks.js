@@ -1,57 +1,148 @@
-const LEFT_CHEEK = [50, 101, 118, 119, 120, 121, 128];
-const RIGHT_CHEEK = [280, 330, 347, 348, 349, 350, 357];
+// 🎯 Puntos de referencia (MediaPipe FaceMesh)
+const LEFT_CHEEK = [116, 117, 118, 119];
+const RIGHT_CHEEK = [346, 347, 348, 349];
+
+
+const isValidCheekPoint = (p, canvas) => {
+  
+  const y = p.y * canvas.height;
+  // ❌ muy arriba (cerca ojo)
+  if (y < canvas.height * 0.35) return false;
+
+  // ❌ muy abajo (mandíbula)
+  if (y > canvas.height * 0.75) return false;
+if (!p || !isValidCheekPoint(p, canvas)) return;
+
+  return true;
+};
+let rgbHistory = [];
+// 🧠 Historial para suavizado temporal
+export function resetCheekHistory() {
+  rgbHistory = [];
+}
+
+// 🎯 Suavizado RGB (evita saltos frame a frame)
+function smoothRGB(rgb) {
+  rgbHistory.push(rgb);
+  if (rgbHistory.length > 5) rgbHistory.shift();
+
+  const avg = rgbHistory.reduce(
+    (acc, val) => [
+      acc[0] + val[0],
+      acc[1] + val[1],
+      acc[2] + val[2],
+    ],
+    [0, 0, 0]
+  );
+
+  return avg.map((v) => Math.round(v / rgbHistory.length));
+}
+
+// 🎯 Corrección simple de iluminación
+function normalizeLighting(r, g, b) {
+  const avg = (r + g + b) / 3 || 1;
+
+  const factor = 110 / avg;
+
+  return [
+    Math.min(255, Math.round(r * factor)),
+    Math.min(255, Math.round(g * factor)),
+    Math.min(255, Math.round(b * factor)),
+  ];
+}
 
 export function getCheekPixels(landmarks, canvas, ctx) {
   if (!landmarks) return null;
 
-  let r = 0, g = 0, b = 0, count = 0;
+  let r = 0,
+    g = 0,
+    b = 0,
+    count = 0;
 
-  [...LEFT_CHEEK, ...RIGHT_CHEEK].forEach((i) => {
-    const p = landmarks[i];
+  const points = [...LEFT_CHEEK, ...RIGHT_CHEEK];
+
+  points.forEach((idx) => {
+    const p = landmarks[idx];
     if (!p) return;
 
     const x = Math.floor(p.x * canvas.width);
     const y = Math.floor(p.y * canvas.height);
 
-    const size = 4;
-    const data = ctx.getImageData(
-      x - size,
-      y - size,
-      size * 2,
-      size * 2
-    ).data;
+    const size = 10; // 🔥 más robusto
 
-    let pr = 0, pg = 0, pb = 0, c = 0;
+    // 🛡 Protección bordes canvas
+    const startX = Math.max(0, x - size);
+    const startY = Math.max(0, y - size);
+    const width = Math.min(size * 2, canvas.width - startX);
+    const height = Math.min(size * 2, canvas.height - startY);
+
+    const data = ctx.getImageData(startX, startY, width, height).data;
+
+    let pr = 0,
+      pg = 0,
+      pb = 0,
+      c = 0;
 
     for (let i = 0; i < data.length; i += 4) {
-      pr += data[i];
-      pg += data[i + 1];
-      pb += data[i + 2];
+      const rr = data[i];
+      const gg = data[i + 1];
+      const bb = data[i + 2];
+
+      // 🎯 luminancia real (mejor que promedio simple)
+      const luminance = 0.2126 * rr + 0.7152 * gg + 0.0722 * bb;
+
+      // ❌ sombras
+      if (luminance < 30) continue;
+
+      // ❌ highlights (brillos)
+      if (luminance > 230) continue;
+
+      // ❌ ruido / saturación extrema
+      const max = Math.max(rr, gg, bb);
+      const min = Math.min(rr, gg, bb);
+      if (max - min > 100) continue;
+
+      pr += rr;
+      pg += gg;
+      pb += bb;
       c++;
     }
+
+    if (!c) return;
 
     const avgR = pr / c;
     const avgG = pg / c;
     const avgB = pb / c;
+const centerPoints = [118, 347];
+    // 🎯 Peso extra en puntos centrales (mejores zonas)
+const weight = centerPoints.includes(idx) ? 3 : 1;
 
-    const brightness = (avgR + avgG + avgB) / 3;
-
-    if (brightness > 40 && brightness < 230) {
-      r += avgR;
-      g += avgG;
-      b += avgB;
-      count++;
-    }
+    r += avgR * weight;
+    g += avgG * weight;
+    b += avgB * weight;
+    count += weight;
   });
 
   if (!count) return null;
 
+  // 🎯 promedio global
+  let finalR = r / count;
+  let finalG = g / count;
+  let finalB = b / count;
+
+  // 🎯 corrección de iluminación
+ // [finalR, finalG, finalB] = normalizeLighting(
+   // finalR,
+    //finalG,
+    //finalB
+  //);
+
+  // 🎯 suavizado temporal
+  const smoothed = smoothRGB([finalR, finalG, finalB]);
+
+console.log("PIXEL COUNT:", count);
   return {
-    rgb: [
-      Math.round(r / count),
-      Math.round(g / count),
-      Math.round(b / count),
-    ],
+    rgb: smoothed,
     count,
   };
 }

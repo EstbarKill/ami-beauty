@@ -1,7 +1,7 @@
 import { rgbToLab } from "./colorUtils";
-import { getToneByITA, getSubtone } from "@/data/skinTones";
+import { getToneByITA, getSubtone, mapSubtoneToProduct } from "@/data/skinTones";
 import { getCheekPixels } from "./cheeks";
-import { generateToneVariants, rgbToHex  } from "./toneVariants";
+import { generateToneVariants, rgbToHex } from "./toneVariants";
 
 let history = [];
 
@@ -29,26 +29,37 @@ export async function analyzeSkinAdvanced(ctx, canvas, source, landmarks) {
   const { L, a, b: bStar } = rgbToLab(r, g, b);
 
   // 🚦 VALIDACIÓN DE LUZ
-  if (L < 20 || L > 90) {
+  if (L < 20 || L > 85) {
     return { error: "bad-lighting" };
   }
-
-  let ita = Math.atan2(L - 50, bStar) * (180 / Math.PI);
+  const safeB = Math.abs(bStar) < 0.01 ? 0.01 : bStar;
+  if (Math.abs(bStar) < 1) {
+    return { error: "unstable-color" };
+  }
+  let ita = Math.atan((L - 50) / safeB) * (180 / Math.PI);
   ita = smooth(ita);
-
+  const subtoneKeyRaw = getSubtone(a, bStar);
   const toneBase = getToneByITA(ita);
-  const subtoneKey = getSubtone(a, bStar);
+  const subtoneKey = mapSubtoneToProduct(subtoneKeyRaw);
+  const chroma = Math.sqrt(a * a + bStar * bStar);
+  const variance =
+    Math.abs(a) + Math.abs(bStar);
 
-return {
-  tone: {
-    ...toneBase,
-    subtoneKey,
-    variants: generateToneVariants(rgb), // dinámico real
-  },
-  ita: Math.round(ita * 10) / 10,
-  rgb: [r, g, b],
-  hex: rgbToHex(rgb), // 🔥 ESTE ES EL COLOR REAL GLOBAL
-  lab: { L, a, b: bStar },
-  confidence: Math.min(1, count / 30),
-};
+  const confidence = Math.min(1, (count / 30)) * (variance > 5 ? 1 : 0.7);
+  if (chroma < 3) {
+    return { error: "low-color-info" };
+  }
+  console.log("RGB:", rgb, "LAB:", L, a, bStar);
+  return {
+    tone: {
+      ...toneBase,
+      subtoneKey,
+      variants: generateToneVariants(rgb), // dinámico real
+    },
+    ita: Math.round(ita * 10) / 10,
+    rgb: [r, g, b],
+    hex: rgbToHex(rgb), // 🔥 ESTE ES EL COLOR REAL GLOBAL
+    lab: { L, a, b: bStar },
+    confidence,
+  };
 }

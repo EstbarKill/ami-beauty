@@ -13,7 +13,7 @@
     "content": "6gr",
     "toneGroup": "Claro",
     "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/majikal-c1.jpeg",
       "/img/products/majikal-c2.jpeg",
@@ -74,7 +74,7 @@
     "isNew": false,
     "recommended":true,
     "toneIds": ["porcelana", "claro-rosado", "claro-neutro", "claro-dorado", "medio-rosado", "medio-neutro"],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/lula-c1.jpeg",
       "/img/products/lula-c2.jpeg",
@@ -110,7 +110,7 @@
       "medio-rosado", "medio-neutro", "trigueño",
       "moreno-calido", "oscuro-calido"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/montoc-base-1.jpeg",
       "/img/products/montoc-base-2.jpeg",
@@ -129,7 +129,7 @@
       { "shade": "550", "hex": "#A05840", "toneId": "trigueño",      "subtone": "dark" },
       { "shade": "600", "hex": "#904832", "toneId": "moreno-calido", "subtone": "mid"  },
       { "shade": "700", "hex": "#7A3828", "toneId": "moreno-calido", "subtone": "dark" },
-      { "shade": "750", "hex": "#6B3020", "toneId": "oscuro-calido", "subtone": "lith" },
+      { "shade": "750", "hex": "#6B3020", "toneId": "oscuro-calido", "subtone": "light" },
       { "shade": "800", "hex": "#5C2A1E", "toneId": "oscuro-calido", "subtone": "dark" },
       { "shade": "850", "hex": "#4A1E18", "toneId": "oscuro-frio",   "subtone": "dark" }
     ]
@@ -291,7 +291,7 @@
     "toneIds": [
       "porcelana", "claro-rosado", "claro-dorado", "medio-neutro"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/polvo-mj-1.jpeg",
       "/img/products/polvo-mj-2.jpeg",
@@ -300,8 +300,8 @@
       "/img/products/polvo-mj-5.jpeg"
     ],
     "variants": [
-      { "shade": "Rosado",   "hex": "#F5C6CB", "toneId": "claro-rosado", "subtone": "lith" },
-      { "shade": "Lila",     "hex": "#E6D6F5", "toneId": "porcelana",    "subtone": "lith" },
+      { "shade": "Rosado",   "hex": "#F5C6CB", "toneId": "claro-rosado", "subtone": "light" },
+      { "shade": "Lila",     "hex": "#E6D6F5", "toneId": "porcelana",    "subtone": "light" },
       { "shade": "Durazno",  "hex": "#F4CEAB", "toneId": "claro-dorado", "subtone": "mid"  },
       { "shade": "Amarillo", "hex": "#F7E3A1", "toneId": "medio-neutro", "subtone": "dark" }
     ]
@@ -323,7 +323,7 @@
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido", "oscuro-calido"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/montoc-polvo-1.jpeg",
       "/img/products/montoc-polvo-2.jpeg",
@@ -351,7 +351,7 @@
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido", "oscuro-calido"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/purpure-polvo-1.jpeg",
       "/img/products/purpure-polvo-2.jpeg",
@@ -461,7 +461,7 @@
       "claro-dorado", "medio-rosado", "medio-neutro",
       "trigueño", "moreno-calido"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/atenea-glamblack-1.jpeg",
       "/img/products/atenea-glamblack-2.jpeg",
@@ -471,9 +471,9 @@
     ],
     "variants": [
       { "shade": "Iluminador Champagne", "hex": "#F4E0C0", "toneId": "claro-dorado",  "subtone": "mid"  },
-      { "shade": "Iluminador Rose Gold", "hex": "#E8C0B0", "toneId": "medio-rosado",  "subtone": "lith" },
+      { "shade": "Iluminador Rose Gold", "hex": "#E8C0B0", "toneId": "medio-rosado",  "subtone": "light" },
       { "shade": "Iluminador Dorado",    "hex": "#F0D080", "toneId": "claro-dorado",  "subtone": "dark" },
-      { "shade": "Iluminador Blanco",    "hex": "#F8F0E8", "toneId": "porcelana",     "subtone": "lith" },
+      { "shade": "Iluminador Blanco",    "hex": "#F8F0E8", "toneId": "porcelana",     "subtone": "light" },
       { "shade": "Bronzer Canela",       "hex": "#C0805A", "toneId": "medio-neutro",  "subtone": "dark" },
       { "shade": "Bronzer Toffee",       "hex": "#9A5838", "toneId": "trigueño",      "subtone": "dark" },
       { "shade": "Bronzer Espresso",     "hex": "#6A3828", "toneId": "moreno-calido", "subtone": "dark" }
@@ -494,7 +494,7 @@
     "toneIds": [
       "claro-dorado", "medio-rosado", "trigueño", "moreno-calido"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/montoc-rubor-1.jpeg",
       "/img/products/montoc-rubor-2.jpeg",
@@ -503,11 +503,11 @@
       "/img/products/montoc-rubor-5.jpeg"
     ],
     "variants": [
-      { "shade": "Guayaba 01",  "hex": "#F28B82", "toneId": "medio-rosado", "subtone": "lith" },
+      { "shade": "Guayaba 01",  "hex": "#F28B82", "toneId": "medio-rosado", "subtone": "light" },
       { "shade": "Durazno 1.5", "hex": "#F4A261", "toneId": "claro-dorado", "subtone": "mid"  },
-      { "shade": "Acai 2.0",    "hex": "#8E3B46", "toneId": "trigueño",     "subtone": "lith" },
+      { "shade": "Acai 2.0",    "hex": "#8E3B46", "toneId": "trigueño",     "subtone": "light" },
       { "shade": "Tamarindo 2.5","hex": "#A0522D", "toneId": "trigueño",     "subtone": "dark" },
-      { "shade": "Pitaya 3.0",  "hex": "#D94F70", "toneId": "medio-rosado", "subtone": "lith" }
+      { "shade": "Pitaya 3.0",  "hex": "#D94F70", "toneId": "medio-rosado", "subtone": "light" }
     ]
   },
 
@@ -526,7 +526,7 @@
       "claro-rosado", "claro-dorado", "medio-rosado",
       "medio-neutro", "trigueño", "moreno-calido"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/atenea-rubor-atemporal-1.jpeg",
       "/img/products/atenea-rubor-atemporal-2.jpeg",
@@ -537,9 +537,9 @@
     "variants": [
       { "shade": "Nude Satin",   "hex": "#DEB49A", "toneId": "claro-dorado",  "subtone": "mid"  },
       { "shade": "Coral Mate",   "hex": "#E8836A", "toneId": "medio-rosado",  "subtone": "dark" },
-      { "shade": "Rosa Mate",    "hex": "#E09090", "toneId": "claro-rosado",  "subtone": "lith" },
+      { "shade": "Rosa Mate",    "hex": "#E09090", "toneId": "claro-rosado",  "subtone": "light" },
       { "shade": "Durazno Mate", "hex": "#ECA880", "toneId": "claro-dorado",  "subtone": "dark" },
-      { "shade": "Mora Satin",   "hex": "#9A4858", "toneId": "trigueño",      "subtone": "lith" },
+      { "shade": "Mora Satin",   "hex": "#9A4858", "toneId": "trigueño",      "subtone": "light" },
       { "shade": "Terracota",    "hex": "#B06040", "toneId": "medio-neutro",  "subtone": "dark" }
     ]
   },
@@ -558,7 +558,7 @@
     "toneIds": [
       "claro-rosado", "claro-dorado", "medio-rosado", "trigueño"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/atenea-allure-1.jpeg",
       "/img/products/atenea-allure-2.jpeg",
@@ -567,9 +567,9 @@
       "/img/products/atenea-allure-5.jpeg"
     ],
     "variants": [
-      { "shade": "Dúo 01 Rose",    "hex": "#ECA8A8", "toneId": "claro-rosado", "subtone": "lith" },
+      { "shade": "Dúo 01 Rose",    "hex": "#ECA8A8", "toneId": "claro-rosado", "subtone": "light" },
       { "shade": "Dúo 02 Peach",   "hex": "#EAA882", "toneId": "claro-dorado", "subtone": "mid"  },
-      { "shade": "Dúo 03 Mauve",   "hex": "#B87880", "toneId": "trigueño",     "subtone": "lith" }
+      { "shade": "Dúo 03 Mauve",   "hex": "#B87880", "toneId": "trigueño",     "subtone": "light" }
     ]
   },
 
@@ -587,7 +587,7 @@
     "toneIds": [
       "claro-rosado", "claro-dorado", "medio-rosado", "trigueño", "moreno-calido"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/atenea-rubor-stick-1.jpeg",
       "/img/products/atenea-rubor-stick-2.jpeg",
@@ -596,10 +596,10 @@
       "/img/products/atenea-rubor-stick-5.jpeg"
     ],
     "variants": [
-      { "shade": "Pink Chai",    "hex": "#E8A0A8", "toneId": "claro-rosado", "subtone": "lith" },
-      { "shade": "Sugarplum",    "hex": "#C87090", "toneId": "medio-rosado", "subtone": "lith" },
-      { "shade": "Cherry Pie",   "hex": "#A84060", "toneId": "trigueño",     "subtone": "lith" },
-      { "shade": "Scarlet Fever","hex": "#8A2840", "toneId": "moreno-calido","subtone": "lith" }
+      { "shade": "Pink Chai",    "hex": "#E8A0A8", "toneId": "claro-rosado", "subtone": "light" },
+      { "shade": "Sugarplum",    "hex": "#C87090", "toneId": "medio-rosado", "subtone": "light" },
+      { "shade": "Cherry Pie",   "hex": "#A84060", "toneId": "trigueño",     "subtone": "light" },
+      { "shade": "Scarlet Fever","hex": "#8A2840", "toneId": "moreno-calido","subtone": "light" }
     ]
   },
 
@@ -617,7 +617,7 @@
     "toneIds": [
       "claro-dorado", "claro-rosado", "medio-rosado", "trigueño"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/purpure-rubor-1.jpeg",
       "/img/products/purpure-rubor-2.jpeg",
@@ -627,10 +627,10 @@
     ],
     "variants": [
       { "shade": "01 Golden Hour", "hex": "#F4A060", "toneId": "claro-dorado", "subtone": "dark" },
-      { "shade": "02 Secret Blush","hex": "#F0A0A0", "toneId": "claro-rosado", "subtone": "lith" },
-      { "shade": "03 First Crush", "hex": "#E08090", "toneId": "medio-rosado", "subtone": "lith" },
-      { "shade": "04 Soft Bloom",  "hex": "#C07090", "toneId": "trigueño",     "subtone": "lith" },
-      { "shade": "05 Pitaya",      "hex": "#D94F70", "toneId": "medio-rosado", "subtone": "lith" }
+      { "shade": "02 Secret Blush","hex": "#F0A0A0", "toneId": "claro-rosado", "subtone": "light" },
+      { "shade": "03 First Crush", "hex": "#E08090", "toneId": "medio-rosado", "subtone": "light" },
+      { "shade": "04 Soft Bloom",  "hex": "#C07090", "toneId": "trigueño",     "subtone": "light" },
+      { "shade": "05 Pitaya",      "hex": "#D94F70", "toneId": "medio-rosado", "subtone": "light" }
     ]
   },
 
@@ -649,7 +649,7 @@
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/purpure-iluminador-1.jpeg",
       "/img/products/purpure-iluminador-2.jpeg",
@@ -658,9 +658,9 @@
       "/img/products/purpure-iluminador-5.jpeg"
     ],
     "variants": [
-      { "shade": "01 Sirius",   "hex": "#E8D8F0", "toneId": "porcelana",    "subtone": "lith" },
-      { "shade": "02 Coraline", "hex": "#F0B8C8", "toneId": "claro-rosado", "subtone": "lith" },
-      { "shade": "03 Ruby",     "hex": "#E87080", "toneId": "medio-rosado", "subtone": "lith" }
+      { "shade": "01 Sirius",   "hex": "#E8D8F0", "toneId": "porcelana",    "subtone": "light" },
+      { "shade": "02 Coraline", "hex": "#F0B8C8", "toneId": "claro-rosado", "subtone": "light" },
+      { "shade": "03 Ruby",     "hex": "#E87080", "toneId": "medio-rosado", "subtone": "light" }
     ]
   },
 
@@ -679,7 +679,7 @@
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/montoc-iluminador-1.jpeg",
       "/img/products/montoc-iluminador-2.jpeg",
@@ -689,7 +689,7 @@
     ],
     "variants": [
       { "shade": "Golden",    "hex": "#F8D880", "toneId": "claro-dorado",  "subtone": "dark" },
-      { "shade": "Rose",      "hex": "#F8C0C0", "toneId": "claro-rosado",  "subtone": "lith" },
+      { "shade": "Rose",      "hex": "#F8C0C0", "toneId": "claro-rosado",  "subtone": "light" },
       { "shade": "Champagne", "hex": "#F4E0C0", "toneId": "claro-neutro",  "subtone": "mid"  }
     ]
   },
@@ -709,7 +709,7 @@
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "trigueño"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/lula-iluminador-1.jpeg",
       "/img/products/lula-iluminador-2.jpeg",
@@ -718,12 +718,12 @@
       "/img/products/lula-iluminador-5.jpeg"
     ],
     "variants": [
-      { "shade": "01", "hex": "#F8E8B0", "toneId": "porcelana",    "subtone": "lith" },
+      { "shade": "01", "hex": "#F8E8B0", "toneId": "porcelana",    "subtone": "light" },
       { "shade": "02", "hex": "#F8D890", "toneId": "claro-dorado", "subtone": "mid"  },
       { "shade": "03", "hex": "#E8C070", "toneId": "claro-dorado", "subtone": "dark" },
-      { "shade": "04", "hex": "#F0C8C0", "toneId": "claro-rosado", "subtone": "lith" },
-      { "shade": "05", "hex": "#E8A8B0", "toneId": "medio-rosado", "subtone": "lith" },
-      { "shade": "06", "hex": "#C87890", "toneId": "trigueño",     "subtone": "lith" }
+      { "shade": "04", "hex": "#F0C8C0", "toneId": "claro-rosado", "subtone": "light" },
+      { "shade": "05", "hex": "#E8A8B0", "toneId": "medio-rosado", "subtone": "light" },
+      { "shade": "06", "hex": "#C87890", "toneId": "trigueño",     "subtone": "light" }
     ]
   },
 
@@ -742,7 +742,7 @@
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "trigueño"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/anik-iluminador-1.jpeg",
       "/img/products/anik-iluminador-2.jpeg",
@@ -754,7 +754,7 @@
       { "shade": "01 Angel Glow",    "hex": "#F0E0C0", "toneId": "claro-neutro", "subtone": "mid"  },
       { "shade": "02 Diva Glow",     "hex": "#F0D0A0", "toneId": "claro-dorado", "subtone": "dark" },
       { "shade": "03 Cookie",        "hex": "#E0B880", "toneId": "claro-dorado", "subtone": "dark" },
-      { "shade": "04 Cosmic Lover",  "hex": "#D0A0B8", "toneId": "medio-rosado", "subtone": "lith" }
+      { "shade": "04 Cosmic Lover",  "hex": "#D0A0B8", "toneId": "medio-rosado", "subtone": "light" }
     ]
   },
 
@@ -774,7 +774,7 @@
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido",
       "oscuro-calido", "oscuro-frio", "ebano"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/atenea-birds-1.jpeg",
       "/img/products/atenea-birds-2.jpeg",
@@ -803,7 +803,7 @@
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido",
       "oscuro-calido", "oscuro-frio", "ebano"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/atenea-classic-1.jpeg",
       "/img/products/atenea-classic-2.jpeg",
@@ -831,7 +831,7 @@
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño", "moreno-calido"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/purpure-sombras-1.jpeg",
       "/img/products/purpure-sombras-2.jpeg",
@@ -841,9 +841,9 @@
     ],
     "variants": [
       { "shade": "01 Neutral",      "hex": "#D4A880", "toneId": "claro-dorado",  "subtone": "mid"  },
-      { "shade": "02 Diva Glow",    "hex": "#D070A0", "toneId": "medio-rosado",  "subtone": "lith" },
+      { "shade": "02 Diva Glow",    "hex": "#D070A0", "toneId": "medio-rosado",  "subtone": "light" },
       { "shade": "03 Cookie",       "hex": "#C89060", "toneId": "medio-neutro",  "subtone": "dark" },
-      { "shade": "04 Cosmic Lover", "hex": "#9060A0", "toneId": "trigueño",      "subtone": "lith" },
+      { "shade": "04 Cosmic Lover", "hex": "#9060A0", "toneId": "trigueño",      "subtone": "light" },
       { "shade": "05 Smoky",        "hex": "#605040", "toneId": "moreno-calido", "subtone": "dark" },
       { "shade": "06 Earth",        "hex": "#A07050", "toneId": "trigueño",      "subtone": "mid"  }
     ]
@@ -863,7 +863,7 @@
     "toneIds": [
       "claro-rosado", "claro-dorado", "medio-rosado", "trigueño"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/montoc-sombras-1.jpeg",
       "/img/products/montoc-sombras-2.jpeg",
@@ -872,9 +872,9 @@
       "/img/products/montoc-sombras-5.jpeg"
     ],
     "variants": [
-      { "shade": "Dalia",  "hex": "#D4607A", "toneId": "medio-rosado", "subtone": "lith" },
-      { "shade": "Iris",   "hex": "#8878C0", "toneId": "trigueño",     "subtone": "lith" },
-      { "shade": "Rosett", "hex": "#E89898", "toneId": "claro-rosado", "subtone": "lith" }
+      { "shade": "Dalia",  "hex": "#D4607A", "toneId": "medio-rosado", "subtone": "light" },
+      { "shade": "Iris",   "hex": "#8878C0", "toneId": "trigueño",     "subtone": "light" },
+      { "shade": "Rosett", "hex": "#E89898", "toneId": "claro-rosado", "subtone": "light" }
     ]
   },
 
@@ -893,7 +893,7 @@
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "medio-neutro", "trigueño"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/purpure-labios-1.jpeg",
       "/img/products/purpure-labios-2.jpeg",
@@ -903,8 +903,8 @@
     ],
     "variants": [
       { "shade": "01 Nude",     "hex": "#E8B8A0", "toneId": "claro-neutro", "subtone": "mid"  },
-      { "shade": "02 Pink",     "hex": "#F0A0B8", "toneId": "claro-rosado", "subtone": "lith" },
-      { "shade": "03 Berry",    "hex": "#C07080", "toneId": "medio-rosado", "subtone": "lith" },
+      { "shade": "02 Pink",     "hex": "#F0A0B8", "toneId": "claro-rosado", "subtone": "light" },
+      { "shade": "03 Berry",    "hex": "#C07080", "toneId": "medio-rosado", "subtone": "light" },
       { "shade": "04 Caramel",  "hex": "#C88060", "toneId": "claro-dorado", "subtone": "dark" }
     ]
   },
@@ -924,7 +924,7 @@
       "porcelana", "claro-rosado", "claro-neutro", "claro-dorado",
       "medio-rosado", "trigueño"
     ],
-    "subtones": ["lith", "mid", "dark"],
+    "subtones": ["light", "mid", "dark"],
     "images": [
       "/img/products/anik-gloss-1.jpeg",
       "/img/products/anik-gloss-2.jpeg",
@@ -934,7 +934,7 @@
     ],
     "variants": [
       { "shade": "Kim",   "hex": "#F0C0A8", "toneId": "claro-neutro", "subtone": "mid"  },
-      { "shade": "Diva",  "hex": "#E89090", "toneId": "claro-rosado", "subtone": "lith" },
+      { "shade": "Diva",  "hex": "#E89090", "toneId": "claro-rosado", "subtone": "light" },
       { "shade": "Angel", "hex": "#F8D0B8", "toneId": "porcelana",    "subtone": "mid"  }
     ]
   }

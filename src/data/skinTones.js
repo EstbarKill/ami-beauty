@@ -149,22 +149,34 @@ export const SKIN_TONES = [
 ];
 
 export function getToneByITA(ita) {
-  if (ita > 55) return SKIN_TONES[0];
-  if (ita > 48) return SKIN_TONES[1];
-  if (ita > 41) return SKIN_TONES[2];
-  if (ita > 34) return SKIN_TONES[3];
-  if (ita > 28) return SKIN_TONES[4];
-  if (ita > 20) return SKIN_TONES[5];
-  if (ita > 10) return SKIN_TONES[6];
-  if (ita > 0) return SKIN_TONES[7];
-  if (ita > -15) return SKIN_TONES[8];
-  if (ita > -30) return SKIN_TONES[9];
+  if (ita >= 55) return SKIN_TONES[0];
+  if (ita >= 49) return SKIN_TONES[1];
+  if (ita >= 41) return SKIN_TONES[2];
+  if (ita >= 34) return SKIN_TONES[3];
+  if (ita >= 28) return SKIN_TONES[4];
+  if (ita >= 20) return SKIN_TONES[5];
+  if (ita >= 10) return SKIN_TONES[6];
+  if (ita >= 0) return SKIN_TONES[7];
+  if (ita >= -15) return SKIN_TONES[8];
+  if (ita >= -30) return SKIN_TONES[9];
   return SKIN_TONES[10];
+}
+export function mapSubtoneToProduct(subtoneKey) {
+  switch (subtoneKey) {
+    case "warm":
+      return "dark";   // cálido → más profundo
+    case "cool":
+      return "light";   // frío → más claro rosado
+    case "olive":
+      return "mid";    // oliva → neutro medio
+    default:
+      return "mid";    // neutral
+  }
 }
 
 export function getSubtone(a, b) {
-  if (b > 15 && a < 10) return "warm";
-  if (a > 15 && b < 10) return "cool";
-  if (b > 10 && a < 5) return "olive";
+  if (b > 8 && a < 8) return "warm";
+  if (a > 8 && b < 8) return "cool";
+  if (b > 5 && a < 3) return "olive";
   return "neutral";
 }

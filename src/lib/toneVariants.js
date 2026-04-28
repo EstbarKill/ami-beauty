@@ -8,28 +8,17 @@ export function adjustColor(rgb, factor) {
 
 export function rgbToHex(rgb) {
   if (!rgb) return "#000000";
-
   let r, g, b;
+  if (Array.isArray(rgb)) [r, g, b] = rgb;
+  else { r = rgb.r; g = rgb.g; b = rgb.b; }
 
-  if (Array.isArray(rgb)) {
-    [r, g, b] = rgb;
-  } else if (typeof rgb === "object") {
-    r = rgb.r;
-    g = rgb.g;
-    b = rgb.b;
-  }
+  r = Number.isFinite(r) ? Math.round(r) : 0;  // ← Math.round()
+  g = Number.isFinite(g) ? Math.round(g) : 0;
+  b = Number.isFinite(b) ? Math.round(b) : 0;
 
-  // 🚨 fallback si algo viene mal
-  r = Number.isFinite(r) ? r : 0;
-  g = Number.isFinite(g) ? g : 0;
-  b = Number.isFinite(b) ? b : 0;
-
-  return (
-    "#" +
-    [r, g, b]
-      .map((x) => x.toString(16).padStart(2, "0"))
-      .join("")
-  );
+  return "#" + [r, g, b]
+    .map(x => clamp(x, 0, 255).toString(16).padStart(2, "0"))
+    .join("");
 }
 
 export function generateToneVariants(rgb) {

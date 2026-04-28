@@ -4,6 +4,7 @@ import { getRecommendations } from "@/lib/recommendProducts";
 import { detectFace } from "@/lib/faceDetector";
 import { applyPreprocessing } from "@/lib/preprocess";
 import { applyGrayWorld } from "@/lib/colorCorrection";
+import { resetCheekHistory } from "@/lib/cheeks";
 
 export default function useSkinAnalysis(videoRef, canvasRef) {
   const [result, setResult] = useState(null);
@@ -38,6 +39,7 @@ const analyze = async (source = null) => {
 
   applyPreprocessing(ctx, canvas);
 applyGrayWorld(ctx, canvas);
+resetCheekHistory(); 
   const data = await analyzeSkinAdvanced(ctx, canvas, input, face);
 
   if (!data) {

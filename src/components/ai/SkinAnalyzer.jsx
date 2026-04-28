@@ -36,9 +36,7 @@ export default function SkinAnalyzer({ mode }) {
     document.removeEventListener("visibilitychange", handleVisibility);
   };
   }, []);
-if (!navigator.mediaDevices) {
-  alert("Tu navegador no soporta cámara. Usa Chrome actualizado.");
-}
+
   // 🎥 ACTIVAR / DESACTIVAR CÁMARA
 const toggleCamera = async () => {
   try {
@@ -47,7 +45,10 @@ const toggleCamera = async () => {
       setCameraOn(false);
       return;
     }
-
+  if (typeof navigator === "undefined" || !navigator.mediaDevices) {
+    alert("Tu navegador no soporta cámara. Usa Chrome actualizado.");
+    return;
+  }
     const stream = await navigator.mediaDevices.getUserMedia({
       video: {
         facingMode: "user",
