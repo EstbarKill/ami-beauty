@@ -1,5 +1,5 @@
 import { rgbToLab } from "./colorUtils";
-import { getToneByITA, getSubtone, mapSubtoneToProduct } from "@/data/skinTones";
+import { getToneByITA } from "@/data/skinTones";
 import { getCheekPixels } from "./cheeks";
 import { generateToneVariants, rgbToHex } from "./toneVariants";
 
@@ -38,14 +38,18 @@ export async function analyzeSkinAdvanced(ctx, canvas, source, landmarks) {
   }
   let ita = Math.atan((L - 50) / safeB) * (180 / Math.PI);
   ita = smooth(ita);
-  const subtoneKeyRaw = getSubtone(a, bStar);
   const toneBase = getToneByITA(ita);
-  const subtoneKey = mapSubtoneToProduct(subtoneKeyRaw);
   const chroma = Math.sqrt(a * a + bStar * bStar);
   const variance =
     Math.abs(a) + Math.abs(bStar);
 
-  const confidence = Math.min(1, (count / 30)) * (variance > 5 ? 1 : 0.7);
+  const consistency = chroma > 5 ? 1 : 0.6;
+const sampleQuality = Math.min(1, count / 40);
+const lightingQuality = L > 30 && L < 80 ? 1 : 0.5;
+
+const confidence = (consistency * 0.4) +
+                   (sampleQuality * 0.3) +
+                   (lightingQuality * 0.3);
   if (chroma < 3) {
     return { error: "low-color-info" };
   }
@@ -53,7 +57,6 @@ export async function analyzeSkinAdvanced(ctx, canvas, source, landmarks) {
   return {
     tone: {
       ...toneBase,
-      subtoneKey,
       variants: generateToneVariants(rgb), // dinámico real
     },
     ita: Math.round(ita * 10) / 10,

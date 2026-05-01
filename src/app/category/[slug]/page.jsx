@@ -8,25 +8,46 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function CategoryPage({ params }) {
-  const { slug } = await params; // ✅ FIX AQUÍ
+export async function generateMetadata({ params, searchParams }) {
+  const { slug } = await params;
+  const brand = searchParams?.brand;
 
-  const filtered = productsData.filter(
-    (p) => p.category === slug // 👈 IMPORTANTE (antes estabas usando p.slug)
+  const categoryName = CATEGORY_MAP[slug] || "Categoría";
+
+  return {
+    title: brand
+      ? `${categoryName} - ${brand} | Ami Beauty`
+      : `${categoryName} | Ami Beauty`,
+  };
+}
+
+export default async function CategoryPage({ params, searchParams }) {
+  const { slug } = await params;
+  const brand = searchParams?.brand;
+
+  let filtered = productsData.filter(
+    (p) => p.category === slug
   );
+
+  if (brand) {
+    filtered = filtered.filter(
+      (p) => p.brand.toLowerCase() === brand.toLowerCase()
+    );
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-10">
-      <h1 className="section-title mb-6">
+      <h1 className="section-title mb-2">
         {CATEGORY_MAP[slug] || "Categoría"}
       </h1>
+
+      {brand && (
+        <p className="text-sm text-gray-500 mb-6">
+          Filtrado por marca: <strong>{brand}</strong>
+        </p>
+      )}
 
       <ProductGrid products={filtered} />
     </div>
   );
-}
-export async function generateMetadata({ params }) {
-  return {
-    title: `${CATEGORY_MAP[params.slug]} | Ami Beauty`,
-  };
 }

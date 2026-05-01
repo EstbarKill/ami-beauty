@@ -1,5 +1,12 @@
-export function applyGrayWorld(ctx, canvas) {
-  const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
+export function applyGrayWorld(ctx, canvas, region = null) {
+  const { width, height } = canvas;
+
+  const x = region?.x || 0;
+  const y = region?.y || 0;
+  const w = region?.width || width;
+  const h = region?.height || height;
+
+  const img = ctx.getImageData(x, y, w, h);
   const data = img.data;
 
   let r = 0, g = 0, b = 0, count = 0;
@@ -22,14 +29,10 @@ export function applyGrayWorld(ctx, canvas) {
   const gainB = gray / avgB;
 
   for (let i = 0; i < data.length; i += 4) {
-    data[i] *= gainR;
-    data[i + 1] *= gainG;
-    data[i + 2] *= gainB;
+    data[i]     = Math.min(255, data[i]     * gainR);
+    data[i + 1] = Math.min(255, data[i + 1] * gainG);
+    data[i + 2] = Math.min(255, data[i + 2] * gainB);
   }
-for (let i = 0; i < data.length; i += 4) {
-  data[i]     = Math.min(255, data[i]     * gainR);
-  data[i + 1] = Math.min(255, data[i + 1] * gainG);
-  data[i + 2] = Math.min(255, data[i + 2] * gainB);
-}
-  ctx.putImageData(img, 0, 0);
+
+  ctx.putImageData(img, x, y);
 }

@@ -24,13 +24,41 @@ const analyze = async (source = null) => {
     return null;
   }
 
-  const face = await detectFace(input);
+function getFaceBoundingBox(landmarks, canvas) {
+  const xs = landmarks.map(p => p.x * canvas.width);
+  const ys = landmarks.map(p => p.y * canvas.height);
 
-  if (!face) {
-    setResult({ error: "no-face" });
-    setLoading(false);
-    return null;
-  }
+  const minX = Math.max(0, Math.min(...xs));
+  const maxX = Math.min(canvas.width, Math.max(...xs));
+  const minY = Math.max(0, Math.min(...ys));
+  const maxY = Math.min(canvas.height, Math.max(...ys));
+
+  return {
+    x: minX,
+    y: minY,
+    width: maxX - minX,
+    height: maxY - minY
+  };
+}
+
+  const face = await detectFace(input);
+  function getFaceBoundingBox(landmarks, canvas) {
+  const xs = landmarks.map(p => p.x * canvas.width);
+  const ys = landmarks.map(p => p.y * canvas.height);
+
+  const minX = Math.max(0, Math.min(...xs));
+  const maxX = Math.min(canvas.width, Math.max(...xs));
+  const minY = Math.max(0, Math.min(...ys));
+  const maxY = Math.min(canvas.height, Math.max(...ys));
+
+  return {
+    x: minX,
+    y: minY,
+    width: maxX - minX,
+    height: maxY - minY
+  };
+}
+  const bbox = getFaceBoundingBox(face, canvas);
 
   canvas.width = input.videoWidth || input.width;
   canvas.height = input.videoHeight || input.height;
@@ -56,10 +84,10 @@ resetCheekHistory();
   };
   setResult(final);
   setLoading(false);
-
+console.log("ANALYSIS RESULT:", final);
   return final; // ✅ FIX REAL
 };
-
+  
   const reset = () => {
     setResult(null);
     setLoading(false);

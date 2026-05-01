@@ -13,6 +13,7 @@ export default function SkinAnalyzer({ mode }) {
   const fileInputRef = useRef(null);
   const loopRef = useRef(false);
   const frameRef = useRef(null);
+const [faceData, setFaceData] = useState(null);
 
   const { analyze, result, loading, reset } =
     useSkinAnalysis(videoRef, canvasRef);
@@ -90,17 +91,20 @@ const stopCamera = () => {
   }
 };
   // 👁 DETECCIÓN LIGERA (SIN ANALYZE)
-const detectFaceLoop = async () => {
+let lastCheck = 0;
+
+const detectFaceLoop = async (time) => {
   if (!loopRef.current) return;
 
-  if (!videoRef.current?.srcObject) return;
+  if (time - lastCheck > 150) { // 🔥 throttle ~6fps
+    lastCheck = time;
 
-  try {
-    const face = await detectFace(videoRef.current);
-    setFaceDetected(!!face);
-  } catch (err) {
-    console.error("Error real:", err);
-    setFaceDetected(false);
+    try {
+      const face = await detectFace(videoRef.current);
+      setFaceDetected(!!face);
+    } catch {
+      setFaceDetected(false);
+    }
   }
 
   frameRef.current = requestAnimationFrame(detectFaceLoop);
@@ -188,6 +192,7 @@ const handleAnalyze = async () => {
       />
 
       {/* VIDEO */}
+      <div className="relative w-[320px] mx-auto">
       {mode === "camera" && (
         <video
           ref={videoRef}
@@ -209,7 +214,7 @@ const handleAnalyze = async () => {
 
       {/* CANVAS OCULTO */}
       <canvas ref={canvasRef} className="hidden" />
-
+</div>
       {/* LOADING */}
       {loading && (
         <p className="text-amber-400 text-center">

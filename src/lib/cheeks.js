@@ -3,18 +3,7 @@ const LEFT_CHEEK = [116, 117, 118, 119];
 const RIGHT_CHEEK = [346, 347, 348, 349];
 
 
-const isValidCheekPoint = (p, canvas) => {
-  
-  const y = p.y * canvas.height;
-  // ❌ muy arriba (cerca ojo)
-  if (y < canvas.height * 0.35) return false;
 
-  // ❌ muy abajo (mandíbula)
-  if (y > canvas.height * 0.75) return false;
-if (!p || !isValidCheekPoint(p, canvas)) return;
-
-  return true;
-};
 let rgbHistory = [];
 // 🧠 Historial para suavizado temporal
 export function resetCheekHistory() {
@@ -36,19 +25,6 @@ function smoothRGB(rgb) {
   );
 
   return avg.map((v) => Math.round(v / rgbHistory.length));
-}
-
-// 🎯 Corrección simple de iluminación
-function normalizeLighting(r, g, b) {
-  const avg = (r + g + b) / 3 || 1;
-
-  const factor = 110 / avg;
-
-  return [
-    Math.min(255, Math.round(r * factor)),
-    Math.min(255, Math.round(g * factor)),
-    Math.min(255, Math.round(b * factor)),
-  ];
 }
 
 export function getCheekPixels(landmarks, canvas, ctx) {
@@ -130,12 +106,7 @@ const weight = centerPoints.includes(idx) ? 3 : 1;
   let finalG = g / count;
   let finalB = b / count;
 
-  // 🎯 corrección de iluminación
- // [finalR, finalG, finalB] = normalizeLighting(
-   // finalR,
-    //finalG,
-    //finalB
-  //);
+
 
   // 🎯 suavizado temporal
   const smoothed = smoothRGB([finalR, finalG, finalB]);

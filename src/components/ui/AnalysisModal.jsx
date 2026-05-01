@@ -115,19 +115,27 @@ export default function AnalysisModal({ result, onClose }) {
             style={{
               color: "black",
               width: "56%",
-              padding: "1.6rem",
-              borderRight: "1px solid var(--cream-dark)",
+              padding: "1rem",
+              borderRight: "2px solid var(--cream-dark)",
               background: "var(--cream)",
               display: "flex",
               flexDirection: "column",
               gap: "2.2rem",
             }}
           >
+            <span
+            style={{
+              fontSize: "1rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: "var(--muted)",
+              textAlign:"center",
+            }}
+            >Tu tono de piel</span>
             {/* Reference row */}
             <div style={{ display: "flex", gap: "6px" }}>
               {tone?.variants?.map((s) => {
                 const active = s.tone === "mid";
-
                 return (
                   <div key={s.id} style={{ flex: 1, textAlign: "center" }}>
                     <p
@@ -146,13 +154,14 @@ export default function AnalysisModal({ result, onClose }) {
                           : "1px solid var(--cream-dark)",
                         transform: active ? "scale(1.05)" : "scale(1)",
                         transition: "all .2s",
+                        zIndex: active ? 2 : 1,
+                        position: "relative",
                       }}
                     />
                   </div>
                 );
               })}
             </div>
-
             {/* Main swatch + info */}
             {tone && (
               <div
