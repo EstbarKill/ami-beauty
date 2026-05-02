@@ -20,7 +20,7 @@ export default function FeaturedProducts() {
           <div>
             <span className="eyebrow">Selección editorial</span>
             <h2 className="section-title" style={{ color: "var(--charcoal)", marginTop: "0.25rem" }}>
-              Productos destacados
+              Productos
             </h2>
           </div>
           <Link href="/category/todos" className="view-all-link">

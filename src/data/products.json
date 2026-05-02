@@ -193,8 +193,7 @@
       "/img/products/anik-base-1.jpeg",
       "/img/products/anik-base-2.jpeg",
       "/img/products/anik-base-3.jpeg",
-      "/img/products/anik-base-4.jpeg",
-      "/img/products/anik-base-5.jpeg"
+      "/img/products/anik-base-4.jpeg"
     ],
     "variants": [
       { "shade": "00 Anne",    "hex": "#F5D8C0", "toneId": "porcelana",     "subtone": "neutral"  },
@@ -295,9 +294,7 @@
     "images": [
       "/img/products/polvo-mj-1.jpeg",
       "/img/products/polvo-mj-2.jpeg",
-      "/img/products/polvo-mj-3.jpeg",
-      "/img/products/polvo-mj-4.jpeg",
-      "/img/products/polvo-mj-5.jpeg"
+      "/img/products/polvo-mj-3.jpeg"
     ],
     "variants": [
       { "shade": "Rosado",   "hex": "#F5C6CB", "toneId": "claro-rosado", "subtone": "cool" },
@@ -326,10 +323,7 @@
     "subtones": ["cool", "neutral", "warm"],
     "images": [
       "/img/products/montoc-polvo-1.jpeg",
-      "/img/products/montoc-polvo-2.jpeg",
-      "/img/products/montoc-polvo-3.jpeg",
-      "/img/products/montoc-polvo-4.jpeg",
-      "/img/products/montoc-polvo-5.jpeg"
+      "/img/products/montoc-polvo-2.jpeg"
     ],
     "variants": [
       { "shade": "Único Traslúcido", "hex": "#F8EEE0", "toneId": "porcelana", "subtone": "neutral" }
@@ -353,11 +347,7 @@
     ],
     "subtones": ["cool", "neutral", "warm"],
     "images": [
-      "/img/products/purpure-polvo-1.jpeg",
-      "/img/products/purpure-polvo-2.jpeg",
-      "/img/products/purpure-polvo-3.jpeg",
-      "/img/products/purpure-polvo-4.jpeg",
-      "/img/products/purpure-polvo-5.jpeg"
+      "/img/products/purpure-polvo-1.jpeg"
     ],
     "variants": [
       { "shade": "Único Traslúcido", "hex": "#F5EDE2", "toneId": "porcelana", "subtone": "neutral" }
@@ -380,9 +370,7 @@
     "images": [
       "/img/products/atenea-bronzer-1.jpeg",
       "/img/products/atenea-bronzer-2.jpeg",
-      "/img/products/atenea-bronzer-3.jpeg",
-      "/img/products/atenea-bronzer-4.jpeg",
-      "/img/products/atenea-bronzer-5.jpeg"
+      "/img/products/atenea-bronzer-3.jpeg"
     ],
     "variants": [
       { "shade": "Terranova",      "hex": "#8F5A3C", "toneId": "trigueño",      "subtone": "neutral"  },
@@ -405,10 +393,7 @@
     "subtones": ["neutral", "warm"],
     "images": [
       "/img/products/anik-contorno-1.jpeg",
-      "/img/products/anik-contorno-2.jpeg",
-      "/img/products/anik-contorno-3.jpeg",
-      "/img/products/anik-contorno-4.jpeg",
-      "/img/products/anik-contorno-5.jpeg"
+      "/img/products/anik-contorno-2.jpeg"
     ],
     "variants": [
       { "shade": "01 Mocca Mami",      "hex": "#8B6240", "toneId": "trigueño",      "subtone": "neutral"  },
@@ -465,9 +450,7 @@
     "images": [
       "/img/products/atenea-glamblack-1.jpeg",
       "/img/products/atenea-glamblack-2.jpeg",
-      "/img/products/atenea-glamblack-3.jpeg",
-      "/img/products/atenea-glamblack-4.jpeg",
-      "/img/products/atenea-glamblack-5.jpeg"
+      "/img/products/atenea-glamblack-3.jpeg"
     ],
     "variants": [
       { "shade": "Iluminador Champagne", "hex": "#F4E0C0", "toneId": "claro-dorado",  "subtone": "neutral"  },
@@ -496,11 +479,7 @@
     ],
     "subtones": ["cool", "neutral", "warm"],
     "images": [
-      "/img/products/montoc-rubor-1.jpeg",
-      "/img/products/montoc-rubor-2.jpeg",
-      "/img/products/montoc-rubor-3.jpeg",
-      "/img/products/montoc-rubor-4.jpeg",
-      "/img/products/montoc-rubor-5.jpeg"
+      "/img/products/montoc-rubor-1.jpeg"
     ],
     "variants": [
       { "shade": "Guayaba 01",  "hex": "#F28B82", "toneId": "medio-rosado", "subtone": "cool" },
@@ -529,10 +508,7 @@
     "subtones": ["cool", "neutral", "warm"],
     "images": [
       "/img/products/atenea-rubor-atemporal-1.jpeg",
-      "/img/products/atenea-rubor-atemporal-2.jpeg",
-      "/img/products/atenea-rubor-atemporal-3.jpeg",
-      "/img/products/atenea-rubor-atemporal-4.jpeg",
-      "/img/products/atenea-rubor-atemporal-5.jpeg"
+      "/img/products/atenea-rubor-atemporal-2.jpeg"
     ],
     "variants": [
       { "shade": "Nude Satin",   "hex": "#DEB49A", "toneId": "claro-dorado",  "subtone": "neutral"  },
@@ -560,11 +536,7 @@
     ],
     "subtones": ["cool", "neutral", "warm"],
     "images": [
-      "/img/products/atenea-allure-1.jpeg",
-      "/img/products/atenea-allure-2.jpeg",
-      "/img/products/atenea-allure-3.jpeg",
-      "/img/products/atenea-allure-4.jpeg",
-      "/img/products/atenea-allure-5.jpeg"
+      "/img/products/atenea-allure-1.jpeg"
     ],
     "variants": [
       { "shade": "Dúo 01 Rose",    "hex": "#ECA8A8", "toneId": "claro-rosado", "subtone": "cool" },
@@ -619,11 +591,7 @@
     ],
     "subtones": ["cool", "neutral", "warm"],
     "images": [
-      "/img/products/purpure-rubor-1.jpeg",
-      "/img/products/purpure-rubor-2.jpeg",
-      "/img/products/purpure-rubor-3.jpeg",
-      "/img/products/purpure-rubor-4.jpeg",
-      "/img/products/purpure-rubor-5.jpeg"
+      "/img/products/purpure-rubor-1.jpeg"
     ],
     "variants": [
       { "shade": "01 Golden Hour", "hex": "#F4A060", "toneId": "claro-dorado", "subtone": "warm" },
@@ -651,11 +619,7 @@
     ],
     "subtones": ["cool", "neutral", "warm"],
     "images": [
-      "/img/products/purpure-iluminador-1.jpeg",
-      "/img/products/purpure-iluminador-2.jpeg",
-      "/img/products/purpure-iluminador-3.jpeg",
-      "/img/products/purpure-iluminador-4.jpeg",
-      "/img/products/purpure-iluminador-5.jpeg"
+      "/img/products/purpure-iluminador-1.jpeg"
     ],
     "variants": [
       { "shade": "01 Sirius",   "hex": "#E8D8F0", "toneId": "porcelana",    "subtone": "cool" },
@@ -684,8 +648,7 @@
       "/img/products/montoc-iluminador-1.jpeg",
       "/img/products/montoc-iluminador-2.jpeg",
       "/img/products/montoc-iluminador-3.jpeg",
-      "/img/products/montoc-iluminador-4.jpeg",
-      "/img/products/montoc-iluminador-5.jpeg"
+      "/img/products/montoc-iluminador-4.jpeg"
     ],
     "variants": [
       { "shade": "Golden",    "hex": "#F8D880", "toneId": "claro-dorado",  "subtone": "warm" },
@@ -712,10 +675,7 @@
     "subtones": ["cool", "neutral", "warm"],
     "images": [
       "/img/products/lula-iluminador-1.jpeg",
-      "/img/products/lula-iluminador-2.jpeg",
-      "/img/products/lula-iluminador-3.jpeg",
-      "/img/products/lula-iluminador-4.jpeg",
-      "/img/products/lula-iluminador-5.jpeg"
+      "/img/products/lula-iluminador-2.jpeg"
     ],
     "variants": [
       { "shade": "01", "hex": "#F8E8B0", "toneId": "porcelana",    "subtone": "cool" },
@@ -726,7 +686,6 @@
       { "shade": "06", "hex": "#C87890", "toneId": "trigueño",     "subtone": "cool" }
     ]
   },
-
   {
     "id": 24,
     "name": "Iluminador Suelto",
@@ -745,10 +704,7 @@
     "subtones": ["cool", "neutral", "warm"],
     "images": [
       "/img/products/anik-iluminador-1.jpeg",
-      "/img/products/anik-iluminador-2.jpeg",
-      "/img/products/anik-iluminador-3.jpeg",
-      "/img/products/anik-iluminador-4.jpeg",
-      "/img/products/anik-iluminador-5.jpeg"
+      "/img/products/anik-iluminador-2.jpeg"
     ],
     "variants": [
       { "shade": "01 Angel Glow",    "hex": "#F0E0C0", "toneId": "claro-neutro", "subtone": "neutral"  },
@@ -776,11 +732,7 @@
     ],
     "subtones": ["cool", "neutral", "warm"],
     "images": [
-      "/img/products/atenea-birds-1.jpeg",
-      "/img/products/atenea-birds-2.jpeg",
-      "/img/products/atenea-birds-3.jpeg",
-      "/img/products/atenea-birds-4.jpeg",
-      "/img/products/atenea-birds-5.jpeg"
+      "/img/products/atenea-birds-1.jpeg"
     ],
     "variants": [
       { "shade": "Paleta Completa", "hex": "#C89060", "toneId": "medio-neutro", "subtone": "neutral" }
@@ -806,10 +758,7 @@
     "subtones": ["cool", "neutral", "warm"],
     "images": [
       "/img/products/atenea-classic-1.jpeg",
-      "/img/products/atenea-classic-2.jpeg",
-      "/img/products/atenea-classic-3.jpeg",
-      "/img/products/atenea-classic-4.jpeg",
-      "/img/products/atenea-classic-5.jpeg"
+      "/img/products/atenea-classic-2.jpeg"
     ],
     "variants": [
       { "shade": "Paleta Completa", "hex": "#B07850", "toneId": "medio-neutro", "subtone": "neutral" }
@@ -834,10 +783,7 @@
     "subtones": ["cool", "neutral", "warm"],
     "images": [
       "/img/products/purpure-sombras-1.jpeg",
-      "/img/products/purpure-sombras-2.jpeg",
-      "/img/products/purpure-sombras-3.jpeg",
-      "/img/products/purpure-sombras-4.jpeg",
-      "/img/products/purpure-sombras-5.jpeg"
+      "/img/products/purpure-sombras-2.jpeg"
     ],
     "variants": [
       { "shade": "01 Neutral",      "hex": "#D4A880", "toneId": "claro-dorado",  "subtone": "neutral"  },
@@ -867,9 +813,7 @@
     "images": [
       "/img/products/montoc-sombras-1.jpeg",
       "/img/products/montoc-sombras-2.jpeg",
-      "/img/products/montoc-sombras-3.jpeg",
-      "/img/products/montoc-sombras-4.jpeg",
-      "/img/products/montoc-sombras-5.jpeg"
+      "/img/products/montoc-sombras-3.jpeg"
     ],
     "variants": [
       { "shade": "Dalia",  "hex": "#D4607A", "toneId": "medio-rosado", "subtone": "cool" },
@@ -896,10 +840,7 @@
     "subtones": ["cool", "neutral", "warm"],
     "images": [
       "/img/products/purpure-labios-1.jpeg",
-      "/img/products/purpure-labios-2.jpeg",
-      "/img/products/purpure-labios-3.jpeg",
-      "/img/products/purpure-labios-4.jpeg",
-      "/img/products/purpure-labios-5.jpeg"
+      "/img/products/purpure-labios-2.jpeg"
     ],
     "variants": [
       { "shade": "01 Nude",     "hex": "#E8B8A0", "toneId": "claro-neutro", "subtone": "neutral"  },
@@ -928,9 +869,7 @@
     "images": [
       "/img/products/anik-gloss-1.jpeg",
       "/img/products/anik-gloss-2.jpeg",
-      "/img/products/anik-gloss-3.jpeg",
-      "/img/products/anik-gloss-4.jpeg",
-      "/img/products/anik-gloss-5.jpeg"
+      "/img/products/anik-gloss-3.jpeg"
     ],
     "variants": [
       { "shade": "Kim",   "hex": "#F0C0A8", "toneId": "claro-neutro", "subtone": "neutral"  },

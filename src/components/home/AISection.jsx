@@ -28,11 +28,11 @@ function ToneItem({ tone }) {
   const activeLabel = subHover
     ? tone.subtones.find((s) => s.id === subHover)?.label
     : hovered
-    ? tone.label
-    : null;
+      ? tone.label
+      : null;
 
   return (
-    <div style={{ position: "relative", width: "70px", height: "70px" }}>
+    <div style={{ position: "relative", width: "70px", height: "70px", marginTop: "20px" }}>
       {tone.subtones.map((sub, i) => {
         const pos = FAN_POSITIONS[i];
         const isSubHovered = subHover === sub.id;
@@ -71,7 +71,7 @@ function ToneItem({ tone }) {
           background: tone.hex,
           margin: "auto",
           cursor: "pointer",
-          transform: hovered ? "scale(1.1)" : "scale(1)",
+          transform: hovered ? "scale(1.1)" : "scale(0.5)",
           transition: "all .2s",
         }}
       />
@@ -79,7 +79,7 @@ function ToneItem({ tone }) {
       <div
         style={{
           position: "absolute",
-          bottom: "-22px",
+          bottom: "-20px",
           fontSize: "12px",
           textAlign: "center",
           width: "100%",
@@ -90,7 +90,6 @@ function ToneItem({ tone }) {
       </div>
     </div>
   );
-  
 }
 
 export default function AISection() {
@@ -102,45 +101,44 @@ export default function AISection() {
   }, []);
 
   return (
-    <section style={{ padding: "4rem 3rem", background: "#0B0A09" }}>
-      <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
-
+    <section style={{ padding: "3rem 3rem", background: "#E5D8BE" }}>
+      <div className="grid lg:grid-cols-2 gap-10 mx-auto">
         {/* LEFT */}
-        <div>
-          <p className="text-amber-400 text-xs uppercase tracking-widest mb-2">
+        <div className="flex flex-col justify-center font-black bg-black/10 rounded-lg p-3 hover:bg-black/25 transition-all">
+          <p className="text-amber-700 text-3xl h-max-full uppercase tracking-widest mb-7">
             Motor de análisis IA
           </p>
 
-          <h2 className="text-3xl font-serif mb-4">
+          <h2 className="text-3xl font-serif">
             Detecta tu tono de piel con precisión científica
           </h2>
 
-          <p className="text-white/60 text-sm mb-6 leading-relaxed">
+          <p className="text-black/60 text-sl mb-6 leading-relaxed">
             Utilizamos un pipeline basado en{" "}
-            <span className="text-amber-400">CIELAB + ITA</span> con corrección
+            <span className="text-orange-500">CIELAB + ITA</span> con corrección
             de color, detección facial y análisis de subtono.
           </p>
 
           <div className="space-y-3 mb-8">
             {STEPS.map((s) => (
-              <div key={s.n} className="flex gap-3 text-sm text-white/60">
-                <span className="text-amber-400">{s.n}</span>
+              <div key={s.n} className="flex gap-3 text-sm text-amber/60">
+                <span className="text-amber-600">{s.n}</span>
                 {s.text}
               </div>
             ))}
           </div>
 
-          <Link href="/analisis" className="px-6 py-3 bg-amber-400 text-black">
+          <Link href="/analisis" className="px-4 py-3 bg-amber-200 text-black border border-amber-400 w-max rounded-full hover:bg-amber-300 transition">
             Analizar ahora
           </Link>
         </div>
 
         {/* RIGHT */}
-        <div>
-          <div className="flex mb-4 border border-white/10">
+        <div className="flex-col font-black bg-black/10 rounded-lg p-3 hover:bg-black/25 transition">
+          <div className="flex justify-self-center border border-amber-400 rounded-full w-max overflow-hidden hover:bg-amber-400/20">
             <button
               onClick={() => setActiveTab("qr")}
-              className={`px-4 py-2 ${
+              className={`px-15 py-2 ${
                 activeTab === "qr" ? "bg-amber-400 text-black" : ""
               }`}
             >
@@ -149,7 +147,7 @@ export default function AISection() {
 
             <button
               onClick={() => setActiveTab("palette")}
-              className={`px-4 py-2 ${
+              className={`px-10 py-2 ${
                 activeTab === "palette" ? "bg-amber-400 text-black" : ""
               }`}
             >
@@ -158,23 +156,31 @@ export default function AISection() {
           </div>
 
           {activeTab === "qr" && qrUrl && (
-            <div className="flex justify-center">
-              <QRCode value={qrUrl} size={160} />
+            <div className="flex justify-center pt-5">
+              <QRCode value={qrUrl} size={360} />
             </div>
           )}
 
           {activeTab === "palette" && (
-    <div key={group}>
-      <p className="text-xs text-white/40 uppercase mb-4 text-center">
-        {group}
-      </p>
+            <div className="grid grid-cols-3 gap-5">
+              {["Claro", "Medio", "Oscuro"].map((group) => {
+                const tones = SKIN_TONES.filter((t) => t.toneGroup === group);
 
-      <div className="flex flex-col gap-8 items-center">
-        {tones.map(tone => (
-          <ToneItem key={tone.id} tone={tone} />
-        ))}
-      </div>
-    </div>
+                return (
+                  <div key={group}>
+                    <p className="text-xs text-white/40 uppercase text-center">
+                      {group}
+                    </p>
+
+                    <div className="flex flex-col gap-8 items-center">
+                      {tones.map((tone) => (
+                        <ToneItem key={tone.id} tone={tone} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           )}
         </div>
       </div>

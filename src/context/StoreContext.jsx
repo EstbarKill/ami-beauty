@@ -47,24 +47,27 @@ export function StoreProvider({ children }) {
   const addToCart = useCallback(
     (product) => {
       setCart((prev) => {
-const exists = prev.find(
-  (c) =>
-    c.id === product.id &&
-    c.selectedVariant?.shade === product.selectedVariant?.shade
-);
-if (exists) {
-  return prev.map((c) =>
-    c.id === product.id && c.variant === product.variant &&
-    c.selectedVariant?.shade === product.selectedVariant?.shade
-      ? { ...c, qty: c.qty + 1 }
-      : c
-  );
-}
+        const exists = prev.find(
+          (c) =>
+            c.id === product.id &&
+            c.image === product.images &&
+            c.selectedVariant?.shade === product.selectedVariant?.shade,
+        );
+        if (exists) {
+          return prev.map((c) =>
+            c.id === product.id &&
+            c.variant === product.variant &&
+            c.image === product.images &&
+            c.selectedVariant?.shade === product.selectedVariant?.shade
+              ? { ...c, qty: c.qty + 1 }
+              : c,
+          );
+        }
         return [...prev, { ...product, qty: 1 }];
       });
       showToast(`${product.name} agregado al carrito ✓`);
     },
-    [showToast]
+    [showToast],
   );
 
   const removeFromCart = useCallback((id) => {
@@ -77,9 +80,7 @@ if (exists) {
     if (qty <= 0) {
       setCart((prev) => prev.filter((c) => c.id !== id));
     } else {
-      setCart((prev) =>
-        prev.map((c) => (c.id === id ? { ...c, qty } : c))
-      );
+      setCart((prev) => prev.map((c) => (c.id === id ? { ...c, qty } : c)));
     }
   }, []);
 
@@ -99,12 +100,12 @@ if (exists) {
         return [...prev, product];
       });
     },
-    [showToast]
+    [showToast],
   );
 
   const isFav = useCallback(
     (id) => favorites.some((f) => f.id === id),
-    [favorites]
+    [favorites],
   );
 
   const value = useMemo(
@@ -141,7 +142,7 @@ if (exists) {
       toast,
       showToast,
       aiRecommended,
-    ]
+    ],
   );
 
   return (
