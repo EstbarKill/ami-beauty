@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/ui/Footer";
+import Footer from "@/components/layout/Footer";
 import CartSidebar from "@/components/ui/CartSidebar";
 import Toast from "@/components/ui/Toast";
 import { StoreProvider } from "@/context/StoreContext";

@@ -6,7 +6,7 @@ export default function FeaturedProducts() {
   const featured = products.filter((p) => p.featured);
 
   return (
-    <section style={{ background: "white", padding: "2rem 3rem" }}>
+    <section style={{ background: "white", padding: "1.5rem 3rem" }}>
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         {/* Header */}
         <div
@@ -14,12 +14,12 @@ export default function FeaturedProducts() {
             display: "flex",
             alignItems: "flex-end",
             justifyContent: "space-between",
-            marginBottom: "3rem",
+            marginBottom: "1rem",
           }}
         >
           <div>
-            <span className="eyebrow">Selección editorial</span>
-            <h2 className="section-title" style={{ color: "var(--charcoal)", marginTop: "0.25rem" }}>
+            <span className="eyebrow">Seleccion productos</span>
+            <h2 className="section-title" style={{ color: "var(--charcoal)", marginTop: "1rem", marginLeft: ".25rem" }}>
               Productos
             </h2>
           </div>
@@ -32,9 +32,11 @@ export default function FeaturedProducts() {
         <div
           style={{
             display: "grid",
+            padding: "1rem",
             gridTemplateColumns: "repeat(4,1fr)",
             gap: "1.5rem",
-          }}
+            boxShadow: "0 0 10px rgba(0,0,0,0.2)",
+            }}
         >
           {featured.map((p) => (
             <ProductCard key={p.id} product={p} />

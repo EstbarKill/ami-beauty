@@ -23,7 +23,7 @@ export default function AnalysisModal({ result, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center pt-20"
       style={{ background: "rgba(28,24,21,0.72)", backdropFilter: "blur(6px)" }}
     >
       {/* Card container — horizontal */}
@@ -32,7 +32,7 @@ export default function AnalysisModal({ result, onClose }) {
           background: "white",
           borderRadius: "4px",
           width: "100%",
-          maxWidth: "760px",
+          maxWidth: "1060px",
           display: "flex",
           flexDirection: "column",
           overflow: "hidden",
@@ -105,7 +105,7 @@ export default function AnalysisModal({ result, onClose }) {
           style={{
             display: "flex",
             minHeight: "340px",
-            gap: "1rem",
+            gap: "2rem",
             overflowX: "auto",
             paddingBottom: "1rem",
           }}
@@ -114,34 +114,34 @@ export default function AnalysisModal({ result, onClose }) {
           <div
             style={{
               color: "black",
-              width: "56%",
+              width: "40%",
               padding: "1rem",
               borderRight: "2px solid var(--cream-dark)",
-              background: "var(--cream)",
+              background: "var(--cream-dark)",
               display: "flex",
               flexDirection: "column",
-              gap: "2.2rem",
+              gap: "1.2rem",
             }}
           >
             <span
             style={{
-              fontSize: "1rem",
+              fontSize: "2rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
-              color: "var(--muted)",
+              color: "var(--rose-dark)",
               textAlign:"center",
             }}
             >Tu tono de piel</span>
             {/* Reference row */}
-            <div style={{ display: "flex", gap: "6px" }}>
+            <div style={{ display: "flex", gap: "10px" }}>
               {tone?.variants?.map((s) => {
                 const active = s.tone === "mid";
                 return (
-                  <div key={s.id} style={{ flex: 1, textAlign: "center" }}>
+                  <div  className="reference" key={s.id} style={{ flex: 1, textAlign: "center" }}>
                     <p
                       style={{ fontFamily: "Georgia, serif", fontSize: "1rem" }}
                     >
-                      {s.label}
+                      {s.label}saa
                     </p>
 
                     <div

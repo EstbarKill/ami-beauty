@@ -65,16 +65,16 @@ export default function Header() {
         </Link>
 
         {/* Search */}
-        <div style={{ flex: 1, maxWidth: "480px", position: "relative" }}>
+        <div style={{ flex: 1, maxWidth: "780px", position: "relative" }}>
           <span
             style={{
               position: "absolute",
-              left: "0.9rem",
+              left: "0.7rem",
               top: "50%",
               transform: "translateY(-50%)",
               pointerEvents: "none",
               color: focused ? "var(--rose)" : "var(--muted-light)",
-              transition: "color 0.2s",
+              transition: "color 0.4s",
             }}
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="13" height="13">

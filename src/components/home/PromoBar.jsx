@@ -11,8 +11,10 @@ export default function PromoBar() {
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(3,2fr)",
-        gap: "1px",
-        background: "var(--cream-dark)",
+        gap: "1rem",
+        background: "white",
+        justifyItems: "center",
+        borderBottom: "1px solid var(--cream-dark)",
       }}
     >
       {PROMOS.map((p) => (
@@ -20,20 +22,18 @@ export default function PromoBar() {
           className="promoBar"
           key={p.label}
           style={{
-            background: "white",
-            padding: "2rem",
             display: "flex",
             alignItems: "center",
             gap: "1rem",
           }
         }
         >
-          <span style={{ fontSize: "1.4rem", color: "var(--rose)", flexShrink: 0 }}>{p.icon}</span>
+          <span style={{ fontSize: "2.4rem", color: "red", flexShrink: 0 }}>{p.icon}</span>
           <div>
-            <div style={{ fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "var(--muted)" }}>
+            <div style={{ fontSize: "20px", letterSpacing: ".08em", textTransform: "uppercase", color: "var(--rose-dark)" }}>
               {p.label}
             </div>
-            <div style={{ fontSize: "15px", fontWeight: 500, color: "var(--charcoal)" }}>
+            <div style={{ fontSize: "15px", fontWeight: 500, color: "var(--rose-lith)", marginLeft: "5px" }}>
               {p.value}
             </div>
           </div>

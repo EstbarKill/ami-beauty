@@ -2,14 +2,14 @@
 
 const REVIEWS = [
   {
-    stars: 5,
+    stars: 4.9,
     text: "Nunca había tenido la piel así. Los ingredientes son excepcionales y los resultados se notan desde la primera semana. Ahora es imposible que cambie de marca.",
     author: "Valentina M.",
     location: "Bogotá",
     initial: "V",
   },
   {
-    stars: 5,
+    stars: 4,
     text: "El analizador de piel es increíble. Me recomendó exactamente el corrector que necesitaba y ahora mi piel luce perfecta todos los días sin esfuerzo.",
     author: "Camila R.",
     location: "Medellín",
@@ -26,7 +26,7 @@ const REVIEWS = [
 
 export default function ReviewsSection() {
   return (
-    <section style={{ background: "var(--charcoal)", padding: "6rem 3rem", color: "white" }}>
+    <section style={{ background: "var(--charcoal)", padding: "3rem 4rem", color: "white" }}>
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         {/* Header row */}
         <div
@@ -35,7 +35,7 @@ export default function ReviewsSection() {
             gridTemplateColumns: "1fr auto",
             gap: "4rem",
             alignItems: "center",
-            marginBottom: "3.5rem",
+            marginBottom: "2rem",
           }}
         >
           <div>
@@ -43,16 +43,15 @@ export default function ReviewsSection() {
             <h2
               style={{
                 fontFamily: "Georgia,serif",
-                fontSize: "clamp(2rem,3vw,2.8rem)",
+                fontSize: "clamp(1.5rem,3vw,2.8rem)",
                 color: "white",
                 fontWeight: 400,
-                marginBottom: "1rem",
-                marginTop: 0,
+                marginBottom: ".3rem",
               }}
             >
               Lo que dicen nuestras clientas
             </h2>
-            <p style={{ color: "rgba(255,255,255,.45)", fontSize: "14px", lineHeight: "1.85", margin: 0, maxWidth: "480px" }}>
+            <p style={{ color: "var(--rose-lith)", fontSize: "20px", lineHeight: "1.5", margin: 0, maxWidth: "780px" }}>
               La satisfacción de nuestras clientas es nuestra mayor prioridad. Cada producto está
               respaldado por miles de reseñas verificadas de compradoras reales.
             </p>
@@ -67,44 +66,44 @@ export default function ReviewsSection() {
                 marginBottom: "0.3rem",
               }}
             >
-              4.9
+              4.8
             </div>
             <div style={{ color: "var(--gold)", fontSize: "1.1rem", letterSpacing: "0.1em", marginBottom: "0.4rem" }}>
               ★★★★★
             </div>
-            <div style={{ fontSize: "11px", color: "rgba(255,255,255,.35)", letterSpacing: "0.06em" }}>
+            <div style={{ fontSize: "15px", color: "var(--rose-lith", letterSpacing: "0.06em" }}>
               +2.400 reseñas verificadas
             </div>
           </div>
         </div>
 
         {/* Reviews grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.75rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.5rem" }}>
           {REVIEWS.map(({ stars, text, author, location, initial }) => (
             <div
               key={author}
               style={{
-                background: "rgba(255,255,255,.04)",
-                border: "1px solid rgba(255,255,255,.07)",
-                padding: "2rem",
-                transition: "border-color .2s, transform .2s",
+                background: "var(--charcoal)",
+                border: "1px solid rgba(255,255,255,.2)",
+                padding: "1rem",
+                transition: "border-color .5s, transform .3s",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "rgba(201,149,122,.35)";
-                e.currentTarget.style.transform = "translateY(-3px)";
+                e.currentTarget.style.borderColor = "rgba(201,149,122,.7)";
+                e.currentTarget.style.transform = "translateY(-10px)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,.07)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,.4)";
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              <div style={{ color: "var(--gold)", fontSize: "13px", letterSpacing: "0.1em", marginBottom: "1rem" }}>
+              <div style={{ color: "var(--gold)", fontSize: "20px", letterSpacing: "0.1em"}}>
                 {"★".repeat(stars)}
               </div>
               <p
                 style={{
-                  fontSize: "13.5px",
-                  color: "rgba(255,255,255,.6)",
+                  fontSize: "13px",
+                  color: "white",
                   lineHeight: "1.85",
                   marginBottom: "1.5rem",
                   fontStyle: "italic",
@@ -112,7 +111,7 @@ export default function ReviewsSection() {
               >
                 "{text}"
               </p>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
                 <div
                   style={{
                     width: "34px",

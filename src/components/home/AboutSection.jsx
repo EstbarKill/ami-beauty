@@ -2,15 +2,14 @@ import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section style={{ background: "white", padding: "7rem 3rem" }}>
+    <section style={{ background: "white", padding: "4rem 4rem" }}>
       <div
         style={{
           maxWidth: "1440px",
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "7rem",
-          alignItems: "center",
+          gridTemplateColumns: "1fr 2fr",
+          gap: "2rem",
         }}
       >
         {/* Image stack */}
@@ -18,7 +17,7 @@ export default function AboutSection() {
           {/* Main block */}
           <div
             style={{
-              width: "78%",
+              width: "60%",
               aspectRatio: "0.82",
               backgroundImage: `url("/img/ami.jpg")`,
               backgroundPosition: "center",
@@ -27,15 +26,16 @@ export default function AboutSection() {
               display: "flex",
               alignItems: "flex-end",
               justifyContent: "flex-start",
-              padding: "1.75rem",
+              padding: "2rem",
+              border: "5px solid var(--rose)",
             }}
           >
             <span
               style={{
                 fontFamily: "Georgia,serif",
-                fontSize: "5rem",
-                marginBottom: "-2rem",
-                color: "rgba(230,21,193, 1)",
+                fontSize: "6rem",
+                color: "rgba(255,255,255)",
+                textShadow: "5px 5px 0 black",
                 fontStyle: "italic",
                 lineHeight: 1,
                 userSelect: "none",
@@ -48,44 +48,32 @@ export default function AboutSection() {
           {/* Floating accent block */}
           <div
             style={{
-              width: "46%",
+              width: "30%",
               aspectRatio: "0.85",
               backgroundImage: `url("/img/beauty.png")`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               position: "absolute",
-              bottom: "-2rem",
-              right: 0,
-              border: "5px solid white",
+              top: "50%",
+              right: "20%",
+              border: "5px solid var(--rose)",
               display: "flex",
               alignItems: "flex-end",
               justifyContent: "flex-end",
               padding: "1rem",
             }}
           >
-            <span
-              style={{
-                fontFamily: "Georgia,serif",
-                fontSize: "1.2rem",
-                color: "rgba(230,21,193, 1)",
-                marginBottom: "-1rem",
-                fontStyle: "italic",
-                userSelect: "none",
-              }}
-            >
-              Beauty
-            </span>
           </div>
 
           {/* Decorative dot */}
           <div
             style={{
               position: "absolute",
-              top: "1.5rem",
-              right: "22%",
-              width: "80px",
-              height: "80px",
+              top: "11rem",
+              right: "20%",
+              width: "70px",
+              height: "70px",
               borderRadius: "50%",
               backgroundImage: `url("/img/dot.png")`,
               backgroundPosition: "center",
@@ -101,7 +89,7 @@ export default function AboutSection() {
           <h2
             className="section-title"
             style={{
-              marginBottom: "1.5rem",
+              marginBottom: "1rem",
               color: "var(--charcoal)",
               marginTop: "0.25rem",
             }}
@@ -111,9 +99,10 @@ export default function AboutSection() {
           <p
             style={{
               color: "var(--charcoal-mid)",
-              lineHeight: "1.95",
-              fontSize: "14px",
+              lineHeight: "1.50rem",
+              fontSize: "15px",
               marginBottom: "1.25rem",
+              marginLeft: "0.25rem",
             }}
           >
             En Ami Beauty nos dedicamos a ofrecer los mejores productos de
@@ -126,8 +115,9 @@ export default function AboutSection() {
             style={{
               color: "var(--charcoal-mid)",
               lineHeight: "1.95",
-              fontSize: "14px",
-              marginBottom: "2.25rem",
+              fontSize: "15px",
+              marginBottom: "1.25rem",
+              marginLeft: "0.25rem",
             }}
           >
             Cada producto en nuestra tienda ha sido cuidadosamente seleccionado.
@@ -142,9 +132,11 @@ export default function AboutSection() {
               display: "flex",
               gap: "2.5rem",
               padding: "1.5rem 0",
-              borderTop: "1px solid var(--cream-dark)",
-              borderBottom: "1px solid var(--cream-dark)",
+              borderTop: "2px solid var(--cream-dark)",
+              borderBottom: "2px solid var(--cream-dark)",
               marginBottom: "2rem",
+              justifyContent: "center",
+              gap: "10rem",
             }}
           >
             {[
@@ -156,18 +148,19 @@ export default function AboutSection() {
                 <div
                   style={{
                     fontFamily: "Georgia,serif",
-                    fontSize: "1.6rem",
-                    color: "var(--rose)",
+                    fontSize: "1.8rem",
+                    color: "var(--rose-dark)",
                     lineHeight: 1,
-                    marginBottom: "4px",
+                    marginBottom: ".5rem",
+                    justifySelf: "center",
                   }}
                 >
                   {n}
                 </div>
                 <div
                   style={{
-                    fontSize: "10.5px",
-                    color: "var(--muted)",
+                    fontSize: "11px",
+                    color: "var(--muted-dark)",
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                   }}

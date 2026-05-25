@@ -13,7 +13,7 @@ export default function Navbar() {
     <nav
       style={{
         background: "white",
-        borderBottom: "1px solid var(--cream-dark)",
+        borderBottom: "1px solid var(--rose)",
         position: "sticky",
         top: "62px",
         zIndex: 800,
@@ -42,11 +42,11 @@ export default function Navbar() {
               <Link
                 href={`/category/${cat.slug}`}
                 style={{
-                  padding: "0.7rem 1rem",
-                  fontSize: "11.5px",
-                  letterSpacing: "0.08em",
+                  padding: "0.7rem 1.7rem",
+                  fontSize: "15px",
+                  letterSpacing: "0.13em",
                   textTransform: "uppercase",
-                  fontWeight: 500,
+                  fontWeight: 600,
                   color: active ? "var(--rose)" : "var(--charcoal-mid)",
                   textDecoration: "none",
                   borderBottom: active
@@ -64,19 +64,24 @@ export default function Navbar() {
                     position: "absolute",
                     top: "100%",
                     left: 0,
-                    background: "white",
-                    border: "1px solid #eee",
+                    background: "rgba(255,255,255)",
+                    border: "2px solid var(--rose)",
                     padding: "1rem",
                     minWidth: "200px",
-                    boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+                    boxShadow: "10px 10px 10px rgba(0,0,0,0.255)",
                   }}
                 >
                   <p
                     style={{
-                      fontSize: "10px",
+                      fontSize: "15px",
                       textTransform: "uppercase",
-                      marginBottom: "0.5rem",
-                      color: "#999",
+                      marginBottom: "0.3rem",
+                      color: "var(--rose-dark)",
+                      position: "relative",
+                      fontWeight: 600,
+                      justifyContent: "center",
+                      display: "flex",
+                      gap: "0.3rem",
                     }}
                   >
                     Marcas
@@ -89,9 +94,12 @@ export default function Navbar() {
                       style={{
                         display: "block",
                         padding: "0.3rem 0",
-                        fontSize: "13px",
+                        fontSize: "15px",
                         color: "#333",
                         textDecoration: "none",
+                        position: "relative",
+                        fontWeight: 600,
+                        gap: "0.3rem",
                       }}
                     >
                       {brand}

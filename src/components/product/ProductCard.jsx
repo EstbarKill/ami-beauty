@@ -7,7 +7,7 @@ import { useStore } from "@/context/StoreContext";
 export default function ProductCard({ product }) {
   const { addToCart, toggleFav, isFav } = useStore();
   const fav = isFav(product.id);
-const variant = product.matchVariants?.[0];
+  const variant = product.matchVariants?.[0];
   const [imgIndex, setImgIndex] = useState(0);
 
   const images = product.images || [];
@@ -18,9 +18,7 @@ const variant = product.matchVariants?.[0];
   };
 
   const prevImage = () => {
-    setImgIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
+    setImgIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   return (
@@ -30,69 +28,67 @@ const variant = product.matchVariants?.[0];
         style={{
           position: "relative",
           overflow: "hidden",
-          aspectRatio: "3/4",
+          aspectRatio: "3/2",
         }}
         onMouseEnter={() => images.length > 1 && nextImage()}
       >
         <Link href={`/product/${product.slug}`}>
-        <img
-          src={currentImage}
-          alt={product.name}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            transition: "transform .6s ease",
-          }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.transform = "scale(1.08)")
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.transform = "scale(1)")
-          }
-        />
-</Link>
+          <img
+            src={currentImage}
+            alt={product.name}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transition: "transform .6s ease",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.transform = "scale(1.08)")
+            }
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          />
+        </Link>
         {/* MINI CONTROLES */}
         {images.length > 1 && (
           <>
-            <button
-              onClick={prevImage}
-              className="img-nav left"
-            >
+            <button onClick={prevImage} className="img-nav left">
               ‹
             </button>
-            <button
-              onClick={nextImage}
-              className="img-nav right"
-            >
+            <button onClick={nextImage} className="img-nav right">
               ›
             </button>
           </>
         )}
 
         {/* BADGES */}
-        {product.isNew && (
-          <span className="badge-new">Nuevo</span>
-        )}
+        {product.isNew && <span className="badge-new">Nuevo</span>}
 
         {/* FAVORITE */}
-
-        <button 
-        style={{display:"flex", justifyContent:"center", alignItems:"center", color:"red", fontSize:"2rem"}}
-        className="fav-btn"
-        onClick={() => toggleFav(product)}>
+        <button
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "red",
+            fontSize: "2rem",
+          }}
+          className="fav-btn"
+          onClick={() => toggleFav(product)}
+        >
           {fav ? "♥" : "♡"}
         </button>
 
         {/* ADD */}
         <div className="product-overlay">
-          <button className="product-overlay-btn" onClick={() =>
-  addToCart({
-    ...product,
-    selectedVariant: variant
-  }) 
-}
->
+          <button
+            className="product-overlay-btn"
+            onClick={() =>
+              addToCart({
+                ...product,
+                selectedVariant: variant,
+              })
+            }
+          >
             Agregar
           </button>
         </div>
@@ -101,8 +97,8 @@ const variant = product.matchVariants?.[0];
       {/* INFO */}
       <Link href={`/product/${product.slug}`}>
         <div className="info">
-          <p className="brand">{product.brand}</p>
-          <p className="name">{product.name}</p>
+          <p className="brand">{product.name}</p>
+          <p className="name">{product.brand}</p>
 
           {/* 🎨 SWATCHES */}
           <div className="swatches">
@@ -117,18 +113,7 @@ const variant = product.matchVariants?.[0];
             ))}
           </div>
 
-          <p className="price">
-            ${product.price?.toLocaleString("es-CO")}
-          </p>
-          <div className="swatches">
-  {product.variants?.slice(0, 5).map((v, i) => (
-    <span
-      key={i}
-      style={{ background: v.hex }}
-      title={v.shade}
-    />
-  ))}
-</div>
+          <p className="price">${product.price?.toLocaleString("es-CO")}</p>
         </div>
       </Link>
     </div>

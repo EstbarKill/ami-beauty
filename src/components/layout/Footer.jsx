@@ -22,10 +22,10 @@ export default function Footer() {
         style={{
           maxWidth: "1440px",
           margin: "0 auto",
-          padding: "4rem 3rem 3rem",
+          padding: "2rem 4rem 1rem",
           display: "grid",
-          gridTemplateColumns: "2fr 1fr 1fr 1.5fr",
-          gap: "3rem",
+          gridTemplateColumns: "4fr 2fr 2fr 2fr",
+          gap: "5rem",
         }}
       >
         {/* Brand */}
@@ -33,32 +33,32 @@ export default function Footer() {
           <div
             style={{
               fontFamily: "Georgia,serif",
-              fontSize: "1.5rem",
-              fontWeight: 400,
-              letterSpacing: ".08em",
-              marginBottom: "1rem",
+              fontSize: "2rem",
+              fontWeight: 500,
+              letterSpacing: "1.2rem",
+              marginBottom: ".7rem",
               color: "white",
             }}
           >
-            Ami<span style={{ color: "var(--rose)" }}>·</span>Beauty
+            Ami<span style={{ color: "var(--rose-dark)" }}>·</span>Beauty
           </div>
-          <p style={{ fontSize: "13px", color: "rgba(255,255,255,.4)", lineHeight: "1.8", maxWidth: "240px" }}>
+          <p style={{ fontSize: "15px", color: "white", lineHeight: "1.8", maxWidth: "370px" }}>
             Descubre tu belleza con inteligencia artificial. Encuentra el tono perfecto para ti.
           </p>
-          <div style={{ display: "flex", gap: "0.75rem", marginTop: "1.5rem" }}>
+          <div style={{ display: "flex", gap: "1.4rem", marginTop: "1rem" }}>
             {["IG", "TK", "WA"].map((s) => (
               <div
                 key={s}
                 style={{
-                  width: "32px",
-                  height: "32px",
-                  border: "1px solid rgba(255,255,255,.12)",
+                  width: "30px",
+                  height: "30px",
+                  border: "1px solid rgba(255,255,255,.5)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "9px",
                   letterSpacing: ".08em",
-                  color: "rgba(255,255,255,.4)",
+                  color: "rgba(255,255,255,.7)",
                   cursor: "pointer",
                   transition: "border-color .2s, color .2s",
                 }}
@@ -67,7 +67,7 @@ export default function Footer() {
                   e.currentTarget.style.color = "var(--rose)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,.12)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,.7)";
                   e.currentTarget.style.color = "rgba(255,255,255,.4)";
                 }}
               >
@@ -81,7 +81,7 @@ export default function Footer() {
         <div>
           <h3
             style={{
-              fontSize: "10px",
+              fontSize: "15px",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
               color: "var(--gold)",
@@ -97,7 +97,7 @@ export default function Footer() {
                 <Link
                   href={href}
                   style={{
-                    fontSize: "13px",
+                    fontSize: "15px",
                     color: "rgba(255,255,255,.45)",
                     textDecoration: "none",
                     transition: "color .2s",
@@ -116,7 +116,7 @@ export default function Footer() {
         <div>
           <h3
             style={{
-              fontSize: "10px",
+              fontSize: "15px",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
               color: "var(--gold)",
@@ -132,7 +132,7 @@ export default function Footer() {
                 <Link
                   href={href}
                   style={{
-                    fontSize: "13px",
+                    fontSize: "15px",
                     color: "rgba(255,255,255,.45)",
                     textDecoration: "none",
                     transition: "color .2s",
@@ -151,7 +151,7 @@ export default function Footer() {
         <div>
           <h3
             style={{
-              fontSize: "10px",
+              fontSize: "15px",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
               color: "var(--gold)",
@@ -169,7 +169,7 @@ export default function Footer() {
             ].map(({ icon, text }) => (
               <div key={text} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
                 <span style={{ color: "var(--rose)", fontSize: "12px" }}>{icon}</span>
-                <span style={{ fontSize: "13px", color: "rgba(255,255,255,.45)" }}>{text}</span>
+                <span style={{ fontSize: "15px", color: "rgba(255,255,255,.45)" }}>{text}</span>
               </div>
             ))}
           </div>
@@ -179,7 +179,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div
         style={{
-          borderTop: "1px solid rgba(255,255,255,.06)",
+          borderTop: "1px solid rgba(255,255,255,.2)",
           padding: "1.25rem 3rem",
           display: "flex",
           alignItems: "center",
@@ -188,11 +188,11 @@ export default function Footer() {
           margin: "0 auto",
         }}
       >
-        <span style={{ fontSize: "11px", color: "rgba(255,255,255,.25)", letterSpacing: "0.04em" }}>
+        <span style={{ fontSize: "11px", color: "rgba(255,255,255,.6)", letterSpacing: "0.04em" }}>
           © {new Date().getFullYear()} Ami Beauty — Todos los derechos reservados
         </span>
-        <span style={{ fontSize: "11px", color: "rgba(255,255,255,.2)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-          Hecho con amor · Colombia
+        <span style={{ fontSize: "11px", color: "rgba(255,255,255,.6)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+          Hecho con amor · Ing. Estevan Cabarcas · Colombia
         </span>
       </div>
     </footer>

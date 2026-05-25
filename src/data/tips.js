@@ -100,7 +100,7 @@ export const tips = [
     slug: "corrector-perfecto-para-tu-tono",
     category: "Skincare",
     gender: "Mixto",
-    title: "Cómo encontrar el corrector perfecto para tu tono",
+    title: "Encontrar el corrector perfecto para tu tono",
     excerpt: "Guía completa para elegir el corrector ideal según tu subtono, tipo de piel y la cobertura que necesitas.",
     readTime: "6 min",
     gradient: "linear-gradient(135deg,#EDD9CC 0%,#C9957A 100%)",

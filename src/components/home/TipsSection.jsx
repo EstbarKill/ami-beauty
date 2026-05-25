@@ -7,7 +7,7 @@ export default function TipsSection() {
   const featured = tips.slice(0, 3);
 
   return (
-    <section style={{ padding: "5rem 3rem", maxWidth: "1440px", margin: "0 auto" }}>
+    <section style={{ padding: "4rem 3rem", maxWidth: "1440px", margin: "0 auto" }}>
       {/* Section header */}
       <div
         style={{
@@ -19,7 +19,7 @@ export default function TipsSection() {
       >
         <div>
           <span className="eyebrow">Consejos de Belleza</span>
-          <h2 className="section-title" style={{ color: "var(--charcoal)" }}>
+          <h2 className="section-title" style={{ marginLeft:"0.5rem", color: "var(--charcoal)" }}>
             Tu guía de estilo y cuidado
           </h2>
         </div>
@@ -32,6 +32,7 @@ export default function TipsSection() {
       <div
         style={{
           display: "grid",
+          position: "relative",
           gridTemplateColumns: "repeat(3,1fr)",
           gap: "2rem",
         }}
@@ -43,11 +44,11 @@ export default function TipsSection() {
             style={{ textDecoration: "none", display: "block" }}
           >
             <article
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", borderRadius: "8px", overflow: "hidden", background: "#fff", boxShadow: "0 2px 8px rgba(0,0,0,0.6)", transition: "box-shadow .3s ease" }}
               className="tip-card"
               onMouseEnter={(e) => {
                 const img = e.currentTarget.querySelector(".tip-img-inner");
-                if (img) img.style.transform = "scale(1.04)";
+                if (img) img.style.transform = "scale(1.4)";
               }}
               onMouseLeave={(e) => {
                 const img = e.currentTarget.querySelector(".tip-img-inner");
@@ -55,7 +56,7 @@ export default function TipsSection() {
               }}
             >
               {/* Image */}
-              <div style={{ aspectRatio: "4/3", overflow: "hidden", marginBottom: "1rem" }}>
+              <div style={{ aspectRatio: "3/2", overflow: "hidden" }}>
                 <div
                   className="tip-img-inner"
                   style={{
@@ -70,14 +71,13 @@ export default function TipsSection() {
                     alignItems: "center",
                     justifyContent: "center",
                     transition: "transform .5s ease",
-                    minHeight: "200px",
                   }}
                 >
                   <span
                     style={{
                       fontFamily: "Georgia,serif",
                       fontSize: "2rem",
-                      color: "rgba(255,255,255,.3)",
+                      color: "rgba(0,0,0,.5)",
                       fontStyle: "italic",
                     }}
                   >
@@ -90,15 +90,17 @@ export default function TipsSection() {
               <div>
                 <div
                   style={{
-                    display: "flex",
+                    display: "block",
+                    position: "relative",
                     alignItems: "center",
-                    gap: "0.5rem",
-                    marginBottom: "0.5rem",
+                    padding: "0.5rem 0.3rem",
+                    fontWeight: 600,
+
                   }}
                 >
                   <span
                     style={{
-                      fontSize: "10px",
+                      fontSize: "1.2rem",
                       letterSpacing: ".15em",
                       textTransform: "uppercase",
                       color: "var(--rose)",
@@ -106,16 +108,17 @@ export default function TipsSection() {
                   >
                     {tip.category}
                   </span>
-                  <span style={{ color: "var(--cream-dark)" }}>·</span>
-                  <span style={{ fontSize: "11px", color: "var(--muted)" }}>{tip.gender}</span>
+                  <span style={{ marginRight:"4px",  color: "black" }}>·</span>
+                  <span style={{fontSize: ".8rem", color: "var(--rose-dark)" }}>{tip.gender}</span>
                 </div>
 
                 <h3
                   style={{
                     fontFamily: "Georgia,serif",
-                    fontSize: "1.25rem",
-                    fontWeight: 400,
+                    fontSize: "1.2rem",
+                    fontWeight: 500,
                     marginBottom: "0.5rem",
+                    marginLeft:"0.3rem",
                     lineHeight: 1.3,
                     color: "var(--charcoal)",
                   }}
@@ -125,17 +128,19 @@ export default function TipsSection() {
 
                 <p
                   style={{
-                    fontSize: "13px",
-                    color: "var(--muted)",
+                    fontSize: "15px",
+                    color: "var(--muted-dark)",
                     lineHeight: 1.7,
                     marginBottom: "0.75rem",
+                    padding: "0 0.3rem",
+                    marginLeft:"0.3rem",
                   }}
                 >
                   {tip.excerpt}
                 </p>
 
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontSize: "11px", color: "var(--muted-light)" }}>
+                <div style={{ padding:".7rem",display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span style={{ fontSize: "14px", color: "var(--muted-light)" }}>
                     Lectura {tip.readTime}
                   </span>
                   <span

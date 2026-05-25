@@ -42,7 +42,7 @@ export default function Hero() {
   const current = slides[index];
 
   return (
-    <section style={{ position: "relative", width: "100%", height: "545px", overflow: "hidden" }}>
+    <section style={{ position: "relative", width: "100%", height: "558px", overflow: "hidden" }}>
       {/* Image */}
       <img
         src={current.img}
@@ -52,7 +52,7 @@ export default function Hero() {
           height: "100%",
           objectFit: "cover",
           opacity: fading ? 0 : 1,
-          transition: "opacity 0.45s ease",
+          transition: "opacity 0.6s ease",
         }}
         onError={(e) => { e.target.src = "https://placehold.co/1440x520/1c1815/c9957a?text=Ami+Beauty"; }}
       />
@@ -62,7 +62,7 @@ export default function Hero() {
         style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(to right, rgba(28,24,21,.78) 0%, rgba(28,24,21,.3) 55%, transparent 100%)",
+          background: "linear-gradient(to right, rgba(28,24,21, .9) 20%, rgba(28,24,21, .8) 30%, transparent 100%)",
         }}
       />
 
@@ -73,26 +73,26 @@ export default function Hero() {
           inset: 0,
           display: "flex",
           alignItems: "center",
-          padding: "0 3rem",
+          padding: "0 4rem",
         }}
       >
         <div
           style={{
-            maxWidth: "560px",
+            maxWidth: "580px",
             opacity: fading ? 0 : 1,
-            transform: fading ? "translateY(8px)" : "translateY(0)",
-            transition: "opacity 0.45s ease, transform 0.45s ease",
+            transform: fading ? "translateY(50px)" : "translateY(0)",
+            transition: "opacity 0.4s ease, transform 0.4s ease",
           }}
         >
           <span
             style={{
               display: "block",
-              fontSize: "10.5px",
+              fontSize: "15px",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               color: "var(--gold)",
               marginBottom: "0.75rem",
-              fontWeight: 500,
+              fontWeight: 600,
             }}
           >
             {current.eyebrow}
@@ -100,11 +100,12 @@ export default function Hero() {
           <h1
             style={{
               fontFamily: "Georgia,serif",
-              fontSize: "clamp(2.2rem,4vw,3.5rem)",
-              fontWeight: 400,
-              color: "white",
+              fontSize: "clamp(3.2rem,5vw,4.5rem)",
+              fontWeight: 500,
+              color: "var(--rose-lith)",
               lineHeight: 1.1,
               marginBottom: "0.9rem",
+              marginLeft: "0.2em",
             }}
           >
             {current.title}
@@ -112,8 +113,9 @@ export default function Hero() {
           <p
             style={{
               fontSize: "15px",
-              color: "rgba(255,255,255,.65)",
-              marginBottom: "2rem",
+              color: "var(--rose-dark)",
+              marginBottom: "1rem",
+              marginLeft: "1rem",
               lineHeight: 1.6,
             }}
           >
