@@ -1,13 +1,10 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import ProductGrid from "@/components/product/ProductGrid";
 import { CATEGORY_MAP } from "@/lib/categories";
-export async function generateStaticParams() {
-  return categories.map((c) => ({
-    slug: c.slug,
-  }));
-}
+import { useSearchParams } from "next/navigation";
+
+
 function normalize(str = "") {
   return str
     .toLowerCase()
@@ -19,32 +16,28 @@ function normalize(str = "") {
 export default function CategoryClient({
   slug,
   products,
+  searchParams,
 }) {
-  const searchParams = useSearchParams();
-
-  const sub = searchParams.get("sub");
-  const brand = searchParams.get("brand");
+  const sub = searchParams?.sub;
+  const brand = searchParams?.brand;
 
   let filtered = products.filter(
     (p) =>
       normalize(p.category) === normalize(slug)
   );
 
-  // 🔥 FILTRO SUBCATEGORY
+  // Filtro por subcategoría
   if (sub) {
     filtered = filtered.filter(
-      (p) =>
-        (p.subcategory) ===
-        (sub)
+      (p) => p.subcategory === sub
     );
   }
 
-  // 🔥 FILTRO BRAND
+  // Filtro por marca
   if (brand) {
     filtered = filtered.filter(
       (p) =>
-        normalize(p.brand) ===
-        normalize(brand)
+        normalize(p.brand) === normalize(brand)
     );
   }
 

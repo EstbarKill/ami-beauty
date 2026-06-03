@@ -1,7 +1,8 @@
 import productsData from "@/data/products.json";
 import CategoryClient from "./CategoryClient";
-
+import { Suspense } from "react";
 import { categories } from "@/lib/categories";
+
 
 // 🔥 OBLIGATORIO PARA output: export
 export async function generateStaticParams() {
@@ -12,7 +13,7 @@ export async function generateStaticParams() {
 
 export default async function CategoryPage({
   params,
-}) {
+  }) {
   const { slug } = await params;
 
   return (
