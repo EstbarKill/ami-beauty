@@ -18,7 +18,7 @@ export default function NewsletterCTA() {
   }
 
   return (
-    <section style={{ background: "var(--blush)", padding: "4rem", textAlign: "center", fontFamily: "var(--font-display)" }}>
+    <section style={{ borderTop:"1px solid blue" ,background: "var(--ai-cyan)", padding: "4rem", textAlign: "center", fontFamily: "var(--font-display)" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
         <span
           style={{
@@ -46,7 +46,7 @@ export default function NewsletterCTA() {
         <p
           style={{
             fontSize: "1.3rem",
-            color: "var(--charcoal-mid)",
+            color: "var(--charcoal-dark)",
             lineHeight: "1.8",
             marginBottom: "1rem",
           }}
@@ -71,7 +71,7 @@ export default function NewsletterCTA() {
             placeholder="Tu correo electrónico"
             style={{
               flex: 1,
-              border: "1px solid var(--rose-dark)",
+              border: "1px solid var(--brand-decent)",
               background: "transparent",
               padding: ".75rem 1rem",
               fontSize: "13px",
@@ -87,7 +87,7 @@ export default function NewsletterCTA() {
             Suscribirse
           </button>
         </form>
-        <p style={{ fontSize: "1.2rem", color: "var(--muted)", marginTop: "1rem" }}>
+        <p style={{ fontSize: "1.2rem", color: "var(--text-secondary)", marginTop: "1rem" }}>
           Al suscribirte aceptas recibir comunicaciones de Ami Beauty. Puedes darte de baja en cualquier momento.
         </p>
       </div>

@@ -30,7 +30,7 @@ export default function ChromaticPalette() {
       </div>
 
       <p className="text-xs text-gray-600 mt-3">
-        Coloca tu rostro cerca de esta guía para obtener una mejor referencia visual.
+        Para una mejor referencia visual.
       </p>
     </div>
   );

@@ -85,16 +85,6 @@ export default function AboutSection() {
         {/* Text */}
         <div>
           <span className="eyebrow">Sobre Nosotras</span>
-          <h2
-            className="section-title"
-            style={{
-              marginBottom: ".5rem",
-              color: "var(--charcoal)",
-              fontFamily: "var(--font-display)",
-            }}
-          >
-            Elevando el lujo, redefiniendo la elegancia
-          </h2>
           <p
             style={{
               color: "var(--charcoal-mid)",
@@ -115,7 +105,7 @@ export default function AboutSection() {
             style={{
               color: "var(--charcoal-mid)",
               lineHeight: "1.5",
-              fontSize: "15px",
+              fontSize: "1rem",
               marginBottom: ".6rem",
               marginLeft: "0.30rem",
               fontFamily: "var(--font-body)",
@@ -161,10 +151,12 @@ export default function AboutSection() {
                 </div>
                 <div
                   style={{
-                    fontSize: "11px",
-                    color: "var(--muted-dark)",
-                    letterSpacing: "0.06em",
+                    fontSize: "13px",
+                    color: "var(--surface)",
+                    letterSpacing: "0.03em",
+                    fontWidth:900,
                     textTransform: "uppercase",
+                    fontFamily:"var(--font-display)"
                   }}
                 >
                   {label}

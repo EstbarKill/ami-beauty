@@ -6,27 +6,23 @@ export default function FeaturedProducts() {
   const featured = products.filter((p) => p.featured);
 
   return (
-    <section style={{ background: "white", padding: "1.5rem 3rem" }}>
+    <section style={{ background: "var(--bg-main)", padding: "1rem 2rem" }}>
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         {/* Header */}
         <div
           style={{
             display: "flex",
-            alignItems: "flex-end",
             justifyContent: "space-between",
             marginBottom: "1rem",
-            fontFamily: "var(--font-display)",
+            fontWeight:1000,
           }}
         >
           <div>
             <span className="eyebrow">Seleccion productos</span>
-            <h2 className="section-title" style={{ letterSpacing:"10px" ,fontFamily:"var(--font-display)", color: "var(--charcoal)", marginTop: "1rem", marginLeft: ".25rem" }}>
+            <h2 className="section-title">
               Productos
             </h2>
           </div>
-          <Link href="/category/todos" className="view-all-link">
-            Ver todos →
-          </Link>
         </div>
 
         {/* Grid */}
@@ -36,7 +32,7 @@ export default function FeaturedProducts() {
             padding: "1rem",
             gridTemplateColumns: "repeat(4,1fr)",
             gap: "1.5rem",
-            boxShadow: "0 0 10px rgba(0,0,0,0.2)",
+            boxShadow: "0 0 20px rgba(104, 86, 245,.6)",
             }}
         >
           {featured.map((p) => (

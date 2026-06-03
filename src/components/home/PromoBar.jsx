@@ -27,12 +27,12 @@ export default function PromoBar() {
           }
         }
         >
-          <span style={{ fontSize: "2.4rem", color: "var(--rose-dark)", flexShrink: 0 }}>{p.icon}</span>
+          <span style={{fontSize: "2.4rem", color: "var(--ai-blue)", flexShrink: 0 }}>{p.icon}</span>
           <div>
-            <div style={{ fontSize: "25px", letterSpacing: ".1em", textTransform: "uppercase", color: "var(--rose-dark)" }}>
+            <div style={{fontWeight:800, fontSize: "2rem", letterSpacing: ".05em", textTransform: "uppercase", color: "var(--brand-primary)" }}>
               {p.label}
             </div>
-            <div style={{ fontSize: "18px", fontWeight: 500, color: "var(--rose-lith)", marginLeft: "5px" }}>
+            <div style={{ fontSize: "1.2rem", fontWeight: 500, color: "var(--brand-accent)", marginLeft: "5px" }}>
               {p.value}
             </div>
           </div>

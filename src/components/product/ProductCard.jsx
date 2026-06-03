@@ -69,8 +69,7 @@ export default function ProductCard({ product }) {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            color: "red",
-            fontSize: "2rem",
+            color: "var(--brand-accent)",
           }}
           className="fav-btn"
           onClick={() => toggleFav(product)}
@@ -114,6 +113,7 @@ export default function ProductCard({ product }) {
           </div>
 
           <p className="price">${product.price?.toLocaleString("es-CO")}</p>
+
         </div>
       </Link>
     </div>

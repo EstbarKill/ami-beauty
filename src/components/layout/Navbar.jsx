@@ -12,8 +12,8 @@ export default function Navbar() {
   return (
     <nav
       style={{
-        background: "white",
-        borderBottom: "2px solid var(--rose)",
+        background: "var(--cream)",
+        borderBottom: ".07rem solid var(--blue-lith)",
         position: "sticky",
         top: "62px",
         zIndex: 600,
@@ -50,7 +50,7 @@ export default function Navbar() {
                   textTransform: "uppercase",
                   fontFamily: "var(--font-display)",
                   fontWeight: 700,
-                  color:hovered === cat.slug ? "var(--rose)" : active ? "var(--rose)" : "var(--charcoal-mid)",
+                  color:hovered === cat.slug ? "var(--blue-lith)" : active ? "var(--blue)" : "var(--charcoal-mid)",
                   textDecoration: "none",
                   display: "block",
                   borderBottom: active
@@ -66,11 +66,13 @@ export default function Navbar() {
                 <div
                   style={{
                     position: "absolute",
+                    gap: "0.2rem",
+                    justifyContent: "center",
                     top: "100%",
                     left: 0,
-                    background: "rgba(255,255,255)",
-                    border: "2px solid var(--rose)",
-                    padding: "1rem",
+                    background: "white",
+                    border: "1px solid var(--blue)",
+                    padding: ".6rem",
                     minWidth: "200px",
                     boxShadow: "10px 10px 10px rgba(0,0,0,0.255)",
                   }}
@@ -80,7 +82,7 @@ export default function Navbar() {
                       fontSize: "15px",
                       textTransform: "uppercase",
                       marginBottom: "0.3rem",
-                      color: "var(--rose-dark)",
+                      color: "var(--blue)",
                       position: "relative",
                       fontWeight: 600,
                       justifyContent: "center",

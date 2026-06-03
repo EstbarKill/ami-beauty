@@ -1,5 +1,3 @@
-import products from "@/data/products.json";
-
 export const CATEGORY_TREE = {
   rostro: {
     label: "Rostro",

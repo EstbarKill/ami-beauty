@@ -21,7 +21,6 @@ function ToneItem({ tone }) {
         title={tone.label}
         className="
           w-14 h-14 rounded-full
-          border-2 border-white/40
           transition-transform duration-300
           hover:scale-110
           shadow-md
@@ -46,21 +45,21 @@ export default function AISection() {
   }, []);
 
   return (
-    <section style={{ padding: "1.5rem 2rem", background: "var(--blush)" }} className="relative overflow-hidden">
+    <section style={{ padding: "1.5rem 2rem", background: "var(--cream)" }} className="relative overflow-hidden">
       <div className="grid lg:grid-cols-2 gap-5 mx-auto">
         {/* LEFT */}
-        <div className="flex flex-col font-black bg-black/10 rounded-lg p-5 hover:bg-black/25 transition-all">
-          <p className="text-amber-700 text-3xl h-max-full uppercase tracking-widest mb-5">
+        <div className="container-ai flex flex-col font-black bg-black/10 rounded-lg p-5 hover:bg-black/25 transition-all">
+          <p style={{fontWidth:800,fontSize: "2.5rem", fontFamily:"var(--font-display)", color:"var(--brand-primary)"}} className="text-3xl h-max-full uppercase tracking-widest mb-5">
             Motor de análisis IA
           </p>
 
-          <h2 className="text-3xl font-serif">
+          <h2 style={{marginBottom: "1px" ,color:"var(--brand-accent)", fontSize:"2rem", fontFamily:"var(--font-display)",  }}>
             Detecta tu tono de piel con precisión científica
           </h2>
 
-          <p className="text-black/60 text-sl mb-6 leading-relaxed">
-            Utilizamos un pipeline basado en{" "}
-            <span className="text-orange-500">CIELAB + ITA</span> con corrección
+          <p className=" mb-6 leading-relaxed">
+            Utilizamos un pipeline basado en {" "}
+            <span style={{color:"var(--brand-decent)"}}>CIELAB + ITA</span> con corrección
             de color, detección facial y análisis de subtono.
           </p>
 
@@ -79,7 +78,7 @@ export default function AISection() {
         </div>
 
         {/* RIGHT */}
-        <div className="flex-col font-black bg-black/10 rounded-lg p-3 hover:bg-black/25 transition">
+        <div className="container-ai flex-col font-black rounded-lg p-5">
           <div className=" justify-self-center border border-amber-400 rounded-full w-max overflow-hidden hover:bg-amber-400/20 mb-5">  
             <button
               onClick={() => setActiveTab("palette")}

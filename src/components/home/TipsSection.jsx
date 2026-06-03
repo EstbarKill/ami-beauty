@@ -18,14 +18,11 @@ export default function TipsSection() {
         }}
       >
         <div>
-          <span style={{fontSize:"3.4rem",fontFamily:"var(--font-display)", color:"var(--rose-dark)", fontWeight: 700}}>Consejos de Belleza</span>
-          <h2 className="section-title" style={{ marginLeft:"0.5rem", color: "var(--charcoal)", fontFamily: "var(--font-body)", fontWeight:400 }}>
+          <span style={{fontSize:"3.6rem",fontFamily:"var(--font-display)", color:"var(--violet-ai)", fontWeight: 900}}>Consejos de Belleza</span>
+          <h2 className="section-title" style={{ marginLeft:"0.7rem", color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontWeight:600 }}>
             Tu guía de estilo y cuidado
           </h2>
         </div>
-        <Link href="/tips" className="view-all-link">
-          Ver todos →
-        </Link>
       </div>
 
       {/* Cards grid */}
@@ -45,7 +42,7 @@ export default function TipsSection() {
             style={{ textDecoration: "none", display: "block" }}
           >
             <article
-              style={{ cursor: "pointer", borderRadius: "8px", overflow: "hidden", background: "#fff", boxShadow: "0 2px 8px rgba(0,0,0,0.6)", transition: "box-shadow .3s ease" }}
+              style={{ cursor: "pointer", borderRadius: "8px", overflow: "hidden", background: "var(--blue-lith)", boxShadow: "0 2px 8px rgba(40, 48, 191,0.6)", transition: "box-shadow .3s ease" }}
               className="tip-card"
               onMouseEnter={(e) => {
                 const img = e.currentTarget.querySelector(".tip-img-inner");
@@ -72,14 +69,16 @@ export default function TipsSection() {
                     alignItems: "center",
                     justifyContent: "center",
                     transition: "transform .5s ease",
+                    borderBottom:".8px solid rgba(40, 48, 191,.8)"
                   }}
                 >
                   <span
                     style={{
                       fontFamily: "var(--font-body)",
-                      fontSize: "2rem",
-                      color: "rgba(0,0,0,.5)",
+                      fontSize: "3rem",
+                      color: "rgba(40, 48, 191,.5)",
                       fontStyle: "italic",
+                      fontWidth: 700
                     }}
                   >
                     {tip.category}
@@ -88,7 +87,7 @@ export default function TipsSection() {
               </div>
 
               {/* Body */}
-              <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", margin: ".5rem" }}>
+              <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", margin: ".8rem" }}>
                 <div
                   style={{
                     display: "block",
@@ -96,31 +95,32 @@ export default function TipsSection() {
                     alignItems: "center",
                     padding: "0.5rem 0.3rem",
                     fontWeight: 600,
+                    color:"var(--brand-primary)",
                     fontFamily: "var(--font-body)",
                   }}
                 >
                   <span
                     style={{
-                      fontSize: "1.2rem",
-                      letterSpacing: ".15em",
+                      fontSize: "1.7rem",
+                      letterSpacing: ".10em",
                       textTransform: "uppercase",
-                      color: "var(--rose)",
+                      color: "var(--brand-primary)",
                     }}
                   >
                     {tip.category}
                   </span>
-                  <span style={{ marginRight:"4px",  color: "black" }}>·</span>
-                  <span style={{fontSize: ".8rem", color: "var(--rose-dark)" }}>{tip.gender}</span>
+                  <span style={{ marginRight:"4px", font:"5rem", color: "black" }}>·</span>
+                  <span style={{fontSize: "1rem", color: "var(--brand-accent)" }}>{tip.gender}</span>
                 </div>
 
                 <h3
                   style={{
-                    fontSize: "1.2rem",
-                    fontWeight: 500,
-                    marginBottom: "0.5rem",
+                    fontSize: "1.5rem",
+                    fontWeight: 700,
+                    marginBottom: "0.2rem",
                     marginLeft:"0.3rem",
                     lineHeight: 1.3,
-                    color: "var(--charcoal)",
+                    color: "var(--surface)",
                   }}
                 >
                   {tip.title}
@@ -146,7 +146,7 @@ export default function TipsSection() {
                   <span
                     style={{
                       fontSize: "11px",
-                      color: "var(--rose)",
+                      color: "var(--brand-decent)",
                       letterSpacing: ".08em",
                       textTransform: "uppercase",
                     }}
