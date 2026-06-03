@@ -26,7 +26,7 @@ export default function Navbar() {
           padding: "0.2rem",
           display: "flex",
           justifyContent: "center ",
-          gap: "10rem",
+          gap: "8rem",
           position: "relative",
           fontFamily: "var(--font-display)",
         }}

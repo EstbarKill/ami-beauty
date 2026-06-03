@@ -3,7 +3,7 @@
 const REVIEWS = [
   {
     stars: 4.9,
-    text: "Nunca había tenido la piel así. Los ingredientes son excepcionales y los resultados se notan desde la primera semana. Ahora es imposible que cambie de marca.",
+    text: "La atención al cliente es impecable y los productos llegan perfectamente empacados. El labial que me recomendaron tiene una duración increíble, lo recomiendo a todas",
     author: "Valentina M.",
     location: "Bogotá",
     initial: "V",

@@ -34,8 +34,8 @@ export default function Hero() {
       setTimeout(() => {
         setIndex((i) => (i + 1) % slides.length);
         setFading(false);
-      }, 200);
-    }, 3800);
+      }, 12000);
+    }, 58000);
     return () => clearInterval(interval);
   }, []);
 
@@ -52,7 +52,7 @@ export default function Hero() {
           height: "100%",
           objectFit: "cover",
           opacity: fading ? 0 : 1,
-          transition: "opacity 0.2s ease",
+          transition: "opacity 2s ease",
         }}
         onError={(e) => { e.target.src = "https://placehold.co/1440x520/1c1815/c9957a?text=Ami+Beauty"; }}
       />
@@ -81,7 +81,7 @@ export default function Hero() {
             maxWidth: "800px",
             opacity: fading ? 0 : 1,
             transform: fading ? "translateY(50px)" : "translateY(0)",
-            transition: "opacity 0.3s ease, transform 0.3s ease",
+            transition: "opacity 2s ease, transform 2s ease",
           }}
         >
           <span

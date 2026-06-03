@@ -17,9 +17,11 @@ export default async function CategoryPage({
   const { slug } = await params;
 
   return (
+    <Suspense fallback={<div>Cargando...</div>}>
     <CategoryClient
       slug={slug}
       products={productsData}
     />
+    </Suspense>
   );
 }
