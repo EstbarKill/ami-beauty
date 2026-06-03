@@ -1,22 +1,131 @@
 import products from "@/data/products.json";
 
-// Categorías principales
-const uniqueCategories = [...new Set(products.map(p => p.category))];
+export const CATEGORY_TREE = {
+  rostro: {
+    label: "Rostro",
+    icon: "🧴",
+    subcategories: [
+      {
+        slug: "bases",
+        label: "Bases",
+      },
+      {
+        slug: "correctores",
+        label: "Correctores",
+      },
+      {
+        slug: "polvos",
+        label: "Polvos",
+      },
+      {
+        slug: "contorno",
+        label: "Contorno",
+      },
+      {
+        slug: "rubor",
+        label: "Rubor",
+      },
+      {
+        slug: "iluminadores",
+        label: "Iluminadores",
+      },
+    ],
+  },
 
-export const categories = uniqueCategories.map(cat => {
-  const productsByCat = products.filter(p => p.category === cat);
+    cejas: {
+    label: "Cejas",
+    icon: "🧴",
+    subcategories: [
+      {
+        slug: "lapiz",
+        label: "Lápiz de cejas",
+      },
+      {
+        slug: "gel Fijador",
+        label: "Gel fijador",
+      },
+      {
+        slug: "pomada",
+        label: "Pomada",
+      },
+      {
+        slug: "sombra Cejas",
+        label: "Sombra de cejas",
+      }
+    ],
+  },
 
-  // Subcategorías por marca
-  const brands = [...new Set(productsByCat.map(p => p.brand))];
+  skincare: {
+    label: "SkinCare",
+    icon: "👁️",
+    subcategories: [
+      {
+        slug: "limpiadores",
+        label: "Limpiadores",
+      },
+      {
+        slug: "hidratantes",
+        label: "Hidratantes",
+      },
+      {
+        slug: "protectorSolar",
+        label: "Protector solar",
+      },
+      {
+        slug: "serums",
+        label: "Serums",
+      },
+      {
+        slug: "Mascarillas",
+        label: "Mascarillas",
+      }
+    ],
+  },
 
-  return {
-    slug: cat,
-    label: cat.charAt(0).toUpperCase() + cat.slice(1),
-    subcategories: {
-      brands,
-    }
-  };
-});
+  ojos: {
+    label: "Ojos",
+    icon: "👁️",
+    subcategories: [
+      {
+        slug: "paletas",
+        label: "Paletas",
+      },
+      {
+        slug: "delineadores",
+        label: "Delineadores",
+      }
+    ],
+  },
+
+  labios: {
+    label: "Labios",
+    icon: "💄",
+    subcategories: [
+      {
+        slug: "labiales",
+        label: "Labiales",
+      },
+      {
+        slug: "gloss",
+        label: "Gloss",
+      },
+      {
+        slug: "tintas",
+        label: "Tintas",
+      },
+    ],
+  },
+};
+
+export const categories = Object.entries(CATEGORY_TREE).map(
+  ([key, value]) => ({
+    slug: key,
+    label: value.label,
+    icon: value.icon,
+    subcategories: value.subcategories,
+  })
+);
+
 export const CATEGORY_MAP = Object.fromEntries(
   categories.map((c) => [c.slug, c.label])
 );

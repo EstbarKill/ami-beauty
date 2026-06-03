@@ -15,11 +15,12 @@ export default function FeaturedProducts() {
             alignItems: "flex-end",
             justifyContent: "space-between",
             marginBottom: "1rem",
+            fontFamily: "var(--font-display)",
           }}
         >
           <div>
             <span className="eyebrow">Seleccion productos</span>
-            <h2 className="section-title" style={{ color: "var(--charcoal)", marginTop: "1rem", marginLeft: ".25rem" }}>
+            <h2 className="section-title" style={{ letterSpacing:"10px" ,fontFamily:"var(--font-display)", color: "var(--charcoal)", marginTop: "1rem", marginLeft: ".25rem" }}>
               Productos
             </h2>
           </div>

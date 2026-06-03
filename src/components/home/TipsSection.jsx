@@ -7,19 +7,19 @@ export default function TipsSection() {
   const featured = tips.slice(0, 3);
 
   return (
-    <section style={{ padding: "4rem 3rem", maxWidth: "1440px", margin: "0 auto" }}>
+    <section style={{ padding: "1rem 3rem", maxWidth: "1440px", margin: "0 auto" }}>
       {/* Section header */}
       <div
         style={{
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "space-between",
-          marginBottom: "3rem",
+          marginBottom: "1rem",
         }}
       >
         <div>
-          <span className="eyebrow">Consejos de Belleza</span>
-          <h2 className="section-title" style={{ marginLeft:"0.5rem", color: "var(--charcoal)" }}>
+          <span style={{fontSize:"3.4rem",fontFamily:"var(--font-display)", color:"var(--rose-dark)", fontWeight: 700}}>Consejos de Belleza</span>
+          <h2 className="section-title" style={{ marginLeft:"0.5rem", color: "var(--charcoal)", fontFamily: "var(--font-body)", fontWeight:400 }}>
             Tu guía de estilo y cuidado
           </h2>
         </div>
@@ -35,6 +35,7 @@ export default function TipsSection() {
           position: "relative",
           gridTemplateColumns: "repeat(3,1fr)",
           gap: "2rem",
+          fontFamily: "var(--font-display)",
         }}
       >
         {featured.map((tip) => (
@@ -75,7 +76,7 @@ export default function TipsSection() {
                 >
                   <span
                     style={{
-                      fontFamily: "Georgia,serif",
+                      fontFamily: "var(--font-body)",
                       fontSize: "2rem",
                       color: "rgba(0,0,0,.5)",
                       fontStyle: "italic",
@@ -87,7 +88,7 @@ export default function TipsSection() {
               </div>
 
               {/* Body */}
-              <div>
+              <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", margin: ".5rem" }}>
                 <div
                   style={{
                     display: "block",
@@ -95,7 +96,7 @@ export default function TipsSection() {
                     alignItems: "center",
                     padding: "0.5rem 0.3rem",
                     fontWeight: 600,
-
+                    fontFamily: "var(--font-body)",
                   }}
                 >
                   <span
@@ -114,7 +115,6 @@ export default function TipsSection() {
 
                 <h3
                   style={{
-                    fontFamily: "Georgia,serif",
                     fontSize: "1.2rem",
                     fontWeight: 500,
                     marginBottom: "0.5rem",
@@ -161,7 +161,7 @@ export default function TipsSection() {
       </div>
 
       {/* See all CTA */}
-      <div style={{ textAlign: "center", marginTop: "3rem" }}>
+      <div style={{ textAlign: "center", marginTop: "2rem" }}>
         <Link href="/tips" className="btn-outline">
           Ver todos los consejos
         </Link>

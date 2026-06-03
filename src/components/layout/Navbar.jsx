@@ -13,20 +13,22 @@ export default function Navbar() {
     <nav
       style={{
         background: "white",
-        borderBottom: "1px solid var(--rose)",
+        borderBottom: "2px solid var(--rose)",
         position: "sticky",
         top: "62px",
-        zIndex: 800,
+        zIndex: 600,
       }}
     >
       <div
         style={{
           maxWidth: "1440px",
           margin: "0 auto",
-          padding: "0 2.5rem",
+          padding: "0.2rem",
           display: "flex",
-          gap: "1rem",
+          justifyContent: "center ",
+          gap: "10rem",
           position: "relative",
+          fontFamily: "var(--font-display)",
         }}
       >
         {categories.map((cat) => {
@@ -37,21 +39,23 @@ export default function Navbar() {
               key={cat.slug}
               onMouseEnter={() => setHovered(cat.slug)}
               onMouseLeave={() => setHovered(null)}
-              style={{ position: "relative" }}
+              style={{ position: "relative", fontFamily: "var(--font-display)" }}
             >
               <Link
                 href={`/category/${cat.slug}`}
                 style={{
-                  padding: "0.7rem 1.7rem",
+                  padding: "0 1.4rem",
                   fontSize: "15px",
-                  letterSpacing: "0.13em",
+                  letterSpacing: "0.15em",
                   textTransform: "uppercase",
-                  fontWeight: 600,
-                  color: active ? "var(--rose)" : "var(--charcoal-mid)",
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
+                  color:hovered === cat.slug ? "var(--rose)" : active ? "var(--rose)" : "var(--charcoal-mid)",
                   textDecoration: "none",
+                  display: "block",
                   borderBottom: active
-                    ? "2px solid var(--rose)"
-                    : "2px solid transparent",
+                    ? "1px solid var(--rose)"
+                    : "1px solid transparent",
                 }}
               >
                 {cat.label}
@@ -82,27 +86,29 @@ export default function Navbar() {
                       justifyContent: "center",
                       display: "flex",
                       gap: "0.3rem",
+                      fontFamily: "var(--font-display)",
                     }}
                   >
-                    Marcas
+                    Productos
                   </p>
 
-                  {cat.subcategories.brands.map((brand) => (
+                  {cat.subcategories.map((sub) => (
                     <Link
-                      key={brand}
-                      href={`/category/${cat.slug}?brand=${brand}`}
+                      key={sub.slug}
+                      href={`/category/${cat.slug}?sub=${sub.slug}`}
                       style={{
                         display: "block",
                         padding: "0.3rem 0",
                         fontSize: "15px",
-                        color: "#333",
+                        color: "var(--charcoal)",
+                        fontFamily: "var(--font-body)",
                         textDecoration: "none",
                         position: "relative",
                         fontWeight: 600,
                         gap: "0.3rem",
                       }}
                     >
-                      {brand}
+                      {sub.label}
                     </Link>
                   ))}
                 </div>

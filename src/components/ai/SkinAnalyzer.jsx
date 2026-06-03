@@ -136,7 +136,7 @@ const detectFaceLoop = async (time) => {
   // 📸 ANALIZAR CÁMARA
 const handleAnalyze = async () => {
   const result = await analyze();
-  
+
   if (!result) {
     alert("No se pudo analizar el rostro");
     return;
@@ -193,6 +193,7 @@ const handleAnalyze = async () => {
 
       {/* VIDEO */}
       <div className="relative w-[320px] mx-auto">
+        
       {mode === "camera" && (
         <video
           ref={videoRef}
@@ -211,7 +212,6 @@ const handleAnalyze = async () => {
           className="w-[320px] mx-auto rounded"
         />
       )}
-
       {/* CANVAS OCULTO */}
       <canvas ref={canvasRef} className="hidden" />
 </div>

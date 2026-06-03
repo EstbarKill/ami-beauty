@@ -17,7 +17,7 @@ const SERVICES = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--charcoal)", color: "white" }}>
+    <footer style={{ background: "var(--charcoal)", color: "white", fontFamily: "var(--font-display)", fontWeight: 600 }}>
       <div
         style={{
           maxWidth: "1440px",

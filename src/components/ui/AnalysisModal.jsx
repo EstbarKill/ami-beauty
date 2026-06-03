@@ -7,9 +7,6 @@ export default function AnalysisModal({ result, onClose }) {
   const tone = result.data?.tone;
   const variants = tone?.variants || [];
 
-  const light = variants.find((v) => v.tone === "light");
-  const mid = variants.find((v) => v.tone === "mid");
-  const dark = variants.find((v) => v.tone === "dark");
   const rgb = result?.data?.rgb;
 
   if (!rgb) {
@@ -80,7 +77,7 @@ export default function AnalysisModal({ result, onClose }) {
             Volver
           </button>
 
-          <span className="eyebrow" style={{ margin: 0 }}>
+          <span style={{fontFamily:"var(--font-display)", margin: 0, color: "var(--rose-dark)", fontSize: "2.6rem", fontWeight: 800 }}>
             Análisis IA · Tono de piel
           </span>
 
@@ -141,9 +138,8 @@ export default function AnalysisModal({ result, onClose }) {
                     <p
                       style={{ fontFamily: "Georgia, serif", fontSize: "1rem" }}
                     >
-                      {s.label}saa
+                      {s.label}
                     </p>
-
                     <div
                       style={{
                         height: "36px",
@@ -190,7 +186,7 @@ export default function AnalysisModal({ result, onClose }) {
                       marginBottom: "2px",
                     }}
                   >
-                    {tone.label}
+                    {tone.label} {result.data.undertone}
                   </p>
                   <p
                     style={{
@@ -261,7 +257,7 @@ export default function AnalysisModal({ result, onClose }) {
               gap: "1rem",
             }}
           >
-            <span className="eyebrow" style={{ marginBottom: "0.2rem" }}>
+            <span style={{ marginBottom: "0.2rem", fontSize: "2.1rem", fontWeight: 700, color: "var(--gold)", fontFamily: "var(--font-body)" }}>
               Recomendados para ti
             </span>
 

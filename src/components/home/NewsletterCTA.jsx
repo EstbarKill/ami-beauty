@@ -18,25 +18,25 @@ export default function NewsletterCTA() {
   }
 
   return (
-    <section style={{ background: "var(--blush)", padding: "5rem 3rem", textAlign: "center" }}>
-      <div style={{ maxWidth: "600px", margin: "0 auto" }}>
+    <section style={{ background: "var(--blush)", padding: "4rem", textAlign: "center", fontFamily: "var(--font-display)" }}>
+      <div style={{ maxWidth: "900px", margin: "0 auto" }}>
         <span
           style={{
             display: "block",
-            fontSize: "11px",
+            fontSize: "3rem",
             letterSpacing: ".18em",
             textTransform: "uppercase",
             color: "var(--rose-dark)",
-            marginBottom: ".75rem",
+            marginTop:"-2rem",
           }}
         >
           Newsletter
         </span>
         <h2
           style={{
-            fontFamily: "Georgia,serif",
+            fontFamily: "var(--font-display)",
             fontSize: "clamp(2rem,3vw,2.6rem)",
-            fontWeight: 400,
+            fontWeight: 800,
             color: "var(--charcoal)",
             marginBottom: "1rem",
           }}
@@ -45,10 +45,10 @@ export default function NewsletterCTA() {
         </h2>
         <p
           style={{
-            fontSize: "14px",
+            fontSize: "1.3rem",
             color: "var(--charcoal-mid)",
             lineHeight: "1.8",
-            marginBottom: "2rem",
+            marginBottom: "1rem",
           }}
         >
           Suscríbete y sé la primera en conocer nuevos lanzamientos, tutoriales exclusivos
@@ -61,6 +61,7 @@ export default function NewsletterCTA() {
             gap: "0.75rem",
             maxWidth: "420px",
             margin: "0 auto",
+            fontFamily: "var(--font-body)",
           }}
         >
           <input
@@ -86,7 +87,7 @@ export default function NewsletterCTA() {
             Suscribirse
           </button>
         </form>
-        <p style={{ fontSize: "11px", color: "var(--muted)", marginTop: "1rem" }}>
+        <p style={{ fontSize: "1.2rem", color: "var(--muted)", marginTop: "1rem" }}>
           Al suscribirte aceptas recibir comunicaciones de Ami Beauty. Puedes darte de baja en cualquier momento.
         </p>
       </div>

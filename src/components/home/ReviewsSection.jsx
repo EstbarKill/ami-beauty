@@ -26,7 +26,7 @@ const REVIEWS = [
 
 export default function ReviewsSection() {
   return (
-    <section style={{ background: "var(--charcoal)", padding: "3rem 4rem", color: "white" }}>
+    <section style={{ fontFamily:"var(--font-display)" , background: "var(--charcoal)", padding: "3rem 4rem", color: "white" }}>
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         {/* Header row */}
         <div
@@ -42,7 +42,6 @@ export default function ReviewsSection() {
             <span className="eyebrow-gold">Testimonios</span>
             <h2
               style={{
-                fontFamily: "Georgia,serif",
                 fontSize: "clamp(1.5rem,3vw,2.8rem)",
                 color: "white",
                 fontWeight: 400,
@@ -51,7 +50,7 @@ export default function ReviewsSection() {
             >
               Lo que dicen nuestras clientas
             </h2>
-            <p style={{ color: "var(--rose-lith)", fontSize: "20px", lineHeight: "1.5", margin: 0, maxWidth: "780px" }}>
+            <p style={{fontFamily:"var(--font-body)", color: "var(--rose-lith)", fontSize: "20px", lineHeight: "1.5", margin: 0, maxWidth: "780px" }}>
               La satisfacción de nuestras clientas es nuestra mayor prioridad. Cada producto está
               respaldado por miles de reseñas verificadas de compradoras reales.
             </p>

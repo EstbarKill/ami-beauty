@@ -2,14 +2,13 @@ import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section style={{ background: "white", padding: "4rem 4rem" }}>
+    <section style={{ background: "white", padding: "2rem 5rem" }}>
       <div
         style={{
           maxWidth: "1440px",
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "1fr 2fr",
-          gap: "2rem",
+          gridTemplateColumns: "2fr 1fr",
         }}
       >
         {/* Image stack */}
@@ -17,7 +16,7 @@ export default function AboutSection() {
           {/* Main block */}
           <div
             style={{
-              width: "60%",
+              width: "50%",
               aspectRatio: "0.82",
               backgroundImage: `url("/img/ami.jpg")`,
               backgroundPosition: "center",
@@ -32,7 +31,7 @@ export default function AboutSection() {
           >
             <span
               style={{
-                fontFamily: "Georgia,serif",
+                fontFamily: "var(--font-display)",
                 fontSize: "6rem",
                 color: "rgba(255,255,255)",
                 textShadow: "5px 5px 0 black",
@@ -56,7 +55,7 @@ export default function AboutSection() {
               backgroundRepeat: "no-repeat",
               position: "absolute",
               top: "50%",
-              right: "20%",
+              right: "36%",
               border: "5px solid var(--rose)",
               display: "flex",
               alignItems: "flex-end",
@@ -70,8 +69,8 @@ export default function AboutSection() {
           <div
             style={{
               position: "absolute",
-              top: "11rem",
-              right: "20%",
+              top: "13rem",
+              right: "40%",
               width: "70px",
               height: "70px",
               borderRadius: "50%",
@@ -89,9 +88,9 @@ export default function AboutSection() {
           <h2
             className="section-title"
             style={{
-              marginBottom: "1rem",
+              marginBottom: ".5rem",
               color: "var(--charcoal)",
-              marginTop: "0.25rem",
+              fontFamily: "var(--font-display)",
             }}
           >
             Elevando el lujo, redefiniendo la elegancia
@@ -101,8 +100,9 @@ export default function AboutSection() {
               color: "var(--charcoal-mid)",
               lineHeight: "1.50rem",
               fontSize: "15px",
-              marginBottom: "1.25rem",
-              marginLeft: "0.25rem",
+              marginBottom: ".6rem",
+              marginLeft: "0.30rem",
+              fontFamily: "var(--font-body)",
             }}
           >
             En Ami Beauty nos dedicamos a ofrecer los mejores productos de
@@ -114,10 +114,11 @@ export default function AboutSection() {
           <p
             style={{
               color: "var(--charcoal-mid)",
-              lineHeight: "1.95",
+              lineHeight: "1.5",
               fontSize: "15px",
-              marginBottom: "1.25rem",
-              marginLeft: "0.25rem",
+              marginBottom: ".6rem",
+              marginLeft: "0.30rem",
+              fontFamily: "var(--font-body)",
             }}
           >
             Cada producto en nuestra tienda ha sido cuidadosamente seleccionado.
@@ -130,13 +131,15 @@ export default function AboutSection() {
           <div
             style={{
               display: "flex",
-              gap: "2.5rem",
-              padding: "1.5rem 0",
-              borderTop: "2px solid var(--cream-dark)",
-              borderBottom: "2px solid var(--cream-dark)",
-              marginBottom: "2rem",
+              gap: "1.5rem",
+              padding: ".5rem 0",
+              borderTop: "1px solid var(--cream-dark)",
+              borderBottom: "1px solid var(--cream-dark)",
+              marginBottom: "1rem",
               justifyContent: "center",
-              gap: "10rem",
+              gap: "7rem",
+              fontFamily: "var(--font-body)",
+              textAlign: "center",
             }}
           >
             {[
@@ -147,12 +150,11 @@ export default function AboutSection() {
               <div key={label}>
                 <div
                   style={{
-                    fontFamily: "Georgia,serif",
+                    fontFamily: "var(--font-display)",
                     fontSize: "1.8rem",
                     color: "var(--rose-dark)",
                     lineHeight: 1,
                     marginBottom: ".5rem",
-                    justifySelf: "center",
                   }}
                 >
                   {n}

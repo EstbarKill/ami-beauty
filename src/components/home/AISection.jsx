@@ -3,74 +3,36 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { SKIN_TONES } from "@/data/skinTones";
+import { SKIN_TONES, SUBTONES } from "@/data/skinTones";
 
 const QRCode = dynamic(() => import("react-qr-code"), { ssr: false });
-
 const STEPS = [
   { n: "1", text: "Detección facial en tiempo real" },
   { n: "2", text: "Extracción de zona de piel (ROI)" },
-  { n: "3", text: "Corrección de color (Gray World)" },
+  { n: "3", text: "Calibración cromática y normalización de color" },
   { n: "4", text: "Conversión a espacio CIELAB" },
   { n: "5", text: "Cálculo ITA + clasificación" },
 ];
 
-const FAN_POSITIONS = [
-  { x: -10, y: 0 },
-  { x: 0, y: -8 },
-  { x: 10, y: 0 },
-];
-
 function ToneItem({ tone }) {
-  const [hovered, setHovered] = useState(false);
-  const [subHover, setSubHover] = useState(null);
-
   return (
-    <div style={{ position: "relative", width: "70px", height: "70px", marginTop: "10px" }}>
-      {tone.subtones.map((sub, i) => {
-        const pos = FAN_POSITIONS[i];
-        const isSubHovered = subHover === sub.id;
-
-        return (
-          <div
-            key={sub.id}
-            onMouseEnter={() => setSubHover(sub.id)}
-            onMouseLeave={() => setSubHover(null)}
-            style={{
-              position: "relative",
-              display: "inline-grid",
-              alignContent: "center",
-              width: isSubHovered ? "24px" : "16px",
-              height: isSubHovered ? "24px" : "16px",
-              borderRadius: "50%",
-              background: sub.hex,
-              opacity: hovered ? 1 : 0,
-              transform: hovered
-                ? `translate(${pos.x}px, ${pos.y}px)`
-                : `translate(0px,0px) scale(0.3)`,
-              transition: "all .4s",
-            }}
-          />
-        );
-      })}
-
+    <div className="flex flex-col items-center gap-2">
       <div
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => {
-          setHovered(false);
-          setSubHover(null);
-        }}
+        title={tone.label}
+        className="
+          w-14 h-14 rounded-full
+          border-2 border-white/40
+          transition-transform duration-300
+          hover:scale-110
+          shadow-md
+        "
         style={{
-          position: "relative",
-          width: "50px",
-          height: "50px",
-          borderRadius: "50%",
-          background: tone.hex,
-          cursor: "pointer",
-          transform: hovered ? "scale(1)" : "scale(0.4)",
-          transition: "ease-in-out all .3s",
+          backgroundColor: tone.hex,
         }}
       />
+      <span className="text-[11px] text-center m-3 text-black/500 max-w-[70px]">
+        {tone.label}
+      </span>
     </div>
   );
 }
@@ -84,10 +46,10 @@ export default function AISection() {
   }, []);
 
   return (
-    <section style={{ padding: "3rem 3rem", background: "var(--blush)" }} className="relative overflow-hidden">
-      <div className="grid lg:grid-cols-2 gap-10 mx-auto">
+    <section style={{ padding: "1.5rem 2rem", background: "var(--blush)" }} className="relative overflow-hidden">
+      <div className="grid lg:grid-cols-2 gap-5 mx-auto">
         {/* LEFT */}
-        <div className="flex flex-col justify-center font-black bg-black/10 rounded-lg p-3 hover:bg-black/25 transition-all">
+        <div className="flex flex-col font-black bg-black/10 rounded-lg p-5 hover:bg-black/25 transition-all">
           <p className="text-amber-700 text-3xl h-max-full uppercase tracking-widest mb-5">
             Motor de análisis IA
           </p>
@@ -118,8 +80,7 @@ export default function AISection() {
 
         {/* RIGHT */}
         <div className="flex-col font-black bg-black/10 rounded-lg p-3 hover:bg-black/25 transition">
-          <div className="flex justify-self-center border border-amber-400 rounded-full w-max overflow-hidden hover:bg-amber-400/20 mb-5">
-            
+          <div className=" justify-self-center border border-amber-400 rounded-full w-max overflow-hidden hover:bg-amber-400/20 mb-5">  
             <button
               onClick={() => setActiveTab("palette")}
               className={`px-10 py-2 ${
@@ -145,17 +106,18 @@ export default function AISection() {
           )}
 
           {activeTab === "palette" && (
-            <div className="justify-center grip gap-10">
-              {["Claro", "Medio", "Oscuro"].map((group) => {
+            <div className="justify-center">
+              {["Claros", "Medios", "Oscuros"].map((group) => {
                 const tones = SKIN_TONES.filter((t) => t.toneGroup === group);
 
                 return (
-                  <div key={group}>
-                    <p className="text-xs text-black uppercase text-center">
-                      {group}s
+                  <div key={group} className="flex flex-col-2">
+                    <div className="flex items-center w-20 h-20 ">
+                    <p className="flex text-xs text-black uppercase">
+                      {group}
                     </p>
-
-                    <div className="flex justify-center gap-20 m-2">
+                    </div>
+                    <div className="flex gap-15 flex-wrap justify-center">
                       {tones.map((tone) => (
                         <ToneItem key={tone.id} tone={tone} />
                       ))}
@@ -163,6 +125,45 @@ export default function AISection() {
                   </div>
                 );
               })}
+              {/* SUBTONOS */}
+<div className="border-t border-black-500 pt-3">
+  <p className="text-center text-xs uppercase tracking-widest text-black/60 mb-4">
+    Subtonos detectados por IA
+  </p>
+
+  <div className="flex justify-center gap-5">
+    {Object.values(SUBTONES).map((subtone) => (
+      <div
+        key={subtone.id}
+        className="
+          flex items-center gap-3
+          px-2 py-2
+          rounded-full
+          bg-white
+          backdrop-blur-sm
+          border border-black/10
+        "
+      >
+        <div
+          className="w-4 h-4 rounded-full"
+          style={{
+            backgroundColor: subtone.hex,
+          }}
+        />
+
+        <div>
+          <p className="text-sm font-semibold">
+            {subtone.label}
+          </p>
+
+          <p className="text-[11px] text-black/500">
+            {subtone.description}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
             </div>
           )}
         </div>

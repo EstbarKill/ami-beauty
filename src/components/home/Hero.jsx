@@ -34,8 +34,8 @@ export default function Hero() {
       setTimeout(() => {
         setIndex((i) => (i + 1) % slides.length);
         setFading(false);
-      }, 400);
-    }, 4800);
+      }, 200);
+    }, 3800);
     return () => clearInterval(interval);
   }, []);
 
@@ -52,7 +52,7 @@ export default function Hero() {
           height: "100%",
           objectFit: "cover",
           opacity: fading ? 0 : 1,
-          transition: "opacity 0.6s ease",
+          transition: "opacity 0.2s ease",
         }}
         onError={(e) => { e.target.src = "https://placehold.co/1440x520/1c1815/c9957a?text=Ami+Beauty"; }}
       />
@@ -78,19 +78,20 @@ export default function Hero() {
       >
         <div
           style={{
-            maxWidth: "580px",
+            maxWidth: "800px",
             opacity: fading ? 0 : 1,
             transform: fading ? "translateY(50px)" : "translateY(0)",
-            transition: "opacity 0.4s ease, transform 0.4s ease",
+            transition: "opacity 0.3s ease, transform 0.3s ease",
           }}
         >
           <span
             style={{
               display: "block",
-              fontSize: "15px",
-              letterSpacing: "0.2em",
+              fontSize: "20px",
+              letterSpacing: "0.4em",
               textTransform: "uppercase",
               color: "var(--gold)",
+              fontFamily: "var(--font-display)",
               marginBottom: "0.75rem",
               fontWeight: 600,
             }}
@@ -99,9 +100,9 @@ export default function Hero() {
           </span>
           <h1
             style={{
-              fontFamily: "Georgia,serif",
-              fontSize: "clamp(3.2rem,5vw,4.5rem)",
-              fontWeight: 500,
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(5.2rem,5vw,4.5rem)",
+              fontWeight: 600,
               color: "var(--rose-lith)",
               lineHeight: 1.1,
               marginBottom: "0.9rem",
@@ -115,13 +116,22 @@ export default function Hero() {
               fontSize: "15px",
               color: "var(--rose-dark)",
               marginBottom: "1rem",
-              marginLeft: "1rem",
-              lineHeight: 1.6,
+              marginLeft: "1.5rem",
+              lineHeight: 1.8,
+              fontFamily: "var(--font-body)",
             }}
           >
             {current.desc}
           </p>
-          <Link href="/analisis" className="btn-primary">
+          <Link href="/analisis" className="btn-primary"
+            style={{
+              display: "inline-block",
+              padding: "0.5rem 0.7rem",
+              borderRadius: "50px",
+              fontWeight: 800,
+              fontFamily: "var(--font-body)",
+            }}
+          >
             Probar IA
           </Link>
         </div>

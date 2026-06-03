@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import SkinAnalyzer from "@/components/ai/SkinAnalyzer";
+import ChromaticPalette from "@/components/ai/ChromaticPalette";
 
 export default function AnalisisPage() {
   const [mode, setMode] = useState(null);
@@ -60,6 +61,13 @@ export default function AnalisisPage() {
                 <ul className="text-white/100 space-y-1">
                   <li>• Luz blanca o natural</li>
                   <li>• Sin filtros</li>
+                  <li>
+  • Tarjeta cromática Ami Beauty visible
+</li>
+
+<li>
+  • Rostro y tarjeta dentro del encuadre
+</li>
                   <li>• Rostro visible</li>
                   <li>• Sin sombras fuertes</li>
                 </ul>
@@ -89,6 +97,7 @@ export default function AnalisisPage() {
       <div className="grid lg:grid-cols-2 gap-10 px-6 py-5 max-w-7xl mx-auto">
         {/* LEFT */}
         <div className="space-y-4">
+          <ChromaticPalette />
           <div>
             <p className="text-(--charcoal) text-3xl uppercase mb-2">
               Sistema de análisis

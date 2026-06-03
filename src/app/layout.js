@@ -18,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" data-scroll-behavior="smooth">
         <head>
     <Script
       src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"

@@ -26,9 +26,10 @@ export default function Header() {
       style={{
         position: "sticky",
         top: 0,
-        zIndex: 900,
+        zIndex: 800,
         background: "white",
         borderBottom: "1px solid var(--cream-dark)",
+        fontFamily: "var(--font-display)",
       }}
     >
       <div
@@ -46,22 +47,11 @@ export default function Header() {
         <Link
           href="/"
           style={{
-            fontFamily: "BadgerScript",
-            fontSize: "2.6rem",
-            fontWeight: 400,
-            letterSpacing: ".05em",
-            color: "var(--blue)",
-            textDecoration: "none",
-            whiteSpace: "nowrap",
-            flexShrink: 0,
-            display: "flex",
-            alignItems: "center",
-            gap: "1px",
+            position: "relative",
+            width: "6rem"
           }}
         >
-          Ami
-          <span style={{ color: "var(--blue)", fontSize: "2.8rem", lineHeight: 0, position: "relative", top: "5px" }}>·</span>
-          Beauty
+          <img src="/img/logo-ami-beauty.webp" alt="Ami Beauty" title="Ami Beauty"/>
         </Link>
 
         {/* Search */}
@@ -88,14 +78,14 @@ export default function Header() {
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="Buscar productos, marcas y más..."
             className="input-base"
-            style={{ paddingLeft: "2.4rem", fontSize: "12.5px", letterSpacing: "0.02em" }}
+            style={{ fontFamily: "var(--font-display)", paddingLeft: "2.4rem", fontSize: "1rem", letterSpacing: "0.02em" }}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
           />
         </div>
 
         {/* Actions */}
-        <div style={{ marginLeft: "auto", display: "flex", alignItems: "center" }}>
+        <div style={{ fontFamily: "var(--font-display)", marginLeft: "auto", display: "flex", alignItems: "center", fontSize: "0.8rem", gap: "1rem" }}>
           <NavAction href="/favoritos" label="Favoritos" badge={favorites.length}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" width="19" height="19">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -126,18 +116,18 @@ function NavAction({ href, label, badge, onClick, as = "link", children }) {
           <span
             style={{
               position: "absolute",
-              top: "-5px",
-              right: "-6px",
+              top: "-9px",
+              right: "-8px",
               background: "var(--rose)",
-              color: "white",
-              fontSize: "8.5px",
+              color: hovered ? "black" : "white",
+              fontSize: "8.7px",
               width: "15px",
               height: "15px",
               borderRadius: "50%",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontWeight: 600,
+              fontWeight: 1000,
               letterSpacing: 0,
             }}
           >
