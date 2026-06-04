@@ -604,7 +604,6 @@ Desarrollador Full Stack especializado en:
 
 ### Ami Beauty AI
 
-Belleza + Ciencia + Inteligencia Artificial
-<sub>Ami Beauty AI — Belleza + Tecnología + Inteligencia Artificial</sub>
+Belleza + Ciencia + Inteligencia Artificia
 </div>
 los derechos reservados © 2026 **Ami Beauty**.
