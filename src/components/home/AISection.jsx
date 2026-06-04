@@ -48,7 +48,7 @@ export default function AISection() {
     <section style={{ padding: "1.5rem 2rem", background: "var(--cream)" }} className="relative overflow-hidden">
       <div className="grid lg:grid-cols-2 gap-5 mx-auto">
         {/* LEFT */}
-        <div className="container-ai flex flex-col font-black bg-black/10 rounded-lg p-5 hover:bg-black/25 transition-all">
+        <div className="container-ai flex flex-col font-black rounded-lg p-5 hover:bg-black/25 transition-all">
           <p style={{fontWidth:800,fontSize: "2.5rem", fontFamily:"var(--font-display)", color:"var(--brand-primary)"}} className="text-3xl h-max-full uppercase tracking-widest mb-5">
             Motor de análisis IA
           </p>

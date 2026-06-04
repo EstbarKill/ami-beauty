@@ -42,7 +42,7 @@ export default function TipsSection() {
             style={{ textDecoration: "none", display: "block" }}
           >
             <article
-              style={{ cursor: "pointer", borderRadius: "8px", overflow: "hidden", background: "var(--ai-cyan)", boxShadow: "0 2px 8px rgba(40, 48, 191,0.6)", transition: "box-shadow .3s ease" }}
+              style={{ cursor: "pointer", borderRadius: "8px", overflow: "hidden", background: "var(--cream-dark)", boxShadow: "0 2px 8px rgba(40, 48, 191,0.6)", transition: "box-shadow .3s ease" }}
               className="tip-card"
               onMouseEnter={(e) => {
                 const img = e.currentTarget.querySelector(".tip-img-inner");
@@ -72,17 +72,6 @@ export default function TipsSection() {
                     borderBottom:".8px solid rgba(40, 48, 191,.8)"
                   }}
                 >
-                  <span
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: "3rem",
-                      color: "rgba(40, 48, 191,.5)",
-                      fontStyle: "italic",
-                      fontWidth: 700
-                    }}
-                  >
-                    {tip.category}
-                  </span>
                 </div>
               </div>
 

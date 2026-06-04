@@ -103,7 +103,7 @@ body {
   transition: background-color 0.3s, transform 0.3s;
 }
 .container-ai{
-  background: var(--ai-cyan);
+  background: var(--cream-dark);
 }
 .btn-primary:hover {
   background-color: var(--ai-cyan);

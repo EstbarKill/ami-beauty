@@ -82,7 +82,7 @@ export default function ReviewsSection() {
             <div
               key={author}
               style={{
-                background: "var(--ai-cyan)",
+                background: "var(--cream-dark)",
                 border: "1px solid rgba(255,255,255,.2)",
                 padding: "1rem",
                 transition: "border-color .5s, transform .3s",
