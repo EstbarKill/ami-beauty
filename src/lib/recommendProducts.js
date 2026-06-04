@@ -99,7 +99,13 @@ const validTones = [
 console.log("VALID TONES:", validTones);
 console.log("SUBTONE:", subtoneId);
 console.log("USER GROUP:", userGroup);
-  const scored = products.map((p) => {
+
+const scored = products
+  .filter(
+    (p) => p.subcategory === "correctores"
+  )
+  .map((p) => {
+    // lógica de score
     let bestScore = 0;
     let bestVariants = [];
 
@@ -151,7 +157,7 @@ const sorted = scored
   .sort((a, b) => b.score - a.score);
 
   return {
-    matched: sorted.slice(0, 4),
-    interest: sorted.slice(4, 8),
+    matched: sorted.slice(0, 5),
+    interest: sorted.slice(5, 9),
   };
 }
