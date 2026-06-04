@@ -39,7 +39,7 @@ export const CATEGORY_TREE = {
         label: "Lápiz de cejas",
       },
       {
-        slug: "gel Fijador",
+        slug: "gel",
         label: "Gel fijador",
       },
       {
@@ -57,6 +57,10 @@ export const CATEGORY_TREE = {
     label: "SkinCare",
     icon: "👁️",
     subcategories: [
+            {
+        slug: "cremas",
+        label: "Cremas",
+      },
       {
         slug: "limpiadores",
         label: "Limpiadores",
@@ -66,17 +70,9 @@ export const CATEGORY_TREE = {
         label: "Hidratantes",
       },
       {
-        slug: "protectorSolar",
-        label: "Protector solar",
-      },
-      {
         slug: "serums",
         label: "Serums",
       },
-      {
-        slug: "Mascarillas",
-        label: "Mascarillas",
-      }
     ],
   },
 
@@ -100,16 +96,8 @@ export const CATEGORY_TREE = {
     icon: "💄",
     subcategories: [
       {
-        slug: "labiales",
-        label: "Labiales",
-      },
-      {
         slug: "gloss",
         label: "Gloss",
-      },
-      {
-        slug: "tintas",
-        label: "Tintas",
       },
       {
         slug: "hidratante",

@@ -22,11 +22,19 @@ export default function ChromaticPalette() {
             key={color}
             style={{
               background: color,
-              height: "60px",
-              borderRadius: "4px",
+              height: "50px",
+              borderRadius: "10px",
+              border:"1px solid var(--ai-cyan)"
             }}
+                  onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "var(--success)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "var(--ai-cyan)";
+      }}       
           />
         ))}
+       
       </div>
     </div>
   );

@@ -744,12 +744,7 @@
     "brand": "Atenea",
     "slug": "sombras-atenea-birds",
     "category": "ojos",
-    "subcategory":[
-      {
-        "slug":"paletas",
-        "label":"Paletas"
-      }
-    ],
+    "subcategory":"paletas",
     "description": "Paleta Birds, la más completa del mercado con 35 colores entre tonos tierra y neones.",
     "price": 96000,
     "featured": true,
@@ -883,7 +878,6 @@
       { "shade": "04 Caramel",  "hex": "#C88060", "toneId": "claro-dorado", "subtone": "warm" }
     ]
   },
-
   {
     "id": 30,
     "name": "Gloss Bonita",
@@ -910,6 +904,253 @@
       { "shade": "Kim",   "hex": "#F0C0A8", "toneId": "claro-neutro", "subtone": "neutral"  },
       { "shade": "Diva",  "hex": "#E89090", "toneId": "claro-rosado", "subtone": "cool" },
       { "shade": "Angel", "hex": "#F8D0B8", "toneId": "porcelana",    "subtone": "neutral"  }
+    ]
+  },
+  {
+  "id": 31,
+    "name": "limpiador con ácido hialurónico",
+    "brand": "og",
+    "slug": "limpiador-con-ácido-hialurónico",
+    "category": "skincare",
+    "subcategory":"limpiadores",
+    "description": "Limpieza profunda con hidratación y suavidad en cada uso. La Espuma Limpiadora de Ácido Hialurónico elimina impurezas sin resecar, mientras hidrata, mejora la elasticidad y refuerza la luminosidad natural de tu piel. Su fórmula avanzada ayuda a suavizar líneas de expresión, mantener la humedad y proteger frente a los agresores externos, dejando una sensación fresca y confortable.",
+    "price": 40000,
+    "featured": true,
+    "isNew": true,
+    "recommended":true,
+    "content": "200ml",
+    "toneGroup": "Claro",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "subtones": ["cool", "neutral", "warm"],
+    "images": [
+      "/img/products/limpiador-con-ácido-hialurónico.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 Winter", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "neutral" },
+      { "shade": "01 Snow",   "hex": "#FEE1C7", "toneId": "porcelana", "subtone": "warm" },
+      { "shade": "02 Off White", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "neutral" },
+      { "shade": "03 Latina",    "hex": "#F2C49A", "toneId": "claro-dorado", "subtone": "warm" },
+      { "shade": "04 Cream Brûlée", "hex": "#F2B177", "toneId": "medio-rosado", "subtone": "warm" },
+      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "moreno-calido", "subtone": "warm" }
+    ]
+  },
+  {
+  "id": 32,
+    "name": "espuma limpiadora de niacinamida",
+    "brand": "og",
+    "slug": "espuma-limpiadora-de-niacinamida",
+    "category": "skincare",
+    "subcategory":"limpiador",
+    "description": "Espuma Limpiadora Facial Niacinamida – Limpieza profunda, piel fresca y luminosa. Diseñada para purificar, equilibrar y revitalizar, esta espuma elimina impurezas, controla el exceso de grasa y ayuda a minimizar los poros sin resecar la piel. Su cepillo de silicona integrado potencia la limpieza, masajea suavemente y estimula la circulación, dejando el rostro limpio, suave y lleno de vida.",
+    "price": 41000,
+    "featured": true,
+    "isNew": true,
+    "recommended":true,
+    "content": "200ml",
+    "toneGroup": "Claro",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "subtones": ["cool", "neutral", "warm"],
+    "images": [
+      "/img/products/espuma-limpiadora-de-niacinamida.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 Winter", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "neutral" },
+      { "shade": "01 Snow",   "hex": "#FEE1C7", "toneId": "porcelana", "subtone": "warm" },
+      { "shade": "02 Off White", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "neutral" },
+      { "shade": "03 Latina",    "hex": "#F2C49A", "toneId": "claro-dorado", "subtone": "warm" },
+      { "shade": "04 Cream Brûlée", "hex": "#F2B177", "toneId": "medio-rosado", "subtone": "warm" },
+      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "moreno-calido", "subtone": "warm" }
+    ]
+  },
+  {
+  "id": 33,
+    "name": "serum de niacinamida",
+    "brand": "og",
+    "slug": "serum-de-niacinamida",
+    "category": "skincare",
+    "subcategory":"serums",
+    "description": "Sérum de Niacinamida – Piel equilibrada, fresca y luminosa.",
+    "price": 40000,
+    "featured": true,
+    "isNew": true,
+    "recommended":true,
+    "content": "200ml",
+    "toneGroup": "Claro",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "subtones": ["cool", "neutral", "warm"],
+    "images": [
+      "/img/products/serum-de-niacinamida.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 Winter", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "neutral" },
+      { "shade": "01 Snow",   "hex": "#FEE1C7", "toneId": "porcelana", "subtone": "warm" },
+      { "shade": "02 Off White", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "neutral" },
+      { "shade": "03 Latina",    "hex": "#F2C49A", "toneId": "claro-dorado", "subtone": "warm" },
+      { "shade": "04 Cream Brûlée", "hex": "#F2B177", "toneId": "medio-rosado", "subtone": "warm" },
+      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "moreno-calido", "subtone": "warm" }
+    ]
+  },
+  {
+  "id": 34,
+    "name": "serum con ácido hialurónico",
+    "brand": "og",
+    "slug": "serum-con-ácido-hialurónico",
+    "category": "skincare",
+    "subcategory":"serums",
+    "description": "Hidratación profunda y luminosidad que transforma tu piel.",
+    "price": 38500,
+    "featured": true,
+    "isNew": true,
+    "recommended":true,
+    "content": "200ml",
+    "toneGroup": "Claro",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "subtones": ["cool", "neutral", "warm"],
+    "images": [
+      "/img/products/serum-con-ácido-hialurónico.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 Winter", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "neutral" },
+      { "shade": "01 Snow",   "hex": "#FEE1C7", "toneId": "porcelana", "subtone": "warm" },
+      { "shade": "02 Off White", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "neutral" },
+      { "shade": "03 Latina",    "hex": "#F2C49A", "toneId": "claro-dorado", "subtone": "warm" },
+      { "shade": "04 Cream Brûlée", "hex": "#F2B177", "toneId": "medio-rosado", "subtone": "warm" },
+      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "moreno-calido", "subtone": "warm" }
+    ]
+  },
+  {"id": 35,
+    "name": "gel hidratante con ácido hialurónico",
+    "brand": "og",
+    "slug": "gel-hidratante-con-ácido-hialurónico",
+    "category": "skincare",
+    "subcategory":"hidratantes",
+    "description": "Piel más hidratada, suave y luminosa. ✨Su fórmula con ácido hialurónico actúa como un imán de humedad, ayudando a restaurar la elasticidad, retener la hidratación y proteger la piel frente a los agresores externos. Disfruta de una textura fresca, ligera y de rápida absorción que deja tu piel firme, radiante y saludable cada día.",
+    "price": 40000,
+    "featured": true,
+    "isNew": true,
+    "recommended":true,
+    "content": "200ml",
+    "toneGroup": "Claro",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "subtones": ["cool", "neutral", "warm"],
+    "images": [
+      "/img/products/gel-hidratante-con-ácido-hialurónico.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 Winter", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "neutral" },
+      { "shade": "01 Snow",   "hex": "#FEE1C7", "toneId": "porcelana", "subtone": "warm" },
+      { "shade": "02 Off White", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "neutral" },
+      { "shade": "03 Latina",    "hex": "#F2C49A", "toneId": "claro-dorado", "subtone": "warm" },
+      { "shade": "04 Cream Brûlée", "hex": "#F2B177", "toneId": "medio-rosado", "subtone": "warm" },
+      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "moreno-calido", "subtone": "warm" }
+    ]
+  },
+  {"id": 36,
+    "name": "crema hidratante de niacinamida",
+    "brand": "og",
+    "slug": "gel-hidratante-con-ácido-hialurónico-crema",
+    "category": "skincare",
+    "subcategory":"cremas",
+    "description": "Crema Facial con Niacinamida – Hidratación, control y luminosidad. Formulada para hidratar en profundidad y mejorar la textura, esta crema ayuda a reducir las manchas, controlar el brillo y minimizar los poros para una piel más uniforme y fresca. Su textura ligera y no comedogénica se absorbe al instante, dejando un acabado suave, equilibrado y natural. Ideal para piel mixta a grasa, pero perfecto para todo tipo de piel.",
+    "price": 41000,
+    "featured": true,
+    "isNew": true,
+    "recommended":true,
+    "content": "200ml",
+    "toneGroup": "Claro",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "subtones": ["cool", "neutral", "warm"],
+    "images": [
+      "/img/products/gel-hidratante-con-ácido-hialurónico-crema.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 Winter", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "neutral" },
+      { "shade": "01 Snow",   "hex": "#FEE1C7", "toneId": "porcelana", "subtone": "warm" },
+      { "shade": "02 Off White", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "neutral" },
+      { "shade": "03 Latina",    "hex": "#F2C49A", "toneId": "claro-dorado", "subtone": "warm" },
+      { "shade": "04 Cream Brûlée", "hex": "#F2B177", "toneId": "medio-rosado", "subtone": "warm" },
+      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "moreno-calido", "subtone": "warm" }
+    ]
+  },
+  {"id": 37,
+    "name": "Gel Fijador de Cejas Freeze Babes",
+    "brand": "Anik",
+    "slug": "gel-fijador-cejas-freeze-babes",
+    "category": "Cejas",
+    "subcategory":"gel",
+    "description": "El fijador de cejas perfecto para unas cejas congeladas. Con aceite de ricino y ácido hialurónico. Peina, define y mantiene cada vello en su lugar.",
+    "price": 22000,
+    "featured": true,
+    "isNew": true,
+    "recommended":true,
+    "content": "200ml",
+    "toneGroup": "Claro",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "subtones": ["cool", "neutral", "warm"],
+    "images": [
+      "/img/products/gel-fijador-cejas-freeze-babes.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 Winter", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "neutral" },
+      { "shade": "01 Snow",   "hex": "#FEE1C7", "toneId": "porcelana", "subtone": "warm" },
+      { "shade": "02 Off White", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "neutral" },
+      { "shade": "03 Latina",    "hex": "#F2C49A", "toneId": "claro-dorado", "subtone": "warm" },
+      { "shade": "04 Cream Brûlée", "hex": "#F2B177", "toneId": "medio-rosado", "subtone": "warm" },
+      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "moreno-calido", "subtone": "warm" }
+    ]
+  },
+  {"id": 38,
+    "name": "Lapiz Doble para Cejas",
+    "brand": "Anik",
+    "slug": "lapiz-doble-cejas",
+    "category": "cejas",
+    "subcategory":"lapiz",
+    "description": "Nuestro lápiz resalta tus cejas, es perfecto para definirlas y rellenar espacios pelo a pelo de manera natural.",
+    "price": 16000,
+    "featured": true,
+    "isNew": true,
+    "recommended":true,
+    "content": "0.3g",
+    "toneGroup": "Claro",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "subtones": ["cool", "neutral", "warm"],
+    "images": [
+      "/img/products/lapiz-doble-cejas-c1.jpeg",
+      "/img/products/lapiz-doble-cejas-c2.jpeg",
+      "/img/products/lapiz-doble-cejas-c3.jpeg",
+      "/img/products/lapiz-doble-cejas-c4.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 light", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "neutral" },
+      { "shade": "01 medium",   "hex": "#FEE1C7", "toneId": "porcelana", "subtone": "warm" },
+      { "shade": "02 dark", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "neutral" }]
+  },
+  {"id": 39,
+    "name": "Kit de Cejas",
+    "brand": "Anik",
+    "slug": "kit-de-cejas",
+    "category": "cejas",
+    "subcategory": "pomadas",
+    "description": "El kit perfecto que dejará tus cejas perfectas, tiene todo lo que necesitas para darle la horma perfecta a tus cejas de forma fácil. Es resistente al agua y de larga duración.",
+    "price": 23000,
+    "featured": true,
+    "isNew": true,
+    "recommended":true,
+    "content": "0.3g",
+    "toneGroup": "Claro",
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "subtones": ["cool", "neutral", "warm"],
+    "images": [
+      "/img/products/kit-de-cejas-c1.jpeg",
+      "/img/products/kit-de-cejas-c2.jpeg"
+    ],
+    "variants": [
+      { "shade": "00 Winter", "hex": "#FAE2D2", "toneId": "porcelana", "subtone": "neutral" },
+      { "shade": "01 Snow",   "hex": "#FEE1C7", "toneId": "porcelana", "subtone": "warm" },
+      { "shade": "02 Off White", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "neutral" },
+      { "shade": "03 Latina",    "hex": "#F2C49A", "toneId": "claro-dorado", "subtone": "warm" },
+      { "shade": "04 Cream Brûlée", "hex": "#F2B177", "toneId": "medio-rosado", "subtone": "warm" },
+      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "moreno-calido", "subtone": "warm" }
     ]
   }
 ]

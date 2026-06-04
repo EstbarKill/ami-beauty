@@ -54,7 +54,7 @@ export default function AboutSection() {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               position: "absolute",
-              top: "50%",
+              top: "40%",
               right: "36%",
               border: "5px solid var(--rose)",
               display: "flex",
@@ -69,8 +69,8 @@ export default function AboutSection() {
           <div
             style={{
               position: "absolute",
-              top: "13rem",
-              right: "40%",
+              top: "17.2rem",
+              right: "39%",
               width: "70px",
               height: "70px",
               borderRadius: "50%",
@@ -85,38 +85,25 @@ export default function AboutSection() {
         {/* Text */}
         <div>
           <span className="eyebrow">Sobre Nosotras</span>
+          <span
+          style={{ fontSize:"1.2rem",color:"var(--font-primary)"}}>Ami es esa amiga.</span>
           <p
             style={{
-              color: "var(--charcoal-mid)",
+              color: "var(--font-primary)",
               lineHeight: "1.50rem",
-              fontSize: "15px",
+              fontSize: "1.1rem",
               marginBottom: ".6rem",
-              marginLeft: "0.30rem",
               fontFamily: "var(--font-body)",
             }}
           >
-            En Ami Beauty nos dedicamos a ofrecer los mejores productos de
-            belleza y cosmética de lujo. Nuestro objetivo es crear una
-            experiencia de compra que refleje los más altos estándares de
-            calidad — desde formulaciones científicamente avanzadas hasta
-            empaques sostenibles.
+            
+La que te dice la verdad aunque no sea lo que querías escuchar. La que sabe de maquillaje y no te deja comprar el tono incorrecto. La que entiende tu piel, tu tono, tu subtono y te orienta sin juzgarte ni confundirte.
+Esa amiga que todas necesitamos cuando estamos frente a una pantalla, sin poder probarnos nada, intentando adivinar si ese corrector es realmente el nuestro.
+Al construir este emprendimiento de marcas colombianas de maquillaje apareció algo que lo cambió todo: en Colombia no existía una herramienta digital confiable que ayudara a la consumidora a encontrar su tono sin prueba física. Las plataformas internacionales tienen sus sistemas, sí pero construidos desde referencias que no nos representan, que no conocen a Majikal ni saben qué es un subtono oliva en una piel mestiza colombiana.
+Ahí estaba la oportunidad. Y de ahí nació esto.
+Ami Beauty: una plataforma de comercio electrónico especializada en marcas colombianas de maquillaje, con un diagnóstico cromático asistido que lee tu tono real y te recomienda el corrector que tiene sentido para tu piel. Sin adivinar. Sin devolver. Sin incertidumbre.
+Como lo haría una buena amiga.
           </p>
-          <p
-            style={{
-              color: "var(--charcoal-mid)",
-              lineHeight: "1.5",
-              fontSize: "1rem",
-              marginBottom: ".6rem",
-              marginLeft: "0.30rem",
-              fontFamily: "var(--font-body)",
-            }}
-          >
-            Cada producto en nuestra tienda ha sido cuidadosamente seleccionado.
-            Usamos tecnología de inteligencia artificial para ayudarte a
-            encontrar los productos perfectos para tu tono de piel exacto —
-            Fitzpatrick I hasta VI.
-          </p>
-
           {/* Stats row */}
           <div
             style={{

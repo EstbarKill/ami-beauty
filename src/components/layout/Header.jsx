@@ -51,7 +51,7 @@ export default function Header() {
             width: "6rem"
           }}
         >
-          <img src="/img/logo-ami-beauty.webp" alt="Ami Beauty" title="Ami Beauty"/>
+          <img src="/img/logo-ami-beauty.png" alt="Ami Beauty" title="Ami Beauty"/>
         </Link>
 
         {/* Search */}

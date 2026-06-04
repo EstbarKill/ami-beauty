@@ -15,9 +15,24 @@ const SERVICES = [
   { label: "Favoritos", href: "/favoritos" },
 ];
 
+const socialLinks = [
+  {
+    label: "IG",
+    href: "https://www.instagram.com/amibeautybaq/",
+  },
+  {
+    label: "TK",
+    href: "https://www.tiktok.com/@amibeautybaq",
+  },
+  {
+    label: "WA",
+    href: "https://wa.me/573242094550",
+  },
+];
+
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--ai-cyan)", color: "black", fontFamily: "var(--font-display)", fontWeight: 600 }}>
+    <footer style={{ borderTop:"2px solid var(--ai-cyan)",background: "white", color: "black", fontFamily: "var(--font-display)", fontWeight: 600 }}>
       <div
         style={{
           maxWidth: "1440px",
@@ -32,49 +47,60 @@ export default function Footer() {
         <div>
           <div
             style={{
-              fontFamily: "Georgia,serif",
-              fontSize: "2rem",
-              fontWeight: 500,
-              letterSpacing: "1.2rem",
-              marginBottom: ".7rem",
-              color: "var(--texxt-primary)",
+              position:"absolute",
+              display:"block",
+              width:"10rem",
+              background:"red",
+              justifySelf:"end",
+              marginTop:"4rem"
             }}
           >
-            Ami<span style={{ color: "var(--text-primary)" }}>·</span>Beauty
+            <img style={{
+                    }} src="/img/logo-ami-beauty.png" alt="Logo" />
           </div>
           <p style={{ fontSize: "15px", color: "black", lineHeight: "1.8", maxWidth: "370px" }}>
             Descubre tu belleza con inteligencia artificial. Encuentra el tono perfecto para ti.
           </p>
-          <div style={{ display: "flex", gap: "1.4rem", marginTop: "1rem" }}>
-            {["IG", "TK", "WA"].map((s) => (
-              <div
-                key={s}
-                style={{
-                  width: "40px",
-                  height: "40px",
-                  border: "1px solid var(--ai-blue)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "9px",
-                  letterSpacing: ".08em",
-                  color: "var(--text-secondary)",
-                  cursor: "pointer",
-                  transition: "border-color .2s, color .2s",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "var(--success)";
-                  e.currentTarget.style.color = "var(--text-primary)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "var(--ai-blue)";
-                  e.currentTarget.style.color = "var(--text-secondary)";
-                }}
-              >
-                {s}
-              </div>
-            ))}
-          </div>
+<div
+  style={{
+    display: "flex",
+    gap: "1.4rem",
+    marginTop: "1rem",
+  }}
+>
+  {socialLinks.map((social) => (
+    <a
+      key={social.label}
+      href={social.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        width: "40px",
+        height: "40px",
+        border: "1px solid var(--ai-blue)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "9px",
+        letterSpacing: ".08em",
+        color: "var(--text-secondary)",
+        textDecoration: "none",
+        cursor: "pointer",
+        transition: "border-color .2s, color .2s",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "var(--success)";
+        e.currentTarget.style.color = "var(--text-primary)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "var(--ai-blue)";
+        e.currentTarget.style.color = "var(--text-secondary)";
+      }}
+    >
+      {social.label}
+    </a>
+  ))}
+</div>
         </div>
 
         {/* Nav */}
@@ -163,8 +189,8 @@ export default function Footer() {
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
             {[
-              { icon: "✉", text: "contacto@amibeauty.com" },
-              { icon: "◎", text: "+57 300 000 0000" },
+              { icon: "✉", text: "amibeautybq@gmail.com" },
+              { icon: "◎", text: "+57 324 209 4550" },
               { icon: "◈", text: "Colombia 🇨🇴" },
             ].map(({ icon, text }) => (
               <div key={text} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>

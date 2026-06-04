@@ -26,7 +26,7 @@ const REVIEWS = [
 
 export default function ReviewsSection() {
   return (
-    <section style={{ fontFamily:"var(--font-display)" , background: "var(--cream)", padding: "2rem 4rem", color: "var(--ai-blue)"}}>
+    <section style={{ fontFamily:"var(--font-display)" , background: "var(--cream)", padding: "2rem 4rem"}}>
       <div style={{ maxWidth: "1440px", margin: "0 auto", marginBottom:"1.7rem"  }}>
         {/* Header row */}
         <div
@@ -67,7 +67,7 @@ export default function ReviewsSection() {
             >
               4.8
             </div>
-            <div style={{ color: "var(--gold)", fontSize: "1.1rem", letterSpacing: "0.1em", marginBottom: "0.4rem" }}>
+            <div style={{ color: "rgba(138, 233, 255, .9)", fontSize: "1.1rem", letterSpacing: "0.1em", marginBottom: "0.4rem" }}>
               ★★★★★
             </div>
             <div style={{ fontSize: "20px", color: "var(--brand-primary)", letterSpacing: "0.06em" }}>
@@ -96,7 +96,7 @@ export default function ReviewsSection() {
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              <div style={{ color: "var(--gold)", fontSize: "20px", letterSpacing: "0.1em"}}>
+              <div style={{ color: "rgba(138, 233, 255, .9)", fontSize: "20px", letterSpacing: "0.1em"}}>
                 {"★".repeat(stars)}
               </div>
               <p
@@ -124,17 +124,17 @@ export default function ReviewsSection() {
                     fontSize: "13px",
                     color: "white",
                     fontWeight: 500,
-                    fontFamily: "Georgia,serif",
+                    fontFamily: "var(--font-display)",
                     flexShrink: 0,
                   }}
                 >
                   {initial}
                 </div>
                 <div>
-                  <div style={{ fontSize: "12.5px", color: "rgba(40, 48, 191,.9)", fontWeight: 500 }}>
+                  <div style={{ fontSize: "12.5px", color: "var(--text-primary)", fontWeight: 500 }}>
                     {author}
                   </div>
-                  <div style={{ fontSize: "11px", color: "rgba(40, 48, 191,.7)", marginTop: "1px" }}>
+                  <div style={{ fontSize: "11px", color: "var(--text-secondary)", marginTop: "1px" }}>
                     {location}
                   </div>
                 </div>

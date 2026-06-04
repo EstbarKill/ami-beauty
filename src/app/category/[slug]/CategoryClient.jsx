@@ -53,13 +53,6 @@ export default function CategoryClient({
           Subcategoría: <strong>{sub}</strong>
         </p>
       )}
-
-      {brand && (
-        <p className="text-sm text-gray-500 mb-6">
-          Marca: <strong>{brand}</strong>
-        </p>
-      )}
-
       <ProductGrid products={filtered} />
     </div>
   );
