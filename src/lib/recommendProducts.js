@@ -111,7 +111,7 @@ console.log("USER GROUP:", userGroup);
 
 
       if (v.toneId === toneId) {
-        score += 15;
+        score += 10;
       }
       else if (
         validTones.includes(v.toneId)

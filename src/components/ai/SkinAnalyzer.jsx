@@ -192,7 +192,7 @@ const handleAnalyze = async () => {
       />
 
       {/* VIDEO */}
-      <div className="relative w-[420px] mx-auto">
+      <div className="relative w-[520px] mx-auto">
         
       {mode === "camera" && (
         <video
@@ -200,7 +200,7 @@ const handleAnalyze = async () => {
           autoPlay
           playsInline
           muted
-          className="w-[720px] mx-auto rounded"
+          className="flex w-[720px] rounded"
         />
         
       )}
@@ -209,7 +209,7 @@ const handleAnalyze = async () => {
       {preview && (
         <img
           src={preview}
-          className="w-[40rem] h-[20.3rem] mx-auto rounded"
+          className="w-[45rem] h-[21rem] rounded"
         />
       )}
       {/* CANVAS OCULTO */}
@@ -217,7 +217,7 @@ const handleAnalyze = async () => {
 </div>
       {/* LOADING */}
       {loading && (
-        <p className="text-black text-end">
+        <p className="text-blac">
           Analizando...
         </p>
       )}

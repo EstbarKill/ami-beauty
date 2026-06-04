@@ -55,7 +55,7 @@ export const SKIN_TONES = [
 
   {
     id: "medio-profundo",
-    label: "Medio Profundo",
+    label: "Moreno Profundo",
     hex: "#B5622E",
     itaRange: "20–27",
     fitzpatrick: "III–IV",
