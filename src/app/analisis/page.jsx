@@ -65,14 +65,7 @@ export default function AnalisisPage() {
                 <ul className="text-black space-y-1">
                   <li>• Luz blanca o natural</li>
                   <li>• Sin filtros</li>
-                  <li>
-  • Tarjeta cromática Ami Beauty visible
-</li>
-
-<li>
-  • Rostro y tarjeta dentro del encuadre
-</li>
-                  <li>• Rostro visible</li>
+                  <li>• Rostro visible dentro del encuadre</li>
                   <li>• Sin sombras fuertes</li>
                 </ul>
               </div>
