@@ -16,6 +16,7 @@
 </div>
 
 ---
+
 ### Motor inteligente de análisis cromático facial para recomendación personalizada de maquillaje
 
 Detección facial • Colorimetría científica • CIELAB • ITA • Recomendación inteligente
