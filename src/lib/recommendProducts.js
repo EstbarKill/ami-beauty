@@ -130,15 +130,6 @@ console.log("USER GROUP:", userGroup);
       ) {
         score += 5;
       }
-        if (score > 0) {
-  console.log({
-    product: p.name,
-    shade: v.shade,
-    toneId: v.toneId,
-    subtone: v.subtone,
-    score,
-  });
-}
       if (score > bestScore) {
         bestScore = score;
         bestVariants = [v];
@@ -158,17 +149,7 @@ const sorted = scored
   .filter(Boolean)
   .filter(p => p.score >= 8)
   .sort((a, b) => b.score - a.score);
-console.table(
-  scored
-    .filter(Boolean)
-    .map(p => ({
-      product: p.name,
-      shade: p.matchVariants?.[0]?.shade,
-      toneId: p.matchVariants?.[0]?.toneId,
-      subtone: p.matchVariants?.[0]?.subtone,
-      score: p.score
-    }))
-);
+
   return {
     matched: sorted.slice(0, 4),
     interest: sorted.slice(4, 8),
