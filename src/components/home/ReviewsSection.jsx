@@ -26,7 +26,7 @@ const REVIEWS = [
 
 export default function ReviewsSection() {
   return (
-    <section style={{ fontFamily:"var(--font-display)" , background: "var(--ai-cyan)", padding: "2rem 4rem", color: "var(--ai-blue)"}}>
+    <section style={{ fontFamily:"var(--font-display)" , background: "var(--cream)", padding: "2rem 4rem", color: "var(--ai-blue)"}}>
       <div style={{ maxWidth: "1440px", margin: "0 auto", marginBottom:"1.7rem"  }}>
         {/* Header row */}
         <div
@@ -60,14 +60,14 @@ export default function ReviewsSection() {
               style={{
                 fontFamily: "Georgia,serif",
                 fontSize: "4.5rem",
-                color: "var(--brand-decent)",
+                color: "var(--text-primary)",
                 lineHeight: 1,
                 marginBottom: "0.3rem",
               }}
             >
               4.8
             </div>
-            <div style={{ color: "var(--brand-accent)", fontSize: "1.1rem", letterSpacing: "0.1em", marginBottom: "0.4rem" }}>
+            <div style={{ color: "var(--gold)", fontSize: "1.1rem", letterSpacing: "0.1em", marginBottom: "0.4rem" }}>
               ★★★★★
             </div>
             <div style={{ fontSize: "20px", color: "var(--brand-primary)", letterSpacing: "0.06em" }}>
@@ -82,7 +82,7 @@ export default function ReviewsSection() {
             <div
               key={author}
               style={{
-                background: "var(--blue-lith)",
+                background: "var(--ai-cyan)",
                 border: "1px solid rgba(255,255,255,.2)",
                 padding: "1rem",
                 transition: "border-color .5s, transform .3s",
@@ -96,7 +96,7 @@ export default function ReviewsSection() {
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              <div style={{ color: "var(--brand-decent)", fontSize: "20px", letterSpacing: "0.1em"}}>
+              <div style={{ color: "var(--gold)", fontSize: "20px", letterSpacing: "0.1em"}}>
                 {"★".repeat(stars)}
               </div>
               <p

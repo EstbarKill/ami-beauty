@@ -184,20 +184,7 @@ export default function Hero() {
 
         }}
       >
-        <div
-        style={{
-          marginTop: ".5rem",
-          display: "flex",
-          justifyContent: "start",
-          width: "150px",
-          opacity: fading ? 0 : 1,
-          transform: fading ? "translateY(50px)" : "translateY(0)",
-          transition: "opacity 0.2s ease, transform 0.2s ease",
-        }}
-      >
-          <img src="/img/logo-ami-beauty.webp" alt="Logo"
-           />
-        </div>
+
         <div
           style={{
             maxWidth: "800px",

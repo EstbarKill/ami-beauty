@@ -32,9 +32,9 @@
   --rose: #C9957A;
   --rose-dark: #A8735A;
   /* Accent IA */ 
---ai-cyan: #a4d8e7;
---ai-blue: #4A5EFF;
---violet-ai: #7C3AED;
+--ai-cyan: #C4DDF2;
+--ai-blue: #2E406D;
+--violet-ai: #F24484;
   /* Semánticos UI */ 
 --success: #34C759;
   --warning: #F59E0B;
@@ -89,14 +89,14 @@ body {
 /* Buttons */
 .btn-primary {
   display: inline-block;
-  background-color: var(--rose-lith);
-  color: var(--violet-ai);
+  background-color: var(--cream);
+  color: var(--font-primary);
   padding: 0.3rem 1rem;
   font-size: 20px;
   letter-spacing: 0.10em;
   text-transform: uppercase;
   font-weight: 500;
-  border: none;
+  border: 1px solid var(--ai-cyan);
   cursor: pointer;
   text-decoration: none;
   margin-left: 20px;
@@ -107,7 +107,7 @@ body {
 }
 .btn-primary:hover {
   background-color: var(--ai-cyan);
-  color: var(--brand-accent);
+  color: var(--brand-primary);
   transform: translateY(-1px);
   border: 1px solid blue;
 }
@@ -243,10 +243,14 @@ body {
 }
 
 .info{
+  justify-content: space-between;
+  flex: 1;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height:90px;
   padding: .5rem;
-  min-height: 50%;
   .brand{
     font-weight: 900;
     font-size: 1.2rem;

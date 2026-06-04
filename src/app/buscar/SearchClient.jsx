@@ -9,18 +9,19 @@ export default function SearchClient() {
   const searchParams = useSearchParams();
   const q = searchParams.get("q") || "";
 
-  const results = useMemo(() => {
-    if (!q.trim()) return [];
+const results = useMemo(() => {
+  if (!q.trim()) return [];
 
-    const lower = q.toLowerCase();
+  const lower = q.toLowerCase();
 
-    return productsData.filter((p) =>
-      p.name.toLowerCase().includes(lower) ||
-      p.catLabel.toLowerCase().includes(lower) ||
-      (p.desc && p.desc.toLowerCase().includes(lower)) ||
-      p.toneGroup.toLowerCase().includes(lower)
-    );
-  }, [q]);
+  return productsData.filter((p) =>
+    (p.name || "").toLowerCase().includes(lower) ||
+    (p.brand || "").toLowerCase().includes(lower) ||
+    (p.category || "").toLowerCase().includes(lower) ||
+    (p.description || "").toLowerCase().includes(lower) ||
+    (p.toneGroup || "").toLowerCase().includes(lower)
+  );
+}, [q]);
 
   return (
     <div className="max-w-6xl mx-auto p-10">

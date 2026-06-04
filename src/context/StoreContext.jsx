@@ -44,45 +44,81 @@ export function StoreProvider({ children }) {
   }, []);
 
   /* ── Cart actions ───────────────────────────── */
-  const addToCart = useCallback(
-    (product) => {
-      setCart((prev) => {
-        const exists = prev.find(
-          (c) =>
-            c.id === product.id &&
-            c.image === product.images &&
-            c.selectedVariant?.shade === product.selectedVariant?.shade,
-        );
-        if (exists) {
-          return prev.map((c) =>
-            c.id === product.id &&
-            c.variant === product.variant &&
-            c.image === product.images &&
-            c.selectedVariant?.shade === product.selectedVariant?.shade
-              ? { ...c, qty: c.qty + 1 }
-              : c,
-          );
-        }
-        return [...prev, { ...product, qty: 1 }];
-      });
-      showToast(`${product.name} agregado al carrito ✓`);
-    },
-    [showToast],
-  );
+const addToCart = useCallback(
+  (product) => {
+    setCart((prev) => {
+      const existingIndex = prev.findIndex(
+        (item) =>
+          item.id === product.id &&
+          item.selectedVariant?.shade ===
+            product.selectedVariant?.shade
+      );
 
-  const removeFromCart = useCallback((id) => {
-    setCart((prev) => prev.filter((c) => c.id !== id));
-  }, []);
+      if (existingIndex >= 0) {
+        return prev.map((item, index) =>
+          index === existingIndex
+            ? { ...item, qty: item.qty + 1 }
+            : item
+        );
+      }
+
+      return [
+        ...prev,
+        {
+          ...product,
+          qty: 1,
+        },
+      ];
+    });
+
+    showToast(`${product.name} agregado al carrito ✓`);
+  },
+  [showToast]
+);
+
+const removeFromCart = useCallback(
+  (id, shade) => {
+    setCart((prev) =>
+      prev.filter(
+        (item) =>
+          !(
+            item.id === id &&
+            item.selectedVariant?.shade === shade
+          )
+      )
+    );
+  },
+  []
+);
 
   const clearCart = useCallback(() => setCart([]), []);
 
-  const updateQty = useCallback((id, qty) => {
+const updateQty = useCallback(
+  (id, shade, qty) => {
     if (qty <= 0) {
-      setCart((prev) => prev.filter((c) => c.id !== id));
-    } else {
-      setCart((prev) => prev.map((c) => (c.id === id ? { ...c, qty } : c)));
+      setCart((prev) =>
+        prev.filter(
+          (item) =>
+            !(
+              item.id === id &&
+              item.selectedVariant?.shade === shade
+            )
+        )
+      );
+      return;
     }
-  }, []);
+
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id &&
+        item.selectedVariant?.shade === shade
+          ? { ...item, qty }
+          : item
+      )
+    );
+  },
+  []
+);
 
   const cartCount = cart.reduce((a, c) => a + c.qty, 0);
   const cartTotal = cart.reduce((a, c) => a + c.price * c.qty, 0);

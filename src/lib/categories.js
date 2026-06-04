@@ -111,6 +111,10 @@ export const CATEGORY_TREE = {
         slug: "tintas",
         label: "Tintas",
       },
+      {
+        slug: "hidratante",
+        label: "Hidratantes",
+      },
     ],
   },
 };

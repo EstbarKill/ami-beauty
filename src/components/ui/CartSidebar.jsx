@@ -30,7 +30,7 @@ export default function CartSidebar() {
             position: "fixed",
             inset: 0,
             zIndex: 8000,
-            background: "rgba(28,24,21,.6)",
+            background: "rgba(0,0,0,.9)",
           }}
         />
       )}
@@ -40,28 +40,28 @@ export default function CartSidebar() {
         style={{
           position: "fixed",
           top: 0,
-          right: cartOpen ? 0 : "-460px",
+          right: cartOpen ? 0 : "-560px",
           bottom: 0,
-          width: "420px",
+          width: "400px",
           background: "white",
           zIndex: 8001,
           transition: "right .4s cubic-bezier(.77,0,.175,1)",
           display: "flex",
           flexDirection: "column",
-          boxShadow: "-8px 0 48px rgba(28,24,21,.1)",
+          boxShadow: "-8px 0 48px rgba(0,0,0,1)",
         }}
       >
         {/* Header */}
         <div
           style={{
-            padding: "1.5rem 1.75rem",
-            borderBottom: "1px solid var(--cream-dark)",
+            padding: ".5rem 1rem",
+            borderBottom: "1px solid var(--ai-cyan)",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
           }}
         >
-          <span style={{ fontFamily: "Georgia,serif", fontSize: "1.5rem" }}>
+          <span style={{ fontFamily: "var(--font-display)", fontSize: "2rem", fontWidth:"800" }}>
             Mi Carrito
           </span>
           <button
@@ -71,13 +71,14 @@ export default function CartSidebar() {
               border: "none",
               cursor: "pointer",
               fontSize: "1.1rem",
-              color: "var(--muted)",
+              color: "var(--blue)",
               transition: "color .2s",
+              fontWidth:"800"
             }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.color = "var(--charcoal)")
             }
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--blue)")}
           >
             ✕
           </button>
@@ -89,60 +90,55 @@ export default function CartSidebar() {
             <div
               style={{
                 textAlign: "center",
-                padding: "3rem 0",
-                color: "var(--muted)",
+                padding: "7rem 0",
+                color: "var(--ai-blue)",
               }}
             >
               <div
                 style={{
-                  fontSize: "2.5rem",
+                  fontSize: "5rem",
                   marginBottom: "0.75rem",
-                  color: "var(--muted-light)",
+                  color: "var(--ai-cyan)",
                 }}
               >
-                ◻
+                °
               </div>
-              <p style={{ fontSize: "14px" }}>Tu carrito está vacío</p>
+              <p style={{ fontSize: "2rem" }}>Tu carrito está vacío</p>
             </div>
           ) : (
             cart.map((item) => (
               <div
-                key={`${item.id}-${item.selectedVariant?.shade || "default"}`}
+                key={`${item.id}-${item.selectedVariant?.shade ?? "default"}`}
                 style={{
                   display: "flex",
                   gap: "1rem",
                   padding: "1rem 0",
-                  borderBottom: "1px solid var(--cream-dark)",
+                  borderBottom: "1px solid var(--ai-cyan)"
                 }}
               >
                 <div
                   style={{
-                    width: "72px",
+                    width: "90px",
                     height: "90px",
-                    backgroundImage: `url(${item.image}) center/cover no-repeat`,
+                    display:"fl ex",
+                    backgroundImage: `url(${item.images?.[0]})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
                     flexShrink: 0,
                   }}
                 />
-                <span>{item.image}</span>
                 <div style={{ flex: 1 }}>
                   <div
                     style={{
-                      fontFamily: "Georgia,serif",
-                      fontSize: "1rem",
+                      fontFamily: "var(--font-display)",
+                      fontSize: "1.3rem",
                       marginBottom: "0.25rem",
-                      lineHeight: 1.3,
+                      lineHeight: 1.2,
+                      color:"var(--gold)"
                     }}
                   >
                     {item.name}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "11px",
-                      color: "var(--muted)",
-                      marginBottom: "0.5rem",
-                    }}
-                  >
-                    {item.catLabel}
                   </div>
                   <div
                     style={{
@@ -155,7 +151,7 @@ export default function CartSidebar() {
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        border: "1px solid var(--cream-dark)",
+                        border: "1px solid var(--gold)",
                       }}
                     >
                       <button
@@ -163,20 +159,27 @@ export default function CartSidebar() {
                         style={{
                           background: "none",
                           border: "none",
-                          padding: "4px 8px",
+                          padding: "2px 5px",
                           cursor: "pointer",
-                          fontSize: "14px",
-                          color: "var(--charcoal-mid)",
+                          fontSize: "15px",
+                          color: "var(--gold)",
                         }}
+                                          onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "var(--success)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "var(--gold)")
+                  } 
                       >
                         −
                       </button>
                       <span
                         style={{
-                          padding: "4px 8px",
-                          fontSize: "13px",
+                          padding: "2px 3px",
+                          fontSize: "15px",
                           minWidth: "28px",
                           textAlign: "center",
+                          color:"var(--ai-blue)"
                         }}
                       >
                         {item.qty}
@@ -189,30 +192,36 @@ export default function CartSidebar() {
                           padding: "4px 8px",
                           cursor: "pointer",
                           fontSize: "14px",
-                          color: "var(--charcoal-mid)",
+                          color: "var(--gold)",
                         }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "var(--success)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "var(--gold)")
+                  }
                       >
                         +
                       </button>
                     </div>
-                    <span style={{ fontSize: "14px", fontWeight: 500 }}>
+                    <span style={{fontFamily:"var(--font-display)" ,fontSize: "1.2rem", fontWeight: 700 }}>
                       ${(item.price * item.qty).toLocaleString("es-CO")}
                     </span>
                   </div>
                 </div>
                 <button
-                  onClick={() => removeFromCart(item.id)}
+                  onClick={() => removeFromCart(item.id, item.selectedVariant?.shade)}
                   style={{
                     background: "none",
                     border: "none",
                     cursor: "pointer",
-                    color: "var(--muted)",
-                    fontSize: "12px",
+                    color: "var(--blue)",
+                    fontSize: "15px",
                     alignSelf: "flex-start",
-                    transition: "color .2s",
+                    transition: "color .4s",
                   }}
                   onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "var(--rose)")
+                    (e.currentTarget.style.color = "var(--blue)")
                   }
                   onMouseLeave={(e) =>
                     (e.currentTarget.style.color = "var(--muted)")
@@ -228,21 +237,23 @@ export default function CartSidebar() {
         {/* Footer */}
         <div
           style={{
-            padding: "1.5rem 1.75rem",
-            borderTop: "1px solid var(--cream-dark)",
+            padding: "1.2rem 2rem",
+            borderTop: "1px solid var(--ai-blue)",
           }}
         >
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
-              fontSize: "15px",
-              fontWeight: 500,
-              marginBottom: "1.25rem",
+              fontSize: "1.5rem",
+              fontWeight: 700,
+              marginBottom: "1rem",
+              fontFamily:"var(--font-display)",
+              color:"var(--text-primary)"
             }}
           >
-            <span>Total</span>
-            <span>${cartTotal.toLocaleString("es-CO")}</span>
+            <span style={{color:"var(--text-primary)"}}>Total</span>
+            <span style={{color:"var(--text-primary)"}}>${cartTotal.toLocaleString("es-CO")}</span>
           </div>
           <button
             onClick={checkout}
@@ -251,8 +262,8 @@ export default function CartSidebar() {
               display: "block",
               width: "100%",
               background: cart.length
-                ? "var(--charcoal)"
-                : "var(--muted-light)",
+                ? "var(--warning)"
+                : "var(--cream)",
               color: "white",
               border: "none",
               padding: "1rem",
@@ -264,11 +275,11 @@ export default function CartSidebar() {
               transition: "background .2s",
             }}
             onMouseEnter={(e) =>
-              cart.length && (e.currentTarget.style.background = "var(--rose)")
+              cart.length && (e.currentTarget.style.background = "var(--success)")
             }
             onMouseLeave={(e) =>
               cart.length &&
-              (e.currentTarget.style.background = "var(--charcoal)")
+              (e.currentTarget.style.background = "var(--warning)")
             }
           >
             Finalizar Compra

@@ -28,7 +28,7 @@ export default function ProductDetail({ product }) {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
       {/* 🖼️ GALERÍA */}
-      <div className="flex gap-4">
+      <div className="flex gap-10">
 
         {/* Thumbnails */}
         <div className="flex flex-col gap-3">
@@ -44,29 +44,28 @@ export default function ProductDetail({ product }) {
         </div>
 
         {/* Imagen principal */}
-        <div className="flex-1">
+        <div className="flex-1 ">
           <img
             src={selectedImage}
-            className="w-full rounded-2xl object-cover hover:scale-105 transition"
+            className="w-full rounded-3xl object-cover hover:scale-108 transition"
           />
         </div>
       </div>
 
       {/* 🧾 INFO */}
       <div className="space-y-6">
-
         {/* Título */}
         <div>
-          <h1 className="text-3xl font-bold">{product.name}</h1>
-          <p className="text-gray-500">{product.brand}</p>
+          <h1 style={{color:"var(--brand-primary)"}} className="text-4xl font-bold">{product.name}</h1>
+          <p style={{color:"var(--brand-accent)"}}>{product.brand}</p>
         </div>
 
         {/* Precio */}
         <div className="flex items-center gap-3">
-          <span className="text-3xl font-bold text-red-500">
+          <span className="text-3xl font-bold text-green-500">
             ${product.price.toLocaleString("es-CO")}
           </span>
-          <span className="line-through text-gray-400">
+          <span className="line-through text-red-400">
             ${(product.price * 1.3).toLocaleString("es-CO")}
           </span>
         </div>
@@ -74,7 +73,7 @@ export default function ProductDetail({ product }) {
         {/* 🎨 VARIANTES */}
         {product.variants && (
           <div>
-            <h3 className="font-semibold mb-2">Tonos:</h3>
+            <h3 style={{color:"var(--text-primary)"}} className="font-semibold mb-3">Tonos:</h3>
             <div className="flex gap-3 flex-wrap">
               {product.variants.map((v, i) => (
                 <div
@@ -83,8 +82,8 @@ export default function ProductDetail({ product }) {
                   className={`w-10 h-10 rounded-full cursor-pointer border-2 transition
                   ${
                     selectedVariant?.shade === v.shade
-                      ? "border-black scale-110"
-                      : "border-gray-300"
+                      ? "border-green-700 scale-120"
+                      : "border-gray-400"
                   }`}
                   style={{ backgroundColor: v.hex }}
                   title={v.shade}
@@ -93,9 +92,9 @@ export default function ProductDetail({ product }) {
             </div>
 
             {/* Nombre del tono */}
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-xl text-black mt-2">
               Tono seleccionado:{" "}
-              <span className="font-medium">
+              <span style={{color:"green"}} className="font-medium">
                 {selectedVariant?.shade}
               </span>
             </p>
@@ -104,14 +103,14 @@ export default function ProductDetail({ product }) {
 
         {/* 📝 DESCRIPCIÓN */}
         <div>
-          <h3 className="font-semibold mb-2">Descripción</h3>
-          <p className="text-gray-700 leading-relaxed">
+          <h3 className="text-xl font-semibold mb-2">Descripción</h3>
+          <p style={{color:"var(--text-secondary)"}} className="leading-relaxed">
             {product.description}
           </p>
         </div>
 
         {/* 🚀 BOTONES */}
-        <div className="flex gap-4 pt-4">
+        <div className="flex gap-4 pt-1">
 
           {/* 🛒 CARRITO */}
           <button
@@ -125,8 +124,8 @@ export default function ProductDetail({ product }) {
             className={`flex-1 py-4 rounded-xl font-semibold transition
             ${
               isInCart
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-black text-white hover:bg-gray-800"
+                ? "bg-green-500 cursor-not-allowed"
+                : "bg-blue-200 text-black hover:bg-gray-800"
             }`}
           >
             {isInCart
@@ -141,7 +140,7 @@ export default function ProductDetail({ product }) {
             ${
               isFavorite
                 ? "bg-red-500 text-white"
-                : "hover:bg-gray-100"
+                : "hover:bg-gray-900"
             }`}
           >
             {isFavorite ? "❤️" : "🤍"}
@@ -149,7 +148,7 @@ export default function ProductDetail({ product }) {
         </div>
 
         {/* 🧠 INFO EXTRA */}
-        <div className="text-sm text-gray-500 space-y-1">
+        <div className="flex gap-10 text-[1rem] text-black">
           <p>🚚 Envío gratis desde $100.000</p>
           <p>💳 Pago seguro</p>
           <p>🔥 Alta demanda</p>

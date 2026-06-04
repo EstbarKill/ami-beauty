@@ -42,7 +42,7 @@ export default function TipsSection() {
             style={{ textDecoration: "none", display: "block" }}
           >
             <article
-              style={{ cursor: "pointer", borderRadius: "8px", overflow: "hidden", background: "var(--blue-lith)", boxShadow: "0 2px 8px rgba(40, 48, 191,0.6)", transition: "box-shadow .3s ease" }}
+              style={{ cursor: "pointer", borderRadius: "8px", overflow: "hidden", background: "var(--ai-cyan)", boxShadow: "0 2px 8px rgba(40, 48, 191,0.6)", transition: "box-shadow .3s ease" }}
               className="tip-card"
               onMouseEnter={(e) => {
                 const img = e.currentTarget.querySelector(".tip-img-inner");
@@ -140,7 +140,7 @@ export default function TipsSection() {
                 </p>
 
                 <div style={{ padding:".7rem",display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontSize: "14px", color: "var(--muted-light)" }}>
+                  <span style={{ fontSize: "14px", color: "var(--ai-blue)" }}>
                     Lectura {tip.readTime}
                   </span>
                   <span

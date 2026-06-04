@@ -17,12 +17,12 @@ const SERVICES = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--charcoal)", color: "white", fontFamily: "var(--font-display)", fontWeight: 600 }}>
+    <footer style={{ background: "var(--ai-cyan)", color: "black", fontFamily: "var(--font-display)", fontWeight: 600 }}>
       <div
         style={{
           maxWidth: "1440px",
           margin: "0 auto",
-          padding: "2rem 4rem 1rem",
+          padding: "1rem 4rem 1rem",
           display: "grid",
           gridTemplateColumns: "4fr 2fr 2fr 2fr",
           gap: "5rem",
@@ -37,12 +37,12 @@ export default function Footer() {
               fontWeight: 500,
               letterSpacing: "1.2rem",
               marginBottom: ".7rem",
-              color: "white",
+              color: "var(--texxt-primary)",
             }}
           >
-            Ami<span style={{ color: "var(--rose-dark)" }}>·</span>Beauty
+            Ami<span style={{ color: "var(--text-primary)" }}>·</span>Beauty
           </div>
-          <p style={{ fontSize: "15px", color: "white", lineHeight: "1.8", maxWidth: "370px" }}>
+          <p style={{ fontSize: "15px", color: "black", lineHeight: "1.8", maxWidth: "370px" }}>
             Descubre tu belleza con inteligencia artificial. Encuentra el tono perfecto para ti.
           </p>
           <div style={{ display: "flex", gap: "1.4rem", marginTop: "1rem" }}>
@@ -50,25 +50,25 @@ export default function Footer() {
               <div
                 key={s}
                 style={{
-                  width: "30px",
-                  height: "30px",
-                  border: "1px solid rgba(255,255,255,.5)",
+                  width: "40px",
+                  height: "40px",
+                  border: "1px solid var(--ai-blue)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "9px",
                   letterSpacing: ".08em",
-                  color: "rgba(255,255,255,.7)",
+                  color: "var(--text-secondary)",
                   cursor: "pointer",
                   transition: "border-color .2s, color .2s",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "var(--rose)";
-                  e.currentTarget.style.color = "var(--rose)";
+                  e.currentTarget.style.borderColor = "var(--success)";
+                  e.currentTarget.style.color = "var(--text-primary)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,.7)";
-                  e.currentTarget.style.color = "rgba(255,255,255,.4)";
+                  e.currentTarget.style.borderColor = "var(--ai-blue)";
+                  e.currentTarget.style.color = "var(--text-secondary)";
                 }}
               >
                 {s}
@@ -84,9 +84,9 @@ export default function Footer() {
               fontSize: "15px",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "var(--gold)",
+              color: "var(--text-primary)",
               marginBottom: "1.25rem",
-              fontWeight: 500,
+              fontWeight: 900,
             }}
           >
             Navegación
@@ -98,12 +98,12 @@ export default function Footer() {
                   href={href}
                   style={{
                     fontSize: "15px",
-                    color: "rgba(255,255,255,.45)",
+                    color: "var(--text-primary)",
                     textDecoration: "none",
                     transition: "color .2s",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,.45)")}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ai-blue)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
                 >
                   {label}
                 </Link>
@@ -119,9 +119,9 @@ export default function Footer() {
               fontSize: "15px",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "var(--gold)",
+              color: "var(--text-primary)",
               marginBottom: "1.25rem",
-              fontWeight: 500,
+              fontWeight: 900,
             }}
           >
             Servicios
@@ -133,12 +133,12 @@ export default function Footer() {
                   href={href}
                   style={{
                     fontSize: "15px",
-                    color: "rgba(255,255,255,.45)",
+                    color: "var(--ai-primary)",
                     textDecoration: "none",
                     transition: "color .2s",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,.45)")}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ai-blue)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
                 >
                   {label}
                 </Link>
@@ -154,9 +154,9 @@ export default function Footer() {
               fontSize: "15px",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "var(--gold)",
+              color: "var(--text-primary)",
               marginBottom: "1.25rem",
-              fontWeight: 500,
+              fontWeight: 900,
             }}
           >
             Contacto
@@ -168,8 +168,8 @@ export default function Footer() {
               { icon: "◈", text: "Colombia 🇨🇴" },
             ].map(({ icon, text }) => (
               <div key={text} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                <span style={{ color: "var(--rose)", fontSize: "12px" }}>{icon}</span>
-                <span style={{ fontSize: "15px", color: "rgba(255,255,255,.45)" }}>{text}</span>
+                <span style={{ color: "var(--brand-primary)", fontSize: "15px" }}>{icon}</span>
+                <span style={{ fontSize: "15px", color: "var(--text-primary)" }}>{text}</span>
               </div>
             ))}
           </div>
@@ -188,13 +188,11 @@ export default function Footer() {
           margin: "0 auto",
         }}
       >
-        <span style={{ fontSize: "11px", color: "rgba(255,255,255,.6)", letterSpacing: "0.04em" }}>
+
+      </div>
+              <span style={{ fontSize: "11px", color: "var(--text-primary)", letterSpacing: "0.04em", justifyContent:"end", display:"flex", marginRight: "15px" }}>
           © {new Date().getFullYear()} Ami Beauty — Todos los derechos reservados
         </span>
-        <span style={{ fontSize: "11px", color: "rgba(255,255,255,.6)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-          Hecho con amor · Ing. Estevan Cabarcas · Colombia
-        </span>
-      </div>
     </footer>
   );
 }

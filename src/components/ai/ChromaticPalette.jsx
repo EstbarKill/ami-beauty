@@ -11,7 +11,7 @@ export default function ChromaticPalette() {
   ];
 
   return (
-    <div className="bg-white p-4 rounded">
+    <div style={{color:"red", background:"var(--rose-lith)", border:"3px solid var(--cream-dark)", boxShadow:"0 6px 10px rgba(24, 12, 2, .7)"}}className="p-3 rounded">
       <h3 className="text-black text-lg font-semibold mb-3">
         Guía Cromática Ami Beauty
       </h3>
@@ -28,10 +28,6 @@ export default function ChromaticPalette() {
           />
         ))}
       </div>
-
-      <p className="text-xs text-gray-600 mt-3">
-        Para una mejor referencia visual.
-      </p>
     </div>
   );
 }

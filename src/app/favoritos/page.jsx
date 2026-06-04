@@ -13,12 +13,12 @@ export default function FavoritesPage() {
       <div style={{ background: "var(--cream-dark)", padding: "2.5rem 3rem" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ fontSize: "12px", color: "var(--muted)", marginBottom: "0.5rem" }}>
-            <Link href="/" style={{ color: "var(--muted)", textDecoration: "none" }} prefetch={false}>Inicio</Link>
+            <Link href="/" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize:"1rem" }} prefetch={false}>Inicio</Link>
             <span style={{ margin: "0 0.5rem" }}>›</span>
-            <span>Favoritos</span>
+            <span style={{color:"var(--text-primary)"}}>Favoritos</span>
           </div>
           <span className="eyebrow">Mi cuenta</span>
-          <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(2rem,3vw,2.8rem)", fontWeight: 400, margin: 0, color: "var(--charcoal)" }}>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,3vw,2.8rem)", fontWeight: 400, margin: 0, color: "var(--charcoal)" }}>
             Mis Favoritos
           </h1>
         </div>
@@ -28,7 +28,7 @@ export default function FavoritesPage() {
       <div style={{ maxWidth: "1440px", margin: "0 auto", padding: "3rem" }}>
         {favorites.length > 0 ? (
           <>
-            <p style={{ fontSize: "13px", color: "var(--muted)", marginBottom: "2rem" }}>
+            <p style={{ fontSize: "1rem", color: "var(--muted-dark)", marginBottom: "2rem" }}>
               {favorites.length} producto{favorites.length !== 1 ? "s" : ""} guardado{favorites.length !== 1 ? "s" : ""}
             </p>
             <ProductGrid products={favorites} loading={false} />
@@ -42,7 +42,7 @@ export default function FavoritesPage() {
             <p style={{ fontSize: "14px", color: "var(--muted)", marginBottom: "2rem" }}>
               Guarda los productos que te gustan para encontrarlos fácilmente.
             </p>
-            <Link href="/category/todos" className="btn-primary" prefetch={false}>
+            <Link href="/" className="btn-primary" prefetch={false}>
               Explorar productos
             </Link>
           </div>

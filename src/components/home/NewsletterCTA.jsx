@@ -18,7 +18,7 @@ export default function NewsletterCTA() {
   }
 
   return (
-    <section style={{ borderTop:"1px solid blue" ,background: "var(--ai-cyan)", padding: "4rem", textAlign: "center", fontFamily: "var(--font-display)" }}>
+    <section style={{ borderTop:"1px solid blue" ,background: "var(--cream)", padding: "4rem", textAlign: "center", fontFamily: "var(--font-display)" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
         <span
           style={{
@@ -26,7 +26,7 @@ export default function NewsletterCTA() {
             fontSize: "3rem",
             letterSpacing: ".18em",
             textTransform: "uppercase",
-            color: "var(--rose-dark)",
+            color: "var(--brand-primary)",
             marginTop:"-2rem",
           }}
         >
@@ -41,7 +41,14 @@ export default function NewsletterCTA() {
             marginBottom: "1rem",
           }}
         >
-          Obtén 25% de descuento en tu primera compra
+          Obtén <span style={{fontSize:"3.5rem",color:"var(--error)"}}
+                        onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--ai-blue)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--success)";
+              }}
+              >25%</span> de descuento en tu primera compra
         </h2>
         <p
           style={{
@@ -71,11 +78,11 @@ export default function NewsletterCTA() {
             placeholder="Tu correo electrónico"
             style={{
               flex: 1,
-              border: "1px solid var(--brand-decent)",
+              border: "1px solid var(--ai-cyan)",
               background: "transparent",
               padding: ".75rem 1rem",
-              fontSize: "13px",
-              color: "var(--charcoal)",
+              fontSize: "14px",
+              color: "var(--text-primary)",
               outline: "none",
               transition: "border-color .2s",
               fontFamily: "inherit",

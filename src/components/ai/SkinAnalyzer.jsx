@@ -192,7 +192,7 @@ const handleAnalyze = async () => {
       />
 
       {/* VIDEO */}
-      <div className="relative w-[320px] mx-auto">
+      <div className="relative w-[420px] mx-auto">
         
       {mode === "camera" && (
         <video
@@ -200,7 +200,7 @@ const handleAnalyze = async () => {
           autoPlay
           playsInline
           muted
-          className="w-[320px] mx-auto rounded"
+          className="w-[720px] mx-auto rounded"
         />
         
       )}
@@ -209,7 +209,7 @@ const handleAnalyze = async () => {
       {preview && (
         <img
           src={preview}
-          className="w-[320px] mx-auto rounded"
+          className="w-[40rem] h-[20.3rem] mx-auto rounded"
         />
       )}
       {/* CANVAS OCULTO */}
@@ -217,14 +217,14 @@ const handleAnalyze = async () => {
 </div>
       {/* LOADING */}
       {loading && (
-        <p className="text-amber-400 text-center">
+        <p className="text-black text-end">
           Analizando...
         </p>
       )}
 
       {/* ESTADO DETECCIÓN */}
       {mode === "camera" && cameraOn && (
-        <p className="text-xs text-center text-white/40">
+        <p className="text-xl text-center text-black">
           {faceDetected ? "Rostro detectado ✔" : "Buscando rostro..."}
         </p>
       )}

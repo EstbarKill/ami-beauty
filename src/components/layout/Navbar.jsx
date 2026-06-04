@@ -54,7 +54,7 @@ export default function Navbar() {
                   textDecoration: "none",
                   display: "block",
                   borderBottom: active
-                    ? "1px solid var(--rose)"
+                    ? "1px solid var(--ai-blue)"
                     : "1px solid transparent",
                 }}
               >

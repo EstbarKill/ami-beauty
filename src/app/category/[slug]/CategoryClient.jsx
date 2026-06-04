@@ -4,7 +4,6 @@ import ProductGrid from "@/components/product/ProductGrid";
 import { CATEGORY_MAP } from "@/lib/categories";
 import { useSearchParams } from "next/navigation";
 
-
 function normalize(str = "") {
   return str
     .toLowerCase()
@@ -16,24 +15,26 @@ function normalize(str = "") {
 export default function CategoryClient({
   slug,
   products,
-  searchParams,
 }) {
-  const sub = searchParams?.sub;
-  const brand = searchParams?.brand;
+  const searchParams = useSearchParams();
+
+  const sub = searchParams.get("sub");
+  const brand = searchParams.get("brand");
 
   let filtered = products.filter(
     (p) =>
       normalize(p.category) === normalize(slug)
   );
 
-  // Filtro por subcategoría
+  // filtro subcategoría
   if (sub) {
     filtered = filtered.filter(
-      (p) => p.subcategory === sub
+      (p) =>
+        normalize(p.subcategory) === normalize(sub)
     );
   }
 
-  // Filtro por marca
+  // filtro marca
   if (brand) {
     filtered = filtered.filter(
       (p) =>

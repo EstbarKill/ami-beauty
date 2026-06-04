@@ -96,6 +96,7 @@ export default function ProductCard({ product }) {
       {/* INFO */}
       <Link href={`/product/${product.slug}`}>
         <div className="info">
+          <span>
           <p className="brand">{product.name}</p>
           <p className="name">{product.brand}</p>
 
@@ -111,8 +112,13 @@ export default function ProductCard({ product }) {
               />
             ))}
           </div>
+          </span>
+          <span style={{display:"flex", alignSelf:"end"}}>
+
 
           <p className="price">${product.price?.toLocaleString("es-CO")}</p>
+
+          </span>
 
         </div>
       </Link>
