@@ -1138,7 +1138,7 @@
     "recommended":true,
     "content": "0.3g",
     "toneGroup": "Claro",
-    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "moreno-calido"],
+    "toneIds": ["porcelana", "claro-neutro", "claro-dorado", "medio-rosado", "oscuro-profundo"],
     "subtones": ["cool", "neutral", "warm"],
     "images": [
       "/img/products/kit-de-cejas-c1.jpeg",
@@ -1150,7 +1150,7 @@
       { "shade": "02 Off White", "hex": "#F0D0B6", "toneId": "claro-neutro", "subtone": "neutral" },
       { "shade": "03 Latina",    "hex": "#F2C49A", "toneId": "claro-dorado", "subtone": "warm" },
       { "shade": "04 Cream Brûlée", "hex": "#F2B177", "toneId": "medio-rosado", "subtone": "warm" },
-      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "moreno-calido", "subtone": "warm" }
+      { "shade": "05 Caramel",  "hex": "#D18D60", "toneId": "oscuro-profundo", "subtone": "warm" }
     ]
   }
 ]

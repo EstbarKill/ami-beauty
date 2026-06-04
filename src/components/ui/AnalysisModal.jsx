@@ -16,7 +16,7 @@ export default function AnalysisModal({ result, onClose }) {
   const products = [
     ...(result.matched || []),
     ...(result.interest || []),
-  ].slice(0, 2);
+  ];
 
   return (
     <div
@@ -24,18 +24,20 @@ export default function AnalysisModal({ result, onClose }) {
       style={{ background: "rgba(28,24,21,0.72)", backdropFilter: "blur(6px)" }}
     >
       {/* Card container — horizontal */}
-      <div
-        style={{
-          background: "white",
-          borderRadius: "4px",
-          width: "100%",
-          maxWidth: "1060px",
-          display: "flex",
-          flexDirection: "column",
-          overflow: "hidden",
-          boxShadow: "0 32px 80px rgba(28,24,21,0.22)",
-        }}
-      >
+<div
+  style={{
+    background: "white",
+    borderRadius: "7px",
+    width: "100%",
+    maxWidth: "1060px",
+    maxHeight:"530px",
+    display: "flex",
+    flexDirection: "column",
+    overflow: "hidden",
+    boxShadow:
+      "0 32px 80px rgba(28,24,21,0.8)",
+  }}
+>
         {/* TOP BAR */}
         <div
           style={{
@@ -248,15 +250,17 @@ export default function AnalysisModal({ result, onClose }) {
           </div>
 
           {/* RIGHT — Products */}
-          <div
-            style={{
-              flex: 1,
-              padding: "1.6rem",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-            }}
-          >
+<div
+  style={{
+    flex: 1,
+    padding: ".6rem",
+    display: "flex",
+    flexDirection: "column",
+    gap: ".7rem",
+    maxHeight: "600px",
+    overflow: "hidden",
+  }}
+>
             <span style={{ marginBottom: "0.2rem", fontSize: "2.1rem", fontWeight: 700, color: "var(--gold)", fontFamily: "var(--font-body)" }}>
               Recomendados para ti
             </span>
@@ -267,9 +271,24 @@ export default function AnalysisModal({ result, onClose }) {
               </p>
             )}
 
-            {products.map((p) => (
-              <HorizontalProductCard key={p.id} product={p} />
-            ))}
+<div
+  style={{
+    flex: 1,
+    overflowY: "auto",
+    paddingRight: "8px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.8rem",
+    minHeight: 0,
+  }}
+>
+  {products.map((p) => (
+    <HorizontalProductCard
+      key={p.id}
+      product={p}
+    />
+  ))}
+</div>
 
             <button
               onClick={onClose}
