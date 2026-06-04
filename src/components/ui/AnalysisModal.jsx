@@ -251,6 +251,7 @@ export default function AnalysisModal({ result, onClose }) {
 
           {/* RIGHT — Products */}
 <div
+className="overflow-y-auto scrollbar-thin"
   style={{
     flex: 1,
     padding: ".6rem",
@@ -259,6 +260,7 @@ export default function AnalysisModal({ result, onClose }) {
     gap: ".7rem",
     maxHeight: "600px",
     overflow: "hidden",
+    
   }}
 >
             <span style={{ marginBottom: "0.2rem", fontSize: "2.1rem", fontWeight: 700, color: "var(--gold)", fontFamily: "var(--font-body)" }}>
