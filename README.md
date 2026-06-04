@@ -16,64 +16,88 @@
 </div>
 
 ---
+# 🤖 Ami Beauty AI
 
-## Descripción
+<div align="center">
 
-**Ami Beauty AI** es una plataforma especializada en maquillaje y cuidado de la piel que combina visión computacional, colorimetría científica y un motor de recomendación inteligente para identificar el tono y subtono de piel de cada usuario a partir de una fotografía.
+<img src="https://img.shields.io/badge/Next.js-16.2-black?style=flat-square&logo=next.js" />
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react" />
+<img src="https://img.shields.io/badge/TailwindCSS-4-38BDF8?style=flat-square&logo=tailwindcss" />
+<img src="https://img.shields.io/badge/MediaPipe-FaceLandmarker-FF6B35?style=flat-square" />
+<img src="https://img.shields.io/badge/CIELAB%20%2B%20ITA-Colorimetría-9B59B6?style=flat-square" />
+<img src="https://img.shields.io/badge/Computer%20Vision-Client%20Side-3498DB?style=flat-square" />
+<img src="https://img.shields.io/badge/Estado-Producción-27AE60?style=flat-square" />
 
-El sistema detecta el rostro, extrae regiones de interés en las mejillas, aplica corrección cromática y clasifica el tono mediante el índice **ITA (Individual Typology Angle)** en el espacio de color **CIELAB**, devolviendo productos compatibles con las características detectadas.
+### Motor inteligente de análisis cromático facial para recomendación personalizada de maquillaje
 
-> _"Ami es esa amiga. La que te dice la verdad aunque no sea lo que querías escuchar."_
+Detección facial • Colorimetría científica • CIELAB • ITA • Recomendación inteligente
 
----
-
-## Características principales
-
-### Motor de análisis IA
-
-| Capacidad | Tecnología |
-|-----------|-----------|
-| Detección facial | MediaPipe FaceLandmarker |
-| Extracción de ROI | Landmarks de mejillas (L/R) |
-| Corrección de color | Gray World Algorithm |
-| Conversión de color | RGB → XYZ → CIELAB |
-| Clasificación de tono | Índice ITA (11 rangos) |
-| Detección de subtono | Ratio a*/b* (Warm / Cool / Neutral) |
-| Suavizado temporal | Historial rolling de 5 frames |
-
-### Ecommerce integrado
-
-- Catálogo de más de 39 productos con variantes de tono
-- Búsqueda en tiempo real por nombre, marca, categoría y subtono
-- Filtrado por categoría y subcategoría
-- Carrito persistente con control de variantes
-- Sistema de favoritos con persistencia local
-- Sidebar de carrito dinámico
-
-### Contenido editorial
-
-- 6 artículos de consejos de belleza con productos relacionados
-- Sección de reseñas verificadas
-- Newsletter con validación de email
+</div>
 
 ---
 
-## Stack tecnológico
+# Descripción
 
-```
-Frontend         Next.js 16.2 + React 19 + TailwindCSS 4
-IA / Visión      MediaPipe Tasks-Vision 0.10.35 (FaceLandmarker)
-Colorimetría     CIELAB · ITA · Gray World (implementación propia)
-Estado           Context API + React Hooks
-Persistencia     LocalStorage (carrito, favoritos)
-Despliegue       Next.js Static Export (output: "export")
-```
+**Ami Beauty AI** es una plataforma de análisis facial desarrollada para el sector beauty-tech que utiliza visión computacional y colorimetría científica para identificar el tono y subtono de piel de una persona mediante una fotografía o captura en tiempo real.
+
+El sistema realiza todo el procesamiento directamente en el navegador utilizando:
+
+* MediaPipe Face Landmarker
+* Colorimetría CIELAB
+* Índice ITA (Individual Typology Angle)
+* Algoritmos de corrección cromática
+* Motor de recomendación por similitud de tonos
+
+El objetivo es reducir la incertidumbre al momento de seleccionar productos cosméticos como:
+
+* Correctores
+* Bases
+* Contornos
+* Polvos
+* Iluminadores
 
 ---
 
-## Arquitectura
+# Características principales
 
-```
+## Motor IA de análisis facial
+
+| Característica        | Implementación               |
+| --------------------- | ---------------------------- |
+| Detección facial      | MediaPipe FaceLandmarker     |
+| Landmarks faciales    | 478 puntos                   |
+| Extracción ROI        | Mejillas izquierda y derecha |
+| Corrección cromática  | Gray World                   |
+| Conversión de color   | RGB → XYZ → LAB              |
+| Clasificación de tono | ITA                          |
+| Detección de subtono  | Análisis a*/b*               |
+| Variantes cromáticas  | Claro · Exacto · Oscuro      |
+| Recomendaciones       | Motor de scoring             |
+
+---
+
+## Ecommerce integrado
+
+* Catálogo de productos con variantes cromáticas
+* Matching automático por tono y subtono
+* Sistema de favoritos
+* Carrito persistente
+* Búsqueda inteligente
+* Filtros por categoría
+* Productos recomendados dinámicamente
+
+---
+### Stack tecnológico
+* Frontend         Next.js 16.2 + React 19 + TailwindCSS 4
+* IA / Visión      MediaPipe Tasks-Vision 0.10.35 (FaceLandmarker)
+* Colorimetría     CIELAB · ITA · Gray World (implementación propia)
+* Estado           Context API + React Hooks
+* Persistencia     LocalStorage (carrito, favoritos)
+* Despliegue       Next.js Static Export (output: "export")
+
+---
+## Arquitectura de alto nivel
+```text
 src/
 ├── app/
 │   ├── analisis/          # Página principal del análisis IA
@@ -117,170 +141,477 @@ src/
     └── tips.js             # Artículos de contenido
 ```
 
+
 ---
 
-## Flujo del análisis IA
+# Flujo del análisis IA
 
-```
-1. CAPTURA
-   Cámara (MediaDevices API) o imagen subida (JPG/PNG/WEBP)
-         ↓
-2. PREPROCESAMIENTO
-   Ajuste de contraste y saturación (canvas filter)
-         ↓
-3. DETECCIÓN FACIAL
-   MediaPipe FaceLandmarker → 478 landmarks
-         ↓
-4. EXTRACCIÓN DE ROI
-   Puntos de mejilla izquierda [111,116–123] + derecha [340,345–352]
-   Muestreo en parches de 15×15px por punto
-   Filtrado por luminancia (30–230) y saturación extrema
-         ↓
-5. SUAVIZADO TEMPORAL
-   Promedio ponderado de los últimos 5 frames (rolling average)
-         ↓
-6. CONVERSIÓN DE COLOR
-   RGB → XYZ (iluminante D65) → CIELAB
-   Obtención de L*, a*, b*
-         ↓
-7. CÁLCULO ITA
-   ITA = atan((L* − 50) / b*) × (180/π)
-         ↓
-8. CLASIFICACIÓN DE TONO
-   11 categorías (Porcelana → Ébano) según rango ITA
-         ↓
-9. DETECCIÓN DE SUBTONO
-   Ratio a*/b* → Warm (b* ≥ 8) / Cool (b* ≤ −8) / Neutral
-         ↓
-10. RECOMENDACIÓN
-    Cruce toneId + subtone → scoring por producto y variante
-    → Matched (score ≥ 8) + Interest (score ≥ 5)
+## 1. Captura
+
+El usuario puede utilizar:
+
+* Cámara web
+* Imagen cargada
+
+Formatos soportados:
+
+```text
+JPG
+PNG
+WEBP
 ```
 
----
-
-## Sistema de tonos
-
-| ID | Tono | Rango ITA | Fitzpatrick |
-|----|------|-----------|-------------|
-| porcelana | Porcelana | > 55 | I |
-| claro | Claro | 49–55 | I–II |
-| claro-medio | Claro Medio | 41–48 | II |
-| medio-claro | Medio Claro | 34–40 | II–III |
-| medio | Medio | 28–33 | III |
-| medio-profundo | Medio Profundo | 20–27 | III–IV |
-| trigueño | Trigueño | 10–19 | IV |
-| moreno | Moreno | 0–9 | IV–V |
-| oscuro | Oscuro | −15 a −1 | V |
-| oscuro-profundo | Oscuro Profundo | −30 a −16 | V–VI |
-| ebano | Ébano | < −30 | VI |
-
-**Subtonos detectados:** Cálido (Warm) · Neutro (Neutral) · Frío (Cool)
+La imagen es convertida a un Canvas para procesamiento.
 
 ---
 
-## Catálogo de productos
+## 2. Detección facial
 
-| Categoría | Subcategorías | Productos |
-|-----------|--------------|-----------|
-| Rostro | Bases, Correctores, Polvos, Contorno, Rubor, Iluminadores | 23 |
-| Ojos | Paletas, Delineadores | 4 |
-| Labios | Gloss, Hidratantes | 2 |
-| Skincare | Limpiadores, Serums, Hidratantes, Cremas | 6 |
-| Cejas | Lápiz, Gel, Pomadas | 4 |
+Se utiliza MediaPipe FaceLandmarker.
 
-**Marcas:** Majikal Beauty · Anik · Lula · Montoc · Purpure · OG · Atenea · Ame
+### Salida
+
+```text
+478 landmarks faciales
+```
+
+Estos landmarks permiten identificar zonas anatómicas específicas del rostro.
 
 ---
 
+## 3. Extracción de regiones de piel
+
+El análisis NO utiliza todo el rostro.
+
+Se seleccionan únicamente zonas de piel con menor interferencia cosmética.
+
+### Mejilla izquierda
+
+```js
+[111,116,117,118,119,120,121,122,123]
+```
+
+### Mejilla derecha
+
+```js
+[340,345,346,347,348,349,350,351,352]
+```
+
+Cada landmark genera una región de muestreo aproximada:
+
+```text
+15 x 15 píxeles
+```
+
+---
+
+## 4. Filtrado de píxeles
+
+Antes de calcular el color promedio se eliminan:
+
+* Sombras profundas
+* Reflejos excesivos
+* Saturación extrema
+* Píxeles contaminados
+
+### Rango permitido
+
+```text
+30 < luminancia < 230
+```
+
+Esto reduce errores provocados por iluminación irregular.
+
+---
+
+## 5. Corrección cromática
+
+### Gray World Algorithm
+
+Las cámaras suelen introducir dominantes de color.
+
+Ejemplos:
+
+```text
+Amarillo
+Azul
+Verde
+```
+
+Para compensarlo se aplica Gray World.
+
+```text
+RGB Original
+      │
+      ▼
+Gray World
+      │
+      ▼
+RGB Corregido
+```
+
+---
+
+## 6. Obtención del color representativo
+
+Después del filtrado se calcula el color promedio.
+
+Ejemplo:
+
+```json
+{
+  "r": 137,
+  "g": 89,
+  "b": 59
+}
+```
+
+Hexadecimal:
+
+```text
+#89593B
+```
+
+Este color representa la muestra final utilizada para clasificación.
+
+---
+
+## 7. Conversión RGB → CIELAB
+
+El espacio RGB no es perceptualmente uniforme.
+
+Por ello el sistema transforma:
+
+```text
+RGB
+ ↓
+XYZ
+ ↓
+CIELAB
+```
+
+Obteniendo:
+
+| Canal | Significado     |
+| ----- | --------------- |
+| L*    | Luminosidad     |
+| a*    | Verde ↔ Rojo    |
+| b*    | Azul ↔ Amarillo |
+
+Ejemplo real:
+
+```json
+{
+  "L": 42.42,
+  "a": 16.41,
+  "b": 25.35
+}
+```
+
+---
+
+## 8. Cálculo del índice ITA
+
+El tono de piel se clasifica mediante el estándar dermatológico ITA.
+
+Fórmula utilizada:
+
+```text
+ITA = atan((L* - 50) / b*) × (180 / π)
+```
+
+Ejemplo:
+
+```json
+{
+  "ita": -16.6
+}
+```
+
+---
+
+## 9. Clasificación de tono
+
+El resultado ITA es comparado contra una tabla de 11 categorías.
+
+| ID              | Tono      | ITA             |
+| --------------- | --------- | --------------- |
+| porcelana       | > 55      | Muy claro       |
+| claro           | 49–55     | Claro           |
+| claro-medio     | 41–48     | Claro medio     |
+| medio-claro     | 34–40     | Medio claro     |
+| medio           | 28–33     | Medio           |
+| medio-profundo  | 20–27     | Medio profundo  |
+| trigueño        | 10–19     | Trigueño        |
+| moreno          | 0–9       | Moreno          |
+| oscuro          | -15 a -1  | Oscuro          |
+| oscuro-profundo | -30 a -16 | Oscuro profundo |
+| ebano           | < -30     | Ébano           |
+
+---
+
+## 10. Detección de subtono
+
+El sistema analiza la relación entre:
+
+```text
+a*
+b*
+```
+
+para determinar:
+
+| Subtono | Característica    |
+| ------- | ----------------- |
+| Warm    | Amarillo / Dorado |
+| Neutral | Balanceado        |
+| Cool    | Rosado / Azulado  |
+
+Ejemplo:
+
+```json
+{
+  "subtone": "warm"
+}
+```
+
+---
+
+## 11. Generación de variantes cromáticas
+
+Cada tono genera tres referencias visuales.
+
+```text
+Claro
+Exacto
+Oscuro
+```
+
+Ejemplo:
+
+```text
+#a27254
+#89593b
+#704022
+```
+
+Esto permite al usuario comparar visualmente la clasificación obtenida.
+
+---
+
+# Motor de recomendaciones
+
+Una vez identificado el tono y subtono se activa el sistema de matching.
+
+---
+
+## Equivalencias de tono
+
+Ejemplo:
+
+```text
+oscuro-profundo
+        │
+        ├── moreno-calido
+        └── oscuro-calido
+```
+
+Estas equivalencias permiten recomendar productos compatibles aunque no exista coincidencia exacta.
+
+---
+
+## Sistema de puntuación
+
+### Coincidencia exacta
+
+```text
++10 puntos
+```
+
+### Coincidencia equivalente
+
+```text
++10 puntos
+```
+
+### Mismo grupo cromático
+
+```text
++4 puntos
+```
+
+### Coincidencia de subtono
+
+```text
++5 puntos
+```
+
+---
+
+## Grupos cromáticos
+
+```text
+LIGHT
+├─ porcelana
+├─ claro
+└─ claro-medio
+
+MEDIUM
+├─ medio-claro
+├─ medio
+├─ medio-profundo
+└─ trigueño
+
+DARK
+├─ moreno
+├─ oscuro
+├─ oscuro-profundo
+└─ ebano
+```
+
+---
+
+## Selección de productos
+
+Actualmente el sistema prioriza:
+
+```text
+Correctores
+```
+
+porque son los productos más sensibles al tono real de piel.
+
+Posteriormente se incluyen:
+
+* Bases
+* Contornos
+* Productos complementarios
+
+---
+
+## Resultado final
+
+```json
+{
+  "matched": [],
+  "interest": []
+}
+```
+
+### Matched
+
+Productos con mayor compatibilidad cromática.
+
+### Interest
+
+Productos adicionales relacionados con el perfil detectado.
+
+---
 ## Instalación
-
-### Prerequisitos
-
-- Node.js `>= 20.9.0`
-- pnpm `>= 8.0`
-
-### Pasos
-
-```bash
+* Prerequisitos
+* Node.js >= 20.9.0
+* pnpm >= 8.0
+* Pasos
 # 1. Clonar repositorio
-git clone https://github.com/usuario/ami-beauty-ai.git
-cd ami-beauty-ai
+* git clone https://github.com/usuario/ami-beauty-ai.git
+* cd ami-beauty-ai
 
 # 2. Instalar dependencias
-pnpm install
+* pnpm install
 
 # 3. Ejecutar en desarrollo
-pnpm dev
+* pnpm dev
+* La aplicación estará disponible en http://localhost:3000.
+
+## Variables de entorno
+* Crea un archivo .env.local en la raíz del proyecto:
+
+* NEXT_PUBLIC_APP_NAME=Ami Beauty AI
+* Build de producción
+* pnpm build
+```text
+El sitio se exporta como HTML estático (output: "export") en la carpeta /out, listo para servirse en cualquier CDN o servidor estático.
 ```
+---
+# Privacidad
 
-La aplicación estará disponible en `http://localhost:3000`.
+Todo el análisis ocurre localmente.
 
-### Variables de entorno
+✅ No se almacenan fotografías
 
-Crea un archivo `.env.local` en la raíz del proyecto:
+✅ No se envían imágenes a servidores
 
-```env
-NEXT_PUBLIC_APP_NAME=Ami Beauty AI
-```
+✅ No existe reconocimiento de identidad
 
-### Build de producción
-
-```bash
-pnpm build
-```
-
-El sitio se exporta como HTML estático (`output: "export"`) en la carpeta `/out`, listo para servirse en cualquier CDN o servidor estático.
+✅ Procesamiento 100% client-side
 
 ---
 
-## Consideraciones técnicas
+# Rendimiento
 
-**Privacidad:** Todo el análisis se ejecuta en el navegador del usuario. Ningún dato de imagen ni resultado se envía a un servidor externo.
-
-**Compatibilidad de cámara:** Requiere contexto seguro (HTTPS o localhost). El acceso a `MediaDevices.getUserMedia` no está disponible en HTTP en producción.
-
-**Modelos MediaPipe:** El modelo `face_landmarker.task` se descarga en tiempo de ejecución desde el CDN de Google. La primera carga puede tomar 2–5 segundos según la conexión.
-
-**Condiciones recomendadas para el análisis:**
-- Luz blanca o natural difusa
-- Sin filtros ni alteraciones de color en la cámara
-- Rostro centrado y sin sombras pronunciadas
-- Tarjeta cromática Ami Beauty visible en el encuadre (mejora la calibración)
+| Métrica               | Valor      |
+| --------------------- | ---------- |
+| Detección facial      | ~15-30 ms  |
+| Conversión LAB        | < 1 ms     |
+| Cálculo ITA           | < 1 ms     |
+| Recomendaciones       | < 5 ms     |
+| Tiempo promedio total | 100-300 ms |
 
 ---
 
-## Roadmap
+# Roadmap
 
-**IA**
-- Integración de TensorFlow.js para clasificación de tipo de piel
-- Detección de acné, manchas e hidratación
+### IA
 
-**Ecommerce**
-- Pasarela de pagos
-- Dashboard administrativo con gestión de inventario
-- Historial de análisis por usuario
+* TensorFlow.js
+* Clasificación de tipo de piel
+* Detección de acné
+* Detección de manchas
+* Análisis de hidratación
 
-**Usuario**
-- Autenticación y perfil personalizado
-- Historial de tonos y evolución temporal
+### Ecommerce
 
----
+* Pasarela de pagos
+* Historial de análisis
+* Dashboard administrativo
 
-## Autor
+### Usuario
 
-**Estevan Alejandro Cabarcas Urieles**  
-Desarrollador Web Full Stack — Barranquilla, Colombia  
-Especializado en Next.js · React · Node.js · IA aplicada a Ecommerce
-
----
-
-## Licencia
-
-Uso privado. Todos los derechos reservados © 2026 **Ami Beauty**.
+* Perfil personalizado
+* Seguimiento histórico de tonos
+* Recomendaciones evolutivas
 
 ---
 
+# Autor
+
+**Estevan Alejandro Cabarcas Urieles**
+
+Desarrollador Full Stack especializado en:
+
+* Next.js
+* React
+* Node.js
+* Computer Vision
+* Ecommerce
+* Inteligencia Artificial aplicada a retail
+
+---
+
+
+---
+### Ami Beauty AI
+
+Belleza + Ciencia + Inteligencia Artificial
 <div align="center">
 <sub>Ami Beauty AI — Belleza + Tecnología + Inteligencia Artificial</sub>
+los derechos reservados © 2026 **Ami Beauty**.
 </div>
+<div align="center">
+
+### Ami Beauty AI
+
+Belleza + Ciencia + Inteligencia Artificial
+
+</div>
+los derechos reservados © 2026 **Ami Beauty**.
