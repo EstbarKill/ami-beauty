@@ -58,6 +58,10 @@ const confidence = (consistency * 0.4) +
     return { error: "low-color-info" };
   }
   console.log("RGB:", rgb, "LAB:", L, a, bStar);
+  console.log(
+  "VALID PIXELS:",
+  sample.validPixels
+);
   return {
     tone: {
       ...toneBase,

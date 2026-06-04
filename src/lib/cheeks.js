@@ -1,13 +1,13 @@
 // 🎯 Puntos de referencia (MediaPipe FaceMesh)
 const LEFT_CHEEK = [
- 111,116,117,118,119,120,121,123
+111,116,117,118,119,120,121,123
 ];
 
 const RIGHT_CHEEK = [
- 340,345,346,347,348,349,350,352
+340,345,346,347,348,349,350,352
 ];
 
-
+let validPixels = 0;
 
 let rgbHistory = [];
 // 🧠 Historial para suavizado temporal
@@ -49,7 +49,7 @@ export function getCheekPixels(landmarks, canvas, ctx) {
     const x = Math.floor(p.x * canvas.width);
     const y = Math.floor(p.y * canvas.height);
 
-    const size = 15; // 🔥 más robusto
+    const size = 25; // 🔥 más robusto
 
     // 🛡 Protección bordes canvas
     const startX = Math.max(0, x - size);
@@ -73,10 +73,10 @@ export function getCheekPixels(landmarks, canvas, ctx) {
       const luminance = 0.2126 * rr + 0.7152 * gg + 0.0722 * bb;
 
       // ❌ sombras
-      if (luminance < 30) continue;
+      if (luminance < 20) continue;
 
       // ❌ highlights (brillos)
-      if (luminance > 230) continue;
+      if (luminance > 245) continue;
 
       // ❌ ruido / saturación extrema
       const max = Math.max(rr, gg, bb);
@@ -88,6 +88,8 @@ export function getCheekPixels(landmarks, canvas, ctx) {
       pg += gg;
       pb += bb;
       c++;
+
+      validPixels++;
     }
 
     if (!c) return;
@@ -121,5 +123,6 @@ console.log("PIXEL COUNT:", count);
   return {
     rgb: smoothed,
     count,
+    validPixels,
   };
 }
