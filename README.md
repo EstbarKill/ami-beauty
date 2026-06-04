@@ -16,18 +16,6 @@
 </div>
 
 ---
-# 🤖 Ami Beauty AI
-
-<div align="center">
-
-<img src="https://img.shields.io/badge/Next.js-16.2-black?style=flat-square&logo=next.js" />
-<img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react" />
-<img src="https://img.shields.io/badge/TailwindCSS-4-38BDF8?style=flat-square&logo=tailwindcss" />
-<img src="https://img.shields.io/badge/MediaPipe-FaceLandmarker-FF6B35?style=flat-square" />
-<img src="https://img.shields.io/badge/CIELAB%20%2B%20ITA-Colorimetría-9B59B6?style=flat-square" />
-<img src="https://img.shields.io/badge/Computer%20Vision-Client%20Side-3498DB?style=flat-square" />
-<img src="https://img.shields.io/badge/Estado-Producción-27AE60?style=flat-square" />
-
 ### Motor inteligente de análisis cromático facial para recomendación personalizada de maquillaje
 
 Detección facial • Colorimetría científica • CIELAB • ITA • Recomendación inteligente
